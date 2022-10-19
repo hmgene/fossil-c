@@ -1,19 +1,37 @@
 # brachy
 
+
+## Data
+Download microorganism input fastqs
+```
+srr=(
+SRR10173838 #Microbiome in dinosaur bone
+SRR10173105 #Microbiome in adjacent sediment
+)
+
+module load sratoolkit/3.0.0
+for f in ${srr[@]};do
+        cat<<-eof | sbatch
+        #!/bin/bash -l
+        fastq-dump --split-files --gzip $f
+        eof
+done
+```
+
+
 ## Articles
+NAR2017, A new model for ancient DNA decay based on paleogenomic meta-analysis https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5499742/
+- ancient DNA decay models,  
+- code: https://datadryad.org/stash/dataset/doi:10.5061%2Fdryad.5r10j
+- data: https://www.ebi.ac.uk/ena/browser/view/ERR844243?show=reads
 
-NAR2017, ancient DNA decay models,  
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5499742/
-code: https://datadryad.org/stash/dataset/doi:10.5061%2Fdryad.5r10j
-data: https://www.ebi.ac.uk/ena/browser/view/ERR844243?show=reads
+EM2020, Genome-centric resolution of novel microbial lineages in an excavated Centrosaurus dinosaur fossil bone from the Late Cretaceous of North America
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8067395/
+- SRR10173838 #Microbiome in dinosaur bone, SRR10173105 #Microbiome in adjacent sediment
 
-Genome-centric resolution of novel microbial lineages in an excavated Centrosaurus dinosaur fossil bone from the Late Cretaceous of North America
-
-
-science2009, Mary H Schweitzer, brachy collagen, https://pubmed.ncbi.nlm.nih.gov/19407199/
-
+Sci2009Mary, Mary H Schweitzer, Biomolecular characterization and protein sequences of the Campanian hadrosaur B. canadensis, 
+- brachy collagen, https://pubmed.ncbi.nlm.nih.gov/19407199/
 
 Centrifuge, meta analysis for microorganism https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5131823/
 
-## Data
 Human ancient DNA, https://www.ebi.ac.uk/ena/browser/view/ERR844243?show=reads
