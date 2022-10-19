@@ -31,6 +31,8 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8067395/
 
 Sci2009Mary, Mary H Schweitzer, Biomolecular characterization and protein sequences of the Campanian hadrosaur B. canadensis, 
 - brachy collagen, https://pubmed.ncbi.nlm.nih.gov/19407199/
+- endogenous proteinaceous material is preserved in bone fragments and soft tissues from an 80-million-year-old Campanian hadrosaur, Brachylophosaurus canadensis [Museum of the Rockies (MOR) 2598]
+- complement earlier results from Tyrannosaurus rex (MOR 1125) and confirm that molecular preservation in Cretaceous dinosaurs is not a unique event
 
 Centrifuge, meta analysis for microorganism https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5131823/
 
