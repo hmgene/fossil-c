@@ -1,4 +1,8 @@
 # brachy
+## Tools
+### Centrifuge
+good explanation https://macadology.com/guide/Centrifuge/
+
 
 ## Visualization
 Show mappability of Bracky samples using ncbi TAXONOMY
