@@ -2,15 +2,19 @@
 
 ## Visualization
 Show mappability of Bracky samples using ncbi TAXONOMY
-```
-# make ggtree input (tree, proportions) of selected species
-make-tree-from-nodedmp <centrifuge_result> <names.dmp> <nodes.dmp> > <tree>
 
-# draw 
-plot-phylo <tree> => <plot_phylog.pdf>
+1. go to ncbi to make related tree
+https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=8496
+
+2. visualize tree in R
+```
+library(ggtree)
+t=read.tree('~/Downloads/phyliptree.phy'')
+ggree(t)
 
 ```
-Phylogenetic tree
+
+ggtree usage:
 - https://guangchuangyu.github.io/ggtree-book/chapter-ggtree.html
 
 ## Data
