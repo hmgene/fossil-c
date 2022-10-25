@@ -1,5 +1,17 @@
 # brachy
 
+## Visualization
+Show mappability of Bracky samples using ncbi TAXONOMY
+```
+# make ggtree input (tree, proportions) of selected species
+make-tree-from-nodedmp <centrifuge_result> <names.dmp> <nodes.dmp> > <tree>
+
+# draw 
+plot-phylo <tree> => <plot_phylog.pdf>
+
+```
+Phylogenetic tree
+- https://guangchuangyu.github.io/ggtree-book/chapter-ggtree.html
 
 ## Data
 Download microorganism input fastqs
