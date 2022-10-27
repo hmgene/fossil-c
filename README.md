@@ -40,6 +40,8 @@ done
 
 
 ## Articles
+Cretaceous dinosaur bone contains recent organic material and provides an environment conducive to microbial communities
+
 NAR2017, A new model for ancient DNA decay based on paleogenomic meta-analysis https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5499742/
 - ancient DNA decay models,  
 - code: https://datadryad.org/stash/dataset/doi:10.5061%2Fdryad.5r10j
