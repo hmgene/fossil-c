@@ -1,5 +1,18 @@
 # brachy
 ## Tools
+### decay Models
+http://ginolhac.github.io/mapDamage/
+```
+Using container
+A container by quay.io is available if you are using docker
+Usage as below:
+
+docker pull quay.io/biocontainers/mapdamage2:2.2.0--pyr36_1
+[...]
+docker run -ti quay.io/biocontainers/mapdamage2:2.2.0--pyr36_1 /bin/bash
+bash-4.2# mapDamage --check-R-packages
+All R packages are present
+```
 ### Centrifuge
 good explanation https://macadology.com/guide/Centrifuge/
 
