@@ -1,4 +1,7 @@
-# brachy
+# fossil-c Bracky & T-rex
+## Synapsis
+- We show that combining our different mapping and filtering approaches can increase the number of high-quality endogenous hits recovered by up to X%.
+
 ## Tools
 ### decay Models
 http://ginolhac.github.io/mapDamage/
