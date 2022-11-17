@@ -21,6 +21,7 @@ https://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-13-178
 - trimming and indel-panelty effects on contaminated but useful reads
 - post-morterm DNA damage is inferred from nucleotide misincorporation patterns [mapDamage]
   - mainly result from post-mortem deamination of cytosine residues into uracil residues, and for Illumina reads consist of an increase of C → T misincorporations at the 5’-ends of sequencing reads paralleled by an increase in G → A misincorporations at 3’-ends[10, 19, 21]; for Helicos tSMS reads, the deamination of cytosine residues results in an increase in G → A mismatches at 5’-ends of sequencing reads[15].
+- Importantly, nucleotide misincorporations related to cytosine deamination were found to dominate mismatch patterns over the full length of sequencing reads, confirming that the new hits identified consisted of reads of ancient origin, as cytosine deamination has been shown to be the most prevalent form of post-mortem damage[19, 22–25]. 
 
 ### Centrifuge
 good explanation https://macadology.com/guide/Centrifuge/
