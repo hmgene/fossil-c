@@ -13,6 +13,10 @@ docker run -ti quay.io/biocontainers/mapdamage2:2.2.0--pyr36_1 /bin/bash
 bash-4.2# mapDamage --check-R-packages
 All R packages are present
 ```
+Improving ancient DNA read mapping against modern reference genomes
+https://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-13-178
+- trimming and indel-panelty effects on contaminated but useful reads
+
 ### Centrifuge
 good explanation https://macadology.com/guide/Centrifuge/
 
