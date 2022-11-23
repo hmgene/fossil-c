@@ -26,6 +26,11 @@ https://bmcgenomics.biomedcentral.com/articles/10.1186/1471-2164-13-178
 
 ### trimming
 - https://github.com/grenaud/leeHom https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4191382/ 
+
+### mapping
+- BWA-aln is better https://onlinelibrary.wiley.com/doi/full/10.1002/ece3.8297
+- BWA-mem is fine https://academic.oup.com/bib/article/22/5/bbab076/6217726
+  - ‘deamSim’ function from gargammel [22] 
 ### Centrifuge
 good explanation https://macadology.com/guide/Centrifuge/
 
