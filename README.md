@@ -71,6 +71,9 @@ done
 
 
 ## Articles
+Ancient DNA https://www.nature.com/articles/35072071#Glos9
+- contamination with modern or recent DNA, Human remains 
+
 Cretaceous ornithurine supports a neognathous crown bird ancestor
 
 Three crocodilian genomes reveal ancestral patterns of evolution among archosaurs
