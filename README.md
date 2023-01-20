@@ -4,6 +4,7 @@
 
 ## Tools
 ### decay Models
+
 http://ginolhac.github.io/mapDamage/
 ```
 Using container
@@ -71,6 +72,10 @@ done
 
 
 ## Articles
+
+Ancient DNA analysis https://www.nature.com/articles/s43586-020-00011-0
+- Breaking down individual error rates per nucleotide substitution type (for example, C to T, G to A, C to A and G to T) generally reveals a pervasive excess of transitions (C to T, G to A and their reciprocal changes) owing to post-mortem cytosine deamination7.
+
 Ancient DNA https://www.nature.com/articles/35072071#Glos9
 - contamination with modern or recent DNA, Human remains 
 
