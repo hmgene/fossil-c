@@ -72,6 +72,10 @@ done
 
 
 ## Articles
+shaking a tree of life including dinosaurs in yeast 
+https://www.glbrc.org/news/chris-todd-hittinger-motivated-missing-links-yeast-evolution
+
+
 Elephant shark genome provides unique insights into gnathostome evolution
 https://www.nature.com/articles/nature12826
 
