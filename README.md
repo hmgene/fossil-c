@@ -72,6 +72,8 @@ done
 
 
 ## Articles
+Elephant shark genome provides unique insights into gnathostome evolution
+https://www.nature.com/articles/nature12826
 
 Ancient DNA analysis https://www.nature.com/articles/s43586-020-00011-0
 - Breaking down individual error rates per nucleotide substitution type (for example, C to T, G to A, C to A and G to T) generally reveals a pervasive excess of transitions (C to T, G to A and their reciprocal changes) owing to post-mortem cytosine deamination7.
