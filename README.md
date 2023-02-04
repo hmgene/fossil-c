@@ -9,10 +9,11 @@ https://repeatbrowser.ucsc.edu/
 ### Evolution Model
 pathFinder : https://academic.oup.com/mbe/article/39/2/msac017/6516020
 
-
 ### decay Models
+schmutzi : https://github.com/grenaud/schmutzi
 
 http://ginolhac.github.io/mapDamage/
+
 ```
 Using container
 A container by quay.io is available if you are using docker
