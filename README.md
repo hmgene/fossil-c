@@ -11,6 +11,8 @@ pathFinder : https://academic.oup.com/mbe/article/39/2/msac017/6516020
 
 ### decay Models
 schmutzi : https://github.com/grenaud/schmutzi
+https://academic.oup.com/bioinformatics/article/38/15/3768/6607584
+
 
 http://ginolhac.github.io/mapDamage/
 
