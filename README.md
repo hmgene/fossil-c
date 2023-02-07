@@ -2,6 +2,16 @@
 ## Synapsis
 - We show that combining our different mapping and filtering approaches can increase the number of high-quality endogenous hits recovered by up to X%.
 
+## Methods
+
+1. FASTQ trimming : fastq files were trimed by the fastp program [fastp](https://github.com/OpenGene/fastp) with various options 
+- Q|q : quality filtering
+- L|l : length filtering
+- G|g : G tailing
+- x|X : trim poly x
+- y|Y : low complexity filter
+
+2. Mapping : reads were mapped to multi-species (UCSC) using the bwa tool [bwa](https://bio-bwa.sourceforge.net/)
 ## Tools
 ### DB
 https://repeatbrowser.ucsc.edu/
