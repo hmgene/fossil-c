@@ -4,12 +4,9 @@
 
 ## Methods
 
-1. FASTQ trimming : fastq files were trimed by the fastp program [fastp](https://github.com/OpenGene/fastp) with various options 
-- Q|q : quality filtering
-- L|l : length filtering
-- G|g : G tailing
-- x|X : trim poly x
-- y|Y : low complexity filter
+1. trim FASTQ files using [fastp](https://github.com/OpenGene/fastp) with various options 
+| input | output | program |
+| fq/[GLxyg]+/*.fastq.gz | fq2/[GLxyg]+/*.fastq.gz | 01-trim-fastq.sh |
 
 2. Mapping : reads were mapped to multi-species (UCSC) using the bwa tool [bwa](https://bio-bwa.sourceforge.net/)
 ## Tools
