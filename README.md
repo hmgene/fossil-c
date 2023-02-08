@@ -5,6 +5,7 @@
 ## Methods
 
 1. trim FASTQ files using [fastp](https://github.com/OpenGene/fastp) with various options 
+
 | input | output | program |
 | fq/[GLxyg]+/*.fastq.gz | fq2/[GLxyg]+/*.fastq.gz | 01-trim-fastq.sh |
 
