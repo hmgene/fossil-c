@@ -8,9 +8,22 @@
 
 | input | output | program |
 | - | - | - |
-| fq/[GLxyg]+/*.fastq.gz | fq2/[GLxyg]+/*.fastq.gz | 01-trim-fastq.sh |
+| *.fastq.gz | fq1/[QLxy]+/*.fastq.gz | 01-trim-fastq.sh |
 
-2. Mapping : reads were mapped to multi-species (UCSC) using the bwa tool [bwa](https://bio-bwa.sourceforge.net/)
+2. merge FASTQ files
+
+| input | output | program |
+| - | - | - |
+| fq1/*/bra_*.fastq.gz | fq2/*/bra_*.fastq.gz | 02-merge-fastq.sh |
+
+
+2. Mapping : reads were mapped to six genomes (UCSC) using the bwa tool [bwa](https://bio-bwa.sourceforge.net/)
+
+| input | output | program |
+| - | - | - |
+| fq[12]/Qxyz/*.fastq.gz | bw/*.fastq.gz | 03-bwa.sh |
+
+
 ## Tools
 ### DB
 https://repeatbrowser.ucsc.edu/
