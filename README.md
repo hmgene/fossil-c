@@ -32,11 +32,12 @@ https://repeatbrowser.ucsc.edu/
 pathFinder : https://academic.oup.com/mbe/article/39/2/msac017/6516020
 
 ### decay Models
-schmutzi : https://github.com/grenaud/schmutzi
-https://academic.oup.com/bioinformatics/article/38/15/3768/6607584
+- schmutzi : https://github.com/grenaud/schmutzi
+- https://academic.oup.com/bioinformatics/article/38/15/3768/6607584
 
+- AuthentiCT : https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02123-y
 
-http://ginolhac.github.io/mapDamage/
+- http://ginolhac.github.io/mapDamage/
 
 ```
 Using container
