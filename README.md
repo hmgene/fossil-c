@@ -25,6 +25,9 @@
 
 
 ## Tools
+### w2rap_conttig
+- https://www.biorxiv.org/content/10.1101/110999v1
+
 ### DB
 https://repeatbrowser.ucsc.edu/
 
