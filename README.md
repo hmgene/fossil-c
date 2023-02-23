@@ -111,6 +111,8 @@ done
 shaking a tree of life including dinosaurs in yeast 
 https://www.glbrc.org/news/chris-todd-hittinger-motivated-missing-links-yeast-evolution
 
+Toward a genome sequence for every animal: Where are we now?
+https://www.pnas.org/doi/10.1073/pnas.2109019118
 
 Elephant shark genome provides unique insights into gnathostome evolution
 https://www.nature.com/articles/nature12826
