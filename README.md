@@ -34,7 +34,16 @@ https://repeatbrowser.ucsc.edu/
 ### Evolution Model
 pathFinder : https://academic.oup.com/mbe/article/39/2/msac017/6516020
 
-### decay Models
+### 
+Whole-genome phylogeny of mammals: Evolutionary information in genic and nongenic regions
+- “feature frequency profile” (FFP) method of alignment-free comparison.  
+- non-genic portion of genomes contain evolutionary information 
+
+Determination of k-mer density in a DNA sequence and subsequent cluster formation algorithm based on the application of electronic filter
+- q-gram => phylogeny
+
+
+### mecay Models
 - schmutzi : https://github.com/grenaud/schmutzi
 - https://academic.oup.com/bioinformatics/article/38/15/3768/6607584
 
