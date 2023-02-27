@@ -1,6 +1,11 @@
 BB=$BASEDIR/bin/`uname -sm | tr " " "_"`
+export LD_LIBRARY_PATH=$BB:$LD_LIBRARY_PATH
 
 blat(){
+	$BB/$FUNCNAME $@;
+}
+
+jellyfish(){
 	$BB/$FUNCNAME $@;
 }
 w2rap-contigger(){
