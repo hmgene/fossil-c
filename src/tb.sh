@@ -14,7 +14,6 @@ if [ $# -lt 1 ];then echo "$usage";return;fi
 	my @cc=sort keys %c;
 	print join("\t","rid",@cc),"\n";
 	foreach my $i (sort keys %r){
-		print $i;
 		print join("\t",$i,map { defined $r{$i}{$_} ? $r{$i}{$_} : 0 } @cc),"\n";
 	}
 	'
