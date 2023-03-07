@@ -16,19 +16,26 @@ ACGTAACGT" | run-jellyfish - 3 tmp
 }
 
 q-gram(){
-usage="$FUNCNAME <kmer.fa> <bsize>"
+usage="$FUNCNAME <kmer.fa> [<w=1>] [<q=1>]"
 # q-mer density for k-mer sequence 
 #ref: https://www.nature.com/articles/s41598-021-93154-3
-cat $1  | perl -e 'use strict; my $B='${2:-1}';
+cat $1  | perl -e 'use strict; my $W='${2:-1}'; my $Q='${3:-1}';
 	my $id="";
 	my %r=();
 	my %m=( A=>"1000", C=>"0100", G=>"0010", T=>"0001" ); 
 	while(<STDIN>){chomp;
 		if($_=~/^>/){ $id=substr($_,1); 
 		}else{
-			print $id;
-			map { print "\t",join("\t",split//,$m{$_});} split //,$_;
-			print "\n";
+			my $s=$_;
+			foreach my $i (0..(length($s) - $W)){
+				my %q=();
+				foreach my $j (0..($W-$Q)){
+					$q{ substr($s,$i+$j,$Q) } += 1/$W;
+				}
+				foreach my $k ( keys %q){
+					print join("\t",$s,"$k$i",$q{$k}),"\n";
+				}
+			}
 		}
 	}
 '
@@ -36,5 +43,21 @@ cat $1  | perl -e 'use strict; my $B='${2:-1}';
 
 q-gram-test(){
 echo ">1
-AACCGT" | q-gram - 4
+AACCGT" | q-gram - 3 2
+}
+
+q-gram-pca-plot(){
+cat<<-eof
+i="o";
+tt=read.table(i,header=T);
+library(stringr)
+r=as.factor(sapply(str_split(tt[,1],"\\."),function(x) x[2]))
+s=as.factor(sapply(str_split(tt[,1],"\\."),function(x) x[1]))
+
+pc <- prcomp(tt[,-1], center = TRUE, scale. = TRUE)
+y=predict(pc); 
+plot(y[,1],y,col=r,pch=levels(s))
+
+
+eof
 }
