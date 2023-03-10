@@ -4,6 +4,9 @@ export LD_LIBRARY_PATH=$BB:$LD_LIBRARY_PATH
 blat(){
 	$BB/$FUNCNAME $@;
 }
+faToTwoBit(){
+	$BB/$FUNCNAME $@;
+}
 
 jellyfish(){
 	$BB/$FUNCNAME $@;
