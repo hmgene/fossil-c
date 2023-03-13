@@ -1,6 +1,9 @@
 BB=$BASEDIR/bin/`uname -sm | tr " " "_"`
 export LD_LIBRARY_PATH=$BB:$LD_LIBRARY_PATH
 
+pslReps(){
+	$BB/$FUNCNAME $@;
+}
 blat(){
 	$BB/$FUNCNAME $@;
 }
