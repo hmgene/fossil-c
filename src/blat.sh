@@ -37,4 +37,20 @@ blat-summary-test(){
 	echo "$blat_example" | blat-summary -
 }
 
+psl2bed(){
+	cat $1 | perl -ne 'chomp;my@d=split/\s+/,$_;
+		next unless $d[0]=~/^\d+$/;	
+		my ($m,$t,$qn,$qs,$qe,$tn,$ts,$te,$n,$l,$qss,$tss)=map {$d[$_]} (0,8,9,11,12,13,15,16,17,18,19,20);	
+		my @x=split/,/,$l;
+		my @y=split/,/,$qss;
+		my @z=split/,/,$tss;
+		foreach my $i (0..($n-1)){
+			print join("\t",$tn,$z[$i],$z[$i]+$x[$i],$qn.":".$y[$i]."-".($y[$i]+$x[$i]),$m,$t),"\n";
+		}
+	'
+}
+psl2bed-test(){
+	echo "$blat_example" | psl2bed -
+}
+
 
