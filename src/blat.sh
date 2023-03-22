@@ -38,19 +38,27 @@ blat-summary-test(){
 }
 
 psl2bed(){
-	cat $1 | perl -ne 'chomp;my@d=split/\s+/,$_;
+usage="$FUNCNAME <psl> [<type=dna|prot>]"
+	cat $1 | perl -ne 'chomp;my@d=split/\s+/,$_; my $ty="'${2:-dna}'";
 		next unless $d[0]=~/^\d+$/;	
-		my ($m,$t,$qn,$qs,$qe,$tn,$ts,$te,$n,$l,$qss,$tss)=map {$d[$_]} (0,8,9,11,12,13,15,16,17,18,19,20);	
-		my @x=split/,/,$l;
-		my @y=split/,/,$qss;
-		my @z=split/,/,$tss;
+		my ($m,$t,$qn,$qz,$qs,$qe,$tn,$tz,$ts,$te,$n,$l,$qss,$tss)=map {$d[$_]} (0,8..20);	
+		my @ql=split/,/,$l;
+		my @tl=map { $_ * ( $ty eq "prot" ? 3 : 1) } split/,/,$l;
+
+		my @qs=split/,/,$qss;
+		my @ts=split/,/,$tss;
 		foreach my $i (0..($n-1)){
-			print join("\t",$tn,$z[$i],$z[$i]+$x[$i],$qn.":".$y[$i]."-".($y[$i]+$x[$i]),$m,$t),"\n";
+			my $ts1= $t=~/.-/ ? $tz - $ts[$i] - $tl[$i] : $ts[$i]; 
+			my $te1= $t=~/.-/ ? $tz - $ts[$i] : $ts[$i] + $tl[$i];
+			my $qs1= $t=~/-./ ? $qz - $qs[$i] - $ql[$i] : $qs[$i]; 
+			my $qe1= $t=~/-./ ? $qz - $qs[$i] : $qs[$i] + $ql[$i];
+			print join("\t",$tn,$ts1,$te1,"$qn:$qs1-$qe1$t",$m,$t),"\n";
 		}
 	'
 }
 psl2bed-test(){
 	echo "$blat_example" | psl2bed -
+	echo "$blat_example" | psl2bed - prot
 }
 
 
