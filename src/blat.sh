@@ -5,7 +5,7 @@ match   mis-    rep.    N's     Q gap   Q gap   T gap   T gap   strand  Q       
         match   match           count   bases   count   bases           name            size    start   end     name            size    start   end     count
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 47      2       0       0       1       7       1       6       +       6       60      0       56      JH739864        475780  61167   61222   2       32,17,  0,39,   61167,61205,
-46      2       0       0       1       8       1       7       +       6       60      0       56      JH739023        2201043 34274   34329   2       32,16,  0,40,   34274,34313,
+46      2       0       0       1       8       1       7       +-       6       60      0       56      JH739023        2201043 34274   34329   2       32,16,  0,40,   34274,34313,
 "
 
 blat-summary(){
@@ -38,27 +38,38 @@ blat-summary-test(){
 }
 
 psl2bed(){
-usage="$FUNCNAME <psl> [<type=dna|prot>]"
-	cat $1 | perl -ne 'chomp;my@d=split/\s+/,$_; my $ty="'${2:-dna}'";
+usage="$FUNCNAME <psl> [options]
+	options:
+		<type> : prot|dna(default)
+		<coord> : query|target(default)
+"
+local x=`echo ${@:2} | tr " " ","`
+	cat $1 | perl -ne 'chomp;my@d=split/\s+/,$_; my $x="'$x'";
 		next unless $d[0]=~/^\d+$/;	
 		my ($m,$t,$qn,$qz,$qs,$qe,$tn,$tz,$ts,$te,$n,$l,$qss,$tss)=map {$d[$_]} (0,8..20);	
 		my @ql=split/,/,$l;
-		my @tl=map { $_ * ( $ty eq "prot" ? 3 : 1) } split/,/,$l;
+		my @tl=map { $_ * ( $x=~/prot/ ? 3 : 1) } split/,/,$l;
+		#$tz=$tz * ($x=~/prot/ ? 3 : 1);
 
 		my @qs=split/,/,$qss;
 		my @ts=split/,/,$tss;
+		my ($qt,$tt)=(substr($t,0,1),substr($t,length($t)-1,1));
 		foreach my $i (0..($n-1)){
-			my $ts1= $t=~/.-/ ? $tz - $ts[$i] - $tl[$i] : $ts[$i]; 
-			my $te1= $t=~/.-/ ? $tz - $ts[$i] : $ts[$i] + $tl[$i];
-			my $qs1= $t=~/-./ ? $qz - $qs[$i] - $ql[$i] : $qs[$i]; 
-			my $qe1= $t=~/-./ ? $qz - $qs[$i] : $qs[$i] + $ql[$i];
-			print join("\t",$tn,$ts1,$te1,"$qn:$qs1-$qe1$t",$m,$t),"\n";
+			my $ts1= $t=~/\+-/ ? $tz - $ts[$i] - $tl[$i] : $ts[$i]; 
+			my $te1= $t=~/\+-/ ? $tz - $ts[$i] : $ts[$i] + $tl[$i];
+			my $qs1= $t=~/-\+/ ? $qz - $qs[$i] - $ql[$i] : $qs[$i]; 
+			my $qe1= $t=~/-\+/ ? $qz - $qs[$i] : $qs[$i] + $ql[$i];
+
+			if($x=~/query/){
+				print join("\t",$qn,$qs1,$qe1,"$tn:$ts1-$te1$tt",$m,$qt),"\n";
+			}else{
+				print join("\t",$tn,$ts1,$te1,"$qn:$qs1-$qe1$qt",$m,$tt),"\n";
+			}
 		}
 	'
 }
 psl2bed-test(){
-	echo "$blat_example" | psl2bed -
-	echo "$blat_example" | psl2bed - prot
+	echo "$blat_example" | psl2bed - $@
 }
 
 
