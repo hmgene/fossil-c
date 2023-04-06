@@ -160,3 +160,6 @@ Sci2009Mary, Mary H Schweitzer, Biomolecular characterization and protein sequen
 Centrifuge, meta analysis for microorganism https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5131823/
 
 Human ancient DNA, https://www.ebi.ac.uk/ena/browser/view/ERR844243?show=reads
+
+Codon usage bias, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8613526/
+
