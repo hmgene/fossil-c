@@ -8,6 +8,9 @@ pslReps(){
 blat(){
 	$BB/$FUNCNAME $@;
 }
+twoBitToFa(){
+	$BB/$FUNCNAME $@;
+}
 faToTwoBit(){
 	$BB/$FUNCNAME $@;
 }
