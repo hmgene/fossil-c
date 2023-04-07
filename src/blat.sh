@@ -38,7 +38,7 @@ blat-summary-test(){
 }
 
 psl2bed(){
-usage="$FUNCNAME <psl> [options]
+usage="$FUNCNAME <psl|pslx> [options]
 	options:
 		<type> : prot|dna(default)
 		<coord> : query|target(default)
@@ -46,12 +46,13 @@ usage="$FUNCNAME <psl> [options]
 local x=`echo ${@:2} | tr " " ","`
 	cat $1 | perl -ne 'chomp;my@d=split/\s+/,$_; my $x="'$x'";
 		next unless $d[0]=~/^\d+$/;	
-		my ($m,$t,$qn,$qz,$qs,$qe,$tn,$tz,$ts,$te,$n,$l,$qss,$tss)=map {$d[$_]} (0,8..20);	
+		my ($m,$t,$qn,$qz,$qs,$qe,$tn,$tz,$ts,$te,$n,$l,$qss,$tss,$qx,$tx)=map {$d[$_]} (0,8..22);	
 		my @ql=split/,/,$l;
 		my @tl=map { $_ * ( $x=~/prot/ ? 3 : 1) } split/,/,$l;
-		#$tz=$tz * ($x=~/prot/ ? 3 : 1);
 
 		my @qs=split/,/,$qss;
+		my @qxs=split/,/,$qx;
+		my @txs=split/,/,$tx;
 		my @ts=split/,/,$tss;
 		my ($qt,$tt)=(substr($t,0,1),substr($t,length($t)-1,1));
 		foreach my $i (0..($n-1)){
@@ -61,9 +62,9 @@ local x=`echo ${@:2} | tr " " ","`
 			my $qe1= $t=~/-\+/ ? $qz - $qs[$i] : $qs[$i] + $ql[$i];
 
 			if($x=~/query/){
-				print join("\t",$qn,$qs1,$qe1,"$tn:$ts1-$te1$tt",$m,$qt),"\n";
+				print join("\t",$qn,$qs1,$qe1,"$tn:$ts1-$te1$tt",$m,$qt,$qxs[$i],$txs[$i]),"\n";
 			}else{
-				print join("\t",$tn,$ts1,$te1,"$qn:$qs1-$qe1$qt",$m,$tt),"\n";
+				print join("\t",$tn,$ts1,$te1,"$qn:$qs1-$qe1$qt",$m,$tt,$qxs[$i],$txs[$i]),"\n";
 			}
 		}
 	'
