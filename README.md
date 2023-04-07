@@ -19,7 +19,7 @@
 
 2. Mapping : reads were mapped to six genomes (UCSC) using the bwa tool [bwa](https://bio-bwa.sourceforge.net/)
 
-- Deal with reference bias, artefacts and short DNA read fragmentization [PMID:33834210]( https://pubmed.ncbi.nlm.nih.gov/33834210/ )
+ - Deal with reference bias, artefacts and short DNA read fragmentization [PMID:33834210]( https://pubmed.ncbi.nlm.nih.gov/33834210/ )
 
 | input | output | program |
 | - | - | - |
