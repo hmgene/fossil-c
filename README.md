@@ -27,14 +27,10 @@
 
 
 ## Tools
-### w2rap_conttig
-- https://www.biorxiv.org/content/10.1101/110999v1
-
-### DB
-https://repeatbrowser.ucsc.edu/
-
-### Evolution Model
-pathFinder : https://academic.oup.com/mbe/article/39/2/msac017/6516020
+- w2rap contig, https://www.biorxiv.org/content/10.1101/110999v1
+- D-statisitc, https://www.bodkan.net/admixr/articles/tutorial.html
+- https://repeatbrowser.ucsc.edu/
+- pathFinder : https://academic.oup.com/mbe/article/39/2/msac017/6516020
 
 ### 
 Whole-genome phylogeny of mammals: Evolutionary information in genic and nongenic regions
