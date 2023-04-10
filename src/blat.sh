@@ -73,4 +73,36 @@ psl2bed-test(){
 	echo "$blat_example" | psl2bed - $@
 }
 
+blat-parallel-test(){
+echo ">a
+AAAAAAAAAAAAAAAAAAAAA
+>c
+CCCCCCCCCCCCCCCCCCCCC
+>g
+GGGGGGGGGGGGGGGGGGGGG
+>t
+TTTTTTTTTTTTTTTTTTTTT
+" > tmp.a
+fo faToTwoBit tmp.a tmp.b
+fo blat-parallel tmp.b tmp.a tmp.c 2 -minScore=10 #-minIdentity=10
+cat tmp.c
+rm -r tmp.*
+
+}
+blat-parallel(){
+usage="$FUNCNAME <2bit> <fa> <output.pslx> <threads> [blat options]"
+if [ $# -lt 4 ];then echo "$usage"; return; fi
+	local o=${3%\/}; mkdir -p $o.d;
+        split -l 100000000 $2 $o.d/fa.
+        local ff=( $o.d/fa.*)
+        parallel -j $4 fo blat $1 {} {}.pslx -out=pslx ${@:5}  ::: ${ff[@]}
+	first=1;
+	for f in $o.d/fa.*.pslx;do 
+		if [ $first -eq 1 ];then
+			cat $f > $o;first=0;	
+		else
+			tail -n+6 $f | grep -v '^$'  >> $o
+		fi
+	done
+}
 
