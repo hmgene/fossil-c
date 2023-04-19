@@ -7,7 +7,6 @@ match   mis-    rep.    N's     Q gap   Q gap   T gap   T gap   strand  Q       
 47      2       0       0       1       7       1       6       +       6       60      0       56      JH739864        475780  61167   61222   2       32,17,  0,39,   61167,61205,
 46      2       0       0       1       8       1       7       +-       6       60      0       56      JH739023        2201043 34274   34329   2       32,16,  0,40,   34274,34313,
 "
-
 blat-summary(){
 usage="$FUNCNAME <psl> [<psl> .. ]";
 if [ $# -lt 1 ];then echo "$usage";return; fi
@@ -42,7 +41,8 @@ usage="$FUNCNAME <psl|pslx> [options]
 	options:
 		<type> : prot|dna(default)
 		<coord> : query|target(default)
-"
+"; if [ $# -lt 1 ];then echo "$usage";return;fi
+
 local x=`echo ${@:2} | tr " " ","`
 	cat $1 | perl -ne 'chomp;my@d=split/\s+/,$_; my $x="'$x'";
 		next unless $d[0]=~/^\d+$/;	
@@ -73,6 +73,23 @@ psl2bed-test(){
 	echo "$blat_example" | psl2bed - $@
 }
 
+psl-bed2mut(){
+usage="$FUNCNAME <pslx.bed> [option]
+	option: prot|dna(default)
+"
+if [ $# -lt 1 ];then echo "$usage";return; fi
+        perl -ne 'chomp;my@d=split/\t/,$_; my $prot="'${2:-dna}'";
+		my $l= $prot eq "prot" ? 3 : 1;
+		my $qs=$d[5] eq "+" ? $d[6] : reverse($d[6]);
+		my $ts=$d[5] eq "+" ? $d[7] : reverse($d[7]);
+		for( my $i=0; $i <= $d[2]-$d[1] - $l; $i+=$l ){
+                        print join("\t",$d[0],$d[1]+$i,$d[1]+$i+$l,$d[5],
+                                substr($qs,$i/$l,1), substr($ts,$i/$l,1)),"\n";
+                }
+        ' | sort -k1,5 | groupBy -g 1,2,3,4 -c 5,6 -o freqdesc,freqdesc
+
+}
+
 blat-parallel-test(){
 echo ">a
 AAAAAAAAAAAAAAAAAAAAA
@@ -93,7 +110,7 @@ blat-parallel(){
 usage="$FUNCNAME <2bit> <fa> <output.pslx> <threads> [blat options]"
 if [ $# -lt 4 ];then echo "$usage"; return; fi
 	local o=${3%\/}; mkdir -p $o.d;
-        split -l 100000000 $2 $o.d/fa.
+        split -l 20000000 $2 $o.d/fa.
         local ff=( $o.d/fa.*)
         parallel -j $4 fo blat $1 {} {}.pslx -out=pslx ${@:5}  ::: ${ff[@]}
 	first=1;
