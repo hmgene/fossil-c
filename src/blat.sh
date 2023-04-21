@@ -78,10 +78,18 @@ usage="$FUNCNAME <pslx.bed> [option]
 	option: prot|dna(default)
 "
 if [ $# -lt 1 ];then echo "$usage";return; fi
-        perl -ne 'chomp;my@d=split/\t/,$_; my $prot="'${2:-dna}'";
-		my $l= $prot eq "prot" ? 3 : 1;
-		my $qs=$d[5] eq "+" ? $d[6] : reverse($d[6]);
-		my $ts=$d[5] eq "+" ? $d[7] : reverse($d[7]);
+        cat $1 | perl -ne 'chomp;my@d=split/\t/,$_; my $prot="'${2:-dna}'";
+		my $l= 1;
+		my $qs=$d[6];
+		my $ts=$d[7];
+	
+		if( $prot eq "prot"){
+			$l=3;
+			if($d[5] eq "-"){
+				$qs=reverse($qs);
+				$ts=reverse($ts);
+			}
+		}
 		for( my $i=0; $i <= $d[2]-$d[1] - $l; $i+=$l ){
                         print join("\t",$d[0],$d[1]+$i,$d[1]+$i+$l,$d[5],
                                 substr($qs,$i/$l,1), substr($ts,$i/$l,1)),"\n";
