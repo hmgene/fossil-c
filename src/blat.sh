@@ -46,7 +46,9 @@ usage="$FUNCNAME <psl|pslx> [options]
 local x=`echo ${@:2} | tr " " ","`
 	cat $1 | perl -ne 'chomp;my@d=split/\s+/,$_; my $x="'$x'";
 		next unless $d[0]=~/^\d+$/;	
-		my ($m,$t,$qn,$qz,$qs,$qe,$tn,$tz,$ts,$te,$n,$l,$qss,$tss,$qx,$tx)=map {$d[$_]} (0,8..22);	
+		my ($m,$M,$t,$qn,$qz,$qs,$qe,$tn,$tz,$ts,$te,$n,$l,$qss,$tss,$qx,$tx)=map {$d[$_]} (0,1,8..22);	
+		$qx=~s/,$//; 
+		$tx=~s/,$//;
 		my @ql=split/,/,$l;
 		my @tl=map { $_ * ( $x=~/prot/ ? 3 : 1) } split/,/,$l;
 
@@ -62,9 +64,9 @@ local x=`echo ${@:2} | tr " " ","`
 			my $qe1= $t=~/-\+/ ? $qz - $qs[$i] : $qs[$i] + $ql[$i];
 
 			if($x=~/query/){
-				print join("\t",$qn,$qs1,$qe1,"$tn:$ts1-$te1$tt",$m,$qt,$qxs[$i],$txs[$i]),"\n";
+				print join("\t",$qn,$qs1,$qe1,"m=$m,M=$M,qs=$qx,$tn:$ts1-$te1$tt",$m,$qt,$qxs[$i],$txs[$i]),"\n";
 			}else{
-				print join("\t",$tn,$ts1,$te1,"$qn:$qs1-$qe1$qt",$m,$tt,$qxs[$i],$txs[$i]),"\n";
+				print join("\t",$tn,$ts1,$te1,"m=$m,M=$M,qs=$qx,$qn:$qs1-$qe1$qt",$m,$tt,$qxs[$i],$txs[$i]),"\n";
 			}
 		}
 	'
