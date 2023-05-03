@@ -31,6 +31,7 @@
 - D-statisitc, https://www.bodkan.net/admixr/articles/tutorial.html
 - https://repeatbrowser.ucsc.edu/
 - pathFinder : https://academic.oup.com/mbe/article/39/2/msac017/6516020
+- MAPLE (large scale phylogeny) : https://onlinelibrary.wiley.com/doi/10.1111/jse.12535 
 
 ### 
 Whole-genome phylogeny of mammals: Evolutionary information in genic and nongenic regions
