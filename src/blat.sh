@@ -7,6 +7,30 @@ match   mis-    rep.    N's     Q gap   Q gap   T gap   T gap   strand  Q       
 47      2       0       0       1       7       1       6       +       6       60      0       56      JH739864        475780  61167   61222   2       32,17,  0,39,   61167,61205,
 46      2       0       0       1       8       1       7       +-       6       60      0       56      JH739023        2201043 34274   34329   2       32,16,  0,40,   34274,34313,
 "
+psl-max(){
+#match  mis-    rep.    N's     Q gap   Q gap   T gap   T gap   strand  Q               Q       Q       Q       T               T       T       T       block   blockSizes      qStarts  tStarts
+#       match   match           count   bases   count   bases           name            size    start   end     name            size    start   end     count
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------
+#28     0       0       0       0       0       0       0       ++      Brachy_cid-2_archosaur_1        28      0       28      chr18   11373140        9189523 9189607 1       28,     091
+        cat $1 | perl -e 'use strict;
+        my %r=();
+        while(<STDIN>){chomp;
+                next unless $_=~/^\d+/;
+                my @d=split/\t/,$_;
+                # id, m -M, t-gap
+                $r{$d[9]}{ $d[0] - $d[1] }{ $d[6] }{ $_ }++;
+                #print join("\t", map{ $d[$_] } (9,0,1,6)),"\n";
+        }
+        foreach my $i (keys %r){
+                my @x=sort {$b<=>$a} keys %{$r{$i}};
+                my @y=sort {$a<=>$b} keys %{$r{$i}{$x[0]}};
+                my @z=keys %{$r{$i}{$x[0]}{$y[0]}};
+                print join("\n",map { $_=~s/^(\d+\t\d+)/$1,U=$#z/;$_} @z),"\n";
+        }
+        '
+}
+
+
 blat-summary(){
 usage="$FUNCNAME <psl> [<psl> .. ]";
 if [ $# -lt 1 ];then echo "$usage";return; fi
@@ -46,7 +70,7 @@ usage="$FUNCNAME <psl|pslx> [options]
 local x=`echo ${@:2} | tr " " ","`
 	cat $1 | perl -ne 'chomp;my@d=split/\s+/,$_; my $x="'$x'";
 		next unless $d[0]=~/^\d+$/;	
-		my ($m,$M,$t,$qn,$qz,$qs,$qe,$tn,$tz,$ts,$te,$n,$l,$qss,$tss,$qx,$tx)=map {$d[$_]} (0,1,8..22);	
+		my ($m,$M,$t,$qn,$qz,$qs,$qe,$tn,$tz,$ts,$te,$n,$l,$qss,$tss,$qx,$tx,$others)=map {$d[$_]} (0,1,8..22,23..$#d);	
 		$qx=~s/,$//; 
 		$tx=~s/,$//;
 		my @ql=split/,/,$l;
@@ -64,9 +88,9 @@ local x=`echo ${@:2} | tr " " ","`
 			my $qe1= $t=~/-\+/ ? $qz - $qs[$i] : $qs[$i] + $ql[$i];
 
 			if($x=~/query/){
-				print join("\t",$qn,$qs1,$qe1,"m=$m,M=$M,qs=$qx,$tn:$ts1-$te1$tt",$m,$qt,$qxs[$i],$txs[$i]),"\n";
+				print join("\t",$qn,$qs1,$qe1,"m=$m,M=$M,qs=$qx,$tn:$ts1-$te1$tt",$m,$qt,$qxs[$i],$txs[$i],$others),"\n";
 			}else{
-				print join("\t",$tn,$ts1,$te1,"m=$m,M=$M,qs=$qx,$qn:$qs1-$qe1$qt",$m,$tt,$qxs[$i],$txs[$i]),"\n";
+				print join("\t",$tn,$ts1,$te1,"m=$m,M=$M,qs=$qx,$qn:$qs1-$qe1$qt",$m,$tt,$qxs[$i],$txs[$i],$others),"\n";
 			}
 		}
 	'
