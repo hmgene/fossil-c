@@ -27,11 +27,13 @@
 
 
 ## Tools
+- TOGA,  inferring orthologs and classifying genes as intact or lost https://github.com/hillerlab/TOGA
 - w2rap contig, https://www.biorxiv.org/content/10.1101/110999v1
 - D-statisitc, https://www.bodkan.net/admixr/articles/tutorial.html
 - https://repeatbrowser.ucsc.edu/
 - pathFinder : https://academic.oup.com/mbe/article/39/2/msac017/6516020
 - MAPLE (large scale phylogeny) : https://onlinelibrary.wiley.com/doi/10.1111/jse.12535 
+- 
 
 ### 
 Whole-genome phylogeny of mammals: Evolutionary information in genic and nongenic regions
@@ -116,6 +118,11 @@ done
 
 
 ## Articles
+Integrating gene annotation with orthology inference at scale
+https://github.com/hillerlab/TOGA
+https://genome.senckenberg.de/
+https://github.com/hillerlab/make_lastz_chains
+
 shaking a tree of life including dinosaurs in yeast 
 https://www.glbrc.org/news/chris-todd-hittinger-motivated-missing-links-yeast-evolution
 
