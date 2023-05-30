@@ -1,4 +1,19 @@
 
+fq-len(){
+       cat $1 | perl -e 'use strict;
+       my %r=();
+       my $B=5;
+       while(<STDIN>){chomp;
+               if( $. % 4==2){
+                       $r{int(length($_)/$B)}++;
+               }
+       }
+       my @i=sort{$a<=>$b} keys %r;
+       map{  my $v=defined $r{$_} ? $r{$_} : 0; print $_*$B,"\t",$v,"\n"; } 0..$i[$#i];
+       #print join("\t",map{  defined $r{$_} ? $r{$_} : 0 } 0..$i[$#i]),"\n";
+       '
+}
+
 fq2fa(){
 	usage="$FUNCNAME <fq> [<prefix>]"
 	if [ $# -lt 2 ];then echo "$usage";return;fi
