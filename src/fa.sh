@@ -10,6 +10,15 @@ fa2flat(){
 
 		
 }
+
+fa-rc(){
+	fa2flat $1 | perl -ne 'chomp;my ($x,$y)=split/\t/,$_;
+		$y=reverse $y;
+		$y=~tr/ACGTacgt/TGCAtgca/;	 
+		print ">$x\n$y\n";
+	'
+}
+
 flat2fa(){
 	cat $1 | awk '{ print ">"$1"\n"$2;}'
 }
