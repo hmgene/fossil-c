@@ -1,4 +1,13 @@
 
+fq2flat(){
+        cat $1 | perl -ne 'chomp;
+		print $_,($.%4==3 ? "\n" : "\t");
+'
+
+
+
+}
+
 fq-len(){
        cat $1 | perl -e 'use strict;
        my %r=();
