@@ -1,3 +1,34 @@
+fq-fil-id(){
+usage="$FUNCNAME <fastq>[.gz] <id file> [-v]
+        -v : exclude (default include)
+"
+if [ $# -lt 2 ];then echo "$usage";return;fi
+
+        local tmp=$(mktemp -d)
+        cat $2 > $tmp/a
+        zcat $1 |\
+        perl -e 'use strict; my $v="'${3:-""}'";
+        my %r=();
+        open(my $fh,"<","'$tmp/a'") or die  $!;
+        while(<$fh>){chomp;$r{$_}=1; }
+        close($fh);
+        #map { print $_,"\n";} keys %r;
+
+        my $ok=0;
+        while(<STDIN>){chomp;my @d=split/\s+/,$_;
+                if( $. % 4 == 1 ){
+                        if($v eq "-v"){
+                                $ok= defined $r{substr($d[0],1)} ? 0 : 1;
+                        }else{
+                                $ok= defined $r{substr($d[0],1)} ? 1 : 0;
+                        }
+                }
+                if($ok){
+                        print $_,"\n";
+                }
+        }
+        '
+}
 
 fq2flat(){
         cat $1 | perl -ne 'chomp;
