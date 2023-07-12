@@ -118,6 +118,12 @@ done
 
 
 ## Articles
+
+Three-dimensional genome architecture persists in a 52,000-year-old
+woolly mammoth skin sample
+https://www.biorxiv.org/content/10.1101/2023.06.30.547175v1.full.pdf
+mammoth, hi-C, 3D genome
+
 Integrating gene annotation with orthology inference at scale
 https://github.com/hillerlab/TOGA
 https://genome.senckenberg.de/
