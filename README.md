@@ -118,6 +118,7 @@ done
 
 
 ## Articles
+Soft sheets of fibrillar bone from a fossil of the supraorbital horn of the dinosaur Triceratops horridus
 
 Three-dimensional genome architecture persists in a 52,000-year-old
 woolly mammoth skin sample
