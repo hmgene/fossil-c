@@ -1,8 +1,10 @@
 # fossil-c Bracky & T-rex
 
-## Molecular Evolution 
-birds have evolved unique hollow air-filled bones to reduce their body weight [23554179](https://pubmed.ncbi.nlm.nih.gov/23554179/). 
+## Characterization of genomic diversity and relation to morphological diversity
+birds have evolved unique hollow air-filled bones to reduce their body weight [23554179](https://pubmed.ncbi.nlm.nih.gov/23554179/). Darwin’s finches constitute a classical model in studies of beak evolution. Rands et al. (2013) published the genome assembly of the large ground finch (Geospiza magnirostris) and determined that two genes (IGF2R and POU1F1) related to beak morphology are under positive selection.
+[2340223](https://pubmed.ncbi.nlm.nih.gov/23402223/) Evolutionary rate analysis,Neutral indel model analysis.
 
+[28475225](https://pubmed.ncbi.nlm.nih.gov/28475225/): SNP, 
 ## Synapsis
 - We show that combining our different mapping and filtering approaches can increase the number of high-quality endogenous hits recovered by up to X%.
 
