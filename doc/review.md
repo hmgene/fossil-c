@@ -53,8 +53,8 @@ Moreover, the results from the metagenomic analysis make little sense. Why would
 - We found sequencing barcodes maps to the alligator genome, thus the previous report may represent this barcode mapping. 
 
 The manuscript is also contradicting in several cases, for example where it says that SRSLY DNA libraries were prepared in the main txt (i.e. single-strand libraries), whereas it says Omni-C in the SI and one of the figure legends. Omni-C library reads are used for genome scaffolding, and it is very unclear what the point would be of using this method on samples of this antiquity. Also, it is unclear what reference database was used for the metagenomic assignment. The SI refers to a supplementary table (a “full taxonomic table”) that doesn’t exist.
-- We only report SRSLY data
-- The taxonomic table is prepared, as the above centrifuge results. 
+- The sequence barcodes map to alligator genome
+- The custom trimming with SRSLY protocol removes these.
 
 Overall, both laboratory and computational methods used (where described at all) are completely unsuitable for ancient DNA analysis, and the results are not presented in a way that allows for an assessment of their validity. For anyone in the field of ancient DNA, the lack of clarity and lack of sanity checks of the data in the manuscript is highly disappointing. There thus is nothing in the presented results that even hints at the successful recovery of authentic dinosaur DNA. Because of of this, I unfortunately have little other choice other than to recommend that this manuscript is rejected.
 
