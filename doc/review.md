@@ -49,10 +49,12 @@ In addition, there is hardly any description of what bioinformatics methods were
 - We can test whether higher level of preservation of aDNA exists in the highly structured genomic regions (https://www.biorxiv.org/content/10.1101/2023.06.30.547175v1)
 
 Moreover, the results from the metagenomic analysis make little sense. Why would a majority of reads be assigned to reptiles rather than birds, even though the latter should be much more closely genetically related to dinosaurs? And, critically, how many reads were assigned during the metagenomic analysis?
-- synthetic reads, barcodes mapped to the alligator genome, after removing this we have more mapping in chicken.
+- SRSLY data produced various origins of aDNA and possible contaminants. 
+- We found sequencing barcodes maps to the alligator genome, thus the previous report may represent this barcode mapping. 
 
 The manuscript is also contradicting in several cases, for example where it says that SRSLY DNA libraries were prepared in the main txt (i.e. single-strand libraries), whereas it says Omni-C in the SI and one of the figure legends. Omni-C library reads are used for genome scaffolding, and it is very unclear what the point would be of using this method on samples of this antiquity. Also, it is unclear what reference database was used for the metagenomic assignment. The SI refers to a supplementary table (a “full taxonomic table”) that doesn’t exist.
-- SRSLY analysis is prepared.
+- We only report SRSLY data
+- The taxonomic table is prepared, as the above centrifuge results. 
 
 Overall, both laboratory and computational methods used (where described at all) are completely unsuitable for ancient DNA analysis, and the results are not presented in a way that allows for an assessment of their validity. For anyone in the field of ancient DNA, the lack of clarity and lack of sanity checks of the data in the manuscript is highly disappointing. There thus is nothing in the presented results that even hints at the successful recovery of authentic dinosaur DNA. Because of of this, I unfortunately have little other choice other than to recommend that this manuscript is rejected.
 
