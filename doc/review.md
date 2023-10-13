@@ -33,13 +33,17 @@ Kim and colleagues report on biomolecular analyses done on two dinosaur species,
 The field of ancient DNA has progressed a lot over the last decades, and a number of recommedations for authentication have been established. While these do not necessarily comprise a list of rules that must be followed, there is an expectation that authors (especially those making extraordinary claims) provide a nuanced and objective assessment of whether their results are valid. The manuscript by Kim and colleagues does not contain any such assessment.
 
 First of all, it seems that the authors did not include any negative controls during DNA extraction and library build. The use of negative controls is important to monitor for background contamination from e.g. reagents and the environment. How were reagents and equipment sterilized to avoid contamination? The authors also do not present any DNA damage plots for the data mapped to the chicken genome. DNA damage at the end of reads would be expected given that the DNA extracts were not UDG treated.
-- Using centrifuge reads from human, microbial, clone vector, syhtnetic barcode will be reported 
-- Fragment edges are calculated from SRSLY trimming, and soft-cliping at alignments (on chicken genome). ( https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4275898/ )
+- single-strand DNA amplipication would increase signal and contaminants (https://pubmed.ncbi.nlm.nih.gov/8020612/)
+- good idea to include poly(dA) negative control ( https://pubmed.ncbi.nlm.nih.gov/19294688/ )
+
+- Using centrifuge reads we reportfrom human, microbial, clone vector, syhtnetic barcode will be reported 
+- Fragment edges are calculated from SRSLY trimming, and soft-cliping at alignments (on chicken genome) are considered. ( https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4275898/ )
 
 In addition, there is hardly any description of what bioinformatics methods were used when the reads were mapped to the chicken reference. How were the reads mapped? Were duplicates discovered/removed? What filtering was done, for example in terms of minimum fragment length? Finally, why isn’t there a more in-depth analysis of the reads that did map? Were these mapping to particularly conserved parts of the vertebrate genome? Why is it relevant that DNAs and peptides overlap in the genome? The authors state that the distribution of mapped reads “agreed with the expected background genome”. What does this even mean? Why is it relevant?
 - SRSLY trimming and UMI barcoding we removed the duplicates.
 - We summarize how the lengths and fragments and alignments mapped to considered genomes using shankey plots. 
 - Using centrifuge We mapped reads on non-redundant pool genome of 7 vertebrates (human, chicken, plytipus, alligator, ostrich ) and known microbiome (bacteria, virus, acheaa) from NCGI and centrifuge indices.
+- bwa mem with single-end mode was used (20 minimum length), and post filtering (UMI) is used due to sparseness.  
 - we assume histone protein and DNA are protected genomic strucutre may protect DNA  
 
 Moreover, the results from the metagenomic analysis make little sense. Why would a majority of reads be assigned to reptiles rather than birds, even though the latter should be much more closely genetically related to dinosaurs? And, critically, how many reads were assigned during the metagenomic analysis?
