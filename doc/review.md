@@ -33,20 +33,28 @@ Kim and colleagues report on biomolecular analyses done on two dinosaur species,
 The field of ancient DNA has progressed a lot over the last decades, and a number of recommedations for authentication have been established. While these do not necessarily comprise a list of rules that must be followed, there is an expectation that authors (especially those making extraordinary claims) provide a nuanced and objective assessment of whether their results are valid. The manuscript by Kim and colleagues does not contain any such assessment.
 
 First of all, it seems that the authors did not include any negative controls during DNA extraction and library build. The use of negative controls is important to monitor for background contamination from e.g. reagents and the environment. How were reagents and equipment sterilized to avoid contamination? The authors also do not present any DNA damage plots for the data mapped to the chicken genome. DNA damage at the end of reads would be expected given that the DNA extracts were not UDG treated.
-- In our SRSLY protocol single-strand DNA amplipication would increase signal and contaminants (https://pubmed.ncbi.nlm.nih.gov/8020612/)
-- Lambda DNA with poly(dA) negative control would improve sensitivity of negative control ( https://pubmed.ncbi.nlm.nih.gov/19294688/ )
-- Partial uracil–DNA–glycosylase treatment (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4275898/) may be required to study DNA damage analysis
-- DNA damage plotting requires correct identification of read edges guided by aligning to a target (chicken) genome - where soft-clipping is also considered
+- Let's focus on SRSLY data only and willing to include negative controls
+  - In our SRSLY protocol single-strand DNA amplipication would increase signal and contaminants (https://pubmed.ncbi.nlm.nih.gov/8020612/)
+  - Lambda DNA with poly(dA) negative control would improve sensitivity of negative control ( https://pubmed.ncbi.nlm.nih.gov/19294688/ )
+  - Partial uracil–DNA–glycosylase treatment (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4275898/) may be required to study DNA damage analysis
+- In parallel, using SRSLY data, DNA damage plotting will be doable because identification of read edges can be guided by recognizing predevined barcodes and we will use more sophisticated methods to consider soft-clipped area when mapped to chicken genome 
 
 
-In addition, there is hardly any description of what bioinformatics methods were used when the reads were mapped to the chicken reference. How were the reads mapped? Were duplicates discovered/removed? What filtering was done, for example in terms of minimum fragment length? Finally, why isn’t there a more in-depth analysis of the reads that did map? Were these mapping to particularly conserved parts of the vertebrate genome? Why is it relevant that DNAs and peptides overlap in the genome? The authors state that the distribution of mapped reads “agreed with the expected background genome”. What does this even mean? Why is it relevant?
+In addition, there is hardly any description of what bioinformatics methods were used when the reads were mapped to the chicken reference. How were the reads mapped? Were duplicates discovered/removed? What filtering was done, for example in terms of minimum fragment length? 
 - SRSLY trimming and UMI barcoding we removed the duplicates.
-- We summarize how the lengths and fragments and alignments mapped to considered genomes using shankey plots.
+- Lengths of trimmed reads and alignments are comprehensively summarized using shankey plots.
 - Using centrifuge tools, we build up non-redundant pool genome of 7 vertebrates (human, chicken, plytipus, alligator, ostrich ) and known microbiome (bacteria, virus, acheaa) from NCGI and centrifuge indices.
+
+
+Finally, why isn’t there a more in-depth analysis of the reads that did map? Were these mapping to particularly conserved parts of the vertebrate genome? Why is it relevant that DNAs and peptides overlap in the genome? The authors state that the distribution of mapped reads “agreed with the expected background genome”. What does this even mean? Why is it relevant?
 - Using centrifuge tools  we identified various aDNA origins including human and microbial genomes. 
-- To test bioinformatics heterogeneity due to different alignment algorithms we also used bwa mem and blat aligners on the target genomes.  
+- To test bioinformatics heterogeneity due to different alignment algorithms we also used bwa mem and blat aligners on the target 
+genomes.
+- Due to sparsity we could perform 
 - We assume histone proteins were identified and their DNAs are more protected by pocketting of genomic strucutres. 
 - We can test whether higher level of preservation of aDNA exists in the highly structured genomic regions (https://www.biorxiv.org/content/10.1101/2023.06.30.547175v1)
+
+
 
 Moreover, the results from the metagenomic analysis make little sense. Why would a majority of reads be assigned to reptiles rather than birds, even though the latter should be much more closely genetically related to dinosaurs? And, critically, how many reads were assigned during the metagenomic analysis?
 - We found sequencing barcodes maps to the alligator genome. 
