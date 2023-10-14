@@ -49,12 +49,15 @@ In addition, there is hardly any description of what bioinformatics methods were
 - We can test whether higher level of preservation of aDNA exists in the highly structured genomic regions (https://www.biorxiv.org/content/10.1101/2023.06.30.547175v1)
 
 Moreover, the results from the metagenomic analysis make little sense. Why would a majority of reads be assigned to reptiles rather than birds, even though the latter should be much more closely genetically related to dinosaurs? And, critically, how many reads were assigned during the metagenomic analysis?
-- SRSLY data produced various origins of aDNA and possible contaminants. 
-- We found sequencing barcodes maps to the alligator genome, thus the previous report may represent this barcode mapping. 
+- We found sequencing barcodes maps to the alligator genome. 
+- SRSLY-trimming resolved this issue
+- About 1% of trimmed reads were mapped to non-human target genomes 
 
 The manuscript is also contradicting in several cases, for example where it says that SRSLY DNA libraries were prepared in the main txt (i.e. single-strand libraries), whereas it says Omni-C in the SI and one of the figure legends. Omni-C library reads are used for genome scaffolding, and it is very unclear what the point would be of using this method on samples of this antiquity. Also, it is unclear what reference database was used for the metagenomic assignment. The SI refers to a supplementary table (a “full taxonomic table”) that doesn’t exist.
-- The sequence barcodes map to alligator genome
-- The custom trimming with SRSLY protocol removes these.
+- We will use SRSLY data only.
+- We use a set of genomes (7 vertebrates + virus + bacteria + achea for centrifuge running).
+- The full taxonomic table will be reported.
+- We will extend the searching including 100 genomes (blat), three chrodalian genomes (https://pubmed.ncbi.nlm.nih.gov/25504731/)
 
 Overall, both laboratory and computational methods used (where described at all) are completely unsuitable for ancient DNA analysis, and the results are not presented in a way that allows for an assessment of their validity. For anyone in the field of ancient DNA, the lack of clarity and lack of sanity checks of the data in the manuscript is highly disappointing. There thus is nothing in the presented results that even hints at the successful recovery of authentic dinosaur DNA. Because of of this, I unfortunately have little other choice other than to recommend that this manuscript is rejected.
 
@@ -69,25 +72,45 @@ Below, I highlight several of the major problems encoutered while reviewing this
 
 
 Appropriate negative controls: There is a lack of proper negative controls in the cell isolation/DNA extraction, library prep, and sequence analyses components. Negative controls processed throughout the entire molecular and bioinformatic process are crucial for discerning between contamination and authentic signals. An additional negative control of a ‘blank’ sample, processed in the same way as the dinosaur samples, would further serve to show how a known non-dinosaur sample would map to this set of reference genomes. The listed negative controls of ancient human tooth and modern ostrich osteocytes have several issues. The human tooth library contains only human-aligned reads to begin with - a more suitable control would be the raw sequence data obtained from an ancient human tooth processed in the same way as the dinosaur samples. Additionally, the negative control of the modern ostrich osteocytes is not appropriate. Nearly all mapped reads from this sample map to the ostrich reference genome, as expected, and it is difficult to discern mapping statistics of the remaining reads which might represent contamination or mappability to different reference genome. And while framed as a ‘negative’ control, this sample serves as something closer to a positive control (see below).
-- we will make a negative control DNAs after training parameters from the examples.
-- the mapped ddinosaur reads at each species can be used as a seed set reads with proper error model we can synthesize the negative control to validate the observation
-
+- Negative control issue was answered in the previous reply
+- Can we consider non-distructive extraction of human ancient tooth (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10247382/)?
 
 Appropriate positive controls: Dinosaur microbial reads are listed as a positive control, but it is not clear for what they are a positive control. It is not possible to have a real positive, as there is no dinosaur DNA. For the bioinformatic steps, however, there are some better controls than are currently used that might simplify interpretation of the results. Here, for example, you map ostrich to itself and show that all reads map to ostrich. Instead, why not map a divergent bird to the ostrich genome? Better yet, a version of the chicken genome with sequence read lengths that match what is recovered, perhaps with damage and a significant portion of human contamination, and map that? That will show what the expectation might be when mapping divergent, damaged, and contaminated reads from a given library to modern genomes.
-- the above negative control extracted from the mapped reference genome can provide a fair controlling
+- We can make sets of synthetic, damaged DNAs from the referece genome focusing on where our aDNA mapped.
 
+Justification for methodological choices: Some unorthodox choices are made in both the molecular and bioinformatic methods which might warrant an explanation or justification. These include: Why was a version of Omni-C chosen as the library preparation method? 
+- we will remove this
+  
+Why was a dual-unique indexing scheme (presumably) not chosen to prevent index-hopping when multiplexing libraries in sequencing?
+- Is this useful? https://knowledge.illumina.com/library-preparation/general/library-preparation-general-reference_material-list/000002344
+  
+Why were PCR duplicate reads not removed bioinformatically? 
+- We also ran non-redundant k-mer approaches,but not reported.
+- SRSLY protocol is used to remove such using UMI
+  
+What is the explanation for the high level of G repeats that are found in the SRSLY libraries (possibly some Illumina failure leading to reads consisting only of G bases)?
+- Yes
+Why was the entire library exhausted in sequencing, instead of preserving this as a future resource for additional study?
+- Berkley, can we answer this ? 
 
-Justification for methodological choices: Some unorthodox choices are made in both the molecular and bioinformatic methods which might warrant an explanation or justification. These include: Why was a version of Omni-C chosen as the library preparation method? Why was a dual-unique indexing scheme (presumably) not chosen to prevent index-hopping when multiplexing libraries in sequencing? Why were PCR duplicate reads not removed bioinformatically? What is the explanation for the high level of G repeats that are found in the SRSLY libraries (possibly some Illumina failure leading to reads consisting only of G bases)? Why was the entire library exhausted in sequencing, instead of preserving this as a future resource for additional study? What filtering steps were used and why? Was there DNA damage on “authentic” reads that map to chicken? Which of the various data sets were used with which analyses? What was the purpose of using reads from cancer cells to increase sequence diversity rather than standard phiX?
-- over sequencing of short fragments produce barcode insertion at both ends, which are removed in the new protocol
-- duplication is handled by using UMI
-- damage analysis will be performed after the proper trimmming 
+What filtering steps were used and why?
+- we only used fragmented lengths and human mapped reads as filter sets,
+- we have centrifuge-based and blat/bwa based filters to be used.
+  
+Was there DNA damage on “authentic” reads that map to chicken? Which of the various data sets were used with which analyses? 
+- we didn't run the detailed analysis
+- we will run DNA damage once the trimming and edge-finidng is available with SRSLY data
 
+What was the purpose of using reads from cancer cells to increase sequence diversity rather than standard phiX?
+- to see the effects of fragmentization and mutations affecting in the pipeline.
+- but without knowning mutation/contamination/substitution models of aDNA I don't think this is valid approach
 
 Data availability and usage: Some analyses are unclear with respect to the raw data used. Were the non-dinosaur fastq data processed in the same way or were alignment/vcf files from previous studies used? Were the filters applied to the dinosaur sample the same as those used to generate ostrich/human data? There is no reference to mapping quality filters or other types of filters prior to alignment such as PCR duplicate removal, and to which samples these filters were applied. It is mentioned on line 96 that “insert-containing fragments averaged 360–390 bp per sample”. This is extraordinary for ancient DNA and it is unclear whether this is referring to the mappable reads or if the majority of this is adapter-only reads, or likely contaminants. Modern DNA would be expected to have larger insert sizes, so the insert sizes of the mappable reads should be reported here.
-- we ca make them available I will restruturize them
+- The answers to these questions can be found above.
 
-
-Interpretation of key results: As stated above, evaluation of these results is difficult given the lack of details in the methods. However several of the results claiming to support the presence of endogenous dinosaur DNA are puzzling. For example, a key piece of evidence for the presence of authentic dinosaur DNA is the proportionate mapping of reads to different functional parts of the genome (Extended data Fig. 4A). However, it is unclear whether this is a null expectation given the distribution of these functional categories in these assemblies. How would a negative control (‘blank’) map to these categories? Or the non-human reads from the human tooth sample? One can imagine many possible controls here to determine whether these results are truly indicative of endogenous DNA, or whether they are the result of simple sample contamination. Similarly, for the correlations shown in Extended Data Figure 4B, there is an obvious relationship between bases in the two tissue types from the same species, but what would be expected from authentic DNA, rather than contamination or spurious alignments? If anything, should these correlations not be higher, given that the DNA in the two tissues are the data from the same species? Also, for this analysis, it is stated that “loci were mapped by at least two samples and with a depth > 10 counts”- given the extremely low coverage recovered from the dinosaurs, wouldn’t the subset of bases covered by more than 10 reads be extremely low, and likely to be highly repetitive and spuriously aligned? It is also mentioned a few times that reads are “high quality”. What does this mean? Is it in reference to mappability?
+Interpretation of key results: As stated above, evaluation of these results is difficult given the lack of details in the methods. However several of the results claiming to support the presence of endogenous dinosaur DNA are puzzling. For example, a key piece of evidence for the presence of authentic dinosaur DNA is the proportionate mapping of reads to different functional parts of the genome (Extended data Fig. 4A). However, it is unclear whether this is a null expectation given the distribution of these functional categories in these assemblies. How would a negative control (‘blank’) map to these categories? Or the non-human reads from the human tooth sample? One can imagine many possible controls here to determine whether these results are truly indicative of endogenous DNA, or whether they are the result of simple sample contamination. 
+- 
+Similarly, for the correlations shown in Extended Data Figure 4B, there is an obvious relationship between bases in the two tissue types from the same species, but what would be expected from authentic DNA, rather than contamination or spurious alignments? If anything, should these correlations not be higher, given that the DNA in the two tissues are the data from the same species? Also, for this analysis, it is stated that “loci were mapped by at least two samples and with a depth > 10 counts”- given the extremely low coverage recovered from the dinosaurs, wouldn’t the subset of bases covered by more than 10 reads be extremely low, and likely to be highly repetitive and spuriously aligned? It is also mentioned a few times that reads are “high quality”. What does this mean? Is it in reference to mappability?
 - we will do contamination analysis and overlap reporting on cross tissues and the analysis with the high quality (non-repeat) reads 
 
 
