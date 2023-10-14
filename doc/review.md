@@ -140,10 +140,11 @@ What point are you trying to convey in Fig. 4? And if the SRSLY prep yields high
 - we will select only SRSLY or a better protocol for the new submission
 
 Oddly, it seems from extended data fig 4C, there is a huge overlap in segments mapping between the two species from SRSLY libraries. Given what is presumably extremely low coverage, why would you see this much overlap? Could this be some sort of bioinformatic artifact?
-- we might use this only
-
+- This might be due to the different experimental protocols though applied same pipelines.
+- We will rerun this after considering more stringent filtering suggested above.
 
 Again, the comments above are not exhaustive of the issues that emerged when attempting to make sense of this potentially remarkable data set, but simply highlight some of the major concerns mainly in the lack of crucial details provided. We note, however, that the absence of a negative control is the most problematic aspect of this work and one that, if no negative was processed alongside these experiments, may be impossible to correct. Unfortunately, use of a negative control is among the few unbreakable rules in ancient DNA research and precisely why so many false reports, several of dinosaur DNA, were published during the early phase of this research field.
+
 - I agree and we will be able to make a negative control set.
 
 
