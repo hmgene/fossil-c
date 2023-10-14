@@ -41,20 +41,19 @@ First of all, it seems that the authors did not include any negative controls du
 
 
 In addition, there is hardly any description of what bioinformatics methods were used when the reads were mapped to the chicken reference. How were the reads mapped? Were duplicates discovered/removed? What filtering was done, for example in terms of minimum fragment length? 
-- SRSLY trimming and UMI barcoding we removed the duplicates.
-- Lengths of trimmed reads and alignments are comprehensively summarized using shankey plots.
-- Using centrifuge tools, we build up non-redundant pool genome of 7 vertebrates (human, chicken, plytipus, alligator, ostrich ) and known microbiome (bacteria, virus, acheaa) from NCGI and centrifuge indices.
+- Using custom SRSLY trimming and UMI barcoding we obtain correct aDNA removing duplicates.
+- Lengths of trimmed reads and alignments are comprehensively summarized using shankey plots : we identified various origins have different length distributions with a trend of higher human, medium chicken, and short alligator and bacterial reads. 
 
+Example SRSLY_BR_O_R1
+![image](https://github.com/hmgene/fossil-c/assets/23003112/920ebbcf-48a7-402c-9191-731275e71688)
 
 Finally, why isn’t there a more in-depth analysis of the reads that did map? Were these mapping to particularly conserved parts of the vertebrate genome? Why is it relevant that DNAs and peptides overlap in the genome? The authors state that the distribution of mapped reads “agreed with the expected background genome”. What does this even mean? Why is it relevant?
-- Using centrifuge tools  we identified various aDNA origins including human and microbial genomes. 
-- To test bioinformatics heterogeneity due to different alignment algorithms we also used bwa mem and blat aligners on the target 
-genomes.
-- Due to sparsity we could perform 
-- We assume histone proteins were identified and their DNAs are more protected by pocketting of genomic strucutres. 
-- We can test whether higher level of preservation of aDNA exists in the highly structured genomic regions (https://www.biorxiv.org/content/10.1101/2023.06.30.547175v1)
-
-
+- Using centrifuge tools, we build up non-redundant pool genome of 7 vertebrates (human, chicken, plytipus, alligator, ostrich ) and known microbiome (bacteria, virus, acheaa) from NCGI and centrifuge indices.
+- From the centrifuge results we identified various aDNA origins including human and microbial genomes.
+- We obtain alignments in the similar genomic features in the coding and non-coding/repeat regions.
+- Yes, the bias of mappability may exists in the more conserved regions, but not available due to the sparcity. 
+- To assess the heterogeneity in bioinformatics resulting from different alignment algorithms, we employed both BWA-MEM and BLAT aligners on the target genomes.
+- We hypothesized that the overlap between DNAs and peptides could potentially indicate the presence of highly expressed histone proteins. Moreover, these proteins' binding sites might play a role in safeguarding the genomic structure, such a 3D genomic structural protection concept supported by the findings in the mammoth study (https://www.biorxiv.org/content/10.1101/2023.06.30.547175v1).
 
 Moreover, the results from the metagenomic analysis make little sense. Why would a majority of reads be assigned to reptiles rather than birds, even though the latter should be much more closely genetically related to dinosaurs? And, critically, how many reads were assigned during the metagenomic analysis?
 - We found sequencing barcodes maps to the alligator genome. 
