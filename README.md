@@ -1,5 +1,22 @@
 # fossil-c Bracky & T-rex
 
+### DNA-damage anallysis example : 
+Three are from the same origin. 
+- 33M has 3' G->A (C-to-T)
+- 31M4S (having additional 4S: 4 soft clipping ) has 5' C->T
+- 32M has 3' C->T (it was C in 33M)
+```
+>33M::33M,0-33 CC GA
+CTTTCCCTACACGACGCTCTTCCGATCTTCACA #query
+CTTTCCCTACACGACGCTCTTCCGATCTTCACG #reference
+>31M4S::31M,0-35 CT AA
+TTTTCCCTACACGACGCTCTTCCGATCTTCA--
+CTTTCCCTACACGACGCTCTTCCGATCTTCA--
+>32M::32M,0-32 CC CT
+CTTTCCCTACACGACGCTCTTCCGATCTTCAT-
+CTTTCCCTACACGACGCTCTTCCGATCTTCAC-
+```
+
 ## Characterization of genomic diversity and relation to morphological diversity
 Genomic feature of birds [35386431](https://pubmed.ncbi.nlm.nih.gov/35386431/):
 - hollow air-filled bones to reduce their body weight [23554179](https://pubmed.ncbi.nlm.nih.gov/23554179/).
