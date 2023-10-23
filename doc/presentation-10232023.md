@@ -6,5 +6,5 @@ Deep-time paleogenomics and the limits of DNA survival [[37797036]]
 [[37797036]]
 
 
-[[37797036]]: https://pubmed.ncbi.nlm.nih.gov/37797036/
+[37797036]: https://pubmed.ncbi.nlm.nih.gov/37797036/
 
