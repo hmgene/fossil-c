@@ -3,7 +3,7 @@ Deep-time paleogenomics and the limits of DNA survival [[37797036]]
 
 
 ![image](https://github.com/hmgene/fossil-c/assets/23003112/4d4d6494-ed61-4212-949a-1ea289d97385) 
-[[37797036]]
+figure from [[37797036]]
 
 
 [[37797036]] Deep-time paleogenomics and the limits of DNA survival
