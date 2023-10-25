@@ -38,6 +38,7 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6289138/#sup1
   - multi-species variation graphs that incorporate variants from several genomes (52),
   - reference-based taxonomic assignment is always limited to sequences deposited in public databases, the ongoing population of these databases will continue to improve robust identification of DNA recovered from Early and Middle Pleistocene remains and sediments.
 - luminescence and electron spin resonance [ESR]) and amino acid (AA) geochronology [36252044/](https://pubmed.ncbi.nlm.nih.gov/36252044/) - half-life of carbon-14 < ~50 ka. 
+- evolutoin model with generation length and molecular history
 <details>
 <summary>Algorithms </summary>
 - FASTME: https://academic.oup.com/mbe/article/32/10/2798/1212138
