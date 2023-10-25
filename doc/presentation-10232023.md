@@ -28,9 +28,9 @@ pubmed id: [[37797036]]
 > Hydrolytic deamination, another common form of chemical damage, converts cytosine to uracil and is observed as thymine in sequencing data, or “C-to-T transitions” (Fig. 2C).
 
 ### Recovery of increasingly old and damaged DNA
-- Single-stranded approaches to genomic library preparation (24, 25) 
-<details><summary>single-strand approaches</summary>
-[28119419](https://pubmed.ncbi.nlm.nih.gov/28119419/)
+<details><summary>single-strand approaches [28119419](https://pubmed.ncbi.nlm.nih.gov/28119419/)
+</summary>
+ 
  
 ![image](https://github.com/hmgene/fossil-c/assets/23003112/da3e0b2d-807a-42bb-9821-c9fd519ed6d7)
 </details>
