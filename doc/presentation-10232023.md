@@ -28,7 +28,7 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6289138/#sup1
 </details>
 
 <details>
-<summary>Sequence data processing and mapping [PMC7116897](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7116897/)</summary>
+<summary>Sequence data processing and mapping </summary>
 We combined our obtained sequence data with that from previously published40 elephantid
 genomes that include all extant and three extinct species (Table S2). For the five samples
 >sequenced here, we trimmed adapters and merged paired-end reads using SeqPrep 1.141, initially
@@ -49,6 +49,8 @@ mitogenomes. Next, we removed PCR duplicates from the alignments using a python 
 (github.com/pontussk/samremovedup) that takes into account both start and end positions of the
 reads following Palkopoulou et al.42. Finally, we removed all reads below 35 base pairs from the
 BAM-files using samtools to filter out spurious mappings (see Supplementary Section 4).
+[PMC7116897](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7116897/)
+
 </details>
 
 
