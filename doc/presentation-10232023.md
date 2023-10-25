@@ -22,6 +22,12 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6289138/#sup1
 ![image](https://github.com/hmgene/fossil-c/assets/23003112/86909a28-7bed-477f-a6b4-8faaa0038bf8)
 >**Deep-time paleogenomes provided new understanding of the evolutionary history of mammoths.** Paleontological hypotheses assumed that the M. columbi lineage evolved after early divergence from M. primigenius (A), however, isolation of a deep-time paleogenome from the Krestova mammoth (blue circle) revealed that M. columbi emerged more recently and following admixture with the Krestova mammoth lineage (B).
 
+<details>
+<summary>Algorithms </summary>
+- FASTME: https://academic.oup.com/mbe/article/32/10/2798/1212138
+</details>
+
+
 
 [[37797036]] Deep-time paleogenomics and the limits of DNA survival
 
