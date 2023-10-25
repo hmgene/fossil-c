@@ -1,4 +1,4 @@
-# Deep-time paleogenomics and the limits of DNA survival 
+# Review by Hyunmin Kim 10/25/2023  
 <img width="678" alt="image" src="https://github.com/hmgene/fossil-c/assets/23003112/5cf63c24-66a1-4466-8424-201fe33c9988">
 
 pubmed id: [[37797036]]
