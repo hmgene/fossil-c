@@ -29,6 +29,7 @@ pubmed id: [[37797036]]
 
 ### Recovery of increasingly old and damaged DNA
 <details><summary>single-strand approaches </summary>  
+
 ![image](https://github.com/hmgene/fossil-c/assets/23003112/da3e0b2d-807a-42bb-9821-c9fd519ed6d7)
 > [28119419](https://pubmed.ncbi.nlm.nih.gov/28119419/)
 
