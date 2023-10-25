@@ -7,6 +7,7 @@ figure from [[37797036]]
 
 ![image](https://github.com/hmgene/fossil-c/assets/23003112/d86344c8-7419-4f26-9afd-e9cd3dc2effe)
 figure from [[37797036]]
+>  The primary chemical mechanism of DNA fragmentation is hydrolytic depurination. This process removes adenine or guanine bases, creating abasic sites that can be cleaved by β elimination (19; Fig. 2C), and leading to purine overrepresentation adjacent to strand breaks (20; Fig. 2E) and interior gaps (21). 
 
 
 
