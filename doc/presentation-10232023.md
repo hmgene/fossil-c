@@ -1,7 +1,7 @@
 # Deep-time paleogenomics and the limits of DNA survival 
 <img width="678" alt="image" src="https://github.com/hmgene/fossil-c/assets/23003112/5cf63c24-66a1-4466-8424-201fe33c9988">
 
-ref: [[37797036]]
+pubmed id: [[37797036]]
 
 >Middle Pleistocene, i.e., >126 ka, are still rare because postmortem processes lead to successive degradation of DNA molecules into increasingly small fragments, making DNA recovery more difficult with age. Early and Middle Pleistocene DNA has, however, been recovered from remains and sediments in high-latitude permafrost (10–14) and lower latitude caves (15, 16), suggesting that deep-time genomics is feasible in ideal preservation environments
 
