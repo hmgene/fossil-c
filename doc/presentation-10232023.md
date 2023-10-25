@@ -53,6 +53,67 @@ BAM-files using samtools to filter out spurious mappings (see Supplementary Sect
 
 </details>
 
+<details>
+<summary>Ancient DNA authenticity and quality assessment</summary>
+
+All ancient genomes in this study were UDG treated to reduce biased inferences resulting from
+post-mortem DNA damage. Given the extreme age of the most ancient samples (Krestovka,
+Adycha, Chukochya), we extensively assessed the authenticity and quality of our mapped
+sequence data. First, only reads that mapped uniquely to non-repetitive regions of the LoxAfr4
+reference and had a mapping quality ≧30 were retained. To do this, we included the human
+genome reference (hg19) in our composite reference as a mapping decoy to ensure that reads
+mapping equally well to conserved genomic regions between LoxAfr4 and hg19 were removed,
+and thus reducing possible biases caused by human contaminating reads47. We next used
+mapDamage2.0.648 to obtain read length distributions for all ancient samples. We observed an
+uptick in the count of 25-30 bp mapped reads for the two low-coverage samples (Adycha,
+Krestovka; Extended Data Fig. 3), which is characteristic of spuriously aligned ultrashort reads49.
+To determine sample-specific minimum read length cutoffs, we employed a method to assess the
+rate of spurious mappings for all reads between 20-35 bp and at 5 bp intervals between 35-50 bp
+(Fig. S3). In each genome, we sampled all alleles with mapping quality ≥30 and base quality ≥30
+13
+at each genomic site and counted how many of these did not match the LoxAfr4 reference. The
+underlying reasoning is that the rate of allele mismatches should be constant as a function of read
+length if no spurious alignments are present. It is challenging to accurately map ultrashort reads
+(e.g. <35 bp)50, but we expect spurious alignments from short reads (both of endogenous and
+non-endogenous origin) to have a different rate of mismatches to the reference than correctlymapped
+endogenous reads. This allowed us to identify a sample-specific minimum read length
+cutoff above which we consider reads to be correctly mapped and endogenous (Fig. S3, Table
+S3). For consistency, we applied the longest sample-specific cutoff (≥35 bp, Krestovka; Fig. S3;
+Table S3) to all samples in downstream analysis using samtools and awk (samtools view -h
+filename.bam | 'length($10) > 34 || $1 ~ /^@/' | samtools view -bS - > 35bp.filename.bam). The
+scripts used to run this analysis are available at (github.com/stefaniehartmann/readLengthCutoff).
+We present ancient DNA quality statistics for each of the ancient samples in Table S3, for both
+the sample-specific and 35 bp minimum read length datasets. Based on reads aligned to the
+LoxAfr4 autosomes, we calculated the (1) count of reads aligned, using the flagstat command in
+SAMtools v.0.1.1945; (2) average genomic coverage, using the mean of values derived from
+samtools depth -a; (3) proportion of the genome uncovered, using the count of sites with zero
+derived from samtools depth -a divided by the total length of the autosomes; (4) average read
+length, using samtools view -F 4 and bash commands; and (5) deamination frequency at the
+terminal nucleotide positions, based on the proportion of C>T at the first position in the forward
+direction as estimated by mapDamage. As all ancient samples were UDG treated, overall cytosine
+deamination frequencies calculated by mapDamage were low (Table S3). We therefore
+additionally examined cytosine deamination profiles at CpG sites, which are unaffected by UDG
+treatment51, using the platypus option in PMDtools (github.com/pontussk/PMDtools)52. The three
+samples processed with afu UDG enzyme during single-strand DNA library preparation (Scotland,
+Kanchalan, and the straight-tusked elephant) had elevated C>T misincorporations at the terminal
+positions, as compared to the other ancient samples. For these three samples, we therefore
+trimmed the first and last two bases from the merged reads, and then remapped and filtered the
+trimmed reads as outlined above. We show that the average read lengths for the most ancient
+samples (Krestovka, Adycha, Chukochya) are 42-49 bp, after excluding reads <35 bp (Extended
+Data Fig. 3; Table S3). These are comparable to other younger specimens, but we note that these
+younger specimens were either sampled from warmer localities with less optimal DNA
+preservation (Columbian mammoth, Wyoming woolly mammoth) or processed using laboratory
+methods (i.e. single-strand DNA library preparation) that generate, and are biased toward the
+recovery of, ultrashort fragments (Scotland, Kanchalan). However, the Krestovka, Adycha, and
+Chukochya average read lengths are far shorter than those generated from the Oimyakon (59 bp)
+and Wrangel (72 bp) mammoths, which are comparable in terms of preservational context
+(permafrozen) and laboratory processing. The cytosine deamination frequencies at CpG sites are
+up to three times higher in the Krestovka, Adycha, and Chukochya data sets, as compared to
+other younger mammoths (Extended Data Fig. 4), which is consistent with their old age.
+[PMC7116897](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7116897/)
+
+</details>
+
 
 
 [[37797036]] Deep-time paleogenomics and the limits of DNA survival
