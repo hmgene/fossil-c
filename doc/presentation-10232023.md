@@ -9,7 +9,7 @@ Deep-time paleogenomics and the limits of DNA survival [[37797036]]
 ![image](https://github.com/hmgene/fossil-c/assets/23003112/d86344c8-7419-4f26-9afd-e9cd3dc2effe)
 figure from [[37797036]]
 >  The primary chemical mechanism of DNA fragmentation is hydrolytic depurination. This process removes adenine or guanine bases, creating abasic sites that can be cleaved by β elimination (19; Fig. 2C), and leading to purine overrepresentation adjacent to strand breaks (20; Fig. 2E) and interior gaps (21). 
-
+![image](https://github.com/hmgene/fossil-c/assets/23003112/9b626169-aa5d-4b41-90d2-bf081993baab)
 ![image](https://github.com/hmgene/fossil-c/assets/23003112/7d1c9492-d96d-4f37-886d-ae1c4e16fc15)
 
 
