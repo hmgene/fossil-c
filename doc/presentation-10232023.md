@@ -37,6 +37,7 @@ pubmed id: [[37797036]]
 </details>
 
 - treated with uracil DNA glycosylase and endonuclease VIII to reduce deamination damage by removing uracil bases
+- Bioinformatic approaches mitigate these challenges by directly modeling DNA damage and/or bias as part of genotyping (28) or considering only substitutions that are not affected by cytosine deamination.
 
 <details><summary>submodel</summary>
 
