@@ -38,8 +38,12 @@ pubmed id: [[37797036]]
 
 - treated with uracil DNA glycosylase and endonuclease VIII to reduce deamination damage by removing uracil bases
 
+<details><summary>submodel</summary>
+
 ![image](https://github.com/hmgene/fossil-c/assets/23003112/d781c621-786e-4fc8-bfae-912fa8a57f6e)
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6289138/#sup1
+[PMC6289138](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6289138/#sup1)
+
+</details>
 
 > The short nature of deep-time DNA molecules makes them prone to spurious alignment and reference bias (27), complicating genome assembly and analysis. 
 
