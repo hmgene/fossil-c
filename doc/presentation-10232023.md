@@ -31,7 +31,7 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6289138/#sup1
 - sedimentary ancient DNA 
 - hybridization capture on deep-time sedimentary DNA
 ### Future research to enable deep-time DNA
-- Kjaer et al (11) found that DNA adsorbed preferentially to clay mineral surfaces compared to non-clay surfaces, and in particular to the clay mineral smectite, which can <u>bind 200 times more DNA than quartz</u> and is a common mineral in terrestrial samples. Their best performing extraction protocol recovered 40% of DNA bound to quartz and only 5% of DNA bound to smectite.
+- Kjaer et al (11) found that DNA adsorbed preferentially to clay mineral surfaces compared to non-clay surfaces, and in particular to the clay mineral smectite, which can <ins>bind 200 times more DNA than quartz</ins> and is a common mineral in terrestrial samples. Their best performing extraction protocol recovered 40% of DNA bound to quartz and only 5% of DNA bound to smectite.
 - Massilani et al (47), for example, showed DNA preserved in cave sediment is concentrated in micro-scale particles, especially fragments of bone and feces preserved within the substrate.
 <details>
 <summary>Algorithms </summary>
