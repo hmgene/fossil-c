@@ -3,7 +3,9 @@
 
 pubmed id: [[37797036]]
 
-## Introduction
+## Key Summary 
+> The state-of-the-art in paleogenomics and key bottlenecks, including technical limitations, evolutionary divergence and associated biases, and the need for more precise dating of remains and sediments. 
+
 >Pleistocene, an epoch of repeated environmental changes that shaped present-day biodiversity. 
 
 >Middle Pleistocene, i.e., >126 ka, are still rare because postmortem processes lead to successive degradation of DNA molecules into increasingly small fragments, making DNA recovery more <ins>difficult</ins> with age. Early and Middle Pleistocene DNA has, however, been recovered from remains and sediments in high-latitude permafrost (10–14) and lower latitude caves (15, 16), suggesting that deep-time genomics is feasible in ideal <ins>preservation environments</ins>
@@ -81,23 +83,23 @@ https://ginolhac.github.io/mapDamage/
 <summary>Sequence data processing and mapping </summary>
 We combined our obtained sequence data with that from previously published40 elephantid
 genomes that include all extant and three extinct species (Table S2). For the five samples
->sequenced here, we trimmed adapters and merged paired-end reads using SeqPrep 1.141, initially
+sequenced here, we trimmed adapters and merged paired-end reads using SeqPrep 1.141, initially
 retaining reads either ≥25 bp (Krestovka, Adycha, Chukochya) or ≥30 bp (Scotland, Kanchalan),
 and with a minor modification in the source code that allowed us to choose the best base quality
 score in the merged region instead of aggregating the scores42. Three of the ancient genomes in
-the dataset had been treated with the afu UDG enzyme (the straight-tusked elephant and the
+the dataset had been <ins>treated with the afu UDG enzyme</ins> (the straight-tusked elephant and the
 Scotland and Kanchalan mammoths, Table S2), which leaves post-mortem DNA damage at the
 DNA fragment termini. Therefore, for these samples, we removed the first and last two base pairs
 from all reads before mapping in order to minimize erroneous bases. Next, we mapped the
 merged reads to a composite reference consisting of the African savannah elephant nuclear
 genome (LoxAfr4), woolly mammoth mitogenome (Krause mammoth, DQ188829), and the
-human genome (hg19) using BWA aln v0.7.8 with deactivated seeding (-l 16,500), allowing for
+<ins>human genome (hg19)</ins> using BWA aln v0.7.8 with deactivated seeding (-l 16,500), allowing for
 more substitutions (-n 0.01) and up to two gaps (-o 2)43,44. We used Samtools v0.1.1945 to process
 the alignment and filter reads with mapping quality below 30 and we used BEDtools v.2.27.146 to
 split the elephant- and mammoth-mapped regions of autosomes, chromosome X and
 mitogenomes. Next, we removed PCR duplicates from the alignments using a python script
-(github.com/pontussk/samremovedup) that takes into account both start and end positions of the
-reads following Palkopoulou et al.42. Finally, we removed all reads below 35 base pairs from the
+(github.com/pontussk/samremovedup) that takes into account both <ins>start and end positions of the
+reads</ins> following Palkopoulou et al.42. Finally, we <ins>removed all reads below 35 base pairs </ins> from the
 BAM-files using samtools to filter out spurious mappings (see Supplementary Section 4).
 [PMC7116897](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7116897/)
 
@@ -109,7 +111,7 @@ BAM-files using samtools to filter out spurious mappings (see Supplementary Sect
 All ancient genomes in this study were UDG treated to reduce biased inferences resulting from
 post-mortem DNA damage. Given the extreme age of the most ancient samples (Krestovka,
 Adycha, Chukochya), we extensively assessed the authenticity and quality of our mapped
-sequence data. First, only reads that mapped uniquely to non-repetitive regions of the LoxAfr4
+sequence data. First, only reads that <ins> mapped uniquely to non-repetitive regions</ins> of the LoxAfr4
 reference and had a mapping quality ≧30 were retained. To do this, we included the human
 genome reference (hg19) in our composite reference as a mapping decoy to ensure that reads
 mapping equally well to conserved genomic regions between LoxAfr4 and hg19 were removed,
