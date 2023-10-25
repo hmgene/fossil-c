@@ -9,7 +9,7 @@ figure from [[37797036]]
 figure from [[37797036]]
 >  The primary chemical mechanism of DNA fragmentation is hydrolytic depurination. This process removes adenine or guanine bases, creating abasic sites that can be cleaved by β elimination (19; Fig. 2C), and leading to purine overrepresentation adjacent to strand breaks (20; Fig. 2E) and interior gaps (21). 
 
-
+>Hydrolytic deamination, another common form of chemical damage, converts cytosine to uracil and is observed as thymine in sequencing data, or “C-to-T transitions” (Fig. 2C). Deamination occurs primarily near strand ends and in single-stranded DNA (17, 21, 22; Fig. 2E)
 
 
 [[37797036]] Deep-time paleogenomics and the limits of DNA survival
