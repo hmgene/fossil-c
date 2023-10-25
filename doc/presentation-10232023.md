@@ -3,7 +3,8 @@ Deep-time paleogenomics and the limits of DNA survival [[37797036]]
 
 
 ![image](https://github.com/hmgene/fossil-c/assets/23003112/4d4d6494-ed61-4212-949a-1ea289d97385) 
-figure from [[37797036]]
+> The temporal distribution of ancient DNA studies to date highlights gaps and opportunities for deep-time paleogenomics and sedimentary ancient DNA. Circles in orange are non-human animal paleogenomes, in blue are hominin paleogenomes, and in brown are sedimentary ancient DNA records. Most ancient DNA studies fall within the last 50 ka and the most recent glacial cycle. The climate curve is based on benthic δ18-Oxygen measurements (per mil, ‰; LR04 stack from (42). Sedimentary ancient DNA data are from the AncientMetagenomeDir (v23.06.0, 58) and von Eggers et al. (v1, https://doi.org/10.5281/zenodo.6847522), with metabarcoding records older than one million years excluded. Paleogenomes older than 100 ka are annotated with a silhouette of the study taxon, with the deep-time paleogenomes including a 130 ka steppe bison (36); 330 ka collared lemming (40); 360 ka cave bear (9); 430 ka cave bear and hominin (35, 59); 700 ka horse (8); and 700 ka, 1.1 Ma, and 1.2 Ma mammoths (10). Silhouettes are from PhyloPic (https://beta.phylopic.org/) and are in the public domain with credits to Zimices (mammoth, two bison) and Robert Bruce Horsfall (horse). LP: Late Pleistocene; IG: Interglacial; G: Glacial. [[37797036]]
+
 
 ![image](https://github.com/hmgene/fossil-c/assets/23003112/d86344c8-7419-4f26-9afd-e9cd3dc2effe)
 figure from [[37797036]]
