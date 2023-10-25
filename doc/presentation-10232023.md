@@ -21,9 +21,18 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6289138/#sup1
 
 ## Research opportunities arising from deep-time DNA
 
+### Speciation and evolution
 ![image](https://github.com/hmgene/fossil-c/assets/23003112/86909a28-7bed-477f-a6b4-8faaa0038bf8)
 >**Deep-time paleogenomes provided new understanding of the evolutionary history of mammoths.** Paleontological hypotheses assumed that the M. columbi lineage evolved after early divergence from M. primigenius (A), however, isolation of a deep-time paleogenome from the Krestova mammoth (blue circle) revealed that M. columbi emerged more recently and following admixture with the Krestova mammoth lineage (B).
 
+### The impact of glacial cycles on biodiversity
+### Inference of ancient ecosystems
+- it possible to reconstruct entire deep-time ecological communities.
+- sedimentary ancient DNA 
+- hybridization capture on deep-time sedimentary DNA
+### Future research to enable deep-time DNA
+- Kjaer et al (11) found that DNA adsorbed preferentially to clay mineral surfaces compared to non-clay surfaces, and in particular to the clay mineral smectite, which can bind 200 times more DNA than quartz and is a common mineral in terrestrial samples. Their best performing extraction protocol recovered 40% of DNA bound to quartz and only 5% of DNA bound to smectite.
+- Massilani et al (47), for example, showed DNA preserved in cave sediment is concentrated in micro-scale particles, especially fragments of bone and feces preserved within the substrate.
 <details>
 <summary>Algorithms </summary>
 - FASTME: https://academic.oup.com/mbe/article/32/10/2798/1212138
