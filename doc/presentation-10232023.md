@@ -23,6 +23,9 @@ pubmed id: [[37797036]]
 ![image](https://github.com/hmgene/fossil-c/assets/23003112/9b626169-aa5d-4b41-90d2-bf081993baab)
 > In 1993, Lindahl estimated that hydrolytic depurination would lead to complete degradation of DNA molecules within several tens of thousands of years (17). However, the maximum age of recoverable and useful DNA molecules—those that are long enough to retain information—remains <ins>uncertain</ins>.
 ![image](https://github.com/hmgene/fossil-c/assets/23003112/d86344c8-7419-4f26-9afd-e9cd3dc2effe)
+> In nuclear DNA, strands are cleaved in labile regions of histone-DNA complexes, resulting in a ~10-base periodicity in the distribution of the lengths of recovered molecules (18).
+> The primary chemical mechanism of DNA fragmentation is hydrolytic depurination. This process removes adenine or guanine bases, creating abasic sites that can be cleaved by β elimination (19) (Fig. 2C), and leading to purine overrepresentation adjacent to strand breaks (20) (Fig. 2E) and interior gaps (21). 
+> Hydrolytic deamination, another common form of chemical damage, converts cytosine to uracil and is observed as thymine in sequencing data, or “C-to-T transitions” (Fig. 2C).
 
 ![image](https://github.com/hmgene/fossil-c/assets/23003112/d781c621-786e-4fc8-bfae-912fa8a57f6e)
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6289138/#sup1
