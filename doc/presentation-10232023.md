@@ -33,6 +33,11 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6289138/#sup1
 ### Future research to enable deep-time DNA
 - Kjaer et al (11) found that DNA adsorbed preferentially to clay mineral surfaces compared to non-clay surfaces, and in particular to the clay mineral smectite, which can <ins>bind 200 times more DNA than quartz</ins> and is a common mineral in terrestrial samples. Their best performing extraction protocol recovered 40% of DNA bound to quartz and only 5% of DNA bound to smectite.
 - Massilani et al (47), for example, showed DNA preserved in cave sediment is concentrated in <ins>micro-scale particles, especially fragments of bone</ins> and feces preserved within the substrate.
+- 100 picograms of DNA into libraries using the Santa Cruz method (25), library preparation has been shown to typically convert only around 10–50% of extracted DNA (21)
+- challenges to ancient DNA authentication and identification as well as to reference-guided genome assembly.
+  - multi-species variation graphs that incorporate variants from several genomes (52),
+  - reference-based taxonomic assignment is always limited to sequences deposited in public databases, the ongoing population of these databases will continue to improve robust identification of DNA recovered from Early and Middle Pleistocene remains and sediments.
+- luminescence and electron spin resonance [ESR]) and amino acid (AA) geochronology [36252044/](https://pubmed.ncbi.nlm.nih.gov/36252044/) - half-life of carbon-14 < ~50 ka. 
 <details>
 <summary>Algorithms </summary>
 - FASTME: https://academic.oup.com/mbe/article/32/10/2798/1212138
