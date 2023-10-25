@@ -17,7 +17,7 @@ figure from [[37797036]]
 >Hydrolytic deamination, another common form of chemical damage, converts cytosine to uracil and is observed as thymine in sequencing data, or “C-to-T transitions” (Fig. 2C). Deamination occurs primarily near strand ends and in single-stranded DNA (17, 21, 22; Fig. 2E)
 
 ![image](https://github.com/hmgene/fossil-c/assets/23003112/d781c621-786e-4fc8-bfae-912fa8a57f6e)
-file:///Users/oannes/Downloads/bty507_supplementary_tables_and_figures.pdf
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6289138/#sup1
 
 
 
