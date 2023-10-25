@@ -21,7 +21,9 @@ pubmed id: [[37797036]]
 >Hydrolytic deamination, another common form of chemical damage, converts cytosine to uracil and is observed as thymine in sequencing data, or “C-to-T transitions” (Fig. 2C). Deamination occurs primarily near strand ends and in single-stranded DNA (17, 21, 22; Fig. 2E)
  
 ![image](https://github.com/hmgene/fossil-c/assets/23003112/9b626169-aa5d-4b41-90d2-bf081993baab)
+> In 1993, Lindahl estimated that hydrolytic depurination would lead to complete degradation of DNA molecules within several tens of thousands of years (17).
 
+>However, the maximum age of recoverable and useful DNA molecules—those that are long enough to retain information—remains uncertain.
 ![image](https://github.com/hmgene/fossil-c/assets/23003112/d86344c8-7419-4f26-9afd-e9cd3dc2effe)
 
 ![image](https://github.com/hmgene/fossil-c/assets/23003112/d781c621-786e-4fc8-bfae-912fa8a57f6e)
