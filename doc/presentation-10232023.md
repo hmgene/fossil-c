@@ -27,6 +27,30 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6289138/#sup1
 - FASTME: https://academic.oup.com/mbe/article/32/10/2798/1212138
 </details>
 
+<details>
+<summary>Sequence data processing and mapping [PMC7116897](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7116897/)</summary>
+We combined our obtained sequence data with that from previously published40 elephantid
+genomes that include all extant and three extinct species (Table S2). For the five samples
+>sequenced here, we trimmed adapters and merged paired-end reads using SeqPrep 1.141, initially
+retaining reads either ≥25 bp (Krestovka, Adycha, Chukochya) or ≥30 bp (Scotland, Kanchalan),
+and with a minor modification in the source code that allowed us to choose the best base quality
+score in the merged region instead of aggregating the scores42. Three of the ancient genomes in
+the dataset had been treated with the afu UDG enzyme (the straight-tusked elephant and the
+Scotland and Kanchalan mammoths, Table S2), which leaves post-mortem DNA damage at the
+DNA fragment termini. Therefore, for these samples, we removed the first and last two base pairs
+from all reads before mapping in order to minimize erroneous bases. Next, we mapped the
+merged reads to a composite reference consisting of the African savannah elephant nuclear
+genome (LoxAfr4), woolly mammoth mitogenome (Krause mammoth, DQ188829), and the
+human genome (hg19) using BWA aln v0.7.8 with deactivated seeding (-l 16,500), allowing for
+more substitutions (-n 0.01) and up to two gaps (-o 2)43,44. We used Samtools v0.1.1945 to process
+the alignment and filter reads with mapping quality below 30 and we used BEDtools v.2.27.146 to
+split the elephant- and mammoth-mapped regions of autosomes, chromosome X and
+mitogenomes. Next, we removed PCR duplicates from the alignments using a python script
+(github.com/pontussk/samremovedup) that takes into account both start and end positions of the
+reads following Palkopoulou et al.42. Finally, we removed all reads below 35 base pairs from the
+BAM-files using samtools to filter out spurious mappings (see Supplementary Section 4).
+</details>
+
 
 
 [[37797036]] Deep-time paleogenomics and the limits of DNA survival
