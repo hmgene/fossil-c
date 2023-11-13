@@ -154,6 +154,8 @@ done
 
 
 ## Articles
+Protein sequences bound to mineral surfaces persist into deep time https://pubmed.ncbi.nlm.nih.gov/27668515/ 
+
 Soft sheets of fibrillar bone from a fossil of the supraorbital horn of the dinosaur Triceratops horridus
 
 Three-dimensional genome architecture persists in a 52,000-year-old
