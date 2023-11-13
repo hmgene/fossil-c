@@ -26,13 +26,13 @@ if [ $# -lt 1 ];then echo "$usage";return; fi
                         if($y=~/[SI]/){
 				next if( $r{$c} < $g+$x);
 
-				my $n=join(",", $d[0],"$d[5]::$x$y",$q,$q+$x,lc substr($seq,$q,$x),$t);
+				my $n=join(",", $d[0],$d[5],$q,$q+$x,lc substr($seq,$q,$x),$t);
 				print join("\t",$c,$g,$g+$x,$n,0,$t),"\n";
                                 $q+=$x;
                         }elsif($y=~/[MX=]/){
 				next if( $r{$c} < $g+$x);
 
-				my $n=join(",", $d[0],"$d[5]::$x$y",$q,$q+$x,uc substr($seq,$q,$x),$t);
+				my $n=join(",", $d[0],$d[5],$q,$q+$x,uc substr($seq,$q,$x),$t);
 				print join("\t",$c,$g,$g+$x,$n,0,$t),"\n";
                                 $q+=$x; $g+=$x;
                         }elsif($y=~/[DN]/){
