@@ -1,3 +1,6 @@
+https://metagraph.ethz.ch/
+- query, annotation, build Bruijin graph
+  
 Deep-time paleogenomics and the limits of DNA survival
 ```download
 wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR502/003/ERR5024913/ERR5024913_2.fastq.gz
