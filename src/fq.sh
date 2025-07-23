@@ -1,3 +1,7 @@
+
+
+
+
 fq-fil-id(){
 usage="$FUNCNAME <fastq>[.gz] <id file> [-v]
         -v : exclude (default include)
