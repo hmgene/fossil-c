@@ -1,0 +1,31 @@
+#!/bin/bash
+#BASEDIR=$(dirname $(realpath "$0"));
+this=${BASH_SOURCE##*/}
+BASEDIR=$( cd "$(dirname "$0")" ; pwd -P )
+home(){ echo $BASEDIR; }
+list(){
+    if [ $# -gt 0 ];then
+        $this declare -f $@
+    else
+        $this declare -F | sed 's/declare -f //g' ;
+    fi
+}
+export CNV_HOME=$BASEDIR;
+export PYTHONPATH=$BASEDIR;
+export PATH=$CNV_HOME/bin:$PATH;
+
+if [ $# -lt 1 ];then
+cat<<eof
+    $this tools (v0.1)
+    Author: Hyunmin Kim, human.gim@gmail.com
+    Usage:  $this <subcommand>
+    e.g.) $BASH_SOURCE list
+eof
+
+else
+        for f in $BASEDIR/src/*.sh;do
+            . $f
+        done
+        ${@:1}
+fi
+

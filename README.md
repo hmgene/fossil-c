@@ -1,5 +1,9 @@
 # fossil-c Bracky & T-rex
 
+### installation
+```
+```
+
 ### DNA-damage anallysis example : 
 Three are from the same origin. 
 - 33M has 3' G->A (C-to-T)
