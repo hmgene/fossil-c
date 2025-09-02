@@ -2,6 +2,7 @@
 
 ### installation
 ```
+mamba env update -n dino_env -f dino_env.yml
 ```
 
 ### DNA-damage anallysis example : 
