@@ -1,4 +1,7 @@
 
+#bwa/allMis1/allMis1.fa.gz.sa  bwa/danRer11/danRer11.fa.gz.sa  bwa/hg38/hg38.fa.gz.sa        bwa/sCam/sCam.fa.gz.sa
+#bwa/anoCar2/anoCar2.fa.gz.sa  bwa/galGal6/galGal6.fa.gz.sa    bwa/ornAna2/ornAna2.fa.gz.sa
+
 rr=( allMis1 danRer11 hg38 anoCar2 galGal6 sCam )
 t=16 ## threads
 mem=64g
