@@ -1,0 +1,39 @@
+
+input=(
+bigdata/leehom/Brachy_Blank.fq.gz
+bigdata/leehom/Brachy_cells.fq.gz
+bigdata/leehom/Brachy_c_sedi.fq.gz
+bigdata/leehom/Brachy_vessels.fq.gz
+bigdata/leehom/Brachy_v_sedi.fq.gz
+bigdata/leehom/Trex_cells.fq.gz
+bigdata/leehom/Trex_c_sedi.fq.gz
+bigdata/leehom/Trex_ExtrBlank.fq.gz
+bigdata/leehom/Trex_vessels.fq.gz
+bigdata/leehom/Trex_v_sedi.fq.gz
+)
+
+fn(){
+	echo "#!/bin//bash
+	gunzip -dc $1 |  fo fq-len - > $1.len
+	" | sbatch --mem=24g -c 4
+};export -f fn;
+
+#parallel fn {} ::: ${input[@]}
+for f in ${input[@]/%/.len};do
+	n=${f##*/};n=${n%.fq.gz*};
+	cat $f | awk -v OFS="\t" -v n=$n  '{print n,$1,$2;}'
+done |  Rscript <( echo '
+	tt=read.table("stdin");
+
+	library(ggplot2)
+library(dplyr)
+
+p=ggplot(tt, aes(x = factor(V2), y = V3, fill = V1)) +
+  geom_bar(stat = "identity", position = "identity", alpha = 0.6) +
+  labs(x = "V2", y = "V3", title = "Overlayed barplots by V1") +
+  theme_minimal() +
+  scale_fill_brewer(palette = "Set1")
+  ggsave("o.png", plot = p, width = 6, height = 4, dpi = 300)
+	
+')
+
