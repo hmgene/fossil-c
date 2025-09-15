@@ -13,7 +13,7 @@ knitr:
 ## Trimmed and Pair-Merged Read Lengths 
 - Reads were merged using LeeHom
 
-```{r setup, echo=FALSE, warning=FALSE, message=FALSE}
+```{r len, echo=FALSE, warning=FALSE, message=FALSE}
 
 library(data.table)
 library(ggplot2)
@@ -49,7 +49,7 @@ ggplot(tt, aes(x = read_len, y = count, color = type)) +
 | UniVec         | ✅       | Vector contamination sequences                    |
 | UniVec_Core    | ✅       | Core vector sequences                             |
 
-```{r setup, echo=FALSE, warning=FALSE, message=FALSE}
+```{r contam, echo=FALSE, warning=FALSE, message=FALSE}
 library(knitr)
 tt=fread("kr_report_domain2phylom.csv")
 kable(tt, format = "markdown", digits = 2, caption = "Kraken report: domain proportions by sample")
