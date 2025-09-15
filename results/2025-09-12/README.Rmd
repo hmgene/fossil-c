@@ -1,4 +1,3 @@
-
 ---
 title: "Fossil-C Profile" 
 author: "Hyunmin Kim"
@@ -12,6 +11,7 @@ knitr:
 ---
 
 ## Trimmed Lengths 
+
 ```{r setup} 
 library(data.table)
 library(ggplot2)
@@ -23,5 +23,6 @@ p=ggplot(tt, aes(x = factor(V2), y = V3, fill = V1)) +
   labs(x = "V2", y = "V3", title = "Overlayed barplots by V1") +
   theme_minimal() +
   scale_fill_brewer(palette = "Set1")
- ```
+
+```
 	
