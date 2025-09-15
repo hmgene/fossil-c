@@ -1,0 +1,32 @@
+/usr/bin/which: no mamba in (/usr/bin:/usr/sbin:/usr/local/clusters/pioneer/bin:/usr/local/bin:/usr/local/sbin:/opt/dell/srvadmin/bin)
+Error unknown MAMBA_EXE: "", filename must be mamba or micromamba
+critical libmamba Cannot activate, prefix does not exist at: '/mnt/vstor/SOM_GENE_BEG33/mamba/miniforge3/envs/dyno_env'
+[bwa_aln] 17bp reads: max_diff = 2
+[bwa_aln] 22bp reads: max_diff = 3
+[bwa_aln] 42bp reads: max_diff = 4
+[bwa_aln] 64bp reads: max_diff = 5
+[bwa_aln] 90bp reads: max_diff = 6
+[bwa_aln] 117bp reads: max_diff = 7
+[bwa_aln] 146bp reads: max_diff = 8
+[bwa_aln] 176bp reads: max_diff = 9
+[bwa_aln] 207bp reads: max_diff = 10
+[bwa_aln] 239bp reads: max_diff = 11
+[bwa_aln_core] calculate SA coordinate... 284.11 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 262144 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 279.08 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 524288 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 277.63 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 786432 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 267.26 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 1048576 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 266.18 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 1310720 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 259.09 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 1572864 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 

@@ -1,0 +1,74 @@
+/usr/bin/which: no mamba in (/usr/bin:/usr/sbin:/usr/local/clusters/pioneer/bin:/usr/local/bin:/usr/local/sbin:/opt/dell/srvadmin/bin)
+Error unknown MAMBA_EXE: "", filename must be mamba or micromamba
+critical libmamba Cannot activate, prefix does not exist at: '/mnt/vstor/SOM_GENE_BEG33/mamba/miniforge3/envs/dyno_env'
+[bwa_aln] 17bp reads: max_diff = 2
+[bwa_aln] 22bp reads: max_diff = 3
+[bwa_aln] 42bp reads: max_diff = 4
+[bwa_aln] 64bp reads: max_diff = 5
+[bwa_aln] 90bp reads: max_diff = 6
+[bwa_aln] 117bp reads: max_diff = 7
+[bwa_aln] 146bp reads: max_diff = 8
+[bwa_aln] 176bp reads: max_diff = 9
+[bwa_aln] 207bp reads: max_diff = 10
+[bwa_aln] 239bp reads: max_diff = 11
+[bwa_aln_core] calculate SA coordinate... 86.91 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 262144 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 86.24 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 524288 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 86.68 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 786432 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 85.76 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 1048576 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 85.04 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 1310720 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 84.45 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 1572864 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 85.13 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 1835008 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 81.97 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 2097152 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 84.18 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 2359296 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 82.54 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 2621440 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 83.77 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 2883584 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 83.25 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 3145728 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 82.75 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 3407872 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 87.26 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 3670016 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 83.85 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 3932160 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 85.66 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 4194304 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 83.33 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 4456448 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 80.88 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 4718592 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 84.32 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 4980736 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 80.62 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 5242880 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 

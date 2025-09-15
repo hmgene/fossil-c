@@ -16,10 +16,11 @@ for f in ${input[@]};do
 	n=${f##*/};n=${n%_S*};
 	o=/mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/leehom/$n
 	mkdir -p ${o%/*}
-	echo "#!/bin/bash 
+	[ -s $o.fq.gz ] || echo "#!/bin/bash 
 	dino leeHom --ancientdna -t 16 \
 		-f AGATCGGAAGAGCACACGTCTGAACTCCAGTCA \
 		-s AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT \
 	-fq1 $f -fq2 ${f/_R1/_R2}  -fqo $o
+        gunzip -dc $o.fq.gz |  fo fq-len - > $o.len
 	" | sbatch --mem=64g -c 24
 done
