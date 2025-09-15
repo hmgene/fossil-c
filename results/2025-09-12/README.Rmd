@@ -12,7 +12,7 @@ knitr:
 
 ## Trimmed Lengths 
 
-```{r setup, include=T}
+```{r setup, include=F}
 knitr::opts_chunk$set( echo = F, warning = F, message = F)
 
 library(data.table)
