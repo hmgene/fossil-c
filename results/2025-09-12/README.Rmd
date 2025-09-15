@@ -12,7 +12,8 @@ knitr:
 
 ## Trimmed Lengths 
 
-```{r setup } 
+```{r setup, include=T}
+knitr::opts_chunk$set( echo = F, warning = F, message = F)
 
 library(data.table)
 library(ggplot2)

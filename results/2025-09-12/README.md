@@ -1,5 +1,7 @@
 ## Trimmed Lengths
 
+    knitr::opts_chunk$set( echo = F, warning = F, message = F)
+
     library(data.table)
 
     ## Warning: package 'data.table' was built under R version 4.2.3
