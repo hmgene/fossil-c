@@ -12,7 +12,7 @@ knitr:
 
 ## Trimmed Lengths 
 
-```{r setup} 
+```{r setup echo=F} 
 
 library(data.table)
 library(ggplot2)
