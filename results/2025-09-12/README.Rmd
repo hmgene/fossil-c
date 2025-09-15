@@ -22,6 +22,7 @@ tt <- fread("len.txt", sep="\t", header=FALSE)
 setnames(tt,c("group","sample","read_len","count"))
 tt$sample <- factor(tt$sample , levels = unique(tt$sample))
 tt[, type := sub("^[^_]+_(.*)$", "\\1", sample)]
+tt[, type := ifelse(type=="ExtrBlank","Blank",type)]
 
 ggplot(tt, aes(x = read_len, y = count, color = type)) +
   geom_line(alpha = 1, size=1.5) +
