@@ -80,4 +80,10 @@ critical libmamba Cannot activate, prefix does not exist at: '/mnt/vstor/SOM_GEN
 [bwa_aln_core] calculate SA coordinate... 90.97 sec
 [bwa_aln_core] write to the disk... 0.01 sec
 [bwa_aln_core] 6029312 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 89.63 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 6291456 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 84.67 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 6553600 sequences have been processed.
 [bwa_aln_core] calculate SA coordinate... 
