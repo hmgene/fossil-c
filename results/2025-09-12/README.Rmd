@@ -18,14 +18,17 @@ library(data.table)
 library(ggplot2)
 library(dplyr)
 tt <- fread("len.txt", sep="\t", header=FALSE)
-tt$V2 <- factor(tt$V2, levels = unique(tt$V2))
-p <- ggplot(tt, aes(x = V2, y = V3, fill = V1)) +
-  geom_bar(stat = "identity", position = "identity", alpha = 0.6) +  # overlay
-  labs(x = "V2", y = "V3", title = "Overlayed barplots by V1") +
-  theme_minimal() +
-  scale_fill_brewer(palette = "Set1")
+setnames(tt,c("group","sample","read_len","count"))
+tt$sample <- factor(tt$sample , levels = unique(tt$sample))
+tt[, type := sub("^[^_]+_(.*)$", "\\1", sample)]
 
-p
+ggplot(tt, aes(x = read_len, y = count, color = type)) +
+  geom_line(alpha = 0.7) +
+  facet_wrap(~group, scales = "free") +   
+  labs(x = "read_len", y = "count", title = "Distribution of Read_len") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+
 
 ```
 	
