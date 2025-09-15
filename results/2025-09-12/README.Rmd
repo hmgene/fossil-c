@@ -10,7 +10,8 @@ knitr:
     message: false
 ---
 
-## Trimmed Lengths 
+## Trimmed and Pair-Merged Read Lengths 
+- Reads were merged using LeeHom
 
 ```{r setup, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -23,7 +24,7 @@ tt$sample <- factor(tt$sample , levels = unique(tt$sample))
 tt[, type := sub("^[^_]+_(.*)$", "\\1", sample)]
 
 ggplot(tt, aes(x = read_len, y = count, color = type)) +
-  geom_line(alpha = 0.7) +
+  geom_line(alpha = 1, size=1.5) +
   facet_wrap(~group, scales = "free") +   
   labs(x = "read_len", y = "count", title = "Distribution of Read_len") +
   theme_minimal() +
