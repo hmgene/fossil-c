@@ -83,8 +83,8 @@ Kraken report: domain proportions by sample
 <col style="width: 12%" />
 <col style="width: 14%" />
 <col style="width: 17%" />
-<col style="width: 18%" />
-<col style="width: 11%" />
+<col style="width: 19%" />
+<col style="width: 10%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -94,7 +94,7 @@ Kraken report: domain proportions by sample
 <th style="text-align: right;">______Bacillati</th>
 <th style="text-align: right;">______Opisthokonta</th>
 <th style="text-align: right;">______Pseudomonadati</th>
-<th style="text-align: right;">unclassified</th>
+<th style="text-align: right;">classified</th>
 </tr>
 </thead>
 <tbody>
@@ -105,7 +105,7 @@ Kraken report: domain proportions by sample
 <td style="text-align: right;">4.29</td>
 <td style="text-align: right;">12.63</td>
 <td style="text-align: right;">5.79</td>
-<td style="text-align: right;">76.24</td>
+<td style="text-align: right;">23.76</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Brachy_c_sedi</td>
@@ -114,7 +114,7 @@ Kraken report: domain proportions by sample
 <td style="text-align: right;">3.90</td>
 <td style="text-align: right;">1.41</td>
 <td style="text-align: right;">9.38</td>
-<td style="text-align: right;">84.18</td>
+<td style="text-align: right;">15.82</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Brachy_cells</td>
@@ -123,7 +123,7 @@ Kraken report: domain proportions by sample
 <td style="text-align: right;">7.57</td>
 <td style="text-align: right;">0.00</td>
 <td style="text-align: right;">9.47</td>
-<td style="text-align: right;">81.47</td>
+<td style="text-align: right;">18.53</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Brachy_v_sedi</td>
@@ -132,7 +132,7 @@ Kraken report: domain proportions by sample
 <td style="text-align: right;">3.49</td>
 <td style="text-align: right;">2.96</td>
 <td style="text-align: right;">6.12</td>
-<td style="text-align: right;">86.39</td>
+<td style="text-align: right;">13.61</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Brachy_vessels</td>
@@ -141,7 +141,7 @@ Kraken report: domain proportions by sample
 <td style="text-align: right;">8.72</td>
 <td style="text-align: right;">0.00</td>
 <td style="text-align: right;">8.87</td>
-<td style="text-align: right;">80.26</td>
+<td style="text-align: right;">19.74</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Trex_ExtrBlank</td>
@@ -150,7 +150,7 @@ Kraken report: domain proportions by sample
 <td style="text-align: right;">5.15</td>
 <td style="text-align: right;">38.23</td>
 <td style="text-align: right;">5.66</td>
-<td style="text-align: right;">49.36</td>
+<td style="text-align: right;">50.64</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Trex_c_sedi</td>
@@ -159,7 +159,7 @@ Kraken report: domain proportions by sample
 <td style="text-align: right;">1.32</td>
 <td style="text-align: right;">5.25</td>
 <td style="text-align: right;">5.76</td>
-<td style="text-align: right;">87.19</td>
+<td style="text-align: right;">12.81</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Trex_cells</td>
@@ -168,7 +168,7 @@ Kraken report: domain proportions by sample
 <td style="text-align: right;">0.00</td>
 <td style="text-align: right;">4.77</td>
 <td style="text-align: right;">3.73</td>
-<td style="text-align: right;">89.61</td>
+<td style="text-align: right;">10.39</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Trex_v_sedi</td>
@@ -177,7 +177,7 @@ Kraken report: domain proportions by sample
 <td style="text-align: right;">0.00</td>
 <td style="text-align: right;">0.00</td>
 <td style="text-align: right;">2.18</td>
-<td style="text-align: right;">95.62</td>
+<td style="text-align: right;">4.38</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Trex_vessels</td>
@@ -186,7 +186,7 @@ Kraken report: domain proportions by sample
 <td style="text-align: right;">3.31</td>
 <td style="text-align: right;">0.00</td>
 <td style="text-align: right;">8.09</td>
-<td style="text-align: right;">87.89</td>
+<td style="text-align: right;">12.11</td>
 </tr>
 </tbody>
 </table>

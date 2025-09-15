@@ -52,6 +52,8 @@ ggplot(tt, aes(x = read_len, y = count, color = type)) +
 ```{r contam, echo=FALSE, warning=FALSE, message=FALSE}
 library(knitr)
 tt=fread("kr_report_domain2phylom.csv")
+tt[,classified := 100 - unclassified]
+tt[,unclassified := NULL]
 kable(tt, format = "markdown", digits = 2, caption = "Kraken report: domain proportions by sample")
 
 taxa_cols <- setdiff(names(tt), "sample")
@@ -61,12 +63,16 @@ tt_long <- melt(tt, id.vars = "sample", variable.name = "taxa", value.name = "pe
 tt_long[, taxa_clean := gsub("_+", "", taxa)]  # remove underscores
 tt_long[, depth := nchar(gsub("[^_]", "", taxa))]  # underscore count
 
-tt_long[, rank := fifelse(depth == 0, "unclassfied(filter passed)",
+tt_long[, rank := fifelse(depth == 0, "classified",
                    fifelse(depth <= 2, "domain",
                    fifelse(depth <= 4, "phylum/clade",
                    fifelse(depth <= 6, "class",
                    fifelse(depth <= 8, "order",
                    fifelse(depth <= 10, "family", "genus/species"))))))]
+rank_levels <- c("classified", "domain", "phylum/clade", "class", "order", "family", "genus/species")
+
+tt_long[, rank := factor(rank, levels = rank_levels)]
+
 
 ggplot(tt_long, aes(x = sample, y = percent, fill = taxa_clean)) +
   geom_bar(stat = "identity", color = "black") +
