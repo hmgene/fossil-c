@@ -16,11 +16,15 @@ for f in ${input[@]};do
 	n=${f##*/};n=${n%_S*};
 	o=/mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/leehom/$n
 	mkdir -p ${o%/*}
-	[ -s $o.fq.gz ] || echo "#!/bin/bash 
-	dino leeHom --ancientdna -t 16 \
-		-f AGATCGGAAGAGCACACGTCTGAACTCCAGTCA \
-		-s AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT \
-	-fq1 $f -fq2 ${f/_R1/_R2}  -fqo $o
-        gunzip -dc $o.fq.gz |  fo fq-len - > $o.len
-	" | sbatch --mem=64g -c 24
+	echo "#!/bin/bash 
+	#dino leeHom --ancientdna -t 16 \
+	#	-f AGATCGGAAGAGCACACGTCTGAACTCCAGTCA \
+	#	-s AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT \
+	#-fq1 $f -fq2 ${f/_R1/_R2}  -fqo $o
+        #gunzip -dc $o.fq.gz |  fo fq-len - > $o.len
+        gunzip -dc $o.fq.gz |  wc -l > $o.n
+	gunzip -dc ${o}_r1.fail.fq.gz | wc -l >> $o.n
+	awk '{ s+=\$1;}END{ print s/4;}' $o.n  > $o.n.tmp
+	mv $o.n.tmp $o.n
+	" #| sbatch --mem=64g -c 24
 done

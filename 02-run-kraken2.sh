@@ -5,9 +5,9 @@ bigdata/leehom/Brachy_cells.fq.gz
 bigdata/leehom/Brachy_c_sedi.fq.gz
 bigdata/leehom/Brachy_vessels.fq.gz
 bigdata/leehom/Brachy_v_sedi.fq.gz
-#bigdata/leehom/Trex_cells.fq.gz
-#bigdata/leehom/Trex_c_sedi.fq.gz
-#bigdata/leehom/Trex_ExtrBlank.fq.gz
+bigdata/leehom/Trex_cells.fq.gz
+bigdata/leehom/Trex_c_sedi.fq.gz
+bigdata/leehom/Trex_ExtrBlank.fq.gz
 bigdata/leehom/Trex_vessels.fq.gz
 bigdata/leehom/Trex_v_sedi.fq.gz
 
@@ -18,7 +18,7 @@ for f in ${input[@]};do
         o=/mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/kr2/results/$n
         mkdir -p ${o%/*}
 
-	echo "#!/bin/bash 
+	[ -s $o.k2_report.txt ] || echo "#!/bin/bash 
 	dino kraken2 --db $db --report $o.k2_report.txt --report-minimizer-data \
     	--output $o.k2_output.txt $f
 	" | sbatch --mem=256g -c 24 -p smp
