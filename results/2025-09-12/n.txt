@@ -1,0 +1,11 @@
+g,s,m,u
+Brachy,Brachy_Blank,37769522,713428
+Brachy,Brachy_cells,278771713,2213151
+Brachy,Brachy_c_sedi,42379196,233072
+Brachy,Brachy_vessels,126053722,671722
+Brachy,Brachy_v_sedi,8425658,608182
+Trex,Trex_cells,171724236,442347
+Trex,Trex_c_sedi,46600971,854542
+Trex,Trex_ExtrBlank,16813817,3101220
+Trex,Trex_vessels,212127552,1482091
+Trex,Trex_v_sedi,13906386,13021770

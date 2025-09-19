@@ -1,0 +1,3 @@
+ gunzip -dc /mnt/vstor/SOM_GENE_BEG33/data/082725_NovaSeq-X_A_lane2/Brachy_Blank_S9_L002_R1_001.fastq.gz | sed -n '2~4p' | head -n 10000 \
+	 | awk  '{ print index($1,"AGATCGGAAGAGCACACGTCTGAACTCCAGTCA");}' | sort | uniq -c | sort -nrk 1 | head 
+

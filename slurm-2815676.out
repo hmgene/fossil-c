@@ -1,0 +1,149 @@
+[bwa_aln] 17bp reads: max_diff = 2
+[bwa_aln] 22bp reads: max_diff = 3
+[bwa_aln] 42bp reads: max_diff = 4
+[bwa_aln] 64bp reads: max_diff = 5
+[bwa_aln] 90bp reads: max_diff = 6
+[bwa_aln] 117bp reads: max_diff = 7
+[bwa_aln] 146bp reads: max_diff = 8
+[bwa_aln] 176bp reads: max_diff = 9
+[bwa_aln] 207bp reads: max_diff = 10
+[bwa_aln] 239bp reads: max_diff = 11
+[bwa_aln_core] calculate SA coordinate... 976.99 sec
+[bwa_aln_core] write to the disk... 0.04 sec
+[bwa_aln_core] 262144 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 960.54 sec
+[bwa_aln_core] write to the disk... 0.04 sec
+[bwa_aln_core] 524288 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 1005.45 sec
+[bwa_aln_core] write to the disk... 0.04 sec
+[bwa_aln_core] 786432 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 929.35 sec
+[bwa_aln_core] write to the disk... 0.04 sec
+[bwa_aln_core] 1048576 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 904.59 sec
+[bwa_aln_core] write to the disk... 0.04 sec
+[bwa_aln_core] 1310720 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 898.86 sec
+[bwa_aln_core] write to the disk... 0.04 sec
+[bwa_aln_core] 1572864 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 893.69 sec
+[bwa_aln_core] write to the disk... 0.04 sec
+[bwa_aln_core] 1835008 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 874.51 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 2097152 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 863.45 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 2359296 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 863.08 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 2621440 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 881.70 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 2883584 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 865.84 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 3145728 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 852.52 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 3407872 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 843.67 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 3670016 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 841.74 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 3932160 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 821.42 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 4194304 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 851.20 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 4456448 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 847.00 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 4718592 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 842.70 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 4980736 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 866.34 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 5242880 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 879.11 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 5505024 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 867.07 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 5767168 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 845.82 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 6029312 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 962.37 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 6291456 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 858.05 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 6553600 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 873.44 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 6815744 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 845.46 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 7077888 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 863.86 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 7340032 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 870.91 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 7602176 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 863.63 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 7864320 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 861.79 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 8126464 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 841.82 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 8388608 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 850.91 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 8650752 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 848.82 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 8912896 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 861.98 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 9175040 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 837.59 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 9437184 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 856.41 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 9699328 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 900.16 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 9961472 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 942.19 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 10223616 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 933.78 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 10485760 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 930.95 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 10747904 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 912.48 sec
+[bwa_aln_core] write to the disk... 0.02 sec
+[bwa_aln_core] 11010048 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 872.37 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 11272192 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 876.76 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 11534336 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 879.25 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 11796480 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 896.10 sec
+[bwa_aln_core] write to the disk... 0.03 sec
+[bwa_aln_core] 12058624 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 
