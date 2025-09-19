@@ -18,7 +18,8 @@ for f in ${input[@]};do
         o=/mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/kr2/results/$n
         mkdir -p ${o%/*}
 
-	[ -s $o.k2_report.txt ] || echo "#!/bin/bash 
+	#[ -s $o.k2_report.txt ] || \
+	echo "#!/bin/bash 
 	dino kraken2 --db $db --report $o.k2_report.txt --report-minimizer-data \
     	--output $o.k2_output.txt $f
 	" | sbatch --mem=256g -c 24 -p smp

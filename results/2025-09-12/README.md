@@ -14,67 +14,65 @@
 <col style="width: 65%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Taxa</th>
 <th style="text-align: center;">Included</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Archaea</td>
 <td style="text-align: center;">✅</td>
 <td>Single-celled microorganisms distinct from bacteria</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Bacteria</td>
 <td style="text-align: center;">✅</td>
 <td>Prokaryotic microorganisms</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Human</td>
 <td style="text-align: center;">✅</td>
 <td>Host genome sequences</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Plasmid</td>
 <td style="text-align: center;">✅</td>
 <td>Extrachromosomal DNA elements</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Viral</td>
 <td style="text-align: center;">✅</td>
 <td>Viruses including phages</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Fungi</td>
 <td style="text-align: center;">✅</td>
 <td>Eukaryotic organisms such as yeasts and molds</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Plant</td>
 <td style="text-align: center;">❌</td>
 <td>Plant sequences (commented out / optional)</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Protozoa</td>
 <td style="text-align: center;">✅</td>
 <td>Single-celled eukaryotes</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>UniVec</td>
 <td style="text-align: center;">✅</td>
 <td>Vector contamination sequences</td>
 </tr>
-<tr class="even">
+<tr>
 <td>UniVec_Core</td>
 <td style="text-align: center;">✅</td>
 <td>Core vector sequences</td>
 </tr>
 </tbody>
 </table>
-
-Kraken report: domain proportions by sample
 
 <table>
 <colgroup>
@@ -87,7 +85,7 @@ Kraken report: domain proportions by sample
 <col style="width: 10%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: left;">sample</th>
 <th style="text-align: right;">____Bacteria</th>
 <th style="text-align: right;">____Eukaryota</th>
@@ -98,7 +96,7 @@ Kraken report: domain proportions by sample
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">Brachy_Blank</td>
 <td style="text-align: right;">10.36</td>
 <td style="text-align: right;">12.69</td>
@@ -107,7 +105,7 @@ Kraken report: domain proportions by sample
 <td style="text-align: right;">5.79</td>
 <td style="text-align: right;">23.76</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">Brachy_c_sedi</td>
 <td style="text-align: right;">14.12</td>
 <td style="text-align: right;">1.42</td>
@@ -116,7 +114,7 @@ Kraken report: domain proportions by sample
 <td style="text-align: right;">9.38</td>
 <td style="text-align: right;">15.82</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">Brachy_cells</td>
 <td style="text-align: right;">18.17</td>
 <td style="text-align: right;">0.00</td>
@@ -125,7 +123,7 @@ Kraken report: domain proportions by sample
 <td style="text-align: right;">9.47</td>
 <td style="text-align: right;">18.53</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">Brachy_v_sedi</td>
 <td style="text-align: right;">10.25</td>
 <td style="text-align: right;">2.99</td>
@@ -134,7 +132,7 @@ Kraken report: domain proportions by sample
 <td style="text-align: right;">6.12</td>
 <td style="text-align: right;">13.61</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">Brachy_vessels</td>
 <td style="text-align: right;">18.64</td>
 <td style="text-align: right;">0.00</td>
@@ -143,7 +141,7 @@ Kraken report: domain proportions by sample
 <td style="text-align: right;">8.87</td>
 <td style="text-align: right;">19.74</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">Trex_ExtrBlank</td>
 <td style="text-align: right;">11.17</td>
 <td style="text-align: right;">38.35</td>
@@ -152,7 +150,7 @@ Kraken report: domain proportions by sample
 <td style="text-align: right;">5.66</td>
 <td style="text-align: right;">50.64</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">Trex_c_sedi</td>
 <td style="text-align: right;">7.21</td>
 <td style="text-align: right;">5.28</td>
@@ -161,7 +159,7 @@ Kraken report: domain proportions by sample
 <td style="text-align: right;">5.76</td>
 <td style="text-align: right;">12.81</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">Trex_cells</td>
 <td style="text-align: right;">4.74</td>
 <td style="text-align: right;">4.80</td>
@@ -170,7 +168,7 @@ Kraken report: domain proportions by sample
 <td style="text-align: right;">3.73</td>
 <td style="text-align: right;">10.39</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">Trex_v_sedi</td>
 <td style="text-align: right;">3.25</td>
 <td style="text-align: right;">0.00</td>
@@ -179,7 +177,7 @@ Kraken report: domain proportions by sample
 <td style="text-align: right;">2.18</td>
 <td style="text-align: right;">4.38</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">Trex_vessels</td>
 <td style="text-align: right;">11.62</td>
 <td style="text-align: right;">0.00</td>
