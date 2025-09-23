@@ -1,5 +1,5 @@
 sam2bed(){
-usage="$FUNCNAME <sam>
+usage="$FUNCNAME <sam+header>
 ref: https://samtools.github.io/hts-specs/SAMv1.pdf
 "
 if [ $# -lt 1 ];then echo "$usage";return; fi
@@ -12,7 +12,8 @@ if [ $# -lt 1 ];then echo "$usage";return; fi
 		return $y/length($x);
 	}
 	while(<STDIN>){ chomp;my@d=split/\t/,$_; 
-		if( $_=~/SN:(\w+)\tLN:(\d+)/ ){
+		if( $_=~/SN:(.+)\tLN:(\d+)/ ){
+			print "$1 $2\n";
 			$r{ $1 } = $2; next;
 		}
                 my ($c,$s,$seq)=($d[2],$d[3]-1,$d[9]);
@@ -20,18 +21,15 @@ if [ $# -lt 1 ];then echo "$usage";return; fi
 
                 my $q=0; ## query pos
                 my $g=$s; ## genomic pos
-
                 while($d[5]=~/(\d+)([SNXMID])/g){
                         my ($x,$y)=($1,$2);
                         if($y=~/[SI]/){
 				next if( $r{$c} < $g+$x);
-
 				my $n=join(",", $d[0],$d[5],$q,$q+$x,lc substr($seq,$q,$x),$t);
 				print join("\t",$c,$g,$g+$x,$n,0,$t),"\n";
                                 $q+=$x;
                         }elsif($y=~/[MX=]/){
 				next if( $r{$c} < $g+$x);
-
 				my $n=join(",", $d[0],$d[5],$q,$q+$x,uc substr($seq,$q,$x),$t);
 				print join("\t",$c,$g,$g+$x,$n,0,$t),"\n";
                                 $q+=$x; $g+=$x;

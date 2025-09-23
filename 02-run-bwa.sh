@@ -31,10 +31,10 @@ for j in ${idx[@]};do
 	echo "#!/bin/bash -l
 	mamba activate dino_env
 
-	bwa aln $j $i -t 24 -n 0.01 -l 1000 -o 2 > $o.sai
-	bwa samse $j $o.sai $i -f $o.sam
-	samtools view -F0x4 -hb $o.sam | samtools sort - -@ 16 -T $o > $o.bam
-	fo gatk-run $o $o.bam $j 16
+	#bwa aln $j $i -t 24 -n 0.01 -l 1000 -o 2 > $o.sai
+	#bwa samse $j $o.sai $i -f $o.sam
+	#samtools view -F0x4 -hb $o.sam | samtools sort - -@ 16 -T $o > $o.bam
+	dino gatk-run $o $o.bam $j 16
 	#java -Xmx32g -jar bigdata/picard.jar MarkDuplicates \
 	#    I=${o}.bam  O=${o}.DR.bam  M=${o}.metrics.txt  REMOVE_DUPLICATES=True 
 	#samtools index -@ 8 ${o}.DR.bam

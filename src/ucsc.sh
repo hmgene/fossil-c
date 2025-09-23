@@ -1,8 +1,10 @@
 ucsc-urls(){
+i=${1:-galGal6}
 echo "
-https://hgdownload.soe.ucsc.edu/goldenPath/galGal6/bigZips/genes/galGal6.refGene.gtf.gz
-https://hgdownload.soe.ucsc.edu/goldenPath/galGal6/database/simpleRepeat.txt.gz
-https://hgdownload.soe.ucsc.edu/goldenPath/galGal6/database/nestedRepeats.txt.gz
+https://hgdownload.soe.ucsc.edu/goldenPath/$i/bigZips/genes/$i.refGene.gtf.gz
+https://hgdownload.soe.ucsc.edu/goldenPath/$i/bigZips/genes/$i.ensGene.gtf.gz
+https://hgdownload.soe.ucsc.edu/goldenPath/$i/database/simpleRepeat.txt.gz
+https://hgdownload.soe.ucsc.edu/goldenPath/$i/database/nestedRepeats.txt.gz
 "
 
 }
@@ -21,14 +23,14 @@ cat $1 | perl -ne 'chomp;my@d=split/\t/,$_;
 	}
 '
 }
-simplerep2bed(){
+ucsc-simplerep2bed(){
 #585     chr1    7       2473    trf     6       379.3   6       67      19      608     27      52      1       17      1.54    CCCAAT
 cat $1 | perl -ne 'chomp;my@d=split/\t/,$_;
 	print join("\t",@d[1..4],0,"+"),"\n";
 '
 }
 
-nestedrep2bed(){
+ucsc-nestedrep2bed(){
 usage='
 $FUNCNAME <nestedRepeats.txt>
 table schema:
