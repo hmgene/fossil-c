@@ -38,19 +38,20 @@ for s in ${samples[@]};do
 		b=bigdata/bwa/results/$s@$p.dedup.rg.bam
 		o=bigdata/stat/$s@$p.bed
 		mkdir -p ${o%/*}
-		echo "#!/bin/bash
-		source /mnt/vstor/SOM_GENE_BEG33/mamba/miniforge3/etc/profile.d/conda.sh
-		mamba activate dino_env
-		bamToBed -i $b | intersectBed -a stdin -b \
-			<( dino ucsc-simplerep2bed <( gunzip -dc bigdata/ucsc/anno/$p/simpleRepeat.txt.gz) ) -v |\
-			intersectBed -a stdin -b <( dino ucsc-nestedrep2bed <( gunzip -dc bigdata/ucsc/anno/$p/nestedRepeats.txt.gz))  -v > $o
-		" | sbatch 
-		f=bigdata/ucsc/anno/$p/nestedRepeats.txt.gz 
+		samtools view -q20 -F0x04 $b | dino sam2score - $p | head -n 1000000
+		#echo "#!/bin/bash
+		#source /mnt/vstor/SOM_GENE_BEG33/mamba/miniforge3/etc/profile.d/conda.sh
+		#mamba activate dino_env
+		#bamToBed -i $b | intersectBed -a stdin -b \
+		#	<( dino ucsc-simplerep2bed <( gunzip -dc bigdata/ucsc/anno/$p/simpleRepeat.txt.gz) ) -v |\
+		#	intersectBed -a stdin -b <( dino ucsc-nestedrep2bed <( gunzip -dc bigdata/ucsc/anno/$p/nestedRepeats.txt.gz))  -v > $o
+		#" | sbatch 
 		#echo "#!/bin/bash
 		#filt_kr $b $kr > ${b%.bam}.un_kr.bam
 		#" | sbatch --mem=64g -c 4
 		#gunzip -dc $f | dino simplerep2bed - | head
-	done
+	done  | dino score-max - | sort -k 1 
+	exit
 done
 
 exit

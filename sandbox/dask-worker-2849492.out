@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "/mnt/vstor/SOM_GENE_BEG33/mamba/miniforge3/envs/rapids/bin/dask-cuda-worker", line 11, in <module>
+    sys.exit(worker())
+  File "/mnt/vstor/SOM_GENE_BEG33/mamba/miniforge3/envs/rapids/lib/python3.10/site-packages/click/core.py", line 1462, in __call__
+    return self.main(*args, **kwargs)
+  File "/mnt/vstor/SOM_GENE_BEG33/mamba/miniforge3/envs/rapids/lib/python3.10/site-packages/click/core.py", line 1383, in main
+    rv = self.invoke(ctx)
+  File "/mnt/vstor/SOM_GENE_BEG33/mamba/miniforge3/envs/rapids/lib/python3.10/site-packages/click/core.py", line 1246, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/mnt/vstor/SOM_GENE_BEG33/mamba/miniforge3/envs/rapids/lib/python3.10/site-packages/click/core.py", line 814, in invoke
+    return callback(*args, **kwargs)
+  File "/mnt/vstor/SOM_GENE_BEG33/mamba/miniforge3/envs/rapids/lib/python3.10/site-packages/dask_cuda/cli.py", line 382, in worker
+    raise ValueError(
+ValueError: The scheduler address can't start with '-'. Please check your command line arguments, you probably attempted to use unsupported one. Scheduler address: --no-affinity
+2025-09-25 14:59:35,010 - distributed.scheduler - INFO - -----------------------------------------------
+2025-09-25 14:59:48,055 - distributed.scheduler - INFO - State start
+2025-09-25 14:59:48,073 - distributed.scheduler - INFO - -----------------------------------------------
+2025-09-25 14:59:48,074 - distributed.scheduler - INFO -   Scheduler at: tcp://192.168.215.13:8786
+2025-09-25 14:59:48,074 - distributed.scheduler - INFO -   dashboard at:  http://192.168.215.13:8787/status
+2025-09-25 14:59:48,115 - distributed.scheduler - INFO - Registering Worker plugin shuffle
+slurmstepd: error: *** JOB 2849492 ON dgxt001 CANCELLED AT 2025-09-25T15:08:52 DUE TO TIME LIMIT ***

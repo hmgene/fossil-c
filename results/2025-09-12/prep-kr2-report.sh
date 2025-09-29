@@ -24,7 +24,10 @@ if($_=~ /==> .+\/results\/(\w+)\.k2_report.txt/){
 		print join("\t",$s,$p,$t,$n),"\n";
 	}
 }
-' | Rscript <( echo '
+'
+exit
+
+Rscript <( echo '
 library(data.table)
 dt <- setDT(read.table("stdin",sep="\t",header=F)); setnames(dt,c("sample", "percent", "reads", "taxon"))
 dt_wide <- dcast(dt, sample ~ taxon, value.var = "percent", fill = 0)

@@ -1,3 +1,31 @@
+sam2score(){
+usage="$FUNCNAME <sam> [tag=sample]"; if [ $# -lt 1 ];then echo "$usage";return;fi
+cat $1 | perl -e 'use strict; my $tag="'${2:-no}'";
+my %r=();
+sub mx{ my ($x,$y)=@_; return defined $x && $x > $y ? $x : $y;}
+while (<>) { chomp; my @f = split(/\t/, $_);
+    next if $f[0] =~ /^@/;
+    my $len = length($f[9]);
+    my ($nm, $xm, $xg, $xt) = (0, 0, 0, "");
+    for my $i (11 .. $#f) {
+        if ($f[$i] =~ /^NM:i:(\d+)/) { $nm = $1; }
+        if ($f[$i] =~ /^XM:i:(\d+)/) { $xm = $1; }
+        if ($f[$i] =~ /^XG:i:(\d+)/) { $xg = $1; }
+        if ($f[$i] =~ /^XT:A:(\w)/)  { $xt = $1; }
+    }
+    if ($xt eq "U") {
+        my $matches = $len - $nm;  # approx number of matches
+        my $score   = ($matches - $xm - $xg) / ($len || 1); # avoid /0
+	print join("\t",$f[0],$tag,$score),"\n";
+    }
+}
+'
+}
+score-max(){
+cat $1 | awk '{ if($3 > max[$1]) { max[$1]=$3; name[$1]=$2 } all[$1]=(all[$1]?all[$1]","$2:$2) }
+     END { for(i in max) print i,  name[i], max[i] }' OFS="\t" 
+}
+
 sam2bed(){
 usage="$FUNCNAME <sam+header>
 ref: https://samtools.github.io/hts-specs/SAMv1.pdf
