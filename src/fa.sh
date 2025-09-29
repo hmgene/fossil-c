@@ -1,4 +1,5 @@
 
+
 fa2flat(){
 	cat $1 | perl -ne 'chomp;
 	if($_=~/^>/){ 

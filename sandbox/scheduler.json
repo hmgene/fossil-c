@@ -1,0 +1,10 @@
+{
+  "type": "Scheduler",
+  "id": "Scheduler-693dc4f1-b258-4f51-89cb-7cf752a4e21e",
+  "address": "tcp://192.168.215.13:8786",
+  "services": {
+    "dashboard": 8787
+  },
+  "started": 1758826775.078722,
+  "workers": {}
+}

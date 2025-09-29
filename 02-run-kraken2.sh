@@ -1,4 +1,4 @@
-db=bigdata/kr2
+db=bigdata/kr2_v2
 input=(
 bigdata/leehom/Brachy_Blank.fq.gz
 bigdata/leehom/Brachy_cells.fq.gz
@@ -15,7 +15,7 @@ bigdata/leehom/Trex_v_sedi.fq.gz
 
 for f in ${input[@]};do
         n=${f##*/};n=${n%.fq.gz};
-        o=/mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/kr2/results/$n
+        o=$db/results/$n
         mkdir -p ${o%/*}
 
 	#[ -s $o.k2_report.txt ] || \
