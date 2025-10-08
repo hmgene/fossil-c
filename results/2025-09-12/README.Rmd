@@ -20,9 +20,25 @@ library(ggplot2)
 library(dplyr)
 tt <- fread("len.txt", sep="\t", header=FALSE)
 setnames(tt,c("group","sample","read_len","count"))
+d<- tt[, .(
+  total_reads = sum(count),
+  short_reads = sum(count[read_len < 20]),
+  perc_short = round(sum(count[read_len < 20]) * 100 / sum(count),digits=4)
+), by = sample]
+fwrite(d,"../../bigdata/results/short_perc.tsv",sep="\t") 
+
+#tt = fread("n.txt")
+#setnames(tt,c("group","sample","leehom_mated","leehom_failed"))
+#tt[ , fail_perc := round(leehom_failed / (leehom_mated + leehom_failed) * 100,digits=4 )];
+#fwrite(tt,"../../bigdata/results/fail_perc.tsv",sep="\t") 
+
+
 tt$sample <- factor(tt$sample , levels = unique(tt$sample))
 tt[, type := sub("^[^_]+_(.*)$", "\\1", sample)]
 tt[, type := ifelse(type=="ExtrBlank","Blank",type)]
+
+
+
 
 ggplot(tt, aes(x = read_len, y = count, color = type)) +
   geom_line(alpha = 1, size=1.5) +

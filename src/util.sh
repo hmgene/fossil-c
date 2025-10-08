@@ -2,6 +2,15 @@ BB=$BASEDIR/bin/`uname -sm | tr " " "_"`
 export LD_LIBRARY_PATH=$BB:$LD_LIBRARY_PATH
 export PATH=$PATH:$BB
 
+mycat(){
+	if [ `file $1 | grep gzip | wc -l ` -gt 0 ];then
+		gunzip -dc $1;
+	else
+		cat $1;
+	fi
+	
+}
+
 other-tools(){
 echo "
 | name | url |
