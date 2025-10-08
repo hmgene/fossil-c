@@ -15,6 +15,9 @@ md_save_pdf <- function(p, f, width = 10, height = 20) {
 }
     
 plt_adapter=function(files){
+    library(ggplot2)
+    library(data.table)
+
     #output="adapter.pdf";
     #files <- list.files("../adapter", pattern = "\\.adapter$", full.names = TRUE)
     read_adapter_file <- function(filepath) {
@@ -28,17 +31,9 @@ plt_adapter=function(files){
     adapter_data[, base_adapter := sub("^rc_", "", adapter)]
     unique_bases <- unique(adapter_data$base_adapter)
     adapter_colors <- setNames( scales::hue_pal()(length(unique_bases)), unique_bases)
-
-    # Annotate line type (solid vs dotted)
     adapter_data[, line_type := ifelse(grepl("^rc_", adapter), "revcompl", "orig")]
     adapter_data[, color := adapter_colors[base_adapter]]
-
-    # Plot each sample separately
-    library(ggplot2)
-    library(data.table)
-
     dt <- adapter_data[!is.na(count)]
-
     ggplot(dt, aes(x = pos, y = count, color = base_adapter, linetype = line_type)) +
       geom_line(size = 0.8) +
       scale_color_manual(values = adapter_colors) +
