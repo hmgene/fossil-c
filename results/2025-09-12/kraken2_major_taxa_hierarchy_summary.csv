@@ -1,0 +1,51 @@
+sample,major,perc
+Brachy_Blank.k2_report.txt,Others,99.0116061400225
+Brachy_Blank.k2_report.txt,Homo sapiens,0.404342942718086
+Brachy_Blank.k2_report.txt,Gallus gallus,0.0599026581804571
+Brachy_Blank.k2_report.txt,Bacteria,0.524148259079
+Brachy_Blank.k2_report.txt,Archaea,0
+Brachy_c_sedi.k2_report.txt,Others,99.1159442966672
+Brachy_c_sedi.k2_report.txt,Bacteria,0.61023314035362
+Brachy_c_sedi.k2_report.txt,Homo sapiens,0.250352057580972
+Brachy_c_sedi.k2_report.txt,Gallus gallus,0.0234705053982162
+Brachy_c_sedi.k2_report.txt,Archaea,0
+Brachy_cells.k2_report.txt,Others,99.4136143452027
+Brachy_cells.k2_report.txt,Bacteria,0.47590719809637
+Brachy_cells.k2_report.txt,Homo sapiens,0.0764850854083452
+Brachy_cells.k2_report.txt,Gallus gallus,0.0339933712925978
+Brachy_cells.k2_report.txt,Archaea,0
+Brachy_v_sedi.k2_report.txt,Others,98.7972869030138
+Brachy_v_sedi.k2_report.txt,Homo sapiens,0.496468778407107
+Brachy_v_sedi.k2_report.txt,Gallus gallus,0.0489476260401373
+Brachy_v_sedi.k2_report.txt,Bacteria,0.657296692538986
+Brachy_v_sedi.k2_report.txt,Archaea,0
+Brachy_vessels.k2_report.txt,Others,99.1050940798531
+Brachy_vessels.k2_report.txt,Bacteria,0.566008872571516
+Brachy_vessels.k2_report.txt,Homo sapiens,0.290653204834022
+Brachy_vessels.k2_report.txt,Gallus gallus,0.0382438427413187
+Brachy_vessels.k2_report.txt,Archaea,0
+Trex_c_sedi.k2_report.txt,Others,99.2111406262578
+Trex_c_sedi.k2_report.txt,Homo sapiens,0.305884246961281
+Trex_c_sedi.k2_report.txt,Gallus gallus,0.016099170892699
+Trex_c_sedi.k2_report.txt,Bacteria,0.466875955888271
+Trex_c_sedi.k2_report.txt,Archaea,0
+Trex_cells.k2_report.txt,Others,99.4970516822754
+Trex_cells.k2_report.txt,Homo sapiens,0.18210197710718
+Trex_cells.k2_report.txt,Gallus gallus,0.017343045438779
+Trex_cells.k2_report.txt,Bacteria,0.303503295178633
+Trex_cells.k2_report.txt,Archaea,0
+Trex_ExtrBlank.k2_report.txt,Others,99.3235343243695
+Trex_ExtrBlank.k2_report.txt,Homo sapiens,0.250542842826123
+Trex_ExtrBlank.k2_report.txt,Gallus gallus,0.0584599966594287
+Trex_ExtrBlank.k2_report.txt,Bacteria,0.36746283614498
+Trex_ExtrBlank.k2_report.txt,Archaea,0
+Trex_v_sedi.k2_report.txt,Others,99.7828139754485
+Trex_v_sedi.k2_report.txt,Homo sapiens,0.0661000944287063
+Trex_v_sedi.k2_report.txt,Gallus gallus,0.028328611898017
+Trex_v_sedi.k2_report.txt,Bacteria,0.12275731822474
+Trex_v_sedi.k2_report.txt,Archaea,0
+Trex_vessels.k2_report.txt,Others,99.6472503617945
+Trex_vessels.k2_report.txt,Bacteria,0.298480463096961
+Trex_vessels.k2_report.txt,Homo sapiens,0.0452243125904486
+Trex_vessels.k2_report.txt,Gallus gallus,0.00904486251808973
+Trex_vessels.k2_report.txt,Archaea,0

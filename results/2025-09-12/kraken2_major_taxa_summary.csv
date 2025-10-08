@@ -1,0 +1,51 @@
+sample,name,perc
+Brachy_Blank.k2_report.txt,Homo sapiens,0.54
+Brachy_Blank.k2_report.txt,Gallus gallus,0.08
+Brachy_Blank.k2_report.txt,Bacteria,0.7
+Brachy_Blank.k2_report.txt,Archaea,0
+Brachy_Blank.k2_report.txt,Others,132.229999999999
+Brachy_c_sedi.k2_report.txt,Bacteria,0.78
+Brachy_c_sedi.k2_report.txt,Homo sapiens,0.32
+Brachy_c_sedi.k2_report.txt,Gallus gallus,0.03
+Brachy_c_sedi.k2_report.txt,Archaea,0
+Brachy_c_sedi.k2_report.txt,Others,126.69
+Brachy_cells.k2_report.txt,Bacteria,0.56
+Brachy_cells.k2_report.txt,Homo sapiens,0.09
+Brachy_cells.k2_report.txt,Gallus gallus,0.04
+Brachy_cells.k2_report.txt,Archaea,0
+Brachy_cells.k2_report.txt,Others,116.98
+Brachy_v_sedi.k2_report.txt,Homo sapiens,0.71
+Brachy_v_sedi.k2_report.txt,Gallus gallus,0.07
+Brachy_v_sedi.k2_report.txt,Bacteria,0.94
+Brachy_v_sedi.k2_report.txt,Archaea,0
+Brachy_v_sedi.k2_report.txt,Others,141.289999999999
+Brachy_vessels.k2_report.txt,Bacteria,0.74
+Brachy_vessels.k2_report.txt,Homo sapiens,0.38
+Brachy_vessels.k2_report.txt,Gallus gallus,0.05
+Brachy_vessels.k2_report.txt,Archaea,0
+Brachy_vessels.k2_report.txt,Others,129.57
+Trex_c_sedi.k2_report.txt,Homo sapiens,0.38
+Trex_c_sedi.k2_report.txt,Gallus gallus,0.02
+Trex_c_sedi.k2_report.txt,Bacteria,0.58
+Trex_c_sedi.k2_report.txt,Archaea,0
+Trex_c_sedi.k2_report.txt,Others,123.25
+Trex_cells.k2_report.txt,Homo sapiens,0.21
+Trex_cells.k2_report.txt,Gallus gallus,0.02
+Trex_cells.k2_report.txt,Bacteria,0.35
+Trex_cells.k2_report.txt,Archaea,0
+Trex_cells.k2_report.txt,Others,114.74
+Trex_ExtrBlank.k2_report.txt,Homo sapiens,0.3
+Trex_ExtrBlank.k2_report.txt,Gallus gallus,0.07
+Trex_ExtrBlank.k2_report.txt,Bacteria,0.44
+Trex_ExtrBlank.k2_report.txt,Archaea,0
+Trex_ExtrBlank.k2_report.txt,Others,118.93
+Trex_v_sedi.k2_report.txt,Homo sapiens,0.07
+Trex_v_sedi.k2_report.txt,Gallus gallus,0.03
+Trex_v_sedi.k2_report.txt,Bacteria,0.13
+Trex_v_sedi.k2_report.txt,Archaea,0
+Trex_v_sedi.k2_report.txt,Others,105.67
+Trex_vessels.k2_report.txt,Bacteria,0.33
+Trex_vessels.k2_report.txt,Homo sapiens,0.05
+Trex_vessels.k2_report.txt,Gallus gallus,0.01
+Trex_vessels.k2_report.txt,Archaea,0
+Trex_vessels.k2_report.txt,Others,110.17
