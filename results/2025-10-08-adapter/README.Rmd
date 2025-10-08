@@ -51,7 +51,7 @@ library(dplyr)
 source("fn.r")
 files <- list.files("../adapter", pattern = "\\.adapter$", full.names = TRUE)
 p=plt_adapter(files);
-md_save_pdf(p, "adapter.pdf", width = 12, height = 3*length(unique(adapter_data$sample)))
+md_save_pdf(p, "adapter.pdf", width = 12, height = 20); 
 
 ```
 
