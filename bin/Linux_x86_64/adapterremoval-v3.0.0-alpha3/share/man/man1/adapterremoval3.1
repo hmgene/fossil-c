@@ -1,0 +1,1402 @@
+.\" Man page generated from reStructuredText.
+.
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.TH "ADAPTERREMOVAL3" "1" "May 19, 2025" "3.0" "AdapterRemoval3"
+.SH NAME
+adapterremoval3 \- AdapterRemoval3 3.0.0-alpha3
+.sp
+AdapterRemoval searches for and trims remnant adapter sequences from High\-Throughput Sequencing (HTS) data, trims low quality bases, merges overlapping paired\-ended reads, and generates QC reports (human and machine\-readable). AdapterRemoval can additionally demultiplex sequencing reads and can construct a consensus adapter sequence from paired\-ended reads.
+.sp
+See the \fI\%Getting started\fP and \fI\%Example usage\fP pages to get started processing your own data. See the \fI\%Detailed overview\fP page for a description of processing carried out by AdapterRemoval and the options affecting each step of the process. See the \fI\%Input and output\fP page for details on the input files read by AdapterRemoval and resulting output files. And finally, see the \fI\%Migrating from older versions\fP page if you are upgrading from an older version of AdapterRemoval.
+.sp
+If you use AdapterRemoval v3, then please cite the paper:
+.INDENT 0.0
+.INDENT 3.5
+Schubert, Lindgreen, and Orlando (2016). AdapterRemoval v2: rapid adapter trimming, identification, and read merging. BMC Research Notes, 12;9(1):88 \fI\%http://bmcresnotes.biomedcentral.com/articles/10.1186/s13104\-016\-1900\-2\fP
+.UNINDENT
+.UNINDENT
+.sp
+AdapterRemoval was originally published in Lindgreen 2012:
+.INDENT 0.0
+.INDENT 3.5
+Lindgreen (2012): AdapterRemoval: Easy Cleaning of Next Generation Sequencing Reads, BMC Research Notes, 5:337 \fI\%http://www.biomedcentral.com/1756\-0500/5/337/\fP
+.UNINDENT
+.UNINDENT
+.SH INSTALLATION
+.SS Precompiled binary
+.sp
+A pre\-compiled binary is provided for 64\-bit x86 Linux systems under \fI\%https://github.com/MikkelSchubert/adapterremoval/releases/\fP
+.SS Installing from sources
+.sp
+This section describes how to build and install the latest version of AdapterRemoval from sources.
+.SS Prerequisites
+.sp
+Building and installing AdapterRemoval requires basic build tools including a C++17 capable compiler, \fI\%meson\fP v1.2+, \fI\%ninja\fP, \fI\%python\fP 3.8+, \fI\%libdeflate\fP and \fI\%isa\-l\fP v2.30+. \fI\%Sphinx\fP is additionally required to build the documentation.
+.sp
+On Debian based systems, these may be installed as follows:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+sudo apt\-get install build\-essential meson ninja\-build libdeflate\-dev libisal\-dev python3 python3\-sphinx
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+On OSX, these can be installed using Homebrew as follows:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+brew install llvm meson ninja isa\-l libdeflate sphinx\-doc
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.SS Building AdapterRemoval
+.sp
+To compile AdapterRemoval, first download and unpack the newest release from GitHub, and then run \fBmake\fP:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+wget \-O adapterremoval\-3.0.0\-alpha3.tar.gz https://github.com/MikkelSchubert/adapterremoval/archive/v3.0.0\-alpha3.tar.gz
+tar xvzf adapterremoval\-3.0.0\-alpha3.tar.gz
+cd adapterremoval\-3.0.0\-alpha3
+make
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+The resulting \fBadapterremoval3\fP executable is located in the \(aqbuild/release\(aq subdirectory, and can be run as\-is. It is also possible to perform a system\-wide installation of the AdapterRemoval executable, man\-page, and examples using the following command:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+sudo make install
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.SS Building a static binary
+.sp
+A \fI\%podman\fP/\fI\%docker\fP \fBContainerfile\fP is provided, which is used to generate the pre\-compiled binaries mentioned above. To run this, \fI\%meson\fP, \fI\%ninja\fP, and either \fI\%podman\fP or \fI\%docker\fP are required.
+.sp
+To build the container, run
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+make static\-container
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+Once the container has been built, run the actual build process via
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+make static
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+The resulting executable and extra files are saved to \fBbuild/static/install\fP\&.
+.SH GETTING STARTED
+.sp
+To run AdapterRemoval on single\-end FASTQ data, simply specify the location of FASTQ file(s) using the \fB\-\-in\-file1\fP command\-line options:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+adapterremoval3 \-\-in\-file1 myreads_1.fastq.gz
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+To run AdapterRemoval on paired\-end FASTQ data, specify the location of the mate 1 and mate 2 FASTQ files using the \fB\-\-in\-file1\fP and \fB\-\-in\-file2\fP command\-line options:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+adapterremoval3 \-\-in\-file1 myreads_1.fastq.gz \-\-in\-file2 myreads_2.fastq.gz
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+The files may be uncompressed or gzip\-compressed. When run in this manner, AdapterRemoval will save the trimmed reads in the current working directly, using filenames starting with \(aqyour_output\(aq. This behavior may be changed using the \fB\-\-out\-prefix\fP option, or using specific options for each output file. See the \fI\%Input and output\fP page for more information about files generated by AdapterRemoval.
+.sp
+More examples of common usage may be found in the \fI\%Example usage\fP section of the documentation.
+.SS A note on specifying adapters
+.sp
+AdapterRemoval uses the expected adapter sequences as part of the trimming/alignment process (see \fI\%Detailed overview\fP). It is therefore extremely important to specify the correct adapter sequences when running AdapterRemoval on a dataset that does not make use of these adapters. Failure to do so will result in the wrong sequences being trimmed, and actual adapter sequences being left in the resulting \(dqtrimmed\(dq reads.
+.sp
+By default, AdapterRemoval is set up to trim the published \fI\%Illumina TruSeq sequences\fP, which should be applicable to most Illumina data, corresponding to the following command\-line options:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+adapterremoval3 \-\-adapter1 AGATCGGAAGAGCACACGTCTGAACTCCAGTCA \-\-adapter2 AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+For BGISEQ/DNBSEQ/MGISEQ data, the published \fI\%BGI adapter sequences\fP should be used:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+adapterremoval3 \-\-adapter1 AAGTCGGAGGCCAAGCGGTCTTAGGAAGACAA \-\-adapter2 AAGTCGGATCGTAGCCATGTCGTTCTGTGAGCCAAGGAGTTG
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+Adapter sequences are specified in the read orientation when using the \fB\-\-adapter1\fP and \fB\-\-adapter2\fP command\-line options, directly corresponding to the sequence that is observed in the FASTQ files produced by the base calling software. If we were processing data generated using the above TrueSeq adapters, then we would therefore expect to find those sequences as\-is in our FASTQ files (assuming that the read lengths are sufficiently long and that insert sizes are sufficiently short):
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+$ grep \(dqAGATCGGAAGAGCACACGTCTGAACTCCAGTCA\(dq file1.fastq
+AGATCGGAAGAGCACACGTCTGAACTCCAGTCACCGATGAATCTCGTATGCCGTCTTCTGCTTGAAAAAAAAACAAGAAT
+CTGGAGTTCAGATCGGAAGAGCACACGTCTGAACTCCAGTCACCGATGAATCTCGTATGCCGTCTTCTGCTTGAAAAAAA
+GGAGATCGGAAGAGCACACGTCTGAACTCCAGTCACCGATGAATCTCGTATGCCGTCTTCTGCTTGCAAATTGAAAACAC
+
+$ grep \(dqAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT\(dq file2.fastq
+CAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCATTCAAAAAAAGAAAAACATCTTG
+GAACTCCAGAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCATTCAAAAAAAATAGA
+GAACTAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCATTCAAAAACATAAGACCTA
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+For paired\-end data, the \fB\-\-report\-only\fP mode may be used to verify the choice of adapters, by attempting to reconstruct the adapter sequence directly from the FASTQ reads. See the \fI\%Example usage\fP section for a demonstration of this functionality.
+.sp
+An \(aqN\(aq in an adapter sequence is treated as a wildcard. An N will align against any other base, including Ns, but do not affect the score of the resulting alignment and are not counted as for the purpose of filters such as \fB\-\-min\-adapter\-overlap\fP\&.
+.SH EXAMPLE USAGE
+.sp
+The following examples all make use of the data included in the \(aqexamples\(aq folder.
+.SS Basic usage
+.sp
+To trim single\-end Illumina TruSeq or similar data, simplify specify one or more files using the \-\-in\-file1 option:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+adapterremoval3 \e
+    \-\-in\-file1 reads_1.fastq \e
+    \-\-out\-prefix output_single
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+To trim paired\-end FASTQ reads, instead specify two input files using the \fB\-\-in\-file1\fP and \fB\-\-in\-file2\fP options:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+adapterremoval3 \e
+    \-\-in\-file1 reads_1.fastq \e
+    \-\-in\-file2 reads_2.fastq \e
+    \-\-out\-prefix output_paired \e
+    \-\-merge
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+The \fB\-\-out\-prefix\fP option ensure that all output files start with the specified prefix. For the paired reads, the \fB\-\-merge\fP option enables merging of reads overlapping at least 11bp (by default).
+.sp
+For non\-Illumina/non\-TruSeq data, it is important to \fI\%specify the correct adapters\fP when running AdapterRemoval.
+.SS Output formats
+.sp
+AdapterRemoval support writing processed reads as uncompressed FASTQ reads (\fB\&.fastq\fP or \fB\&.fq\fP), as gzip compressed FASTQ reads (\fB\&.fastq.gz\fP or \fB\&.fq.gz\fP), as uncompressed or compressed SAM records (\fB\&.sam\fP and \fB\&.sam.gz\fP), and as compressed BAM records (\fB\&.bam\fP) or uncompressed BAM records (\fBubam\fP).
+.sp
+Formats are specified either using the \fB\-\-out\-format\fP option in conjunction with the \fB\-out\-prefix\fP option, or by specifying one of the above extensions when using one of the \fB\-\-out\-*\fP options (except for \fBubam\fP). If AdapterRemoval does not recognize the extension, then the format specified via \fB\-\-out\-format\fP is used, defaulting to gzip compressed FASTQ.
+.sp
+By default, the uncompressed version of the format specified via \fB\-\-out\-format\fP is used for records written to STDOUT, under the assumption that the output is to be processed by another program, but this may be overridden using the \fB\-\-stdout\-format\fP option.
+.SS Standard input (STDIN), standard output (STDOUT), and disabling output
+.sp
+Reading from STDIN and writing to STDOUT can be accomplished \fIeither\fP by using the special \fB/dev/stdin\fP and \fB/dev/stdout\fP files, \fIor\fP by using the filename \fB\-\fP for either \fB\-\-in\-file*\fP or \fB\-\-out\-*\fP options:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+some\-command | adapterremoval3 \-\-in\-file1 \- \-\-out\-file1 \- | some\-other\-command
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+Input from STDIN and output to STDOUT can freely be interleaved as described in the \fIInterleaved input and output\fP below.
+.sp
+Finally, AdapterRemoval recognizes the special path \fB/dev/null\fP and will skip writing reads if this path is specified. That means that you can use the \fB\-\-prefix\fP option to specify a default output path, and disable the read types that you do not care about. Meaning that instead of
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+adapterremoval3 \e
+    \-\-in\-file1 reads_1.fastq \e
+    \-\-in\-file2 reads_2.fastq \e
+    \-\-out\-html output.html \e
+    \-\-out\-json output.json \e
+    \-\-out\-file1 output.r1.fastq.gz \e
+    \-\-out\-file2 output.r2.fastq.gz \e
+    \-\-out\-merged output.merged.fastq.gz
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+you could write
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+adapterremoval3
+   \-\-in\-file1 reads_1.fastq \e
+   \-\-in\-file2 reads_2.fastq \e
+   \-\-out\-prefix output \e
+   \-\-out\-singleton /dev/null
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.SS Multiple input FASTQ files
+.sp
+More than one input file may be specified listed after the \fB\-\-in\-file1\fP and \fB\-\-in\-file2\fP options. Files are processed in the specified order, as if they had been concatenated using \fBcat\fP or \fBzcat\fP:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+adapterremoval3 \e
+    \-\-in\-file1 reads_1a.fastq reads_1b.fastq reads_1c.fastq
+adapterremoval3 \e
+    \-\-in\-file1 reads_1a.fastq reads_1b.fastq reads_1c.fastq \e
+    \-\-in\-file2 reads_2a.fastq reads_2b.fastq reads_2c.fastq
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.SS Interleaved input and output
+.sp
+AdapterRemoval is able to read and write paired\-end reads stored in a single, so\-called interleaved FASTQ file (one pair at a time, first mate 1, then mate 2). This is accomplished by specifying the location of the file using \fB\-\-in\-file1\fP and \fIalso\fP setting the \fB\-\-interleaved\fP command\-line option:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+adapterremoval3 \e
+    \-\-interleaved \e
+    \-\-in\-file1 interleaved.fastq \e
+    \-\-out\-prefix output_interleaved
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+Other than taking just a single input file, this mode operates almost exactly like paired end trimming (as described above); the mode differs only in that paired reads are not written to a \(aqr1\(aq and a \(aqr2\(aq file, but instead these are instead written to a single file. The location of this file is controlled using the \fB\-\-out\-file1\fP option.
+.sp
+Enabling either reading or writing of interleaved FASTQ files, both not both, can be accomplished by specifying either of the \fB\-\-interleaved\-input\fP and \fB\-\-interleaved\-output\fP options, both of which are enabled by the \fB\-\-interleaved\fP option.
+.sp
+Alternatively, you can specify the same output file for multiple output types, in order to write all of those reads to a single file in interleaved mode:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+adapterremoval3 \e
+    \-\-in\-file1 input_1.fastq.gz \e
+    \-\-in\-file2 input_2.fastq.gz \e
+    \-\-out\-file1 output_interleaved.fastq.gz \e
+    \-\-out\-file2 output_interleaved.fastq.gz
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+The ability to interleave output extends to all output types, except for the two reports (\fB\-\-out\-json\fP and \fB\-\-out\-html\fP), and one could for example write both discarded and singleton reads to the same file (\fBoutput_interleaved.discarded.fastq.gz\fP) using the following command:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+adapterremoval3 \e
+     \-\-in\-file1 input_1.fastq.gz \e
+     \-\-in\-file2 input_2.fastq.gz \e
+     \-\-out\-prefix output_interleaved \e
+     \-\-out\-discarded output_interleaved.discarded.fastq.gz \e
+     \-\-out\-singleton output_interleaved.discarded.fastq.gz
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.SS Different quality score encodings
+.sp
+By default, AdapterRemoval expects the quality scores in FASTQ reads to be Phred+33 encoded, meaning that the error probabilities are encoded as \fB(char)(\(aq!\(aq \- 10 * log10(p))\fP\&. Most data will be encoded using Phred+33, but Phred+64 and \(aqSolexa\(aq encoded quality scores are also supported. These are selected by specifying the \fB\-\-quality\-format\fP command\-line option (specifying either \(aq33\(aq, \(aq64\(aq, or \(aqsolexa\(aq):
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+adapterremoval3 \e
+    \-\-quality\-format 64 \e
+    \-\-in\-file1 reads_q64.fastq \e
+    \-\-out\-prefix output_phred_64
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+Output is always saved as Phred+33. See \fI\%this Wikipedia article\fP for a detailed overview of Phred encoding schemes currently and previously in use.
+.SS Trimming paired\-end reads with multiple adapter pairs
+.sp
+It is possible to provide multiple, different sets of adapters for trimming, in which case AdapterRemoval will select the best match for each read (pair).  This is done by providing a one or two\-column table, for SE and PE trimming, respectively, with each line containing one or two adapters, separated by whitespace.
+.sp
+For example, to specify both Illumina TruSeq and BIGSeq adapters, one might save the following in the file \fBadapters.txt\fP:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+AGATCGGAAGAGCACACGTCTGAACTCCAGTCA  AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT
+AAGTCGGAGGCCAAGCGGTCTTAGGAAGACAA   AAGTCGGATCGTAGCCATGTCGTTCTGTGAGCCAAGGAGTTG
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+This file is then specified using the \fB\-\-adapter\-list\fP option:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+adapterremoval3 \e
+    \-\-in\-file1 reads_1.fastq \e
+    \-\-in\-file2 reads_2.fastq \e
+    \-\-out\-prefix output_multi \e
+    \-\-adapter\-list adapters.txt
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+Pairs of adapters are used exactly as written, and the resulting QC reports lists how frequently adapter or pairs of adapters were used.
+.sp
+Note that throughput decreases proportionally to the number of adapters, and it is therefore \fInot\fP recommended to use this functionality unless strictly necessary. When adapters differ only after the first N bases (for 20\-30 bp), for example due to an embedded barcode, then is typically better to specify only the shared part of the adapter sequences on the command line.
+.sp
+It is also possibly to mask variable sites in an adapter sequence, such as barcodes, by setting sites to \fBN\fP\&. These sites will then not be considered part of the alignments.
+.SS Demultiplexing
+.sp
+AdapterRemoval supports simultaneous demultiplexing and adapter trimming; demultiplexing is carried out using a simple comparison between the specified barcode (a sequence of A, C, G, and T) and the first N bases of the mate 1 read, where N is the length of the barcode. Demultiplexing of double\-indexed sequences is also supported, in which case two barcodes must be specified for each sample. The first barcode is then compared to first \fBN_1\fP bases of the mate 1 read, and the second barcode is compared to the first \fBN_2\fP bases of the mate 2 read. By default, this comparison requires a perfect match. Reads identified as containing a specific barcode(s) are then trimmed using adapter sequences including the barcode(s) as necessary. Reads for which no (pair of) barcodes matched are written to a separate file or a pair of files (for paired end reads).
+.sp
+Demultiplexing is enabled by creating a table of barcodes, the first column of which species the sample name (using characters a\-z, A\-Z, 0\-9, or _) and the second and (optional) third columns specifies the barcode sequences expected at the 5\(aq termini of mate 1 and mate 2 reads, respectively.
+.sp
+For example, a table of barcodes from a double\-indexed run might be as follows (see examples/barcodes.txt):
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+cat barcodes.txt
+sample_1 ATGCGGA TGAATCT
+sample_2 ATGGATT ATAGTGA
+sample_7 CAAAACT TCGCTGC
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+AdapterRemoval is invoked with the \fB\-\-barcode\-list\fP option, specifying the path to this table:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+adapterremoval3 \-\-in\-file1 demux_1.fastq \-\-in\-file2 demux_2.fastq \-\-out\-prefix output_demux \-\-barcode\-list barcodes.txt
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+This generates a set of output files for each sample specified in the barcode table, using \fBoutput_demux\fP as the prefix for output filenames, followed by a dot and the sample name, followed by a dot and the default name for a given file type. The reports generated by AdapterRemoval contains information about the number of reads identified for each sample and (in the JSON file) detailed per\-sample quality metrics.
+.sp
+The maximum number of mismatches allowed when comparing barcodes is controlled using the options \fB\-\-barcode\-mm\fP, \fB\-\-barcode\-mm\-r1\fP, and \fB\-\-barcode\-mm\-r2\fP, which specify the maximum number of mismatches total, and the maximum number of mismatches for the mate 1 and mate 2 barcodes respectively. Thus, if mm_1(i) and mm_2(i) represents the number of mismatches observed for barcode\-pair i for a given pair of reads, these options require that
+.INDENT 0.0
+.INDENT 3.5
+.INDENT 0.0
+.IP 1. 3
+mm_1(i) <= \fB\-\-barcode\-mm\-r1\fP
+.IP 2. 3
+mm_2(i) <= \fB\-\-barcode\-mm\-r2\fP
+.IP 3. 3
+mm_1(i) + mm_2(i) <= \fB\-\-barcode\-mm\fP
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.sp
+If the \fB\-\-demultiplex\-only\fP option is used, then no trimming/processing is performed after the demultiplexing step:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+adapterremoval3 \-\-in\-file1 demux_1.fastq \-\-in\-file2 demux_2.fastq \-\-out\-prefix output_only_demux \-\-barcode\-list barcodes.txt \-\-demultiplex\-only
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+These reads will still contain adapters, and for paired reads/double indexed data these adapters will be prefixed by the barcode sequence(s). The adapter plus barcode sequences are reported for each sample in the JSON report file.
+.SS Quality reports and identifying adapter sequences
+.sp
+AdapterRemoval generates a detailed report of input and output data, as part of its operation. This report can additionally be run without performing read processing, meaning that statistics are only provided for the \(dqraw\(dq input data.
+.sp
+Additionally, when run without read processing enable,d AdapterRemoval attempts to infer a consensus adapter sequence. This is done based on fragments identified as belonging to the adapters through pairwise alignments of the reads.
+.sp
+By default, quality reports are written to \fBprefix.html\fP and \fBprefix.json\fP, if the \fB\-\-out\-prefix\fP option is used. The files can either or both be written to specific files using \fB\-\-out\-json\fP and \fB\-\-out\-html\fP:
+.sp
+This means that we can simply omit other output files to generate only the reports:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+adapterremoval3 \e
+    \-\-in\-file1 reads_1.fastq \e
+    \-\-in\-file2 reads_2.fastq \e
+    \-\-out\-json my_report.json \e
+    \-\-out\-html my_report.html
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+To generate a report only for the input data, including inference of adapter sequences, use the \fB\-\-report\-only\fP mode. Since only the reports are generated in this mode, we can use the \fB\-\-out\-prefix\fP option to simplify the command:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+adapterremoval3 \e
+    \-\-report\-only \e
+    \-\-in\-file1 reads_1.fastq \e
+    \-\-in\-file2 reads_2.fastq \e
+    \-\-out\-prefix my_report
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+The consensus sequences inferred are compared to those specified using the \fB\-\-adapter1\fP and \fB\-\-adapter2\fP command\-line options, or with the default values for these if no values have been given (as in this case). Pipes (|) indicate matches between the provided sequences and the consensus sequence, and \(dq*\(dq indicate the presence of unspecified bases (Ns).
+.sp
+Best practice is to compare the consensus with published \fI\%Illumina\fP or \fI\%BGI/MGI\fP adapter sequences and pick out the best matches. However, on occasion there will be differences between the published sequences and the observed adapter sequences.
+.sp
+When using the consensus directly, it is not recommended to use the full consensus sequence, since the quality of the consensus sequence declines quickly towards the 3\(aq end.
+.SH DETAILED OVERVIEW
+.sp
+This page describes the data\-flow in AdapterRemoval, and list what command\-line options affect which parts of the process. For a detailed overview of input and output files, see \fI\%Input and output\fP\&.
+.SS 1. Reading FASTQ files
+.sp
+FASTQ data is read from one or more files specified with \fB\-\-in\-file1\fP and (optionally) \fB\-\-in\-file2\fP\&. If either the \fB\-\-interleaved\fP or the \fB\-\-interleaved\-input\fP options are specified, the files specified with \fB\-\-in\-file1\fP are expected to contain sequential pairs of FASTQ reads.
+.sp
+FASTQ quality scores are expected to be \fI\%Phred+33\fP encoded by default, but this can be changed using the \fB\-\-quality\-format\fP option. By default, AdapterRemoval will attempt to infer the character used to separate the read name from the mate number (for example \fB/\fP in \fB@my_read/1\fP and \fB@my_read/2\fP), but this can be overridden using the \fB\-\-mate\-separator\fP option.
+.sp
+If enabled by the \fB\-\-mask\-degenerate\-bases\fP option, IUPAC encoded degenerate bases (\fBB\fP, \fBD\fP, \fBH\fP, \fBK\fP, \fBM\fP, \fBR\fP, \fBS\fP, \fBV\fP, \fBW\fP, and \fBY\fP) are replaced with \fBN\fP\&. If enabled by \fB\-\-convert\-uracils\fP option, positions containing uracils (\fBU\fP) are converted to thymine (\fBT\fP). All bases are furthermore converted to uppercase and any dots (\fB\&.\fP) are replaced with \fBN\fP\&.
+.sp
+Basic statistics are collected based on this pre\-processed data, including detailed per\-nucleotide statistics are collected from a random selection of reads determined by the \fB\-\-report\-sample\-rate\fP option. If enabled by the \fB\-\-report\-duplication\fP option, the amount of read duplication is estimated using the \fI\%FastQC\fP methodology per mate.
+.sp
+If specified, the \fB\-\-head\fP option limits the total number of reads (in single ended mode) or pairs (in paired ended mode) that are read from the input.
+.SS 2. Demultiplexing
+.sp
+If a table of barcodes is specified using the \fB\-\-barcode\-list\fP, then demultiplexing of the data is performed prior to trimming. By default, each barcode or pair of barcodes is expected to identify a unique sample, but this restriction can be loosened using the \fB\-\-multiple\-barcodes\fP option.
+.sp
+By default, these barcodes are considered to be in a \fBunspecified\fP orientation. An orientation may be specified with \fB\-\-barcode\-orientation\fP, and if either \fBforward\fP or \fBreverse\fP is used, then the corresponding reverse or forward barcode pairs are automatically generated.
+.sp
+The \fB\-\-barcode\-mm\fP option defines a global maximum number of mismatches allowed across both barcodes (in paired end mode), while the \fB\-\-barcode\-mm\-r1\fP and \fB\-\-barcode\-mm\-r2\fP options sets limits for either barcode in addition to the global maximum.
+.sp
+If the \fB\-\-demultiplex\-only\fP option is set, the read processing and filtering steps are skipped and output is written as described in \fI\%5. Output\fP\&.
+.SS 3. Read processing
+.sp
+If the \fB\-\-pre\-trim3p\fP option is specified, the reads are trimmed by the specified amounts of bases. Next poly\-X tails are trimmed if the \fB\-\-pre\-trim\-polyx\fP option is specified.
+.sp
+The reads and adapters (single end mode) or reads + adapters (paired end mode) are aligned, using the adapter sequences specified with \fB\-\-adapter1\fP and \fB\-\-adapter2\fP, with a maximum error rate defined by \fB\-\-mm\fP\&. The alignment is performed as follows, for single end and paired end reads expectively:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+SE: [Read 1 \-\-\-\-\-\-\-\-\-\-\-\-\-]
+                [Adapter 1 \-\-\-\-\-]
+
+PE: [Adapter 2\(aq \-\-\-\-][Read 1 \-\-\-\-\-\-\-\-\-\-\-\-]
+              [Read 2\(aq \-\-\-\-\-\-\-\-\-\-\-\-][Adapter 1 \-\-\-\-]
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+Note that adapter 2 and read 2 are both reverse complemented in the above. If multiple adapters are specified using \fB\-\-adapter\-list\fP, then alignment is carried out with each adapter or adapter pair to find the best alignment.
+.sp
+If the best alignment covers at least \fB\-\-merge\-threshold\fP bases, then the sequences are considered to be overlapping. For paired end reads the inferred adapter sequences are always trimmed, while for single end reads the overlap must be at least \fB\-\-min\-adapter\-overlap\fP bases before the sequence is trimmed (if specified). If the \fB\-\-merge\fP option is set and the best alignment is at least \fB\-\-merge\-threshold\fP long, then the two reads are merged into a single sequence (paired end mode only).
+.sp
+If the \fB\-\-post\-trim5p\fP or \fB\-\-post\-trim3p\fP options are specified, the reads are trimmed by the specified amounts of bases and poly\-X tails are trimmed if the \fB\-\-post\-trim\-polyx\fP option is specified. Only trimming with the \fB\-\-post\-trim5p\fP is performed on merged reads, since the 3p ends are typically located inside the reads or correspond to the 5p of the other mate.
+.sp
+Quality trimming is performed using the trimming algorithm specified using the \fB\-\-quality\-trimming\fP option and the related options. By default both ends of a read will be quality trimmed, but trimming can be limited to the 3p end via the \fB\-\-preserve5p\fP option.
+.sp
+If the \fB\-\-prefix\-read1\fP, \fB\-\-prefix\-read2\fP, and \fB\-\-prefix\-merged\fP options are set, the mate 1, mate 2, and merged read names are prefixed using the corresponding values.
+.SS 4. Read filtering
+.sp
+Reads with more than \fB\-\-max\-ns\fP ambiguous bases (Ns), that are shorter than \fB\-\-min\-length\fP, that are longer than \fB\-\-max\-length\fP, that have a mean Phred encoded quality score less than \fB\-\-min\-mean\-quality\fP, or that have a complexity score less than \fB\-\-min\-complexity\fP are discarded. If only one read in a pair is filtered, then the read that was not filtered is classified as a \(dqsingleton\(dq read.
+.SS 5. Output
+.sp
+Reads are written to files specified using \fB\-\-out\-prefix\fP and/or individual \fB\-\-out\-*\fP options. If \fB\-\-out\-prefix\fP is used, AdapterRemoval will automatically name the default output files, excluding discarded reads, which are not saved by default.
+.sp
+Output files may also be named using the corresponding \fB\-\-out\-*\fP options, for example \fB\-\-out\-discarded\fP for discarded reads. If \fB\-\-out\-prefix\fP is combined with \fB\-\-out\-*\fP options, then those options take priority.
+.sp
+If multiple \fB\-\-out\-*\fP options point to the same file, then all those reads are written to the same file in order. At least one \fB\-\-out\-*\fP option must be specified, but one can perform a dry run by for example using \fB\-\-out\-prefix /dev/null\fP (see below).
+.sp
+Basic statistics are collected for all output data, and detailed per\-nucleotide statistics are collected from a random selection of reads determined by the \fB\-\-report\-sample\-rate\fP option.
+.SS Supported output formats
+.sp
+Output is written as gzip compressed FASTQ records by default (see below), but this can be controlled using either the \fB\-\-out\-format\fP option or by manually specifying a filename with the desired extension using one of the \fB\-\-out\-*\fP options. AdapterRemoval currently recognizes \fB\&.fq.gz\fP, \fB\&.fastq.gz\fP, \fB\&.fq\fP, \fBfastq\fP, \fB\&.sam.gz\fP, \fB\&.sam\fP, and \fB\&.bam\fP\&.
+.sp
+If AdapterRemoval does not recognize the extension (for example when writing to STDOUT), then the format specified with \fB\-\-out\-format\fP is used.
+.SS FASTQ output
+.sp
+When not performing demultiplexing, AdapterRemoval will generate the following files when using \fB\-\-out\-prefix\fP, replacing the key \fB${prefix}\fP with the value of \fB\-\-out\-prefix\fP:
+.INDENT 0.0
+.IP \(bu 2
+\fB${prefix}.json\fP
+.IP \(bu 2
+\fB${prefix}.html\fP
+.IP \(bu 2
+\fB${prefix}.r1.fastq.gz\fP
+.IP \(bu 2
+\fB${prefix}.r2.fastq.gz\fP (paired end mode)
+.IP \(bu 2
+\fB${prefix}.singleton.gz\fP (paired end mode, if any filtering is enabled)
+.IP \(bu 2
+\fB${prefix}.merged.gz\fP (paired end mode, if read merging is enabled)
+.UNINDENT
+.sp
+If demultiplexing is enabled, the following files will be generated with \fB\-\-out\-prefix\fP, with the key \fB${sample}\fP additionally replaced with each sample name:
+.INDENT 0.0
+.IP \(bu 2
+\fB${prefix}.json\fP
+.IP \(bu 2
+\fB${prefix}.html\fP
+.IP \(bu 2
+\fB${prefix}.unidentified.r1.fastq.gz\fP
+.IP \(bu 2
+\fB${prefix}.unidentified.r2.fastq.gz\fP (paired end mode)
+.IP \(bu 2
+\fB${prefix}.${sample}.r1.fastq.gz\fP
+.IP \(bu 2
+\fB${prefix}.${sample}.r2.fastq.gz\fP (paired end mode)
+.IP \(bu 2
+\fB${prefix}.${sample}.singleton.gz\fP (paired end mode, if any filtering is enabled)
+.IP \(bu 2
+\fB${prefix}.${sample}.merged.gz\fP (paired end mode, if read merging is enabled)
+.UNINDENT
+.sp
+The \fBunidentified\fP files contain any reads for which no sample could be identified using the supplied barcode sequences. Note that no trimming, filtering, or merging is performed if \fB\-\-demultiplex\-only\fP is used.
+.SS SAM/BAM output
+.sp
+When using \fB\-\-out\-format\fP with \fB\&.sam\fP, \fB\&.sam.gz\fP, or \fB\&.bam\fP, AdapterRemoval defaults to writing a single file containing \fIall\fP output, including discarded reads. For example, for BAM output:
+.INDENT 0.0
+.IP \(bu 2
+\fB${prefix}.json\fP
+.IP \(bu 2
+\fB${prefix}.html\fP
+.IP \(bu 2
+\fB${prefix}.bam\fP
+.UNINDENT
+.sp
+Or when demultiplexing is enabled, replacing the key \fB${sample}\fP with each sample name:
+.INDENT 0.0
+.IP \(bu 2
+\fB${prefix}.json\fP
+.IP \(bu 2
+\fB${prefix}.html\fP
+.IP \(bu 2
+\fB${prefix}.unidentified.bam\fP
+.IP \(bu 2
+\fB${prefix}.${sample}.bam\fP
+.UNINDENT
+.sp
+This can be overridden as described above, using the individual \fB\-\-out\-*\fP options.
+.SS STDIN, STDOUT, and /dev/null
+.sp
+AdapterRemoval supports four special filenames: \fB\-\fP, \fB/dev/stdin\fP, \fB/dev/stdout\fP, and \fB/dev/null\fP:
+.INDENT 0.0
+.IP \(bu 2
+If \fB\-\fP or \fB/dev/stdin\fP is used for either \fB\-\-in\-file1\fP or \fB\-\-in\-file2\fP, then AdapterRemoval will read those reads from STDIN. Note that it is currently not possible to use \fB\-\-in\-file1 \- \-\-in\-file2 \-\fP for interleaved input, instead use \fB\-\-interleaved\-input \-\-in\-file1 \-\fP\&.
+.IP \(bu 2
+If \fB\-\fP or \fB/dev/stdout\fP is used for any \fB\-\-out\-*\fP options, then that file is written to STDOUT. As noted above, multiple read types may be written to STDOUT in this manner, meaning that \fB\-\-interleaved\-output \-\-out\-file1 \-\fP and \fB\-\-out\-file1 \- \-\-out\-file2 \-\fP give identical output.
+.IP \(bu 2
+If \fB/dev/null\fP is used with any \fB\-\-out\-*\fP option, then the corresponding files are not saved. Statistics are still collected for any processed reads.
+.UNINDENT
+.sp
+As specifying \fB/dev/null\fP skips the compression/write steps, it is highly recommended to disable any undesired file types in this way when using the \fB\-\-out\-prefix\fP option. Alternatively, only specify the exact file\-types that you want to save for the same effect.
+.SS Interleaved output
+.sp
+Interleaved output, in which both mate 1 and mate 2 reads are written to the same file, can be obtained in several ways:
+.INDENT 0.0
+.IP \(bu 2
+By using the \fB\-\-interleaved\fP option to enabled interleaved input and output. The interleaved reads are written to \fB\-\-out\-file1\fP filename.
+.IP \(bu 2
+By using the \fB\-\-interleaved\-output\fP to enable interleaved output. The interleaved reads are written to \fB\-\-out\-file1\fP filename.
+.IP \(bu 2
+By specifying the same filename for \fB\-\-out\-file1\fP and \fB\-\-out\-file2\fP\&. This includes special filenames \fB\-\fP and \fB/dev/stdout\fP, to write interleaved output to STDOUT.
+.UNINDENT
+.SS Compressed output
+.sp
+As described above, AdapterRemoval defaults to writing gzip compressed FASTQ files. The compression level used for these, as well as for gzip compressed SAM files and for BAM files, and be controlled via the \fB\-\-compression\-level\fP option.
+.sp
+Depending on the compression level, this option either enables block\-based compression using \fBlibdeflate\fP (for levels 2 and above), or stream\-based compression using \fBisa\-l\fP for level 1. Compression level 0 is uncompressed, but includes gzip headers and checksums for validation.
+.sp
+\fBNOTE:\fP
+.INDENT 0.0
+.INDENT 3.5
+Most tools are compatible with block\-based compression, but if a downstream tool only processes a few hundreds of your trimmed reads, then try running AdapterRemoval with \fB\-\-compression\-level 1\fP to enable stream\-based compression.
+.UNINDENT
+.UNINDENT
+.sp
+\fBTIP:\fP
+.INDENT 0.0
+.INDENT 3.5
+On fast storage, and if space is not a limiting factor, then \fB\-\-compression\-level\fP can be decreased to 1 for an up to 50\-100% increase in throughput, at the cost of 10\-20% larger files, depending on the data and hardware.
+.UNINDENT
+.UNINDENT
+.SH INPUT AND OUTPUT
+.SS Input files
+.SS FASTQ files
+.sp
+AdapterRemoval v3 expected standard FASTQ files as input specified using the \fB\-\-in\-file1\fP and \fB\-\-in\-file2\fP options. DNA sequences and quality scores are expected to be written on a single line, and DNA sequences are expected to contain only standard bases A, C, G, T, and N (ambiguous bases). AdapterRemoval v3 supports reading of FASTQ files with Phred+33, Phred+64, and Solexa encoded \fI\%quality scores\fP\&. Input may optionally be gzip compressed.
+.sp
+When specifying paired reads, the FASTQ record names are expected to be identical excepting for the last two characters. The last two characters typically indicate the mate number, and consist of a matching separator character followed by either \fB1\fP or \fB2\fP\&. Examples include \fB/1\fP and \fB/2\fP, and \fB\&.1\fP and \fB\&.2\fP\&.
+.SS Table of adapters
+.sp
+The table used with \fB\-\-adapter\-list\fP is expected to be a plain\-text table containing one or two whitespace separated columns, with each line containing the same number of columns:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+AGATCGGAAGAGCACACGTCTGAACTCCAGTCA  AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT
+AAGTCGGAGGCCAAGCGGTCTTAGGAAGACAA   AAGTCGGATCGTAGCCATGTCGTTCTGTGAGCCAAGGAGTTG
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+Column one corresponds to \fB\-\-adapter1\fP and column two corresponds to \fB\-\-adapter2\fP\&. Only one column is required in single end mode, while both columns are required in paired end mode.
+.SS Table of barcodes
+.sp
+The table used with \fB\-\-barcode\-list\fP is expected to be a plain\-text table containing two or three whitespace separated columns, with each line containing the same number of columns:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+sample_1 ATGCGGA TGAATCT
+sample_2 ATGGATT ATAGTGA
+sample_7 CAAAACT TCGCTGC
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+Sample names in the first column may only contain letters, numbers and underscores \fB_\fP\&. The barcodes in the second column is expected to be found at the 5\(aq of mate 1 reads and the barcode in the third column is expected to be found at the 5\(aq of mate 2 reads.
+.sp
+If \fB\-\-barcode\-orientation explicit\fP is used, the table is expected to contain a fourth column specifying the orientation of each barcode pair:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+sample_1 ATGCGGA TGAATCT forward
+sample_1 TGAATCT ATGCGGA reverse
+sample_2 ATGGATT ATAGTGA reverse
+sample_7 CAAAACT TCGCTGC forward
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+The following names for orientations are supported: \fBforward\fP, \fBreverse\fP, \fBfwd\fP, \fBrev\fP, \fB+\fP, and \fB\-\fP\&. This table is used as is, and the \(dqmissing\(dq orientations are not automatically generated.
+.SS Output files
+.sp
+The default filenames for single end mode, when using \fB\-\-out\-prefix\fP are as follows:
+.INDENT 0.0
+.INDENT 3.5
+.INDENT 0.0
+.IP \(bu 2
+\fB{prefix}[.{sample}].r1.fastq.gz\fP
+.IP \(bu 2
+\fB{prefix}[.{sample}].discarded.fastq.gz\fP
+.IP \(bu 2
+\fB{prefix}.unidentified.fastq.gz\fP, if demultiplexing is enabled
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.sp
+The default filenames for paired end mode, when using \fB\-\-out\-prefix\fP, are as follows:
+.INDENT 0.0
+.INDENT 3.5
+.INDENT 0.0
+.IP \(bu 2
+\fB{prefix}[.{sample}].r1.fastq.gz\fP
+.IP \(bu 2
+\fB{prefix}[.{sample}].r2.fastq.gz\fP
+.IP \(bu 2
+\fB{prefix}[.{sample}].merged.fastq.gz\fP, if merging is enabled
+.IP \(bu 2
+\fB{prefix}[.{sample}].singleton.fastq.gz\fP
+.IP \(bu 2
+\fB{prefix}.unidentified.r1.fastq.gz\fP, if demultiplexing is enabled
+.IP \(bu 2
+\fB{prefix}.unidentified.r2.fastq.gz\fP, if demultiplexing is enabled
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.sp
+Discarded reads are not written by default, and therefore does not have a default filename. The \fB{sample}\fP field is only added if demultiplexing is enabled.
+.sp
+For SAM and BAM output, read types are classified using SAM/BAM flags rather than by filename, and all reads are therefore written to a single file, depending on the chosen format:
+.INDENT 0.0
+.INDENT 3.5
+.INDENT 0.0
+.IP \(bu 2
+\fB{prefix}[.{sample}].sam\fP
+.IP \(bu 2
+\fB{prefix}[.{sample}].sam.gz\fP
+.IP \(bu 2
+\fB{prefix}[.{sample}].bam\fP
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.sp
+Additionally, unlike FASTQ data, discarded reads are included by default, though this can be disabled by using \fB\-\-out\-discarded /dev/null\fP\&.
+.SS FASTQ files
+.sp
+Output files with the \fB\&.fastq\fP extension correspond to that described for input FASTQ files, but are always Phred+33 encoded regardless of the encoding of the input data.
+.SS SAM/BAM files
+.sp
+TODO
+.SS HTML report
+.sp
+TODO
+.sp
+Note that this file currently requires an internet connection, due to depending on external JavaScript files for interactive plotting.
+.SS JSON report
+.sp
+TODO
+.sp
+A full \fI\%JSON schema\fP can be found in the \fBschema.json\fP file in the root of the source distribution of AdapterRemoval.
+.SH MIGRATING FROM OLDER VERSIONS
+.SS Migrating AdapterRemoval to 3.x from 2.x
+.sp
+AdapterRemoval v3 makes a number of changes in default behavior, including the renaming of a number of options (old names may still be used, but are deprecated) and the renaming of all output filenames. See the changelog for an exhaustive list of changes in behavior.
+.INDENT 0.0
+.TP
+\fBOutput\fP
+.INDENT 7.0
+.IP \(bu 2
+AdapterRemoval will no longer default to writing all files with the prefix \fByour_output\fP\&. Instead, you should either set a prefix via the \fB\-\-out\-prefix\fP option (previously \fB\-\-basename\fP) or select just the reads you want to save via the various \fB\-\-out\-*\fP options.
+.IP \(bu 2
+Default filenames have been updated and all use the \fB\&.fastq.gz\fP extension. This can be overridden by using the various \fB\-\-out\-*\fP options on a per\-file basis.
+.IP \(bu 2
+Discarded reads are no longer saved by default, even when using \fB\-\-out\-prefix\fP option. These can be saved by setting the \fB\-\-out\-discarded\fP option.
+.IP \(bu 2
+Output when using the \fB\-\-out\-prefix\fP option is now gzip compressed by default. This can be changed by using \fB\-\-out\-format fastq\fP\&.
+.IP \(bu 2
+The files for discarded and singleton reads are not created if no filtering options are enabled.
+.UNINDENT
+.TP
+\fBAdapter trimming\fP
+.INDENT 7.0
+.IP \(bu 2
+Default adapters have been changed to the \fI\%recommended Illumina sequences\fP\&. This makes the default settings more generally applicable, but may result in slightly different results. If necessary, the old default adapter sequences can be specified using \fB\-\-adapter1\fP and \fB\-\-adapter2\fP\&.
+.IP \(bu 2
+The default \fB\-\-mm\fP value has been increased to 6.
+.UNINDENT
+.TP
+\fBRead merging\fP
+.INDENT 7.0
+.IP \(bu 2
+Read\-merging now assigns \fBN\fP to any mismatching position where both candidate bases have the same quality score, to make results deterministic, instead of picking one of the two at random, and picks the highest quality score for each merged position rather than calculate. A slightly more conservative version of the original score recalculation is available via \fB\-\-merge\-strategy additive\fP, that sums the score of matches and subtracts the scores of mismatches.
+.IP \(bu 2
+Merged reads are no longer given a \fBM_\fP name prefix by default, but this may be re\-enabled by using \fB\-\-prefix\-merged M_\fP\&.
+.IP \(bu 2
+It is no longer possible to \(dqmerge\(dq unpaired reads.
+.UNINDENT
+.TP
+\fBQuality trimming and filtering\fP
+.INDENT 7.0
+.IP \(bu 2
+The various quality trimming options \fB\-\-trimwindows\fP, \fB\-\-trimns\fP, \fB\-\-trimqualities\fP, and \fB\-\-minquality\fP have been deprecated in favor of the new \fB\-\-trim\-mott\-rate\fP option, which uses the modified Mott\(aqs algorithm. This is enabled by default with a threshold of \fB0.05\fP, but the algorithm used may be changed back (or disabled) using the new \fB\-\-quality\-trimming\fP option.
+.UNINDENT
+.TP
+\fBReports\fP
+.INDENT 7.0
+.IP \(bu 2
+The \fB\&.settings\fP file has been replaced by two reports, one report in HTML intended for human consumption and one report in JSON format intended for machine consumption. A JSON schema for the JSON report is included in the source distribution.
+.UNINDENT
+.TP
+\fBMisc\fP
+.INDENT 7.0
+.IP \(bu 2
+FASTQ are now always written using Phred+33 quality scores. If you need FASTQ data in another format, then use a tool like \fI\%seqtk\fP to convert the output.
+.IP \(bu 2
+The \fB\-\-qualitymax\fP option has been removed, and AdapterRemoval instead uses looser criteria to verify that input data is valid. Support for the full range valid of quality scores has been added via the \fB\-\-quality\-format sam\fP option.
+.IP \(bu 2
+The \fB\-\-combined\-output\fP option has been removed, but it is now possible to arbitrarily combine output files simply by specifying the same filename for multiple outputs. However, the ability to maintain pairing by writing 0\-length trimmed reads as a single \fIN\fP was removed due to a negative impact on some downstream analyses.
+.IP \(bu 2
+AdapterRemoval now defaults to using 2 threads. This can be changed using the \fB\-\-threads\fP option.
+.IP \(bu 2
+The default (gzip) compression level has been decreased in order to increase throughput at the cost of output files being about 3% larger. This can be changed using the \fB\-\-compression\-level\fP option, that now gives access to a wider range of compression levels (0 to 13).
+.UNINDENT
+.UNINDENT
+.SS Migrating to AdapterRemoval 2.x from 1.x
+.sp
+Command\-line options mostly behave the same between AdapterRemoval v1 and AdapterRemoval v2, and scripts written with AdapterRemoval v1.x in mind should work with AdapterRemoval v2.x. A notable exception is the \fB\-\-pcr1\fP and \fB\-\-pcr2\fP options, which have been replaced by the \fB\-\-adapter1\fP and \fB\-\-adapter2\fP options described above. While the \fB\-\-pcr\fP options are still supported for backwards compatibility, these should not be used going forward.
+.sp
+The difference between these two options is that \fB\-\-adapter2\fP expects the mate 2 adapter sequence to be specified in the read orientation as described above, while the \fB\-\-pcr2\fP expects the sequence to be in the same orientation as the mate 1 sequence, the reverse complement of the sequence observed in the mate 2 reads.
+.sp
+Using the common 13 bp Illumina adapter sequence (AGATCGGAAGAGC) as an example, this is how the options would be used in AdapterRemoval v2.x:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+adapterremoval3 \-\-adapter1 AGATCGGAAGAGC \-\-adapter2 AGATCGGAAGAGC ...
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+And in AdapterRemoval v1.x:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+adapterremoval3 \-\-adapter1 AGATCGGAAGAGC \-\-adapter2 GCTCTTCCGATCT ...
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.SH ADAPTERREMOVAL MANPAGE
+.SS Synopsis
+.sp
+\fBadapterremoval3\fP [\fIoptions\fP\&...] \-\-in\-file1 <\fIfilenames\fP> [\-\-in\-file2 <\fIfilenames\fP>]
+.SS Description
+.sp
+\fBadapterremoval3\fP removes residual adapter sequences from single\-end (SE) or paired\-end (PE) FASTQ reads, optionally trimming Ns and low qualities bases and/or merging overlapping paired\-end mates into one read. Low quality reads are filtered based on the resulting length and the number of ambiguous nucleotides (\(aqN\(aq) present following trimming. These operations may be combined with simultaneous demultiplexing using 5\(aq barcode sequences. Reports containing statistics and plots in HTML and JSON format are generated after each run.
+.sp
+Alternatively, \fBadapterremoval3\fP may perform a read\-only analysis of the input data, including the reconstruction of a consensus adapter sequences from paired\-end data.
+.sp
+If you use this program, please cite the paper:
+.INDENT 0.0
+.INDENT 3.5
+Schubert, Lindgreen, and Orlando (2016). AdapterRemoval v2: rapid adapter trimming, identification, and read merging. BMC Research Notes, 12;9(1):88
+.sp
+\fI\%http://bmcresnotes.biomedcentral.com/articles/10.1186/s13104\-016\-1900\-2\fP
+.UNINDENT
+.UNINDENT
+.sp
+For detailed documentation, please see
+.INDENT 0.0
+.INDENT 3.5
+\fI\%http://adapterremoval.readthedocs.io/\fP
+.UNINDENT
+.UNINDENT
+.SS Options
+.INDENT 0.0
+.TP
+.B \-h, \-\-help
+Display summary of command\-line options.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-v, \-\-version
+Print the version string.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-licenses
+.TP
+.B Print licenses for this software.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-threads n
+Maximum number of threads. Defaults to 1.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-simd name
+Selects the preferred SIMD instruction. Possible values are none, SSE2, AVX2, AVX512, and NEON. Options may be unavailable depending on the current system and depending on the compiler used to build AdapterRemoval. By default, AdapterRemoval will use the most advanced instruction available.
+.UNINDENT
+.SS Input files
+.INDENT 0.0
+.TP
+.B \-\-in\-file1 filename [filenames...]
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-in\-file2 filename [filenames...]
+Read FASTQ mate 1 and mate 2 reads from one or more files, either uncompressed or gzip compressed.  The \fB\-\-interleaved\fP and \fB\-\-interleaved\-input\fP options may be used to enable reading of interleaved reads from the files specified with \fB\-\-in\-file1\fP, in which case \fB\-\-in\-file2\fP is not used.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-head n
+If set, AdapterRemoval will process only the first N reads/pairs of reads in the input. Accepts suffixes K (thousands), M (millions), and G (billions). By default, all data is processed.
+.UNINDENT
+.SS Output file options
+.sp
+Output files for AdapterRemoval may be specified either via the \fB\-\-out\-prefix\fP option, which assigns default filenames, and/or via the individual \fB\-\-out\-*\fP to set or override the output filename for a given output read type. The same filename may be used for multiple \fB\-\-out\-*\fP options, in which case all of those reads are written to that file in input order.
+.sp
+Use \fB\-\fP or \fB/dev/stdin\fP to read from standard input, use \fB\-\fP or \fB/dev/stdout\fP to write to standard output, and use \fB/dev/null\fP to disable the generation of those types of reads. Statistics are still collected for read types written to \fB/dev/null\fP, but the data itself is not serialized or compressed, in order to save time.
+.INDENT 0.0
+.TP
+.B \-\-out\-prefix path
+Prefix for the output files for which no filename was set using the corresponding options below, except for \fB\-\-out\-discarded\fP which is not saved by default. If this option is not used, then files for which no \fB\-\-out\fP option was set will not be saved.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-out\-file1 filename
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-out\-file2 filename
+Output files containing trimmed mate 1 reads and mate 2 reads. If interleaved output is enabled via the \fB\-\-interleaved\fP or the \fB\-\-interleaved\-output\fP options, then only \fB\-\-out\-file1\fP is used, and this file will contain both mate 1 and mate 2 reads.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-out\-merged filename
+When used with \fB\-\-merged\fP, this file contains overlapping mate\-pairs which have been merged into a single read. Setting this option in demultiplexing mode overrides \fB\-\-out\-prefix\fP for just this read type.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-out\-singleton filename
+Output file to which containing paired reads for which the mate has been discarded. Setting this option in demultiplexing mode overrides \fB\-\-out\-prefix\fP for just this read type.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-out\-unidentified1 filename
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-out\-unidentified2 filename
+In demultiplexing mode, reads that could not be assigned to a single sample are written to these files. In interleaved mode, both mate 1 and mate 2 reads are written to \fB\-\-out\-unidentified1\fP\&.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-out\-discarded filename
+Contains reads discarded due to the \fB\-\-min\-length\fP, \fB\-\-max\-length\fP, or \fB\-\-max\-ns\fP, \fB\-\-min\-mean\-quality\fP, \fB\-\-min\-complexity\fP options. Setting this option in demultiplexing mode overrides \fB\-\-out\-prefix\fP for just this read type, but this option is not enabled by just setting \fB\-\-out\-prefix\fP\&. This file will furthermore not be written if all filtering is disabled.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-out\-json filename
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-out\-html filename
+Reports in JSON/HTML format containing information about the parameters used in the run, overall statistics on the reads before and after trimming, demultiplexing statistics, and the results of any analyses carried out during the runs. Analyses include insert inference of sizes, duplication levels, and any inferred consensus adapter sequences.
+.UNINDENT
+.SS FASTQ options
+.INDENT 0.0
+.TP
+.B \-\-quality\-format name
+The Phred quality scores encoding used in input reads \- either \fB64\fP for Phred+64 (Illumina 1.3+ and 1.5+) or \fB33\fP for Phred+33 (Illumina 1.8+, BGISeq, and more). In addition, the value \fBsolexa\fP may be used to specify reads with Solexa encoded scores. The \fBsam\fP format may be used for Phred+33 encoded data with quality scores higher than that normally produced by squencing machines. Defaults to \fB33\fP\&.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-mate\-separator separator
+Character separating the mate number (\fB1\fP or \fB2\fP) from the read name in FASTQ records, such as \fB@my\-read/1\fP and \fB@my\-read/2\fP\&. This is typically either \fB/\fP or \fB\&.\fP\&. By default, AdapterRemoval will attempt to infer this from the data.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-interleaved\-input
+Enable reading of interleaved FASTQ reads from the files specified with \fB\-\-in\-file1\fP\&. Defaults to off.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-interleaved\-output
+Write paired\-end reads to the file specified by \fB\-\-out\-file1\fP, interleaving mate 1 and mate 2 reads. Defaults to off.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-interleaved
+Enables \fB\-\-interleaved\-input\fP and \fB\-\-interleaved\-output\fP\&. Defaults to off.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-mask\-degenerate\-bases
+Mask degenerate/ambiguous IUPAC encoded bases (B/D/H/K/M/N/R/S/V/W/Y) in the input by replacing them with an \(aqN\(aq; if this option is not used, AdapterRemoval will abort upon encountering degenerate bases in the input.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-convert\-uracils
+Convert uracils (U) to thymine (T) in input reads; if this option is not used, AdapterRemoval will abort upon encountering uracils in the input.
+.UNINDENT
+.SS Output compression options
+.INDENT 0.0
+.TP
+.B \-\-out\-format name
+Selects the default output format for files, one of either \fBfastq\fP for uncompressed FASTQ reads, \fBfastq.gz\fP for gzip compressed FASTQ reads, \fBsam\fP for uncompressed SAM records, \fBsam.gz\fP for gzip compressed SAM records, \fBbam\fP for BGZF compressed BAM records, and \fBubam\fP for uncompressed BAM records. Setting a \fB\-\-out\-*\fP option overrides this option based on the extension used (except \fB\&.ubam\fP). Defaults to \fBfastq.gz\fP\&.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-stdout\-format name
+.TP
+.B Selects the output format for data written to STDOUT, i.e. when writing to \(ga\(ga\-\(ga\(ga or \(ga\(ga/dev/stdout\(ga\(ga; choices are the same as for \-\-out\-format. By default, the uncompressed version of the current \(ga\(ga\-\-out\-format\(ga\(ga is used.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-read\-group [n, \&...]
+Add read\-group (RG) information to SAM/BAM output. Tags can either be specified as individual arguments, i.e. \fB\-\-read\-group ID:foo SM:bar\fP, or as a string containing tags separated by tabs. Normally the latter can be written as \fB\-\-read\-group $\(aqID:DS\-1\etSM:TK\-421\etPL:ILLUMINA\(aq\fP on the command\-line. If the ID tag is not provided, the default ID \fB1\fP will be used.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-compression\-level n
+Sets the compression level for compressed output. Valid values are 0 to 13: Level 0 is uncompressed but includes gzip headers/checksums, level 1 is streamed for FASTQ output, which may be required in rare cases for compatibility. FASTQ output with compression levels 2 to 13, SAM, and BAM output is block compressed using the gzip compatible BGZF format. Defaults to compression level 5, roughly equivalent to \fBgzip \-4\fP\&.
+.UNINDENT
+.SS FASTQ processing options
+.INDENT 0.0
+.TP
+.B \-\-adapter1 adapter
+Adapter sequence expected to be found in mate 1 reads, specified in read direction. For a detailed description of how to provide the appropriate adapter sequences, see the \(dqAdapters\(dq section of the online documentation. Default is \fBAGATCGGAAGAGCACACGTCTGAACTCCAGTCA\fP, intended for Illumina TruSeq and similar data.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-adapter2 adapter
+Adapter sequence expected to be found in mate 2 reads, specified in read direction. For a detailed description of how to provide the appropriate adapter sequences, see the \(dqAdapters\(dq section of the online documentation. Default is \fBAGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT\fP, intended for Illumina TruSeq and similar data.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-adapter\-list filename
+Read one or more adapter sequences from a table. The first two columns (separated by whitespace) of each line in the file are expected to correspond to values passed to \-\-adapter1 and \-\-adapter2. In single\-end mode, only column one is required. Lines starting with \(aq#\(aq are ignored. When multiple rows are found in the table, AdapterRemoval will try each adapter (pair), and select the best aligning adapters for each FASTQ read processed.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-min\-adapter\-overlap length
+In single\-end mode, reads are only trimmed if the overlap between read and the adapter is at least X bases long, not counting ambiguous nucleotides (N). Defaults to 1.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-mismatch\-rate rate
+The allowed fraction of mismatches allowed in the aligned region. If the value is less than 1, then the value is used directly. If \fB\-\-mismatch\-rate\fP is greater than 1, the rate is set to 1 / \fBrate\fP\&. The default setting is 6 when trimming adapters, corresponding to a maximum mismatch rate of 1/6, and 10 when using \fB\-\-identify\-adapters\fP\&.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-shift n
+To allow for missing bases in the 5\(aq end of the read, the program can let the alignment slip \fB\-\-shift\fP bases in the 5\(aq end. This corresponds to starting the alignment maximum \fB\-\-shift\fP nucleotides into read 2 (for paired\-end) or the adapter (for single\-end). The default is 2.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-merge
+In paired\-end mode, merge overlapping mates into a single and recalculate the quality scores. The overlap needs to be at least \fB\-\-merge\-threshold\fP nucleotides, with a maximum number of mismatches determined by \fB\-\-mismatch\-mate\fP\&. This option has no effect in single\-end mode.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-merge\-threshold length
+The minimum overlap between mate 1 and mate 2 before the reads are merged into one, potentially longer sequence, when merging paired\-end reads. Default is 11 bases.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-merge\-strategy name
+Determines how to assign quality scores to matching/mismatching bases during read merging. The \fBmaximum\fP strategy uses \fBQ=max(Q1, Q2)\fP for matches while the \fBadditive\fP strategy uses \fBQ = Q1 + Q2\fP\&. Both strategies use \fBQ = abs(Q1 \- Q2)\fP for mismatches, and picks the highest quality base, unless the qualities are the same in which case \fBN\fP is used. Setting this option implies \-\-merge. Possible values are maximum, and additive. Defaults to \fBmaximum\fP\&.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-merge\-quality\-max phred
+Sets the maximum Phred score for re\-calculated quality scores when read merging is enabled with the \(aqadditive\(aq merging strategy. The value must be in the range 0 to 93, corresponding to Phred+33 encoded values of \fB!\fP to \fB~\fP\&. Defaults to 41.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-prefix\-read1 X
+Adds the specified prefix to the names of mate 1 reads. Default to no prefix.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-prefix\-read2 X
+Adds the specified prefix to the names of mate 2 reads. Default to no prefix.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-prefix\-merged X
+Adds the specified prefix to merged read names. Default to no prefix.
+.UNINDENT
+.SS Quality trimming options
+.INDENT 0.0
+.TP
+.B \-\-pre\-trim3p n [n]
+Trim the 3\(aq of reads by a fixed amount after demultiplexing but before removing adapters. Specify one value to trim mate 1 and mate 2 reads the same amount, or two values separated by a space to trim each mate a different amount. Off by default.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-post\-trim5p n [n]
+Trim the 5\(aq of reads by a fixed amount after removing adapters, but before carrying out quality based trimming. See \fB\-\-pre\-trim3p\fP\&.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-post\-trim3p n [n]
+Trim the 3\(aq of reads by a fixed amount after removing adapters, but before carrying out quality based trimming. See \fB\-\-pre\-trim3p\fP\&.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-quality\-trimming method
+The method used for performing quality trimming; \fBnone\fP to disable quality trimming, \fBmott\fP to enable trimming using the modified Mott\(aqs algorithm, \fBwindow\fP to perform window based quality trimming, and \fBper\-base\fP to perform base\-by\-base trimming of low\-quality bases and Ns (if enabled). Defaults to Mott\(aqs algorithm.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-trim\-mott\-quality phred
+The threshold Phred score used when performing trimming quality based trimming using the modified Mott\(aqs algorithm. The value must be in the range 0 to 93, corresponding to Phred+33 encoded values of \fB!\fP to \fB~\fP\&. Default to 13, which is an error rate of roughly 0.05.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-trim\-windows size
+Trim low quality bases using a sliding window based approach inspired by \fBsickle\fP with the given window size. See the \(dqWindow based quality trimming\(dq section of the manual page for a description of this algorithm. Applies when \fBwindow\fP based trimming is enabled using \fB\-\-quality\-trimming\fP\&. Defaults to 0.1.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-trim\-min\-quality minimum
+Inclusive minimum quality used when trimming low\-quality bases with \-\-trimming\-strategy \(aqwindow\(aq and \(aqper\-base\(aq. Applies when \fBwindow\fP based or \fBper\-base\fP trimming is enabled using \fB\-\-quality\-trimming\fP\&. Defaults to 2.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-trim\-qualities
+Trim consecutive stretches of low quality bases (threshold set by \fB\-\-trim\-min\-quality\fP) from the 5\(aq and 3\(aq termini. If trimming of Ns is also enabled (\fB\-\-trim\-ns\fP), then stretches of mixed low\-quality bases and Ns are trimmed. Applies when \fBper\-base\fP trimming is enabled using \fB\-\-quality\-trimming\fP\&.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-trim\-ns
+Trim consecutive Ns from the 5\(aq and 3\(aq termini. If quality trimming is also enabled (\fB\-\-trim\-qualities\fP), then stretches of mixed low\-quality bases and/or Ns are trimmed. Applies when \fBwindow\fP based or \fBper\-base\fP trimming is enabled using \fB\-\-quality\-trimming\fP\&.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-pre\-trim\-polyx [nucleotides...]
+Enable trimming of poly\-X tails prior to read alignment and adapter trimming. Zero or more nucleotides (A, C, G, T) may be specified, separated by spaces, with zero nucleotides corresponding to all of A, C, G, and T. Defaults to no trimming.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-post\-trim\-polyx [nucleotides...]
+Enable trimming of poly\-X tails after read alignment and adapter trimming/merging, but before trimming of low\-quality bases. Merged reads are not trimmed by this option, since both ends are derived from the 5\(aq of reads. See \fB\-\-pre\-trim\-polyx\fP\&. Off by default.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-preserve5p
+If set, bases at the 5p will not be trimmed by \fBmott\fP, \fBwindow\fP, or \fBper\-base\fP trimming, except if the entire read consists of low\-quality bases. Merged reads will not be quality trimmed when this option is enabled due to the 3\(aq ends being located inside the reads or overlapping the 5\(aq of the source sequences.
+.UNINDENT
+.SS Filtering options
+.INDENT 0.0
+.TP
+.B \-\-max\-ns n
+Discard reads containing more than \fB\-\-max\fP ambiguous bases (\(aqN\(aq) after trimming. Default is no maximum.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-min\-length length
+Reads shorter than this length are discarded following trimming. Defaults to 15.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-max\-length length
+Reads longer than this length are discarded following trimming. Defaults to no maximum.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-min\-mean\-quality X
+Reads with a mean quality score less than this value (in the range 0 to 126) following trimming are discarded. Defaults to no minimum.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B min\-complexity X
+Reads with a sequence quality less than this value after trimming are discarded. Complexity is measured as the fraction of positions that differ from the previous position. A suggested value is 0.3. Defaults to no minimum.
+.UNINDENT
+.SS Demultiplexing options
+.INDENT 0.0
+.TP
+.B \-\-barcode\-list filename
+Perform demultiplexing using table of one or two fixed\-length barcodes for SE or PE reads. The table is expected to contain 2 or 3 white\-space separated columns, the first of which represent the name of a given sample, and the second and third of which represent the mate 1 and (optionally) the mate 2 barcode sequence. For a detailed description, see the \(dqDemultiplexing\(dq section of the online documentation.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-multiple\-barcodes
+Allow for more than one barcode (pair) for each sample. If this option is not specified, AdapterRemoval will abort if multiple barcodes/barcode pairs identify the same sample.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-barcode\-orientation orientation
+Process barcodes sequences in both the barcode1\-insert\-barcode2 (\fBforward\fP) orientation and barcode2\-insert\-barcode1 (\fBreverse\fP) orientation. If \fBforward\fP or \fBreverse\fP is used, the barcode in the barcode table are assumed to be in that orientation, and the opposite sequence is generated. If \fBexplicit\fP is used, the barcode table is expected to contain a 4th column specifying the orientation (\fBforward\fP or \fBreverse\fP for each barcode), and only that orientation is used. Default is \fBunspecified\fP\&.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-normalize\-orientation
+Reverse complement merged reads found to be in the reverse orientation, based on barcode orientation
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-barcode\-mm n
+.TP
+.B Maximum *total* number of mismatches allowed, when counting mismatches in both the mate 1 and the mate 2 barcode for paired reads.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-barcode\-mm\-r1 n
+Maximum number of mismatches allowed for the mate 1 barcode; if not set, this value is equal to the \fB\-\-barcode\-mm\fP value; cannot be higher than the \fB\-\-barcode\-mm\fP value.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-barcode\-mm\-r2 n
+Maximum number of mismatches allowed for the mate 2 barcode; if not set, this value is equal to the \fB\-\-barcode\-mm\fP value; cannot be higher than the \fB\-\-barcode\-mm\fP value.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-demultiplex\-only
+Only carry out demultiplexing using the list of barcodes supplied with \-\-barcode\-list. No other processing is done.
+.UNINDENT
+.SS Reporting options
+.INDENT 0.0
+.TP
+.B \-\-report\-only
+Write a report of the input data without performing any processing of the FASTQ reads. In addition, attempt to build a consensus adapter sequence from fully overlapping pairs of paired\-end reads. The minimum overlap is controlled by \fB\-\-merge\-threshold\fP and the result will be compared with the values set using \fB\-\-adapter1\fP and \fB\-\-adapter2\fP\&. Default is off.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-report\-title title
+Set the title used in the HTML report. Defaults to \fBAdapterRemoval v3.0.0\-alpha3\fP\&.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-report\-sample\-rate X
+The fraction of reads to sample when generating base quality/composition curves for trimming reports. Using all data (\fB\-\-report\-sample\-nth 1.0\fP) results in an 10\-30% decrease in throughput and is typically not necessary, except for tiny datasets. Default is 0.10.
+.UNINDENT
+.INDENT 0.0
+.TP
+.B \-\-report\-duplication <N>
+FastQC based duplicate detection, based on the frequency of the first N unique sequences observed. If the option is used without a value, an N of 100k is used, corresponding to FastQC defaults; a value of 0 disables the analysis. Accepts suffixes K, M, and G. Default is 0.
+.UNINDENT
+.SS Logging options
+.INDENT 0.0
+.TP
+.BI \-\-log\-level \ name
+The minimum severity of messages to be written to stderr. Possible values are debug, info, warning, and error. Default is info.
+.TP
+.BI \-\-log\-colors \ name
+Enable/disable the use of colors when writing log messages. If set to auto, colors will only be enabled if STDERR is a terminal and the NO_COLORS is environmental variable is not set. Possible values are auto, always, and never. Defaults to auto.
+.TP
+.BI \-\-log\-progress \ name
+Specify the type of progress report used. If set to \fBauto\fP, then a spinner will be used if STDERR is a terminal and the NO_COLORS environmental variable is not set, otherwise a log line will be written for every 1 million records processed. Possible values are \fBauto\fP, \fBspin\fP, \fBlog\fP, and \fBnever\fP\&. Default is \fBauto\fP\&.
+.UNINDENT
+.SS Window based quality trimming
+.sp
+AdapterRemoval implements sliding window based approach to quality based base\-trimming inspired by \fBsickle\fP\&. If \fB\-\-trim\-window\-size\fP is greater than or equal to 1, that number is used as the window size for all reads. If \fB\-\-trim\-window\-size\fP is a number greater than or equal to 0 and less than 1, then that number is multiplied by the length of individual reads to determine the window size. If the window length is zero or is greater than the current read length, then the read length is used instead.
+.sp
+Reads are trimmed as follows for a given window size:
+.INDENT 0.0
+.INDENT 3.5
+.INDENT 0.0
+.IP 1. 3
+The new 5\(aq is determined by locating the first window where both the average quality and the quality of the first base in the window is greater than \fB\-\-trim\-min\-quality\fP\&.
+.IP 2. 3
+The new 3\(aq is located by sliding the first window right, until the average quality becomes less than or equal to \fB\-\-trim\-min\-quality\fP\&. The new 3\(aq is placed at the last base in that window where the quality is greater than or equal to \fB\-\-trim\-min\-quality\fP\&.
+.IP 3. 3
+If no 5\(aq position could be determined, the read is discarded.
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.SS Exit status
+.sp
+AdapterRemoval exists with status 0 if the program ran successfully, and with a non\-zero exit code if any errors were encountered. Output from AdapterRemoval should not be used if the program returned a non\-zero exit code.
+.SS Reporting bugs
+.sp
+Please report any bugs using the AdapterRemoval issue\-tracker:
+.sp
+\fI\%https://github.com/MikkelSchubert/adapterremoval/issues\fP
+.SS License
+.sp
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 3 of the License, or
+at your option any later version.
+.sp
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+.sp
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <\fI\%http://www.gnu.org/licenses/\fP>.
+.INDENT 0.0
+.IP \(bu 2
+\fI\%Index\fP
+.IP \(bu 2
+\fI\%Module Index\fP
+.IP \(bu 2
+\fI\%Search Page\fP
+.UNINDENT
+.SH AUTHOR
+Mikkel Schubert; Stinus Lindgreen
+.SH COPYRIGHT
+2025, Mikkel Schubert; Stinus Lindgreen
+.\" Generated by docutils manpage writer.
+.
