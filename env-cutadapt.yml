@@ -1,0 +1,8 @@
+name: dino_cutadapt
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - seqkit
+  - cutadapt
