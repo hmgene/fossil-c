@@ -9,6 +9,7 @@ mamba env update -n dino_env -f dino_env.yml
 ### Structure of DATA
 <details>
 <summary> bigdata (not shown here ) structure </summary>
+```
 bigdata/
 ├── adapterrm
 ├── bwa
@@ -60,7 +61,7 @@ bigdata/
     │   ├── galGal6
     │   └── hg38
     └── fa
-
+```
 </details>
 
 
