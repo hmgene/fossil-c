@@ -37,7 +37,8 @@ usage="$FUNCNAME <fq> <fa> [outputtype=seq]
 		}
 	}
 	my %r=();
-	my $N=0;
+	my $N=0; ## total
+	my $M=0; ## with adapters 
 	my %c=();
 	while(<>){chomp;
 		my ($s,$tmp1,$tmp2)=($_,"","");
@@ -48,6 +49,7 @@ usage="$FUNCNAME <fq> <fa> [outputtype=seq]
 			if($tmp2 ne "" ){ $pos .= "rc_$k:$tmp2;"; }
 		}
 		if($pos ne ""){
+			$M++;
 			map { my ($i,@x)=split /[:,]/,$_; $c{$i}++; map { $r{$_}{$i}++;} @x; } split /;/,$pos;
 			#print $s,"\t",$pos,"\n";
 		}
@@ -55,6 +57,7 @@ usage="$FUNCNAME <fq> <fa> [outputtype=seq]
 	}
 	my @cc=sort keys %c;
 	print "#N=$N\n";
+	print "#M=$M\n";
 	print join("\t","pos",@cc),"\n";
 
 	foreach my $x (sort {$a<=>$b} keys %r){

@@ -1,4 +1,12 @@
 
+kr2-de-db(){
+usage="$FUNNAME <db>";if [ $# -lt 1 ];then echo "$usage";return;fi
+    local db=$1
+    rm $db/hash.k2d
+    rm $db/opts.k2d
+    rm $db/seqid2taxid.map
+    rm $db/taxo.k2d
+}
 kr2-fq-class(){
 echo "read https://jodyphelan.gitbook.io/tutorials/ngs/kraken2"
 }
@@ -17,19 +25,47 @@ awk '$1>0 && $3>100' Ga1-pol-1_S1_L004_R1_001.fastq.gz.report |uniq|sort -k1,1nr
 }
 
 
+kr2-ls-txid(){
+usage="$FUNCNAME <db>";if [ $# -lt 1 ];then echo "$usage";return;fi
+	cut -f 3  ${1%/}/library/*/prelim_map*.txt | sort -u
+}
+kr2-is-txid(){
+usage="$FUNCNAME <db> <txid>"; if [ $# -lt 2 ];then echo "$usage";return;fi
+	#existed=( `cut -f 3  $db/library/added/prelim_map*.txt | sort -u` )
+	#if [[ " ${existed[*]} " =~ " ${txid} " ]]; then
+	dino kr2-ls-txid $1 | grep -w $2
+}
+
+
+kr2-add2lib(){
+usage="$FUNCNAME <fa> <txid> <db>"
+if [ $# -lt 3 ];then echo "$usage";return;fi
+local txid=$2; local fa=$1; local db=${3%/}
+	existed=( `cut -f 3  $db/library/added/prelim_map*.txt | sort -u` )
+	if [[ " ${existed[*]} " =~ " ${txid} " ]]; then
+		echo "$txid exists in $db/library/added"
+	else
+		dino kraken2-build --add-to-library $fa --db $db 
+	fi
+}
+
 
 kr2-dn-lib(){
 	usage="$FUNCNAME <library> <db> [<threads>=8]";if [ $# -lt 1 ];then echo "$usage";return;fi
+	local db=${2%/};
 	if [ $1 == "plasmid" ];then 
-		o=bigdata/genome/plasmid.fna
-		if [ ! -s $o ];then
+		txid=36549
+		o=$db/genome/plasmid.fna
+		if [ -s $o ];then
+			echo "$o exists"
+		else
 			mkdir -p ${o%.fna}
 			cd ${o%.fna}
 			wget -r -np -nH --cut-dirs=3 -A "*genomic.fna.gz" ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/plasmid/
-			gunzip -dc *genomic.fna.gz | dino kr2-fa - 36549 > library.fna
+			gunzip -dc *genomic.fna.gz | dino kr2-fa - $txid > library.fna
 			cd -
 		fi
-		dino kraken2-build --add-to-library $o --db $2 
+		dino kr2-add2lib $o $txid $db
 	else
 		o=bigdata/$2/library/$1/library.fna
 		if [ -s $o ];then
@@ -53,10 +89,11 @@ usage="$FUNCNAME <db>";if [ $# -lt 1 ];then echo "$usage";return;fi
 	fi
 }
 
-kr2-add2lib(){
+kr2-add-genome(){
 	usage="$FUNCNAME <fa|url> <species_name> <taxid> <krakendb> [output=bigdata/genome/<species_name>.fna]> [threds=8]";
 	if [ $# -lt 4 ];then echo "$usage";return;fi
-	f=$1;s=$2;t=$3;d=$4;o=${5:-bigdata/genome/$s.fna};p=${6:-8}
+	f=$1;s=$2;t=$3;d=$4;
+	o=${5:-$d/genome/$s.fna};p=${6:-8}
 	if [ -s $o ];then
 		echo "$o exists"
 	else
@@ -71,15 +108,7 @@ kr2-add2lib(){
 			return 
 		fi
 	fi
-
-	o2=$d/library/$s/library.fna
-	if [ -s $o2 ];then 
-		echo "$o2 exists!"
-	else
-		echo "building .. $o2"
-		dino kraken2-build --add-to-library $o --db $d 
-		echo "done .. $o2"
-	fi
+	kr2-add2lib $o $t $d  
 }
 
 
