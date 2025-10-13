@@ -1,0 +1,44 @@
+[bwa_index] Pack FASTA... 14.37 sec
+[bwa_index] Construct BWT for the packed sequence...
+[BWTIncCreate] textLength=2623197718, availableWord=196577752
+[BWTIncConstructFromPacked] 10 iterations done. 99999990 characters processed.
+[BWTIncConstructFromPacked] 20 iterations done. 199999990 characters processed.
+[BWTIncConstructFromPacked] 30 iterations done. 299999990 characters processed.
+[BWTIncConstructFromPacked] 40 iterations done. 399999990 characters processed.
+[BWTIncConstructFromPacked] 50 iterations done. 499999990 characters processed.
+[BWTIncConstructFromPacked] 60 iterations done. 599999990 characters processed.
+[BWTIncConstructFromPacked] 70 iterations done. 699999990 characters processed.
+[BWTIncConstructFromPacked] 80 iterations done. 799999990 characters processed.
+[BWTIncConstructFromPacked] 90 iterations done. 899999990 characters processed.
+[BWTIncConstructFromPacked] 100 iterations done. 999999990 characters processed.
+[BWTIncConstructFromPacked] 110 iterations done. 1099999990 characters processed.
+[BWTIncConstructFromPacked] 120 iterations done. 1199999990 characters processed.
+[BWTIncConstructFromPacked] 130 iterations done. 1299999990 characters processed.
+[BWTIncConstructFromPacked] 140 iterations done. 1399999990 characters processed.
+[BWTIncConstructFromPacked] 150 iterations done. 1499999990 characters processed.
+[BWTIncConstructFromPacked] 160 iterations done. 1599999990 characters processed.
+[BWTIncConstructFromPacked] 170 iterations done. 1699999990 characters processed.
+[BWTIncConstructFromPacked] 180 iterations done. 1799999990 characters processed.
+[BWTIncConstructFromPacked] 190 iterations done. 1899999990 characters processed.
+[BWTIncConstructFromPacked] 200 iterations done. 1998368118 characters processed.
+[BWTIncConstructFromPacked] 210 iterations done. 2086954486 characters processed.
+[BWTIncConstructFromPacked] 220 iterations done. 2165686262 characters processed.
+[BWTIncConstructFromPacked] 230 iterations done. 2235659270 characters processed.
+[BWTIncConstructFromPacked] 240 iterations done. 2297847462 characters processed.
+[BWTIncConstructFromPacked] 250 iterations done. 2353116422 characters processed.
+[BWTIncConstructFromPacked] 260 iterations done. 2402235622 characters processed.
+[BWTIncConstructFromPacked] 270 iterations done. 2445888870 characters processed.
+[BWTIncConstructFromPacked] 280 iterations done. 2484683974 characters processed.
+[BWTIncConstructFromPacked] 290 iterations done. 2519161110 characters processed.
+[BWTIncConstructFromPacked] 300 iterations done. 2549800470 characters processed.
+[BWTIncConstructFromPacked] 310 iterations done. 2577028774 characters processed.
+[BWTIncConstructFromPacked] 320 iterations done. 2601225350 characters processed.
+[BWTIncConstructFromPacked] 330 iterations done. 2622727270 characters processed.
+[bwt_gen] Finished constructing BWT in 331 iterations.
+[bwa_index] 937.22 seconds elapse.
+[bwa_index] Update BWT... 6.33 sec
+[bwa_index] Pack forward-only FASTA... 10.99 sec
+[bwa_index] Construct SA from BWT and Occ... 297.07 sec
+[main] Version: 0.7.19-r1273
+[main] CMD: bwa index bigdata/genome/falcon.fna.gz
+[main] Real time: 1276.379 sec; CPU: 1265.980 sec

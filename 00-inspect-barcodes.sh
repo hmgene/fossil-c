@@ -40,13 +40,18 @@ input=(
 #bigdata/leehom/Brachy_Blank_r1.fail.fq.gz
 )
 
-odir=bigdata/adapter;mkdir -p $odir
+odir=results/adapter;mkdir -p $odir
 for r1 in ${input[@]};do
 	r2=${r1/_R1/_R2};
 	o1=$odir/${r1##*/};
 	o2=${o1/_R1/_R2};
+	#gunzip -dc $r1 | head -n 1000 | dino fq-adapter - adapters.fa 
 	echo "#!/bin/bash
 	gunzip -dc $r1 | dino fq-adapter - adapters.fa > $o1.adapter
-	gunzip -dc $r2 | dino fq-adapter - adapters.fa > $o2.adapter
 	" | sbatch 
+	if [ $r1 != $r2 ];then
+		echo "#!/bin/bash
+		gunzip -dc $r2 | dino fq-adapter - adapters.fa > $o2.adapter
+		" | sbatch 
+	fi
 done

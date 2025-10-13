@@ -1,0 +1,5 @@
+[bwa_index] Pack FASTA... 15.38 sec
+[bwa_index] Construct BWT for the packed sequence...
+[BWTIncCreate] textLength=3015891678, availableWord=224209000
+[BWTIncConstructFromPacked] 10 iterations done. 99999998 characters processed.
+slurmstepd: error: *** JOB 2917577 ON compt296 CANCELLED AT 2025-10-13T11:00:29 ***
