@@ -6,17 +6,18 @@ sub mx{ my ($x,$y)=@_; return defined $x && $x > $y ? $x : $y;}
 while (<>) { chomp; my @f = split(/\t/, $_);
     next if $f[0] =~ /^@/;
     my $len = length($f[9]);
-    my ($nm, $xm, $xg, $xt) = (0, 0, 0, "");
+    my ($nm, $xm, $xg, $xt,$rg) = (0, 0, 0, "",$tag);
     for my $i (11 .. $#f) {
-        if ($f[$i] =~ /^NM:i:(\d+)/) { $nm = $1; }
-        if ($f[$i] =~ /^XM:i:(\d+)/) { $xm = $1; }
-        if ($f[$i] =~ /^XG:i:(\d+)/) { $xg = $1; }
-        if ($f[$i] =~ /^XT:A:(\w)/)  { $xt = $1; }
+        if ($f[$i] =~ /^NM:i:(\d+)/) { $nm = $1; } # num distance (including indels) 
+        if ($f[$i] =~ /^XM:i:(\d+)/) { $xm = $1; } # mismatches 
+        if ($f[$i] =~ /^XG:i:(\d+)/) { $xg = $1; } # num gaps (contiguous indels)
+        if ($f[$i] =~ /^XT:A:(\w)/)  { $xt = $1; } # uniqness
+        if ($f[$i] =~/^RG:Z:([\w@]+)/){ $rg= $1; }
     }
     if ($xt eq "U") {
         my $matches = $len - $nm;  # approx number of matches
-        my $score   = ($matches - $xm - $xg) / ($len || 1); # avoid /0
-	print join("\t",$f[0],$tag,$score),"\n";
+        my $score   = ($matches - $nm - $xg); # / ($len || 1); # avoid /0
+	    print join("\t",$f[0],$rg,$score),"\n";
     }
 }
 '
