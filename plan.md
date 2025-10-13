@@ -1,6 +1,16 @@
 Project: DNA from Two Non-Avian Dinosaurs: Technical Re-Evaluation
 Objective: Address reviewer concerns and strengthen authentication, contamination control, and analytical rigor.
 
+
+| Task | Description | Priority | Responsible |
+|------|--------------|-----------|--------------|
+| 🧫 Negative controls | Prepare mock and blank libraries | 🔴 High | Wet lab |
+| 🧬 Damage profiling | Add UDG-treated SRSLY and damage plots | 🔴 High | Bioinformatics |
+| 💻 Pipeline update | Release reproducible SRSLY workflow | 🟠 Medium | Computational |
+| 📊 Data QC | Include fragment length, contamination metrics | 🟠 Medium | QC |
+| 🧠 Reframe manuscript | Focus on technical validation | 🟢 Low | Writing |
+
+
 1. Authentication and Contamination Control
 <details> <summary>View details</summary>
 
