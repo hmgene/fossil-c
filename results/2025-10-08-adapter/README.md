@@ -109,11 +109,47 @@
 <td style="text-align: right;">90697470</td>
 <td style="text-align: right;">343448472</td>
 </tr>
+<tr>
+<td style="text-align: left;">Trex_c_sedi</td>
+<td style="text-align: right;">105026180</td>
+<td style="text-align: right;">52513090</td>
+<td style="text-align: right;">34030999</td>
+<td style="text-align: right;">52513090</td>
+<td style="text-align: right;">22302784</td>
+<td style="text-align: right;">93201942</td>
+</tr>
+<tr>
+<td style="text-align: left;">Trex_ExtrBlank</td>
+<td style="text-align: right;">76781220</td>
+<td style="text-align: right;">38390610</td>
+<td style="text-align: right;">31627279</td>
+<td style="text-align: right;">38390610</td>
+<td style="text-align: right;">9926676</td>
+<td style="text-align: right;">33627634</td>
+</tr>
+<tr>
+<td style="text-align: left;">Trex_vessels</td>
+<td style="text-align: right;">477581256</td>
+<td style="text-align: right;">238790628</td>
+<td style="text-align: right;">178440835</td>
+<td style="text-align: right;">238790628</td>
+<td style="text-align: right;">117108774</td>
+<td style="text-align: right;">424255104</td>
+</tr>
+<tr>
+<td style="text-align: left;">Trex_v_sedi</td>
+<td style="text-align: right;">121451024</td>
+<td style="text-align: right;">60725512</td>
+<td style="text-align: right;">56755780</td>
+<td style="text-align: right;">60725512</td>
+<td style="text-align: right;">13014488</td>
+<td style="text-align: right;">27812772</td>
+</tr>
 </tbody>
 </table>
 
-    [tsv](summary.tsv)
+[tsv download](summary.tsv)
 
-    ### Adapter Distribution
+### Adapter Distribution
 
-![](README_files/figure-markdown_strict/unnamed-chunk-3-1.png)[PDF](adapter.pdf)
+![](README_files/figure-markdown_strict/unnamed-chunk-2-1.png)[PDF](adapter.pdf)

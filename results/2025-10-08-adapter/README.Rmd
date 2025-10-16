@@ -50,9 +50,9 @@ CAAGCAGAAGACGGCATACGA
 library(readr)
 library(knitr)
 df <- read.table("summary.tsv",header=T)
-kable(head(df), format = "pipe")
-```{markdown}
-[tsv](summary.tsv)
+kable(df, format = "pipe")
+```
+[tsv download](summary.tsv)
 
 ### Adapter Distribution
 
