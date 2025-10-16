@@ -13,6 +13,7 @@ knitr:
 ## Barcode and Adapter Structure 
 
 **Design**
+
 ```
 Xs = i7 index sequence
 5′-CAAGCAGAAGACGGCATACGAGATNNNNNNNNNXXXXXXXXGTGACTGGAGTTCAGACGTGT-3′
@@ -26,6 +27,7 @@ Reverse Index Primer Sequence (Ui7)
 
 <details>
 <summary>**Fasta**</summary>
+
 ```
 >f
 AGATCGGAAGAGCACACGTCTGAACTCCAGTCA
@@ -43,6 +45,9 @@ ACACTCTTTCCCTACACGACGCTCTTCCGATCT
 CAAGCAGAAGACGGCATACGA   
 ```
 </details>
+
+### Summary
+`[tsv](summary.tsv)`
 
 ### Adapter Distribution
 
