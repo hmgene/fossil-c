@@ -33,10 +33,87 @@
 
 </details>
 
-### Summary
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 15%" />
+<col style="width: 12%" />
+<col style="width: 13%" />
+<col style="width: 12%" />
+<col style="width: 13%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">sample</th>
+<th style="text-align: right;">total_reads</th>
+<th style="text-align: right;">R1_total</th>
+<th style="text-align: right;">R1_trimmed</th>
+<th style="text-align: right;">R2_total</th>
+<th style="text-align: right;">R2_trimmed</th>
+<th style="text-align: right;">merged</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Brachy_Blank</td>
+<td style="text-align: right;">91592712</td>
+<td style="text-align: right;">45796356</td>
+<td style="text-align: right;">23081987</td>
+<td style="text-align: right;">45796356</td>
+<td style="text-align: right;">14073047</td>
+<td style="text-align: right;">75539044</td>
+</tr>
+<tr>
+<td style="text-align: left;">Brachy_cells</td>
+<td style="text-align: right;">675698180</td>
+<td style="text-align: right;">337849090</td>
+<td style="text-align: right;">157010629</td>
+<td style="text-align: right;">337849090</td>
+<td style="text-align: right;">100274196</td>
+<td style="text-align: right;">557543426</td>
+</tr>
+<tr>
+<td style="text-align: left;">Brachy_c_sedi</td>
+<td style="text-align: right;">96402232</td>
+<td style="text-align: right;">48201116</td>
+<td style="text-align: right;">19092210</td>
+<td style="text-align: right;">48201116</td>
+<td style="text-align: right;">12894149</td>
+<td style="text-align: right;">84758392</td>
+</tr>
+<tr>
+<td style="text-align: left;">Brachy_vessels</td>
+<td style="text-align: right;">327279862</td>
+<td style="text-align: right;">163639931</td>
+<td style="text-align: right;">61995998</td>
+<td style="text-align: right;">163639931</td>
+<td style="text-align: right;">37254821</td>
+<td style="text-align: right;">252107444</td>
+</tr>
+<tr>
+<td style="text-align: left;">Brachy_v_sedi</td>
+<td style="text-align: right;">24071368</td>
+<td style="text-align: right;">12035684</td>
+<td style="text-align: right;">6491824</td>
+<td style="text-align: right;">12035684</td>
+<td style="text-align: right;">3146163</td>
+<td style="text-align: right;">16851316</td>
+</tr>
+<tr>
+<td style="text-align: left;">Trex_cells</td>
+<td style="text-align: right;">372679752</td>
+<td style="text-align: right;">186339876</td>
+<td style="text-align: right;">126454998</td>
+<td style="text-align: right;">186339876</td>
+<td style="text-align: right;">90697470</td>
+<td style="text-align: right;">343448472</td>
+</tr>
+</tbody>
+</table>
 
-`[tsv](summary.tsv)`
+    [tsv](summary.tsv)
 
-### Adapter Distribution
+    ### Adapter Distribution
 
-![](README_files/figure-markdown_strict/unnamed-chunk-1-1.png)[PDF](adapter.pdf)
+![](README_files/figure-markdown_strict/unnamed-chunk-3-1.png)[PDF](adapter.pdf)
