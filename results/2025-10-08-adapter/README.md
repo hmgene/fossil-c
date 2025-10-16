@@ -1,37 +1,4 @@
-## Barcode and Adapter Structure
-
-**Design**
-
-    Xs = i7 index sequence
-    5′-CAAGCAGAAGACGGCATACGAGATNNNNNNNNNXXXXXXXXGTGACTGGAGTTCAGACGTGT-3′
-
-    Forward Index Primer Sequence (i5)
-    5′-AATGATACGGCGACCACCGAGATCTACACXXXXXXXXACACTCTTTCCCTACACGACGCTCTTCCGATCT-3′
-
-    Reverse Index Primer Sequence (Ui7)
-    #5′-CAAGCAGAAGACGGCATACGA-3′
-
-<details>
-<summary>
-**Fasta**
-</summary>
-
-    >f
-    AGATCGGAAGAGCACACGTCTGAACTCCAGTCA
-    >b
-    AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT
-    >i7_5
-    CAAGCAGAAGACGGCATACGAGAT
-    >i7_3
-    GTGACTGGAGTTCAGACGTGT
-    >i5_5
-    AATGATACGGCGACCACCGAGATCTACAC
-    >i5_3
-    ACACTCTTTCCCTACACGACGCTCTTCCGATCT
-    >ui7
-    CAAGCAGAAGACGGCATACGA   
-
-</details>
+## Read Count Summary
 
 <table>
 <colgroup>
@@ -150,6 +117,47 @@
 
 [tsv download](summary.tsv)
 
-### Adapter Distribution
+## Barcode and Adapter Structure
+
+**Design**
+
+    Xs = i7 index sequence
+       i7_5                                     i7_3
+    5′-CAAGCAGAAGACGGCATACGAGATNNNNNNNNNXXXXXXXXGTGACTGGAGTTCAGACGTGT-3′
+                      (rc_i7_5)                             (rc_i5_3 )
+
+    Forward Index Primer Sequence (i5)
+       i5_5                                 i5_3
+    5′-AATGATACGGCGACCACCGAGATCTACACXXXXXXXXACACTCTTTCCCTACACGACGCTCTTCCGATCT-3′
+                            (rc_i5_5)                                (rc_i5_3)
+
+    Reverse Index Primer Sequence (Ui7)
+       ui7
+    5′-CAAGCAGAAGACGGCATACGA-3′
+                    (rc_ui7)
+
+<details>
+<summary>
+**Fasta**
+</summary>
+
+    >f (illumina foward adapter)
+    AGATCGGAAGAGCACACGTCTGAACTCCAGTCA
+    >b (illumina backward adapter)
+    AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT
+    >i7_5
+    CAAGCAGAAGACGGCATACGAGAT
+    >i7_3
+    GTGACTGGAGTTCAGACGTGT
+    >i5_5
+    AATGATACGGCGACCACCGAGATCTACAC
+    >i5_3
+    ACACTCTTTCCCTACACGACGCTCTTCCGATCT
+    >ui7
+    CAAGCAGAAGACGGCATACGA   
+
+</details>
+
+## Adapter Distribution
 
 ![](README_files/figure-markdown_strict/unnamed-chunk-2-1.png)[PDF](adapter.pdf)

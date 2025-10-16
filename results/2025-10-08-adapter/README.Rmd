@@ -9,6 +9,15 @@ knitr:
     warning: false
     message: false
 ---
+## Read Count Summary
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
+library(readr)
+library(knitr)
+df <- read.table("summary.tsv",header=T)
+kable(df, format = "pipe")
+```
+[tsv download](summary.tsv)
+
 
 ## Barcode and Adapter Structure 
 
@@ -16,22 +25,28 @@ knitr:
 
 ```
 Xs = i7 index sequence
+   i7_5                                     i7_3
 5′-CAAGCAGAAGACGGCATACGAGATNNNNNNNNNXXXXXXXXGTGACTGGAGTTCAGACGTGT-3′
+                  (rc_i7_5)                             (rc_i5_3 )
 
 Forward Index Primer Sequence (i5)
+   i5_5                                 i5_3
 5′-AATGATACGGCGACCACCGAGATCTACACXXXXXXXXACACTCTTTCCCTACACGACGCTCTTCCGATCT-3′
+                        (rc_i5_5)                                (rc_i5_3)
 
 Reverse Index Primer Sequence (Ui7)
-#5′-CAAGCAGAAGACGGCATACGA-3′
+   ui7
+5′-CAAGCAGAAGACGGCATACGA-3′
+                (rc_ui7)
 ```
 
 <details>
-<summary>**Fasta**</summary>
+<summary> **Fasta** </summary>
 
 ```
->f
+>f (illumina foward adapter)
 AGATCGGAAGAGCACACGTCTGAACTCCAGTCA
->b
+>b (illumina backward adapter)
 AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT
 >i7_5
 CAAGCAGAAGACGGCATACGAGAT
@@ -46,15 +61,8 @@ CAAGCAGAAGACGGCATACGA
 ```
 </details>
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
-library(readr)
-library(knitr)
-df <- read.table("summary.tsv",header=T)
-kable(df, format = "pipe")
-```
-[tsv download](summary.tsv)
 
-### Adapter Distribution
+## Adapter Distribution
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
 library(data.table)
@@ -64,7 +72,6 @@ source("fn.r")
 files <- list.files("../adapter", pattern = "\\.adapter$", full.names = TRUE)
 p=plt_adapter(files);
 md_save_pdf(p, "adapter.pdf", width = 12, height = 20); 
-
 ```
 
 
