@@ -49,7 +49,7 @@ CAAGCAGAAGACGGCATACGA
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
 library(readr)
 library(knitr)
-df <- read_csv("summary.csv")
+df <- read_csv("summary.tsv",sep="\t")
 kable(head(df), format = "pipe")
 ```{markdown}
 [tsv](summary.tsv)
