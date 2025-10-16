@@ -4,13 +4,8 @@ library(ggplot2)
 # Define directories
 
 md_save_pdf <- function(p, f, width = 10, height = 20) {
-  # Print plot inline
   print(p)
-  
-  # Save PDF
   ggsave(filename = f, plot = p, width = width, height = height)
-  
-  # Return clickable Markdown link
   cat(sprintf("[PDF](%s)\n", f))
 }
     

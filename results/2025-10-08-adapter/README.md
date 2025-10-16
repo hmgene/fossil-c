@@ -33,6 +33,10 @@
 
 </details>
 
+### Summary
+
+`[tsv](summary.tsv)`
+
 ### Adapter Distribution
 
 ![](README_files/figure-markdown_strict/unnamed-chunk-1-1.png)[PDF](adapter.pdf)

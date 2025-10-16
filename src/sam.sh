@@ -1,8 +1,9 @@
 sam2score(){
-usage="$FUNCNAME <sam> [tag=sample]"; if [ $# -lt 1 ];then echo "$usage";return;fi
+usage="$FUNCNAME <sam.rg.sam> [tag=sample]"; if [ $# -lt 1 ];then echo "$usage";return;fi
 cat $1 | perl -e 'use strict; my $tag="'${2:-no}'";
 my %r=();
 sub mx{ my ($x,$y)=@_; return defined $x && $x > $y ? $x : $y;}
+my %col=();
 while (<>) { chomp; my @f = split(/\t/, $_);
     next if $f[0] =~ /^@/;
     my $len = length($f[9]);
@@ -12,13 +13,22 @@ while (<>) { chomp; my @f = split(/\t/, $_);
         if ($f[$i] =~ /^XM:i:(\d+)/) { $xm = $1; } # mismatches 
         if ($f[$i] =~ /^XG:i:(\d+)/) { $xg = $1; } # num gaps (contiguous indels)
         if ($f[$i] =~ /^XT:A:(\w)/)  { $xt = $1; } # uniqness
-        if ($f[$i] =~/^RG:Z:([\w@]+)/){ $rg= $1; }
+        if ($f[$i] =~ /^RG:Z:(\S+)/){ $rg= $1;}
     }
     if ($xt eq "U") {
         my $matches = $len - $nm;  # approx number of matches
         my $score   = ($matches - $nm - $xg); # / ($len || 1); # avoid /0
-	    print join("\t",$f[0],$rg,$score),"\n";
+	    #print join("\t",$f[0],$rg,$score),"\n";
+        $r{ $f[0]."\t".$f[9] }{$rg} = $score;
+        $col{$rg} ++;
     }
+}
+my @cols=sort keys %col;
+print join("\t","id","seq",@cols),"\n";
+foreach my $i (keys %r){
+    print $i;
+    map { print "\t", defined $r{$i}{$_} ? $r{$i}{$_} : 0;  } @cols;
+    print "\n";
 }
 '
 }
