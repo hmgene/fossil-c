@@ -46,8 +46,13 @@ CAAGCAGAAGACGGCATACGA
 ```
 </details>
 
-### Summary
-`[tsv](summary.tsv)`
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
+library(readr)
+library(knitr)
+df <- read_csv("summary.csv")
+kable(head(df), format = "pipe")
+```{markdown}
+[tsv](summary.tsv)
 
 ### Adapter Distribution
 
