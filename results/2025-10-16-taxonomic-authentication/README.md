@@ -52,11 +52,6 @@
 <td>Eukaryotic organisms such as yeasts and molds</td>
 </tr>
 <tr>
-<td>Plant</td>
-<td style="text-align: center;">❌</td>
-<td>Plant sequences (commented out / optional)</td>
-</tr>
-<tr>
 <td>Protozoa</td>
 <td style="text-align: center;">✅</td>
 <td>Single-celled eukaryotes</td>
@@ -190,3 +185,29 @@
 </table>
 
 ![](README_files/figure-markdown_strict/contam-1.png)
+
+## BWA Best Scores
+
+    ## [PDF](group_Brachy_grid.png)
+
+![](README_files/figure-markdown_strict/auth-1.png)![](README_files/figure-markdown_strict/auth-2.png)
+
+    ## [PDF](group_Brachy_lt60_grid.png)
+
+    ## [PDF](group_ERR13475326_grid.png)
+
+![](README_files/figure-markdown_strict/auth-3.png)![](README_files/figure-markdown_strict/auth-4.png)
+
+    ## [PDF](group_ERR13475326_lt60_grid.png)
+
+    ## [PDF](group_ERR5024913_grid.png)
+
+![](README_files/figure-markdown_strict/auth-5.png)![](README_files/figure-markdown_strict/auth-6.png)
+
+    ## [PDF](group_ERR5024913_lt60_grid.png)
+
+    ## [PDF](group_Trex_grid.png)
+
+![](README_files/figure-markdown_strict/auth-7.png)![](README_files/figure-markdown_strict/auth-8.png)
+
+    ## [PDF](group_Trex_lt60_grid.png)
