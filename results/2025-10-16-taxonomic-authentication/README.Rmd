@@ -1,5 +1,5 @@
 ---
-title: "Fossil-C Profile" 
+title: "Taxonomic Athentication" 
 author: "Hyunmin Kim"
 last updated : "`r Sys.Date()`"
 output: md_document
@@ -14,6 +14,13 @@ knitr:
 - Reads were merged using LeeHom
 
 ```{r len, echo=FALSE, warning=FALSE, message=FALSE}
+
+md_save_pdf <- function(p, f, width = 10, height = 20) {
+  print(p)
+  ggsave(filename = f, plot = p, width = width, height = height)
+  cat(sprintf("[PDF](%s)\n", f))
+}   
+
 
 library(data.table)
 library(ggplot2)
@@ -61,7 +68,6 @@ ggplot(tt, aes(x = read_len, y = count, color = type)) +
 | Plasmid        | ✅       | Extrachromosomal DNA elements                    |
 | Viral          | ✅       | Viruses including phages                         |
 | Fungi          | ✅       | Eukaryotic organisms such as yeasts and molds   |
-| Plant          | ❌       | Plant sequences (commented out / optional)      |
 | Protozoa       | ✅       | Single-celled eukaryotes                         |
 | UniVec         | ✅       | Vector contamination sequences                    |
 | UniVec_Core    | ✅       | Core vector sequences                             |
@@ -101,4 +107,77 @@ ggplot(tt_long, aes(x = sample, y = percent, fill = taxa_clean)) +
   scale_fill_brewer(palette = "Set3")
 
 ```
+
+## BWA Best Scores 
 	
+```{r len, echo=FALSE, warning=FALSE, message=FALSE}
+library(data.table)
+library(ggplot2)
+library(cowplot)
+library(tools)
+
+# Find all TSV files
+tsv_files <- list.files("../../bigdata/bwa_scores", pattern = "\\.tsv$", full.names = TRUE, recursive = TRUE)
+
+# Extract group name (first token before "_")
+get_group_name <- function(f) {
+  strsplit(basename(f), "_")[[1]][1]
+}
+
+groups <- split(tsv_files, sapply(tsv_files, get_group_name))
+
+for (grp in names(groups)) {
+  message("Processing group: ", grp)
+  plots <- list()
+  plots_lt60 <- list()
+  for (tsv in groups[[grp]]) {
+    sample_name <- file_path_sans_ext(basename(tsv))
+    dt <- fread(tsv)
+    score_cols <- setdiff(names(dt), c("id", "seq"))
+    if (length(score_cols) == 0) next
+
+    dt_best <- dt[, .( best_score = do.call(pmax, .SD), best_ref   = score_cols[max.col(.SD, ties.method = "first")]), .SDcols = score_cols]
+
+    dt_best_filtered <- dt_best[best_score > 20]
+    total_N <- nrow(dt_best)
+    short_N <- nrow(dt_best_filtered)
+    if (short_N == 0) next  # skip empty plots
+
+    # Stacked histogram
+    p <- ggplot(dt_best_filtered, aes(x = best_score, fill = best_ref)) +
+      geom_histogram(binwidth = 10, position = "stack", color = "black") +
+      ggtitle(paste0(sample_name, " | Total: ", total_N, " | >20: ", short_N)) +
+      xlab("Best Score") + ylab("Count") + theme_bw(base_size = 9) + theme(legend.position = "none")
+    plots[[sample_name]] <- p
+
+    dt_best_filtered <- dt_best[best_score > 20 & best_score < 60]
+    total_N <- nrow(dt_best)
+    short_N <- nrow(dt_best_filtered)
+    if (short_N == 0) next  # skip empty plots
+
+    p <- ggplot(dt_best_filtered, aes(x = best_score, fill = best_ref)) +
+      geom_histogram(binwidth = 10, position = "stack", color = "black") +
+      ggtitle(paste0(sample_name, " | Total: ", total_N, " | >20: ", short_N)) +
+      xlab("Best Score") + ylab("Count") + theme_bw(base_size = 9) + theme(legend.position = "none")
+    plots_lt60[[sample_name]] <- p
+  }
+
+  rightmost_plot <- plots[[length(plots)]]
+  legend <- get_legend( rightmost_plot + theme(legend.position = "right", legend.title = element_text(size=9)))
+  plots <- lapply(plots, function(p) p + theme(legend.position = "none"))
+  combined_row <- plot_grid(plotlist = plots, ncol = length(plots))
+  final_plot <- plot_grid(combined_row, legend, ncol = 2, rel_widths = c(1, 0.15))
+  ggsave(filename = paste0("../../bigdata/bwa_scores/group_", grp, "_grid.png"),
+         plot = final_plot, width = 5 * length(plots) + 2, height = 5)
+  md_save_pdf(final_plot,paste0("group_", grp, "_grid.png"), width = 5* length(plots)+2, height = 5);
+
+  rightmost_plot <- plots_lt60[[length(plots_lt60)]]
+  legend <- get_legend( rightmost_plot + theme(legend.position = "right", legend.title = element_text(size=9)))
+  plots <- lapply(plots_lt60, function(p) p + theme(legend.position = "none"))
+  combined_row <- plot_grid(plotlist = plots, ncol = length(plots))
+  final_plot <- plot_grid(combined_row, legend, ncol = 2, rel_widths = c(1, 0.15))
+  ggsave(filename = paste0("../../bigdata/bwa_scores/group_", grp, "_lt60_grid.png"),
+         plot = final_plot, width = 5 * length(plots) + 2, height = 5)
+  md_save_pdf(final_plot,paste0("group_", grp, "_lt60_grid.png"), width = 5* length(plots)+2, height = 5);
+}
+```
