@@ -110,7 +110,7 @@ ggplot(tt_long, aes(x = sample, y = percent, fill = taxa_clean)) +
 
 ## BWA Best Scores 
 	
-```{r len, echo=FALSE, warning=FALSE, message=FALSE}
+```{r auth, echo=FALSE, warning=FALSE, message=FALSE}
 library(data.table)
 library(ggplot2)
 library(cowplot)
