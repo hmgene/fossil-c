@@ -78,7 +78,7 @@ Mismatches include indels, and gap openings are penalized to account for fragmen
 - Cells and Vessels contain fewer human contaminants.
 - Small fragments (~20–30 bp) are distributed across multiple species.
 
-Example of Mammoth mapped to Elephant:
+**Example:** A Mammoth sequence aligned to the Elephant genome.
 
 ![png](results/2025-10-16-taxonomic-authentication/figs/group_ERR5024913_grid.png )
 
