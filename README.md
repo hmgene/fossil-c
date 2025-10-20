@@ -37,7 +37,7 @@ dino list ## list tools
 4. Bwa Best Scores 
 
 $$
-\text{Score} = \#\text{matches} - \#\text{mismatches\_and\_indels} - \#\text{gapopen}
+\text{Score} = \text{matches} - \text{mismatches\_and\_indels} - \text{gapopen}
 $$
 
 ```
