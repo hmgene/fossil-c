@@ -114,14 +114,14 @@ for (grp in names(groups)) {
   plots <- lapply(plots, function(p) p + theme(legend.position = "none"))
   combined_row <- plot_grid(plotlist = plots, ncol = length(plots))
   final_plot <- plot_grid(combined_row, legend, ncol = 2, rel_widths = c(1, 0.15))
-  md_save_pdf(final_plot,paste0("group_", grp, "_grid.png"), width = 10* length(plots)+2, height = 5);
+  md_save_pdf(final_plot,paste0("group_", grp, "_grid.pdf"), width = 5 * length(plots)+2, height = 5);
 
   rightmost_plot <- plots_lt60[[length(plots_lt60)]]
   legend <- get_legend( rightmost_plot + theme(legend.position = "right", legend.title = element_text(size=9)))
   plots <- lapply(plots_lt60, function(p) p + theme(legend.position = "none"))
   combined_row <- plot_grid(plotlist = plots, ncol = length(plots))
   final_plot <- plot_grid(combined_row, legend, ncol = 2, rel_widths = c(1, 0.15))
-  md_save_pdf(final_plot,paste0("group_", grp, "_lt60_grid.png"), width = 10* length(plots)+2, height = 5);
+  md_save_pdf(final_plot,paste0("group_", grp, "_lt60_grid.pdf"), width = 5 * length(plots)+2, height = 5);
 }
 ```
 
