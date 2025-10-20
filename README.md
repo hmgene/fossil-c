@@ -31,18 +31,45 @@ dino list ## list tools
 3. Mapping Reads
 
 ```
+    input=(
+        bigdata/ucsc/fa/allMis1.fa
+        bigdata/ucsc/fa/anoCar2.fa
+        bigdata/ucsc/fa/galGal6.fa
+        bigdata/ucsc/fa/hg38.fa
+        bigdata/ucsc/fa/mm10.fa.gz
+        bigdata/ucsc/fa/loxAfr3.fa.gz
+        bigdata/genome/bearded_dragon.fna.gz
+        bigdata/genome/brown_anole.fna.gz
+        bigdata/genome/crocodile.fna.gz
+        bigdata/genome/falcon.fna.gz
+        bigdata/genome/komodo_dragon.fna.gz
+        bigdata/genome/ostrich.fna.gz
+    )
+
+
     01-bwa-pp.sh  ## preprocessing => bigdata/bwa/idx
     02-bwa-rn.sh  ## mapping to multi species => bigdata/bwa/results
 ```
 
 4. Bwa Best Scores 
+Instead of concatenating the target genomes, we extracted the highest-scoring alignment for each species using:
+$$
+\text{Score} = \text{matches} - \text{mismatches} - \text{gapopen}
+$$
 
-$$ \text{Score} = \text{matches} - \text{mismatches_and_indels} - \text{gapopen}$$
+Mismatches include indels, and gap openings are penalized to account for fragmented insertions.
 
 ```
 03-bwa-pl.sh # table of alignment scores => bigdata/bwa_scores/
 ```
-[go to results](results/2025-10-16-taxonomic-authentication/README.md)
+
+| Group | png | 
+| -- | :-: |
+| Bracky | [png](results/2025-10-16-taxonomic-authentication/figs/group_Brachy_grid.png	) |
+| Bracky | [png](results/2025-10-16-taxonomic-authentication/figs/group_Brachy_lt60_grid.png ) |
+| Trex | [png](results/2025-10-16-taxonomic-authentication/figs/group_Trex_grid.png) |
+| Trex | [png](results/2025-10-16-taxonomic-authentication/figs/group_Trex_lt60_grid.png) |
+[go details](results/2025-10-16-taxonomic-authentication/README.md)
 
 
 ```
