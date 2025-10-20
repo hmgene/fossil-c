@@ -4,12 +4,24 @@ library(ggplot2)
 library(cowplot)
 library(tools)
 tsv_files <- list.files( "../../bigdata/bwa_scores", pattern = "(Brachy|Trex).*\\.tsv$", full.names = TRUE, recursive = TRUE)
+
+pattern_order <- c("cells", "vessels", "c_sedi", "v_sedi", "blank")
+tsv_files<- tsv_files[order(sapply(tsv_files, function(x) {
+  x_lower <- tolower(basename(x))
+  idx <- which(sapply(pattern_order, function(p) grepl(p, x_lower, fixed = TRUE)))
+  if(length(idx) == 0) return(Inf) else return(idx[1])
+}))]
+
+
 get_group_name <- function(f) { strsplit(basename(f), "_")[[1]][1]; }
 groups <- split(tsv_files, sapply(tsv_files, get_group_name))
 all_group_plots <- list()
 for (grp in names(groups)) {
   message("Processing group: ", grp); plots <- list()
+
+
   for (tsv in groups[[grp]]) {
+
     sample_name <- file_path_sans_ext(basename(tsv))
     dt <- fread(tsv)
     score_cols <- setdiff(names(dt), c("id", "seq"))
