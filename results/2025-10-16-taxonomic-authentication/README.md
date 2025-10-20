@@ -6,38 +6,6 @@
 
 ## BWA Best Scores
 
-![](README_files/figure-markdown_strict/auth-1.png)
-
-    ## [PDF](group_Brachy_grid.pdf)
-
-![](README_files/figure-markdown_strict/auth-2.png)
-
-    ## [PDF](group_Brachy_lt60_grid.pdf)
-
-![](README_files/figure-markdown_strict/auth-3.png)
-
-    ## [PDF](group_ERR13475326_grid.pdf)
-
-![](README_files/figure-markdown_strict/auth-4.png)
-
-    ## [PDF](group_ERR13475326_lt60_grid.pdf)
-
-![](README_files/figure-markdown_strict/auth-5.png)
-
-    ## [PDF](group_ERR5024913_grid.pdf)
-
-![](README_files/figure-markdown_strict/auth-6.png)
-
-    ## [PDF](group_ERR5024913_lt60_grid.pdf)
-
-![](README_files/figure-markdown_strict/auth-7.png)
-
-    ## [PDF](group_Trex_grid.pdf)
-
-![](README_files/figure-markdown_strict/auth-8.png)
-
-    ## [PDF](group_Trex_lt60_grid.pdf)
-
 ## Kraken2 Contamination Report
 
 <table>

@@ -82,19 +82,14 @@ for (grp in names(groups)) {
     dt <- fread(tsv)
     score_cols <- setdiff(names(dt), c("id", "seq"))
     if (length(score_cols) == 0) next
-
     dt_best <- dt[, .( best_score = do.call(pmax, .SD), best_ref   = score_cols[max.col(.SD, ties.method = "first")]), .SDcols = score_cols]
-
     dt_best_filtered <- dt_best[best_score > 20]
     total_N <- nrow(dt_best)
     short_N <- nrow(dt_best_filtered)
     if (short_N == 0) next  # skip empty plots
 
-    # Stacked histogram
-    p <- ggplot(dt_best_filtered, aes(x = best_score, fill = best_ref)) +
-      geom_histogram(binwidth = 10, position = "stack", color = "black") +
-      ggtitle(paste0(sample_name, " | Total: ", total_N, " | >20: ", short_N)) +
-      xlab("Best Score") + ylab("Count") + theme_bw(base_size = 9) + theme(legend.position = "none")
+    p <- ggplot(dt_best_filtered, aes(x = best_score, fill = best_ref)) + geom_histogram(binwidth = 10, position = "stack", color = "black") +
+      ggtitle(paste0(sample_name, " | Total: ", total_N, " | >20: ", short_N)) + xlab("Best Score") + ylab("Count") + theme_bw(base_size = 9) + theme(legend.position = "none")
     plots[[sample_name]] <- p
 
     dt_best_filtered <- dt_best[best_score > 20 & best_score < 60]
@@ -102,10 +97,8 @@ for (grp in names(groups)) {
     short_N <- nrow(dt_best_filtered)
     if (short_N == 0) next  # skip empty plots
 
-    p <- ggplot(dt_best_filtered, aes(x = best_score, fill = best_ref)) +
-      geom_histogram(binwidth = 10, position = "stack", color = "black") +
-      ggtitle(paste0(sample_name, " | Total: ", total_N, " | >20: ", short_N)) +
-      xlab("Best Score") + ylab("Count") + theme_bw(base_size = 9) + theme(legend.position = "none")
+    p <- ggplot(dt_best_filtered, aes(x = best_score, fill = best_ref)) + geom_histogram(binwidth = 10, position = "stack", color = "black") +
+      ggtitle(paste0(sample_name, " | Total: ", total_N, " | >20: ", short_N)) + xlab("Best Score") + ylab("Count") + theme_bw(base_size = 9) + theme(legend.position = "none")
     plots_lt60[[sample_name]] <- p
   }
 
@@ -114,14 +107,14 @@ for (grp in names(groups)) {
   plots <- lapply(plots, function(p) p + theme(legend.position = "none"))
   combined_row <- plot_grid(plotlist = plots, ncol = length(plots))
   final_plot <- plot_grid(combined_row, legend, ncol = 2, rel_widths = c(1, 0.15))
-  md_save_pdf(final_plot,paste0("group_", grp, "_grid.pdf"), width = 5 * length(plots)+2, height = 5);
+  final_plot
 
   rightmost_plot <- plots_lt60[[length(plots_lt60)]]
   legend <- get_legend( rightmost_plot + theme(legend.position = "right", legend.title = element_text(size=9)))
   plots <- lapply(plots_lt60, function(p) p + theme(legend.position = "none"))
   combined_row <- plot_grid(plotlist = plots, ncol = length(plots))
   final_plot <- plot_grid(combined_row, legend, ncol = 2, rel_widths = c(1, 0.15))
-  md_save_pdf(final_plot,paste0("group_", grp, "_lt60_grid.pdf"), width = 5 * length(plots)+2, height = 5);
+  final_plot
 }
 ```
 
