@@ -45,66 +45,13 @@ tt[, type := sub("^[^_]+_(.*)$", "\\1", sample)]
 tt[, type := ifelse(type=="ExtrBlank","Blank",type)]
 
 
-
-
 ggplot(tt, aes(x = read_len, y = count, color = type)) +
-  geom_line(alpha = 1, size=1.5) +
+  geom_line(alpha = 1, linewidth=1.5) +
   facet_wrap(~group, scales = "free") +   
   labs(x = "read_len", y = "count", title = "Distribution of Read_len") +
   theme_minimal() +
   theme(legend.position = "bottom")
 
-
-```
-
-
-## Kraken2 Contamination Report 
-
-| Taxa           | Included | Description                                      |
-|----------------|:--------:|-------------------------------------------------|
-| Archaea        | ✅       | Single-celled microorganisms distinct from bacteria |
-| Bacteria       | ✅       | Prokaryotic microorganisms                       |
-| Human          | ✅       | Host genome sequences                            |
-| Plasmid        | ✅       | Extrachromosomal DNA elements                    |
-| Viral          | ✅       | Viruses including phages                         |
-| Fungi          | ✅       | Eukaryotic organisms such as yeasts and molds   |
-| Protozoa       | ✅       | Single-celled eukaryotes                         |
-| UniVec         | ✅       | Vector contamination sequences                    |
-| UniVec_Core    | ✅       | Core vector sequences                             |
-
-```{r contam, echo=FALSE, warning=FALSE, message=FALSE}
-library(knitr)
-tt=fread("kr_report_domain2phylom.csv")
-tt[,classified := 100 - unclassified]
-tt[,unclassified := NULL]
-kable(tt, format = "markdown", digits = 2, caption = "Kraken report: domain proportions by sample")
-
-taxa_cols <- setdiff(names(tt), "sample")
-depth <- nchar(gsub("[^_]", "", taxa_cols))  # count underscores
-taxa_depth <- data.table(taxa = taxa_cols, depth = depth)
-tt_long <- melt(tt, id.vars = "sample", variable.name = "taxa", value.name = "percent")
-tt_long[, taxa_clean := gsub("_+", "", taxa)]  # remove underscores
-tt_long[, depth := nchar(gsub("[^_]", "", taxa))]  # underscore count
-
-tt_long[, rank := fifelse(depth == 0, "classified",
-                   fifelse(depth <= 2, "domain",
-                   fifelse(depth <= 4, "phylum/clade",
-                   fifelse(depth <= 6, "class",
-                   fifelse(depth <= 8, "order",
-                   fifelse(depth <= 10, "family", "genus/species"))))))]
-rank_levels <- c("classified", "domain", "phylum/clade", "class", "order", "family", "genus/species")
-
-tt_long[, rank := factor(rank, levels = rank_levels)]
-
-
-ggplot(tt_long, aes(x = sample, y = percent, fill = taxa_clean)) +
-  geom_bar(stat = "identity", color = "black") +
-  facet_wrap(~rank, scales = "free_y") +  # separate panels by depth
-  labs(x = "Sample", y = "Percent", title = "Taxonomic Proportions by Kraken Report") +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1),
-        legend.position = "bottom") +
-  scale_fill_brewer(palette = "Set3")
 
 ```
 
@@ -177,3 +124,55 @@ for (grp in names(groups)) {
   md_save_pdf(final_plot,paste0("group_", grp, "_lt60_grid.png"), width = 10* length(plots)+2, height = 5);
 }
 ```
+
+
+## Kraken2 Contamination Report 
+
+| Taxa           | Included | Description                                      |
+|----------------|:--------:|-------------------------------------------------|
+| Archaea        | ✅       | Single-celled microorganisms distinct from bacteria |
+| Bacteria       | ✅       | Prokaryotic microorganisms                       |
+| Human          | ✅       | Host genome sequences                            |
+| Plasmid        | ✅       | Extrachromosomal DNA elements                    |
+| Viral          | ✅       | Viruses including phages                         |
+| Fungi          | ✅       | Eukaryotic organisms such as yeasts and molds   |
+| Protozoa       | ✅       | Single-celled eukaryotes                         |
+| UniVec         | ✅       | Vector contamination sequences                    |
+| UniVec_Core    | ✅       | Core vector sequences                             |
+
+```{r contam, echo=FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+tt=fread("kr_report_domain2phylom.csv")
+tt[,classified := 100 - unclassified]
+tt[,unclassified := NULL]
+kable(tt, format = "markdown", digits = 2, caption = "Kraken report: domain proportions by sample")
+
+taxa_cols <- setdiff(names(tt), "sample")
+depth <- nchar(gsub("[^_]", "", taxa_cols))  # count underscores
+taxa_depth <- data.table(taxa = taxa_cols, depth = depth)
+tt_long <- melt(tt, id.vars = "sample", variable.name = "taxa", value.name = "percent")
+tt_long[, taxa_clean := gsub("_+", "", taxa)]  # remove underscores
+tt_long[, depth := nchar(gsub("[^_]", "", taxa))]  # underscore count
+
+tt_long[, rank := fifelse(depth == 0, "classified",
+                   fifelse(depth <= 2, "domain",
+                   fifelse(depth <= 4, "phylum/clade",
+                   fifelse(depth <= 6, "class",
+                   fifelse(depth <= 8, "order",
+                   fifelse(depth <= 10, "family", "genus/species"))))))]
+rank_levels <- c("classified", "domain", "phylum/clade", "class", "order", "family", "genus/species")
+
+tt_long[, rank := factor(rank, levels = rank_levels)]
+
+
+ggplot(tt_long, aes(x = sample, y = percent, fill = taxa_clean)) +
+  geom_bar(stat = "identity", color = "black") +
+  facet_wrap(~rank, scales = "free_y") +  # separate panels by depth
+  labs(x = "Sample", y = "Percent", title = "Taxonomic Proportions by Kraken Report") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        legend.position = "bottom") +
+  scale_fill_brewer(palette = "Set3")
+
+```
+
