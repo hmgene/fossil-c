@@ -115,6 +115,7 @@
 </tbody>
 </table>
 
+![](README_files/figure-markdown_strict/unnamed-chunk-1-1.png)[PDF](summary.pdf)
 [tsv download](summary.tsv)
 
 ## Barcode and Adapter Structure
@@ -161,4 +162,3 @@
 ## Adapter Distribution
 
 ![](README_files/figure-markdown_strict/unnamed-chunk-2-1.png)[PDF](adapter.pdf)
-![](README_files/figure-markdown_strict/unnamed-chunk-2-2.png)[PDF](summary.pdf)

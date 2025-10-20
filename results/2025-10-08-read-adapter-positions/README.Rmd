@@ -15,6 +15,10 @@ library(readr)
 library(knitr)
 df <- read.table("summary.tsv",header=T)
 kable(df, format = "pipe")
+
+source("fn.r")
+p=pl_summary("summary.tsv");
+md_save_pdf(p, "summary.pdf", width = 12, height = 7); 
 ```
 [tsv download](summary.tsv)
 
@@ -73,8 +77,6 @@ files <- list.files("../adapter", pattern = "\\.adapter$", full.names = TRUE)
 p=plt_adapter(files);
 md_save_pdf(p, "adapter.pdf", width = 12, height = 20); 
 
-p=pl_summary("summary.tsv");
-md_save_pdf(p, "summary.pdf", width = 12, height = 20); 
 
 ```
 
