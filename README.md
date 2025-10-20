@@ -85,62 +85,92 @@ Mismatches include indels, and gap openings are penalized to account for fragmen
 <summary> bigdata (not shown here ) structure </summary>
 
 ```text
+├── bigdata/adapterrm
+│   ├── adapterrm
+│   │   ├── Brachy_Blank.html
+│   │   ├── Brachy_Blank.json
+│   │   ├── Brachy_Blank.merged.fastq.gz
+├── bigdata/bwa
+│   ├── bwa_scores
+│   │   ├── Brachy_Blank_best_score_hist.png
+│   │   ├── Brachy_Blank_best_score_stacked.png
+│   │   ├── Brachy_Blank.tsv
+│   ├── bwa
+├── bigdata/bwa_scores
+│   ├── bwa_scores
+│   │   ├── Brachy_Blank_best_score_hist.png
+│   │   ├── Brachy_Blank_best_score_stacked.png
+│   │   ├── Brachy_Blank.tsv
+├── bigdata/centrifuge
+│   ├── centrifuge
+│   │   ├── h+p+v+c.tar
+│   │   ├── hpvc.1.cf
+│   │   ├── hpvc.2.cf
+├── bigdata/dn.sh
+│   ├── dn.sh
+├── bigdata/fastp
+│   ├── fastp
+│   │   ├── Brachy_Blank_S9_L002_R1_001.fastq.gz
+│   │   ├── Brachy_Blank_S9_L002_R1_001.fastq.gz.fastp_report.html
+│   │   ├── Brachy_Blank_S9_L002_R2_001.fastq.gz
+├── bigdata/gatk
+│   ├── gatk
+│   │   ├── gatk-4.6.2.0.zip
+├── bigdata/genome
+│   ├── genome
+│   │   ├── bearded_dragon.fna.gz
+│   │   ├── brown_anole.fna.gz
+│   │   ├── crocodile.fna.gz
+├── bigdata/Human
+│   ├── Human
+│   │   ├── ERR13475326_1.fastq.gz
+│   │   ├── ERR13475326_2.fastq.gz
+│   │   ├── ERR13475326.fastq.gz
+├── bigdata/kr2
+│   ├── kr2
+│   │   ├── hash.k2d
+│   │   ├── opts.k2d
+│   │   ├── seqid2taxid.map
+├── bigdata/leehom
+│   ├── leehom
+│   │   ├── Brachy_Blank_r1.fail.fq.gz
+│   │   ├── Brachy_Blank_r1.fail.fq.gz.n
+│   │   ├── Brachy_Blank_r1.fq.gz
+├── bigdata/Mammuthus
+│   ├── Mammuthus
+│   │   ├── ERR5024913_1.fastq.gz
+│   │   ├── ERR5024913_2.fastq.gz
+│   │   ├── ERR5032053_1.fastq.gz
+├── bigdata/mapdamage
+│   ├── mapdamage
+├── bigdata/picard.jar
+│   ├── picard.jar
+├── bigdata/resources
+│   ├── resources
+│   │   ├── CheckPileup.java
+│   │   ├── CountLoci.java
+│   │   ├── CountReads.java
+├── bigdata/results
+│   ├── results
+│   │   ├── count_summary.csv
+│   │   ├── fail_perc.tsv
+│   │   ├── len_distribution.tsv
+├── bigdata/stat
+│   ├── stat
+│   │   ├── Brachy_Blank@allMis1.bed
+│   │   ├── Brachy_Blank@galGal6.bed
+│   │   ├── Brachy_Blank@hg38.bed
+├── bigdata/ucsc
+│   ├── ucsc
+│   │   ├── genome_info.2bit.urls
+│   │   ├── genome_info.fa.urls
+│   │   ├── genome_info.json
 
-    bigdata/
-    ├── adapterrm
-    ├── bwa
-    │   ├── idx
-    │   └── results
-    ├── centrifuge
-    │   └── library
-    │       └── contaminants
-    ├── fastp
-    ├── gatk
-    │   └── gatk-4.6.2.0
-    │       ├── gatkdoc
-    │       └── scripts
-    │           ├── cnv_wdl
-    │           │   ├── germline
-    │           │   └── somatic
-    │           ├── mutect2_wdl
-    │           │   └── mutect_resources_json
-    │           └── sv
-    │               └── stepByStep
-    ├── genome
-    ├── Human
-    ├── kr2
-    │   ├── genome
-    │   │   └── plasmid
-    │   ├── library
-    │   │   ├── added
-    │   │   ├── archaea
-    │   │   ├── bacteria
-    │   │   ├── fungi
-    │   │   ├── human
-    │   │   ├── protozoa
-    │   │   ├── UniVec_Core
-    │   │   └── viral
-    │   ├── results
-    │   └── taxonomy
-    ├── leehom
-    ├── Mammuthus
-    ├── resources
-    ├── results
-    ├── stat
-    ├── tmp
-    │   └── genomes
-    └── ucsc
-        ├── 2bit
-        ├── anno
-        │   ├── allMis1
-        │   ├── anoCar2
-        │   ├── galGal6
-        │   └── hg38
-        └── fa
 ```
 </details>
 
-### Privious Review Criteria 
+### Privious Review Points
+
 [plan](plan.md)
 
 
