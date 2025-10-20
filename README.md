@@ -14,31 +14,30 @@ dino list ## list tools
 1. Adapter handling
 
 ```
-00-inspect-barcodes.sh
-00-leehom-rn.sh
+    00-inspect-barcodes.sh
+    00-leehom-rn.sh
 ``` 
-[go to results]( results/2025-10-08-read-adapter-positions/README.md  )
+
+  - [go to results]( results/2025-10-08-read-adapter-positions/README.md  )
 
 
 2. Preparing Genomes 
 
 ```
-00-download-genome.sh # => bigdata/genome
-00-download-ucsc-data.sh # =>bigdata/ucsc
+    00-download-genome.sh # => bigdata/genome
+    00-download-ucsc-data.sh # =>bigdata/ucsc
 ```
 
 3. Mapping Reads
 
 ```
-01-bwa-pp.sh  ## preprocessing => bigdata/bwa/idx
-02-bwa-rn.sh  ## mapping to multi species => bigdata/bwa/results
+    01-bwa-pp.sh  ## preprocessing => bigdata/bwa/idx
+    02-bwa-rn.sh  ## mapping to multi species => bigdata/bwa/results
 ```
 
 4. Bwa Best Scores 
 
-$$
-\text{Score} = \text{matches} - \text{mismatches\_and\_indels} - \text{gapopen}
-$$
+$$ \text{Score} = \text{matches} - \text{mismatches_and_indels} - \text{gapopen}$$
 
 ```
 03-bwa-pl.sh # table of alignment scores => bigdata/bwa_scores/
