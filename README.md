@@ -1,10 +1,17 @@
 # fossil-c Bracky & T-rex
 
-### installation
+### Installation
 ```
 mamba env update -n dino_env -f dino_env.yml
 
 ```
+
+### Procedures
+
+1. Inspection of barcodes
+```
+00-inspect-barcodes.sh
+``` 
 
 ### Structure of DATA
 <details>
