@@ -78,11 +78,9 @@ Mismatches include indels, and gap openings are penalized to account for fragmen
 ![png](results/2025-10-16-taxonomic-authentication/figs/group_ERR5024913_grid.png )
 
 
-```
-
 ### Structure of DATA
 <details>
-<summary> bigdata (not shown here ) structure </summary>
+<summary> bigdata (in HPC ) structure </summary>
 
 ```text
 ├── bigdata/adapterrm
