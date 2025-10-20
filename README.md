@@ -65,12 +65,7 @@ Mismatches include indels, and gap openings are penalized to account for fragmen
     03-bwa-pl.sh # table of alignment scores => bigdata/bwa_scores/
 ```
 
-| Group | png | 
-| -- | :-: |
-| Bracky | ![png](results/2025-10-16-taxonomic-authentication/figs/group_Brachy_grid.png	) |
-| Bracky : len<60| ![png](results/2025-10-16-taxonomic-authentication/figs/group_Brachy_lt60_grid.png ) |
-| Trex | ![png](results/2025-10-16-taxonomic-authentication/figs/group_Trex_grid.png) |
-| Trex : len<60| ![png](results/2025-10-16-taxonomic-authentication/figs/group_Trex_lt60_grid.png) |
+![png](figs/bwa_score_grid.png)
 
 [go details](results/2025-10-16-taxonomic-authentication/README.md)
 
