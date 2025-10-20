@@ -62,7 +62,7 @@ $$
 Mismatches include indels, and gap openings are penalized to account for fragmented insertions.
 
 ```
-03-bwa-pl.sh # table of alignment scores => bigdata/bwa_scores/
+    03-bwa-pl.sh # table of alignment scores => bigdata/bwa_scores/
 ```
 
 | Group | png | 
@@ -71,7 +71,16 @@ Mismatches include indels, and gap openings are penalized to account for fragmen
 | Bracky : len<60| ![png](results/2025-10-16-taxonomic-authentication/figs/group_Brachy_lt60_grid.png ) |
 | Trex | ![png](results/2025-10-16-taxonomic-authentication/figs/group_Trex_grid.png) |
 | Trex : len<60| ![png](results/2025-10-16-taxonomic-authentication/figs/group_Trex_lt60_grid.png) |
+
 [go details](results/2025-10-16-taxonomic-authentication/README.md)
+
+- All samples contain fragmented human contaminants.
+- Cells and Vessels contain fewer human contaminants.
+- Small fragments (~20–30 bp) are distributed across multiple species.
+
+Example of Mammoth mapped to Elephant:
+
+![png](results/2025-10-16-taxonomic-authentication/figs/group_ERR5024913_grid.png )
 
 
 ```
@@ -136,10 +145,8 @@ Mismatches include indels, and gap openings are penalized to account for fragmen
 ```
 </details>
 
-### plan
+### Privious Review Criteria 
 [plan](plan.md)
-
-### Data structure
 
 
 
