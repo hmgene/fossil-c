@@ -61,9 +61,12 @@ $$
 
 Mismatches include indels, and gap openings are penalized to account for fragmented insertions.
 
+```
+Run:
+    03-bwa-pl.sh # table of alignment scores => bigdata/bwa_scores/
+
 Output : bigdata/bwa_scores/Bracky_cells.tsv 
 
-```
 id	seq	Brachy_cells@allMis1	Brachy_cells@anoCar2	Brachy_cells@bearded_dragon	Brachy_cells@brown_anole	Brachy_cells@crocodile	Brachy_cells@falcon	Brachy_cells@galGal6	Brachy_cells@hg38	Brachy_cells@komodo_dragon	Brachy_cells@loxAfr3	Brachy_cells@mm10	Brachy_cells@ostrich
 LH00333:151:232G25LT3:2:2167:33774:18886	TGGCCCCGGAAGTCGTCGGC	0	0	0	0	0	0	0	0	0	0	16	0
 LH00333:151:232G25LT3:2:2176:26174:11745	AAATTTTGCTAAGGATATTTGCGTCAATTTTTATGAAGATTTTATCAAGAATATGGGTTGTAGTTTTCCATTATGATGTCTTTGTTGGAGTAATGCTGGCCT	0	0	0	0	0	0	0	102	0	0	0	0
@@ -77,9 +80,6 @@ LH00333:151:232G25LT3:2:1180:34365:8478	TGAACTCCAGCATCCGTTTC	0	0	0	0	0	0	0	0	0	1
 ```
 
 
-```
-    03-bwa-pl.sh # table of alignment scores => bigdata/bwa_scores/
-```
 
 ![png](results/2025-10-16-taxonomic-authentication/figs/bwa_score_grid.png)
 
