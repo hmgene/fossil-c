@@ -4,6 +4,7 @@ library(ggplot2)
 # Define directories
 
 md_save_pdf <- function(p, f, width = 10, height = 20) {
+  options(repr.plot.width = width, repr.plot.height = height)
   print(p)
   ggsave(filename = f, plot = p, width = width, height = height)
   cat(sprintf("[PDF](%s)\n", f))
