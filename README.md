@@ -66,9 +66,12 @@ mamba env update -n dino_env -f dino_env.yml
 ```
 </details>
 
-
 ### plan
 [plan](plan.md)
+
+### Data structure
+
+Summary Table [summary](results/2025-10-08-read-adapter-positions/summary.tsv)
 
 
 
