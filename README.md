@@ -1,29 +1,39 @@
-# fossil-c Bracky & T-rex
+# Fossil-C Bracky & T-rex
 
 ### Installation
+
 ```
 mamba env update -n dino_env -f dino_env.yml
+mamba activate dino_env
+dino list ## list tools
 
 ```
 
 ### Procedures
 
 1. Adapter handling
+
 ```
 00-inspect-barcodes.sh
 00-leehom-rn.sh
 ``` 
+[go to results]( results/2025-10-08-read-adapter-positions/README.md  )
+
 
 2. Preparing Genomes 
+
 ```
 00-download-genome.sh
 00-download-ucsc-data.sh
 ``
+
 3. Mapping Reads
+
 ```
 01-bwa-pp.sh  ## preprocessing
 02-bwa-rn.sh  ## mapping to multi species bigdata/bwa/results
 ```
+
 4. Bwa Best Scores 
 
 $$ Score = #matches  - #mismatches_and_indels  -  #gapopen $$
