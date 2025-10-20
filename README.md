@@ -52,7 +52,9 @@ dino list ## list tools
 ```
 
 4. Bwa Best Scores 
+
 Instead of concatenating the target genomes, we extracted the highest-scoring alignment for each species using:
+
 $$
 \text{Score} = \text{matches} - \text{mismatches} - \text{gapopen}
 $$
@@ -65,10 +67,10 @@ Mismatches include indels, and gap openings are penalized to account for fragmen
 
 | Group | png | 
 | -- | :-: |
-| Bracky | [png](results/2025-10-16-taxonomic-authentication/figs/group_Brachy_grid.png	) |
-| Bracky | [png](results/2025-10-16-taxonomic-authentication/figs/group_Brachy_lt60_grid.png ) |
-| Trex | [png](results/2025-10-16-taxonomic-authentication/figs/group_Trex_grid.png) |
-| Trex | [png](results/2025-10-16-taxonomic-authentication/figs/group_Trex_lt60_grid.png) |
+| Bracky | ![png](results/2025-10-16-taxonomic-authentication/figs/group_Brachy_grid.png	) |
+| Bracky : len<60| ![png](results/2025-10-16-taxonomic-authentication/figs/group_Brachy_lt60_grid.png ) |
+| Trex | ![png](results/2025-10-16-taxonomic-authentication/figs/group_Trex_grid.png) |
+| Trex : len<60| ![png](results/2025-10-16-taxonomic-authentication/figs/group_Trex_lt60_grid.png) |
 [go details](results/2025-10-16-taxonomic-authentication/README.md)
 
 
