@@ -1,0 +1,183 @@
+---
+title: "Taxonomic Athentication" 
+author: "Hyunmin Kim"
+last updated : "`r Sys.Date()`"
+output: md_document
+knitr:
+  opts_chunk:
+    echo: false
+    warning: false
+    message: false
+---
+
+## Trimmed and Pair-Merged Read Lengths 
+- Reads were merged using LeeHom
+
+```{r len, echo=FALSE, warning=FALSE, message=FALSE}
+
+md_save_pdf <- function(p, f, width = 10, height = 20) {
+  print(p)
+  ggsave(filename = f, plot = p, width = width, height = height)
+  cat(sprintf("[PDF](%s)\n", f))
+}   
+
+
+library(data.table)
+library(ggplot2)
+library(dplyr)
+tt <- fread("len.txt", sep="\t", header=FALSE)
+setnames(tt,c("group","sample","read_len","count"))
+d<- tt[, .(
+  total_reads = sum(count),
+  short_reads = sum(count[read_len < 20]),
+  perc_short = round(sum(count[read_len < 20]) * 100 / sum(count),digits=4)
+), by = sample]
+fwrite(d,"../../bigdata/results/short_perc.tsv",sep="\t") 
+
+#tt = fread("n.txt")
+#setnames(tt,c("group","sample","leehom_mated","leehom_failed"))
+#tt[ , fail_perc := round(leehom_failed / (leehom_mated + leehom_failed) * 100,digits=4 )];
+#fwrite(tt,"../../bigdata/results/fail_perc.tsv",sep="\t") 
+
+
+tt$sample <- factor(tt$sample , levels = unique(tt$sample))
+tt[, type := sub("^[^_]+_(.*)$", "\\1", sample)]
+tt[, type := ifelse(type=="ExtrBlank","Blank",type)]
+
+
+
+
+ggplot(tt, aes(x = read_len, y = count, color = type)) +
+  geom_line(alpha = 1, size=1.5) +
+  facet_wrap(~group, scales = "free") +   
+  labs(x = "read_len", y = "count", title = "Distribution of Read_len") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+
+
+```
+
+
+## Kraken2 Contamination Report 
+
+| Taxa           | Included | Description                                      |
+|----------------|:--------:|-------------------------------------------------|
+| Archaea        | ✅       | Single-celled microorganisms distinct from bacteria |
+| Bacteria       | ✅       | Prokaryotic microorganisms                       |
+| Human          | ✅       | Host genome sequences                            |
+| Plasmid        | ✅       | Extrachromosomal DNA elements                    |
+| Viral          | ✅       | Viruses including phages                         |
+| Fungi          | ✅       | Eukaryotic organisms such as yeasts and molds   |
+| Protozoa       | ✅       | Single-celled eukaryotes                         |
+| UniVec         | ✅       | Vector contamination sequences                    |
+| UniVec_Core    | ✅       | Core vector sequences                             |
+
+```{r contam, echo=FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+tt=fread("kr_report_domain2phylom.csv")
+tt[,classified := 100 - unclassified]
+tt[,unclassified := NULL]
+kable(tt, format = "markdown", digits = 2, caption = "Kraken report: domain proportions by sample")
+
+taxa_cols <- setdiff(names(tt), "sample")
+depth <- nchar(gsub("[^_]", "", taxa_cols))  # count underscores
+taxa_depth <- data.table(taxa = taxa_cols, depth = depth)
+tt_long <- melt(tt, id.vars = "sample", variable.name = "taxa", value.name = "percent")
+tt_long[, taxa_clean := gsub("_+", "", taxa)]  # remove underscores
+tt_long[, depth := nchar(gsub("[^_]", "", taxa))]  # underscore count
+
+tt_long[, rank := fifelse(depth == 0, "classified",
+                   fifelse(depth <= 2, "domain",
+                   fifelse(depth <= 4, "phylum/clade",
+                   fifelse(depth <= 6, "class",
+                   fifelse(depth <= 8, "order",
+                   fifelse(depth <= 10, "family", "genus/species"))))))]
+rank_levels <- c("classified", "domain", "phylum/clade", "class", "order", "family", "genus/species")
+
+tt_long[, rank := factor(rank, levels = rank_levels)]
+
+
+ggplot(tt_long, aes(x = sample, y = percent, fill = taxa_clean)) +
+  geom_bar(stat = "identity", color = "black") +
+  facet_wrap(~rank, scales = "free_y") +  # separate panels by depth
+  labs(x = "Sample", y = "Percent", title = "Taxonomic Proportions by Kraken Report") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        legend.position = "bottom") +
+  scale_fill_brewer(palette = "Set3")
+
+```
+
+## BWA Best Scores 
+	
+```{r auth, echo=FALSE, warning=FALSE, message=FALSE}
+library(data.table)
+library(ggplot2)
+library(cowplot)
+library(tools)
+
+# Find all TSV files
+tsv_files <- list.files("../../bigdata/bwa_scores", pattern = "\\.tsv$", full.names = TRUE, recursive = TRUE)
+
+# Extract group name (first token before "_")
+get_group_name <- function(f) {
+  strsplit(basename(f), "_")[[1]][1]
+}
+
+groups <- split(tsv_files, sapply(tsv_files, get_group_name))
+
+for (grp in names(groups)) {
+  message("Processing group: ", grp)
+  plots <- list()
+  plots_lt60 <- list()
+  for (tsv in groups[[grp]]) {
+    sample_name <- file_path_sans_ext(basename(tsv))
+    dt <- fread(tsv)
+    score_cols <- setdiff(names(dt), c("id", "seq"))
+    if (length(score_cols) == 0) next
+
+    dt_best <- dt[, .( best_score = do.call(pmax, .SD), best_ref   = score_cols[max.col(.SD, ties.method = "first")]), .SDcols = score_cols]
+
+    dt_best_filtered <- dt_best[best_score > 20]
+    total_N <- nrow(dt_best)
+    short_N <- nrow(dt_best_filtered)
+    if (short_N == 0) next  # skip empty plots
+
+    # Stacked histogram
+    p <- ggplot(dt_best_filtered, aes(x = best_score, fill = best_ref)) +
+      geom_histogram(binwidth = 10, position = "stack", color = "black") +
+      ggtitle(paste0(sample_name, " | Total: ", total_N, " | >20: ", short_N)) +
+      xlab("Best Score") + ylab("Count") + theme_bw(base_size = 9) + theme(legend.position = "none")
+    plots[[sample_name]] <- p
+
+    dt_best_filtered <- dt_best[best_score > 20 & best_score < 60]
+    total_N <- nrow(dt_best)
+    short_N <- nrow(dt_best_filtered)
+    if (short_N == 0) next  # skip empty plots
+
+    p <- ggplot(dt_best_filtered, aes(x = best_score, fill = best_ref)) +
+      geom_histogram(binwidth = 10, position = "stack", color = "black") +
+      ggtitle(paste0(sample_name, " | Total: ", total_N, " | >20: ", short_N)) +
+      xlab("Best Score") + ylab("Count") + theme_bw(base_size = 9) + theme(legend.position = "none")
+    plots_lt60[[sample_name]] <- p
+  }
+
+  rightmost_plot <- plots[[length(plots)]]
+  legend <- get_legend( rightmost_plot + theme(legend.position = "right", legend.title = element_text(size=9)))
+  plots <- lapply(plots, function(p) p + theme(legend.position = "none"))
+  combined_row <- plot_grid(plotlist = plots, ncol = length(plots))
+  final_plot <- plot_grid(combined_row, legend, ncol = 2, rel_widths = c(1, 0.15))
+  ggsave(filename = paste0("../../bigdata/bwa_scores/group_", grp, "_grid.png"),
+         plot = final_plot, width = 5 * length(plots) + 2, height = 5)
+  md_save_pdf(final_plot,paste0("group_", grp, "_grid.png"), width = 5* length(plots)+2, height = 5);
+
+  rightmost_plot <- plots_lt60[[length(plots_lt60)]]
+  legend <- get_legend( rightmost_plot + theme(legend.position = "right", legend.title = element_text(size=9)))
+  plots <- lapply(plots_lt60, function(p) p + theme(legend.position = "none"))
+  combined_row <- plot_grid(plotlist = plots, ncol = length(plots))
+  final_plot <- plot_grid(combined_row, legend, ncol = 2, rel_widths = c(1, 0.15))
+  ggsave(filename = paste0("../../bigdata/bwa_scores/group_", grp, "_lt60_grid.png"),
+         plot = final_plot, width = 5 * length(plots) + 2, height = 5)
+  md_save_pdf(final_plot,paste0("group_", grp, "_lt60_grid.png"), width = 5* length(plots)+2, height = 5);
+}
+```
