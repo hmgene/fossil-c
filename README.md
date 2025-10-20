@@ -79,7 +79,7 @@ LH00333:151:232G25LT3:2:2189:22171:21721	TACCTTAAGATCGGAAGAGC	0	0	0	0	0	0	0	0	0	
 LH00333:151:232G25LT3:2:1180:34365:8478	TGAACTCCAGCATCCGTTTC	0	0	0	0	0	0	0	0	0	16	0	0
 ```
 
-
+**Summary Plots**
 
 ![png](results/2025-10-16-taxonomic-authentication/figs/bwa_score_grid.png)
 
