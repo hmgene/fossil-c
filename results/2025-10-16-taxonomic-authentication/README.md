@@ -6,6 +6,11 @@
 
 ## BWA Best Scores
 
+<figure>
+<img src="figs/bwa_score_grid.png" alt="bwa_score" />
+<figcaption aria-hidden="true">bwa_score</figcaption>
+</figure>
+
 ## Kraken2 Contamination Report
 
 <table>
