@@ -8,10 +8,29 @@ mamba env update -n dino_env -f dino_env.yml
 
 ### Procedures
 
-1. Inspection of barcodes
+1. Adapter handling
 ```
 00-inspect-barcodes.sh
+00-leehom-rn.sh
 ``` 
+
+2. Preparing Genomes 
+```
+00-download-genome.sh
+00-download-ucsc-data.sh
+``
+3. Mapping Reads
+```
+01-bwa-pp.sh  ## preprocessing
+02-bwa-rn.sh  ## mapping to multi species bigdata/bwa/results
+```
+4. Bwa Best Scores 
+
+$$ Score = #matches  - #mismatches_and_indels  -  #gapopen $$
+
+```
+03-bwa-pl.sh # table of alignment scores => bigdata/bwa_scores/
+```
 
 ### Structure of DATA
 <details>
