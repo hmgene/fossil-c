@@ -65,7 +65,7 @@ Mismatches include indels, and gap openings are penalized to account for fragmen
     03-bwa-pl.sh # table of alignment scores => bigdata/bwa_scores/
 ```
 
-![png](figs/bwa_score_grid.png)
+![png](results/2025-10-16-taxonomic-authentication/figs/bwa_score_grid.png)
 
 [go details](results/2025-10-16-taxonomic-authentication/README.md)
 
