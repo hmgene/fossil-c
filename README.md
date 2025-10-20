@@ -36,11 +36,11 @@ dino list ## list tools
 
 4. Bwa Best Scores 
 
-```
 $$
 \text{Score} = \#\text{matches} - \#\text{mismatches\_and\_indels} - \#\text{gapopen}
 $$
 
+```
 03-bwa-pl.sh # table of alignment scores => bigdata/bwa_scores/
 ```
 [go to results](results/2025-10-16-taxonomic-authentication/README.md)
