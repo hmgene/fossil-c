@@ -9,6 +9,23 @@ dino list ## list tools
 
 ```
 
+## Goals
+### Profiling of FASTQ Read Contents
+1. Lengths of trimmed and merged reads
+2. Composition of trimmed reads (A/T and G/C repeats, quality metrics)
+3. Untreated and unmerged reads
+
+### Profiling of Mapped Alignment Contents
+1. Distribution of alignments across target species
+2. Mutation patterns in representative species
+
+
+## Our Approach
+>Conventional tools such as EASER and PALEOMIX are designed for aDNA analysis but rely on a reference genome. In our case, only candidate genomes are available, making the challenge far greater than previous efforts.
+>Recovering dinosaur aDNA represents one of the most extreme tasks in paleogenomics, requiring highly customized analytical solutions.
+>While we adopted the best algorithms from existing literature, the steps between pipelines cannot be fully pre-configured for such data. Instead, we implemented each step individually, rigorously performing QC checks before advancing results to the next stage, ensuring accuracy in this unprecedented context.
+
+
 ### Procedures
 
 1. Adapter handling
