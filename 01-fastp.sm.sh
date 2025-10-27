@@ -61,5 +61,7 @@ wide["Total_Reads"] = total_reads
 print("=== Percent Remaining per Param ===")
 print(wide)
 wide.to_csv("results/2025-10-27-fastp/fastp_summary.tsv",sep="\t")
+print("=== Details===")
+print(pivot)
 ')
 

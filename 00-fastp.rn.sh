@@ -1,5 +1,5 @@
 input=(
-#/mnt/vstor/SOM_GENE_BEG33/data/082725_NovaSeq-X_A_lane2/Brachy_Blank_S9_L002_R1_001.fastq.gz
+/mnt/vstor/SOM_GENE_BEG33/data/082725_NovaSeq-X_A_lane2/Brachy_Blank_S9_L002_R1_001.fastq.gz
 /mnt/vstor/SOM_GENE_BEG33/data/082725_NovaSeq-X_A_lane2/Brachy_cells_S5_L002_R1_001.fastq.gz
 /mnt/vstor/SOM_GENE_BEG33/data/082725_NovaSeq-X_A_lane2/Brachy_c_sedi_S7_L002_R1_001.fastq.gz
 /mnt/vstor/SOM_GENE_BEG33/data/082725_NovaSeq-X_A_lane2/Brachy_vessels_S6_L002_R1_001.fastq.gz
@@ -14,7 +14,7 @@ input=(
 for f1 in ${input[@]};do
     n=${f1##*/};n=${n%_S*};n=${n%_?.fastq.gz};
     f2=${f1/_R1/_R2}
-    for x in QGL GL L xL xyL xy ;do
+    for x in do QGL GL gL gxL gxyL gxy ;do
         output=bigdata/fastp/$x;mkdir -p $output;
         o=$output/$n; o1=${o}_R1.fq.gz; o2=${o1/_R1/_R2};
         if [ -s $o.fastp.json ];then
