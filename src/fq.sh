@@ -102,8 +102,9 @@ usage="$FUNCNAME <fastq>[.gz] <id file> [-v]
 if [ $# -lt 2 ];then echo "$usage";return;fi
 
         local tmp=$(mktemp -d)
-        cat $2 > $tmp/a
-        zcat $1 |\
+        dino mycat $2 > $tmp/a
+        cat $1 > $tmp/b
+        dino mycat $tmp/b |\
         perl -e 'use strict; my $v="'${3:-""}'";
         my %r=();
         open(my $fh,"<","'$tmp/a'") or die  $!;

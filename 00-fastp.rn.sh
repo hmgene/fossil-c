@@ -14,7 +14,8 @@ input=(
 for f1 in ${input[@]};do
     n=${f1##*/};n=${n%_S*};n=${n%_?.fastq.gz};
     f2=${f1/_R1/_R2}
-    for x in do QGL GL gL gxL gxyL gxy ;do
+    for x in QGL GL gL gxL gxyL gxyl20 ;do
+        xx=`echo $x | perl -pe 's/([a-zA-Z])/-$1 /g;'`
         output=bigdata/fastp/$x;mkdir -p $output;
         o=$output/$n; o1=${o}_R1.fq.gz; o2=${o1/_R1/_R2};
         if [ -s $o.fastp.json ];then
@@ -28,7 +29,7 @@ for f1 in ${input[@]};do
                     --adapter_sequence AGATCGGAAGAGCACACGTCTGAACTCCAGTCA \
                     --adapter_sequence_r2 AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT \
                     --umi --umi_loc=read1 --umi_len=9 \
-                    --json $o.fastp.json --html $o.fastp.html --thread 8 -$x
+                    --json $o.fastp.json --html $o.fastp.html --thread 8 $xx
                 " | sbatch --mem=16g -c 9 -o $output/$n.out
             fi
         fi
