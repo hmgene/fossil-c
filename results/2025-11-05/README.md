@@ -1,6 +1,9 @@
 
 ## Brachy Krona Visualization Dashboard (2025-11-05)
 
+### Summary
+We applied K-mer (Kraken2) and alignment-based (Centrifuge) methods to assess dinosaur authentication. K-mer detects mutation-free fragments, while alignments reveal sequences from modern species and their ancestors with mutations. Blank samples contain unclassified reads that partially align to multiple species, whereas cells map to a broader range of unknown species.
+
 ### Input
 LeeHom Trimmed, Merged FastQ [link](https://github.com/hmgene/fossil-c/tree/main/results/2025-10-08-read-adapter-positions)
 
@@ -12,6 +15,8 @@ LeeHom Trimmed, Merged FastQ [link](https://github.com/hmgene/fossil-c/tree/main
 | bracky_cells | Kraken2 | <img width="2402" height="1270" alt="image" src="https://github.com/user-attachments/assets/513e2914-35c1-4e6b-8be7-0ea090fe90fb" />[View](https://raw.githack.com/hmgene/fossil-c/main/results/2025-11-05/bracky_cells_k2_nt.krona.html) |
 
 ### (Partial) Alignment w/ Centrifuge @ nt db
+
+K-mer (Kraken2) identifies mutation-free fragments, while alignment-based (Centrifuge) analysis reveals ancestral and modern species sequences, with cells mapping to more unknown species than blank samples.
 
 | File | Method | Link | Eukarota |
 |------|-------|------|------|
