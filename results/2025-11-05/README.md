@@ -2,6 +2,7 @@
 ## Brachy Krona Visualization Dashboard (2025-11-05)
 
 ### Summary
+We applied both k-mer–based (Kraken2) and alignment-based (Centrifuge) approaches to assess the authenticity of putative dinosaur DNA.
 The purpose of using additional Centrifuge is to allow partial and mismatched alignments, enabling examination of sequences that remain unclassified by exact k-mer matching.
 K-mer–based detection (Kraken2) captures unmutated fragments, while alignment-based analysis (Centrifuge) identifies reads related to modern or ancestral taxa through partial homology.
 Notably, unclassified reads from blank controls show ambiguous partial matches across multiple species, whereas reads from cellular samples span a broader range of unknown or poorly annotated organisms.
