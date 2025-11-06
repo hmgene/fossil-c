@@ -1,6 +1,9 @@
 
 ## Brachy Krona Visualization Dashboard (2025-11-05)
 
+### Input
+LeeHom Trimmed, Merged FastQ [link](https://github.com/hmgene/fossil-c/tree/main/results/2025-10-08-read-adapter-positions)
+
 ### K-mer w/ Kraken2 @ nt db
 
 | File | Method | Link |
