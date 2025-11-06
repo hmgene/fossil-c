@@ -16,5 +16,4 @@ LeeHom Trimmed, Merged FastQ [link](https://github.com/hmgene/fossil-c/tree/main
 | File | Method | Link | Eukarota |
 |------|-------|------|------|
 | bracky_blank | Centrifuge | <img width="2402" height="1270" alt="image" src="https://github.com/user-attachments/assets/73f5e50f-1bdc-4315-9eaa-f2b96ac0473f" />[View](https://raw.githack.com/hmgene/fossil-c/main/results/2025-11-05/bracky_blank_cf_nt.krona.html) |  <img width="2402" height="1270" alt="image" src="https://github.com/user-attachments/assets/3ecb01d9-d58a-4601-afd7-60fb5fdde96a" /> |
-
-| bracky_cells | Centrifuge | <img width="2402" height="1270" alt="image" src="https://github.com/user-attachments/assets/2b329391-5c12-4df6-8f1b-688d96eb5df4" /> [View](https://raw.githack.com/hmgene/fossil-c/main/results/2025-11-05/bracky_cells_cf_nt.krona.html) | |
+| bracky_cells | Centrifuge | <img width="2402" height="1270" alt="image" src="https://github.com/user-attachments/assets/2b329391-5c12-4df6-8f1b-688d96eb5df4" /> [View](https://raw.githack.com/hmgene/fossil-c/main/results/2025-11-05/bracky_cells_cf_nt.krona.html) | <img width="2402" height="1270" alt="image" src="https://github.com/user-attachments/assets/937a8d1f-53b6-4b11-94cc-d8089b2dd7d7" /> |
