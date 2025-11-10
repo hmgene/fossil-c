@@ -1,1 +1,2 @@
-Writing results/2025-11-05/bracky_cells_k2_nt.krona.html...
+/var/spool/slurm/job2987483/slurm_script: line 2: python: command not found
+/var/spool/slurm/job2987483/slurm_script: line 3: ktImportText: command not found

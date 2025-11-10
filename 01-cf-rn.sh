@@ -4,6 +4,13 @@ bigdata/leehom/Brachy_cells.fq.gz
 )
 x=/mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/centrifuge/nt
 
+head -n 10000 bigdata/centrifuge/results/Brachy_cells.txt  | perl -e 'use strict; 
+    while(<>){chomp;my@d=split/\t/,$_;
+        print $d[5],"\t",$d[6],"\n";
+    }
+' > tt
+exit
+
 for f in ${input[@]};do
 	n=${f##*/};n=${n%.fq.gz};
 	o=bigdata/centrifuge/results/$n
