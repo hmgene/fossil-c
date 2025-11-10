@@ -17,7 +17,7 @@ n=${i%,*}
 f=${i#*,}
 o=$odir/$n
 echo "#!/bin/bash
-python ../KrakenTools/kreport2krona.py -r <( awk '\$1 > 0' $f ) -o $o.krona.txt
+python ../KrakenTools/kreport2krona.py -r $f -o $o.krona.txt
 ktImportText $o.krona.txt  -o $o.krona.html 
 " | sbatch  -o $o.out 
 done
