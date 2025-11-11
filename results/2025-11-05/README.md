@@ -26,5 +26,5 @@ K-mer (Kraken2) identifies mutation-free fragments, while alignment-based (Centr
 | File | Method | Link | Eukarota |
 |------|-------|------|------|
 | bracky_blank | Centrifuge | ![svg](figures/snapshot-cf-brach-blank-euk.svg ) [View](https://raw.githack.com/hmgene/fossil-c/main/results/2025-11-05/bracky_blank_cf_nt.krona.html) |  <img width="2402" height="1270" alt="image" src="https://github.com/user-attachments/assets/3ecb01d9-d58a-4601-afd7-60fb5fdde96a" /> |
-| bracky_cells | Centrifuge | ![z](figures/snapshot-cf-brach-cells.png) [View](https://raw.githack.com/hmgene/fossil-c/main/results/2025-11-05/bracky_cells_cf_nt.krona.html) | <img width="2402" height="1270" alt="image" src="https://github.com/user-attachments/assets/937a8d1f-53b6-4b11-94cc-d8089b2dd7d7" /> |
-| BC_SRSLY | Centrifuge | [View](https://raw.githack.com/hmgene/fossil-c/main/results/2025-11-05/BC_SRSLY.krreport.txt.krona.html) |
+| bracky_cells | Centrifuge | ![z](figures/snapshot-cf-brach-cells.png) [View](https://raw.githack.com/hmgene/fossil-c/main/results/2025-11-05/bracky_cells_cf_nt.krona.html) | [svg](figures/snapshot-cf-brach-cells-euk.svg) | 
+| BC_SRSLY | Centrifuge | ![svg](figures/snapshot-cf-BC-SRSLY.svg) [View](https://raw.githack.com/hmgene/fossil-c/main/results/2025-11-05/BC_SRSLY.krreport.txt.krona.html) | [svg](figures/snapshot-cf-BC-SRSLY-euk.svg) |
