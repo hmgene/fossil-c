@@ -1,15 +1,9 @@
 input=(
 bigdata/leehom/Brachy_Blank.fq.gz  
 bigdata/leehom/Brachy_cells.fq.gz
+bigdata/leehom/BC_SRSLY.fq.gz
 )
 x=/mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/centrifuge/nt
-
-head -n 10000 bigdata/centrifuge/results/Brachy_cells.txt  | perl -e 'use strict; 
-    while(<>){chomp;my@d=split/\t/,$_;
-        print $d[5],"\t",$d[6],"\n";
-    }
-' > tt
-exit
 
 for f in ${input[@]};do
 	n=${f##*/};n=${n%.fq.gz};
@@ -17,7 +11,7 @@ for f in ${input[@]};do
 	mkdir -p ${o%/*}
 	echo "#!/bin/bash
 		mamba activate dino_env
-	   	centrifuge -p 16 -x $x -U $f --report-file $o.tsv --min-hitlen 16 --score-min L,0,-0.2 -k 5 > $o.txt
+	   	centrifuge -p 16 -x $x -U $f --report-file $o.tsv --min-hitlen 16 --score-min L,0,-0.2 -k 5 > $o.txt 
         centrifuge-kreport -x $x $o.txt > $o.krreport.txt 
-        " #| sbatch --mem=512g -c 24 -p smp -o $o.out -e $o.err
+        " | sbatch -J cf_$n --mem=512g -c 24 -p smp -o $o.out -e $o.err
 done 
