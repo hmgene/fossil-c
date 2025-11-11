@@ -7,6 +7,12 @@ The purpose of using additional Centrifuge is to allow partial and mismatched al
 K-mer–based detection (Kraken2) captures unmutated fragments, while alignment-based analysis (Centrifuge) identifies reads related to modern or ancestral taxa through partial homology.
 Notably, unclassified reads from blank controls show ambiguous partial matches across multiple species, whereas reads from cellular samples span a broader range of unknown or poorly annotated organisms.
 
+### Discussion Points
+- [x] Generate Krona plots **without pruning** (previously, 1% fraction was used).  
+- [x] Include **earlier dataset**: Brachy Cell SRSLY added.  
+- [ ] Decompile **partial / multi-species data** (SAM output attempted but not working)
+  - [ ] Extract reads under Archelosauria Taxanomy
+
 ### Input
 LeeHom Trimmed, Merged FastQ [link](https://github.com/hmgene/fossil-c/tree/main/results/2025-10-08-read-adapter-positions)
 
