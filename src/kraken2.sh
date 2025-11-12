@@ -2,39 +2,22 @@ kr2-filter(){
 usage="$FUNCNAME <kreport> <perc_thre=1>";
 if [ $# -lt 2 ];then echo "$usage";return;fi
     cat $1 | perl -e 'my $thre='${2:-1}'; 
-use strict;
-use warnings;
-my %tree;
-my @lineage;
-while(<>) { chomp; next if /^\s*$/;
-    my ($perc, $clade_reads, $taxon_reads, $rank, $taxid, $name) = split /\t/,$_;
-    my ($indent) = $name=~/^(\s*)/;
-    my $depth = length($indent) / 2;  # approximate: 2 spaces per level
-    $#lineage = $depth - 1 if $depth > 0;
-    $lineage[$depth] = { perc => $perc, name => $name, taxid => $taxid, rank => $rank, clade_reads => $clade_reads, taxon_reads => $taxon_reads, children => {}, };
-    if ($depth == 0) { $tree{$taxid} = $lineage[$depth];
-    } else { my $parent = $lineage[$depth-1]; $parent->{children}{$taxid} = $lineage[$depth]; }
-}
-sub print_tree {
-    my ($node, $indent) = @_;
-    $indent //= 0;
-    if ($node->{perc} < $thre) {
-        $node->{node_count} = $node->{clade_reads};
-        $node->{children} = {};
-        return;
+    use strict; use warnings;
+    my $y="";
+    while (<>) {chomp; next if /^\s*$/; my @d=split/\t/,$_;
+        #my ($perc, $clade, $taxon, $rank, $taxid, $name) = split /\t/;
+        my ($x) = $d[5]=~/(\s+)/;
+        if ( $d[0] < $thre ){
+            $d[2]=$d[1];
+            if( length($x) > length($y) ){
+                print join("\t",@d),"\n";
+            }
+        }else{
+            print join("\t",@d),"\n";
+        }
+        $y = $x;
     }
-    print join("\t", map { $node->{$_} } qw(perc clade_reads taxon_reads rank taxid)),"\t";
-    print " " x ($indent*2),$node->{name},"\n";
-    for my $child (values %{$node->{children}}) {
-        print_tree($child, $indent+1);
-    }
-}
-for my $root (values %tree) {
-    print_tree($root,0);
-}
 '
-
-
 }
 
 kr2-de-db(){

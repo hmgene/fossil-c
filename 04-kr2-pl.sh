@@ -19,7 +19,8 @@ f=${i#*,}
 o=$odir/$n
 #[ -s $o.html ] || \
 echo "#!/bin/bash
-python ../KrakenTools/kreport2krona.py -r <( dino kr2-filter $f 1) -o $o.krona.txt
+dino kr2-filter $f 1 > $o.kreport 
+python ../KrakenTools/kreport2krona.py -r $o.kreport -o $o.krona.txt
 ktImportText $o.krona.txt  -o $o.krona.html 
 " | sbatch  -o $o.out 
 done

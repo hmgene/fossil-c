@@ -1,0 +1,11 @@
+230931361	Unclassified
+919378	p__Pseudomonadota
+618543	p__Pseudomonadota	c__Alphaproteobacteria
+823150	p__Pseudomonadota	c__Alphaproteobacteria	o__Hyphomicrobiales
+15266	p__Planctomycetota
+198595	p__Planctomycetota	c__Planctomycetia
+310419	p__Actinomycetota
+2452497	p__Actinomycetota	c__Actinomycetes
+2116	p__Actinomycetota	c__Actinomycetes	o__Kitasatosporales
+118719	p__Actinomycetota	c__Actinomycetes	o__Kitasatosporales	f__Streptomycetaceae
+921187	p__Actinomycetota	c__Actinomycetes	o__Kitasatosporales	f__Streptomycetaceae	g__Streptomyces

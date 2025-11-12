@@ -1,0 +1,18 @@
+28965343	Unclassified
+4855	p__Ascomycota
+318	p__Ascomycota	c__Pichiomycetes
+0	p__Ascomycota	c__Pichiomycetes	o__Pichiales
+220	p__Ascomycota	c__Pichiomycetes	o__Pichiales	f__Pichiaceae
+0	p__Ascomycota	c__Pichiomycetes	o__Pichiales	f__Pichiaceae	g__Komagataella
+4278142	p__Ascomycota	c__Pichiomycetes	o__Pichiales	f__Pichiaceae	g__Komagataella	s__Komagataella_phaffii
+8364	p__Chordata
+29276	p__Pseudomonadota
+13607	p__Pseudomonadota	c__Alphaproteobacteria
+13768	p__Pseudomonadota	c__Alphaproteobacteria	o__Hyphomicrobiales
+7258	p__Pseudomonadota	c__Gammaproteobacteria
+4125	p__Pseudomonadota	c__Betaproteobacteria
+12585	p__Pseudomonadota	c__Betaproteobacteria	o__Burkholderiales
+3773	p__Actinomycetota
+66057	p__Actinomycetota	c__Actinomycetes
+16763	p__Actinomycetota	c__Actinomycetes	o__Micrococcales
+16686	p__Actinomycetota	c__Actinomycetes	o__Micrococcales	f__Microbacteriaceae
