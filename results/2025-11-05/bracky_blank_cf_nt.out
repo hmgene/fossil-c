@@ -1,2 +1,12 @@
-python: can't open file '/home/hxk728/git/fossil-c/../KrakenTools/filter_bracken_kreport.py': [Errno 2] No such file or directory
-No such file or directory at /mnt/vstor/SOM_GENE_BEG33/mamba/miniforge3/envs/dino_env/bin/ktImportText line 71.
+Traceback (most recent call last):
+  File "/home/hxk728/git/fossil-c/../KrakenTools/kreport2krona.py", line 282, in <module>
+    main()
+    ~~~~^^
+  File "/home/hxk728/git/fossil-c/../KrakenTools/kreport2krona.py", line 278, in main
+    kreport2krona_main(args.r_file,args.o_file)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hxk728/git/fossil-c/../KrakenTools/kreport2krona.py", line 218, in kreport2krona_main
+    curr_path.pop()
+    ~~~~~~~~~~~~~^^
+IndexError: pop from empty list
+Writing results/2025-11-05/bracky_blank_cf_nt.krona.html...

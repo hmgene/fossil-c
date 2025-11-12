@@ -1,2 +1,1 @@
-python: can't open file '/home/hxk728/git/fossil-c/../KrakenTools/filter_bracken_kreport.py': [Errno 2] No such file or directory
-No such file or directory at /mnt/vstor/SOM_GENE_BEG33/mamba/miniforge3/envs/dino_env/bin/ktImportText line 71.
+Writing results/2025-11-05/brachy_blank_k2_nt.krona.html...
