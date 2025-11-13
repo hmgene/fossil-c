@@ -3,19 +3,15 @@ usage="$FUNCNAME <kreport> <perc_thre=1>";
 if [ $# -lt 2 ];then echo "$usage";return;fi
     cat $1 | perl -e 'my $thre='${2:-1}'; 
     use strict; use warnings;
-    my $y="";
+    my @buf=();
     while (<>) {chomp; next if /^\s*$/; my @d=split/\t/,$_;
-        #my ($perc, $clade, $taxon, $rank, $taxid, $name) = split /\t/;
-        my ($x) = $d[5]=~/(\s+)/;
-        if ( $d[0] < $thre ){
-            $d[2]=$d[1];
-            if( length($x) > length($y) ){
-                print join("\t",@d),"\n";
-            }
-        }else{
-            print join("\t",@d),"\n";
-        }
-        $y = $x;
+        my ($x) = $d[7]=~/(\s+)/;
+        if($f){
+            print join("\t",@d),length($x),length($y),"\n";
+        } 
+        
+        $f = $d[0] > $thre ? 1 : 0;
+        $y=$x;
     }
 '
 }

@@ -20,5 +20,5 @@ for i in ${input[@]};do
     echo "#!/bin/bash -l
     mamba activate dino_env
     /mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/tools/SPAdes-4.2.0-Linux/bin/spades.py -s $i -o $o  --careful -k 21,33,55 -t 8 --only-assembler
-    " | sbatch -p smp --mem=256g -c 32 --time=100:00:00 -o $o/out
+    " | sbatch -p smp --mem=1024g -c 32 --time=100:00:00 -o $o/out
 done

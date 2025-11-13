@@ -1,0 +1,23 @@
+---
+title: "Fossil-C BWA Alignment Profile"
+author: "Hyunmin Kim"
+last updated : "`r Sys.Date()`"
+output: md_document
+knitr:
+  opts_chunk:
+    echo: false
+    warning: false
+    message: false
+---
+## Read Count Summary
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
+imgs <- c("figures/alignment_proportion_Brachy_Blank.png",
+          "figures/alignment_proportion_Brachy_cells.png")
+labels <- c("Brachy Blank", "Brachy Cells")
+
+# Print as Markdown table
+cat("| ", paste(labels, collapse = " | "), " |\n")
+cat("|", paste(rep("---", length(labels)), collapse = " | "), "|\n")
+cat("| ", paste0("![](", imgs, ")", collapse = " | "), " |\n")
+```
+
