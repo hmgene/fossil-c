@@ -19,9 +19,7 @@ f=${i#*,}
 o=$odir/$n
 #[ -s $o.html ] || \
 echo "#!/bin/bash
-#dino kr2-filter $f 1 > $o.kreport 
-awk '\$1>1' $f > $o.kreport 
-python ../KrakenTools/kreport2krona.py -r $o.kreport -o $o.krona.txt --intermediate-ranks
+python ../KrakenTools/kreport2krona.py -r $i -o $o.krona.txt 
 ktImportText $o.krona.txt  -o $o.krona.html 
 " | sbatch  -o $o.out 
 done
