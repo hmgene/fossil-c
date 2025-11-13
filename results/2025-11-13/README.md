@@ -1,4 +1,18 @@
-## Read Count Summary
+## Discussion Points
+
+-   ☒ : Quantify the proportion of reads mapped for Brachy\_Blank and
+    Brachy\_cells in human and other species.
+
+## Results
+
+-   Data: bigdata/bwa\_scores/\*.tsv files on HPC
+-   Score calculation:
+    *s**c**o**r**e* = *m**a**t**c**h**e**s* − *m**i**s**m**a**t**c**h**e**s* − *g**a**p*<sub>*i*</sub>*n**i**t**a**t**i**o**n*
+    [code](../../03-bwa-pl.sh)
+
+Alignment Length Proportions
+
+### Alignment Length Proportions
 
 <table>
 <colgroup>

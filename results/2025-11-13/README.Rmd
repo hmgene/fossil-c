@@ -9,7 +9,17 @@ knitr:
     warning: false
     message: false
 ---
-## Read Count Summary
+## Discussion Points
+- [x] :  Quantify the proportion of reads mapped for Brachy_Blank and Brachy_cells in human and other species.
+
+## Results
+
+- Data: bigdata/bwa_scores/*.tsv files on HPC
+- Score calculation: $$score=matches − mismatches − gap_initation$$ [code](../../03-bwa-pl.sh)
+
+Alignment Length Proportions
+
+### Alignment Length Proportions
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
 imgs <- c("figures/alignment_proportion_Brachy_Blank.png",
           "figures/alignment_proportion_Brachy_cells.png")
