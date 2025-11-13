@@ -3,39 +3,26 @@ usage="$FUNCNAME <kreport> <perc_thre=1>";
 if [ $# -lt 2 ];then echo "$usage";return;fi
     cat $1 | perl -e 'my $thre='${2:-1}'; 
     use strict; use warnings;
-    my @stack = ();  # keep track of ancestors
+    my $p=0; my $s=0;
+    
     while (<>) { chomp; next if /^\s*$/; my @d = split /\t/;
         my ($indent) = $d[5] =~ /^(\s*)/;
         my $level = length($indent);
 
     if ($level == 0) {
-        print join("\t", @d), "\n";
-        push @stack, { level => $level, skip => 0 };
-        next;
+        print join("\t", @d), "\n";next;
     }
 
-
-
-    # check if parent is skipping children
-    if (@stack && $stack[-1]{skip}) {
-        # skip this node
-        push @stack, { level => $level, skip => 1 };
-        next;
-    }
-
-    # if current node < threshold
     if ($d[0] < $thre) {
-        # replace taxon_reads with clade_reads
         $d[2] = $d[1];
-        print join("\t", @d), "\n";
-        # mark this node as skipping children
-        push @stack, { level => $level, skip => 1 };
+        if($p < $level && $s==0){
+            print join("\t", @d), "\n";
+            $s=1;
+        }
         next;
     }
-
-    # normal node
-    print join("\t", @d), "\n";
-    push @stack, { level => $level, skip => 0 };
+    print join("\t",@d),"\n";
+    $p=$level;
 }
 
 '
