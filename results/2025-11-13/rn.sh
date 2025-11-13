@@ -25,17 +25,17 @@ for (grp in names(groups)) {
     dt_best[, read_len:=nchar(dt[,seq])]
     dt_best[, prop := best_score / read_len]
     dt_best[, ref := sub(".*@", "", best_ref)]
-    dt_best[, ref_label := paste0(best_ref, " (n=", .N, ")"), by = best_ref]
+    dt_best[, ref_label := paste0(ref, " (n=", .N, ")"), by = best_ref]
 
 
     library(ggplot2)
     library(dplyr)
     library(tidyr)  # needed for unnest
 
-    dt_norm <- dt_best %>% group_by(ref) %>%
+    dt_norm <- dt_best %>% group_by(ref_label) %>%
       summarise( dens = list(density(best_score / read_len, adjust = 1.2)), .groups = "drop") %>%
       mutate( x = lapply(dens, function(d) d$x), y = lapply(dens, function(d) d$y / max(d$y))) %>%
-      select(ref, x, y) %>% unnest(cols = c(x, y))  # tidyr unnest
+      select(ref_label, x, y) %>% unnest(cols = c(x, y))  # tidyr unnest
 
     # Plot
     p <- ggplot(dt_norm, aes(x = x, y = y, color = ref_label)) +
