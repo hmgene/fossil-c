@@ -33,4 +33,4 @@ K-mer (Kraken2) identifies mutation-free fragments, while alignment-based (Centr
 |------|-------|------|------|
 | bracky_blank | Centrifuge | ![svg](figures/snapshot-cf-brach-blank.svg ) [View](https://raw.githack.com/hmgene/fossil-c/main/results/2025-11-05/bracky_blank_cf_nt.krona.html) | ![svg](figures/snapshot-cf-brach-blank-euk.svg) |
 | bracky_cells | Centrifuge | ![z](figures/snapshot-cf-brach-cells.png) [View](https://raw.githack.com/hmgene/fossil-c/main/results/2025-11-05/bracky_cells_cf_nt.krona.html) | ![svg](figures/snapshot-cf-brach-cells-euk.svg) | 
-| BC_SRSLY | Centrifuge | ![svg](figures/snapshot-cf-BC-SRSLY.svg) [View](https://raw.githack.com/hmgene/fossil-c/main/results/2025-11-05/BC_SRSLY.krreport.txt.krona.html) | ![svg](figures/snapshot-cf-BC-SRSLY-euk.svg) |
+| BC_SRSLY | Centrifuge | ![svg](figures/snapshot-cf-BC-SRSLY.svg) [View](https://raw.githack.com/hmgene/fossil-c/main/results/2025-11-05/BC_SRSLY.krona.html) | ![svg](figures/snapshot-cf-BC-SRSLY-euk.svg) |
