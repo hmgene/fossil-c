@@ -22,8 +22,8 @@ LeeHom Trimmed, Merged FastQ [link](https://github.com/hmgene/fossil-c/tree/main
 
 | File | Method | Link |
 |------|-------|------|
-| Bracky_Blank | Kraken2 | <img width="2402" height="1270" alt="image" src="https://github.com/user-attachments/assets/2b3cf784-b31d-4c34-a751-a05839ac69b9" /> [View](https://raw.githack.com/hmgene/fossil-c/main/results/2025-11-05/brachy_blank_k2_nt.krona.html) |
-| bracky_cells | Kraken2 | <img width="2402" height="1270" alt="image" src="https://github.com/user-attachments/assets/513e2914-35c1-4e6b-8be7-0ea090fe90fb" />[View](https://raw.githack.com/hmgene/fossil-c/main/results/2025-11-05/bracky_cells_k2_nt.krona.html) |
+| Bracky_Blank | Kraken2 | [svg](figures/snapshot_brachy_blank_k2_nt.krona) [View](https://raw.githack.com/hmgene/fossil-c/main/results/2025-11-05/brachy_blank_k2_nt.krona.html) |
+| bracky_cells | Kraken2 | [svg](figures/snapshot_brachy_cells_k2_nt.krona) [View](https://raw.githack.com/hmgene/fossil-c/main/results/2025-11-05/bracky_cells_k2_nt.krona.html) |
 
 ### (Partial > 16 bp) Alignment w/ Centrifuge @ nt db
 
