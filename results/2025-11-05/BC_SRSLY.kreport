@@ -6,7 +6,6 @@
   7.95	3631523	124960	C	28211	        Alphaproteobacteria
   5.34	2439080	112719	O	356	          Rhizobiales
   1.60	733185	38954	F	41294	            Bradyrhizobiaceae
-  0.98	446072	446072	G	374	              Bradyrhizobium
   3.82	1747517	50384	C	1236	        Gammaproteobacteria
   1.56	712200	242	O	72274	          Pseudomonadales
   1.45	663708	2078	F	135621	            Pseudomonadaceae
@@ -75,8 +74,6 @@
   1.90	866063	15911	-	1206794	                Ecdysozoa
   1.07	486820	5	-	88770	                  Panarthropoda
   1.07	486710	1008	P	6656	                    Arthropoda
-  1.00	458867	4	-	197563	                      Mandibulata
-  1.00	458259	668	-	197562	                        Pancrustacea
   1.10	501219	5502	P	6157	              Platyhelminthes
   2.34	1067676	2273	K	4751	        Fungi
   2.29	1047839	12242	-	451864	          Dikarya

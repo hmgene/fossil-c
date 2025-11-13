@@ -1,4 +1,3 @@
-  0.83	314633	314633	U	0	unclassified
  99.17	37454889	228695	-	1	root
  98.28	37121098	2871418	-	131567	  cellular organisms
  72.75	27477219	2128156	D	2759	    Eukaryota
@@ -31,7 +30,6 @@
   2.20	831319	58565	-	207598	                                                          Homininae
   1.94	732525	0	G	9605	                                                            Homo
   1.94	732525	732525	S	9606	                                                              Homo sapiens
-  0.00	20	20	-	37011	                                                                Pan troglodytes troglodytes
   1.74	657516	703	-	314147	                                              Glires
   1.71	645504	2933	O	9989	                                                Rodentia
   1.49	562275	266	-	1963758	                                                  Myomorpha
@@ -98,9 +96,6 @@
   2.80	1059204	17123	P	6157	              Platyhelminthes
   1.44	543732	0	C	6178	                Trematoda
   1.44	543725	3660	-	6179	                  Digenea
-  1.00	379209	0	O	6180	                    Strigeidida
-  1.00	379170	11	-	31244	                      Schistosomatoidea
-  1.00	379125	1964	F	31245	                        Schistosomatidae
   1.07	402507	0	C	6199	                Cestoda
   1.07	402500	1830	-	6200	                  Eucestoda
  14.72	5559382	13240	K	4751	        Fungi
