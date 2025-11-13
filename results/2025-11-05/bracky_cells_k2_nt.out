@@ -1,11 +1,1 @@
-Traceback (most recent call last):
-  File "/home/hxk728/git/fossil-c/../KrakenTools/kreport2krona.py", line 282, in <module>
-    main()
-    ~~~~^^
-  File "/home/hxk728/git/fossil-c/../KrakenTools/kreport2krona.py", line 278, in main
-    kreport2krona_main(args.r_file,args.o_file)
-    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hxk728/git/fossil-c/../KrakenTools/kreport2krona.py", line 177, in kreport2krona_main
-    r_file = open(report_file, 'r')
-FileNotFoundError: [Errno 2] No such file or directory: 'bracky_cells_k2_nt,bigdata/kr2/results/Brachy_cells.k2_report.txt'
 Writing results/2025-11-05/bracky_cells_k2_nt.krona.html...
