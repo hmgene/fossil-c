@@ -15,7 +15,6 @@ Rscript -e '
 library(data.table)
 library(ggplot2)
 
-# TSV 파일 경로
 tsv_files <- list.files("bigdata/bwa_scores/", pattern = "*.tsv$", full.names = TRUE)
 
 for (tsv in tsv_files) {
@@ -39,8 +38,7 @@ for (tsv in tsv_files) {
   ggsave(filename = paste0("bigdata/bwa_scores/", sample_name, "_best_score_stacked.png"),
          plot = p, width = 10, height = 6)
 
-
 '
 }
-pl-bwa-score
+#pl-bwa-score
 

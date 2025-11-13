@@ -26,6 +26,7 @@ LH00333:151:232G25LT3:2:1172:50091:21945	CGACAGCGTCGTGACAGCTTC	0	0	0	0	0	0	0	0	0
 $$
 \text{score} = \text{matches} - \text{mismatches} - \text{gap\_initiation}
 $$
+[code](../../02-bwa-rn.sh)
 
 Alignment Length Proportions
 

@@ -16,6 +16,7 @@
         LH00333:151:232G25LT3:2:1172:50091:21945    CGACAGCGTCGTGACAGCTTC   0   0   0   0   0   0   0   0   0   0   17  17
 -   Score calculation:
     score = matches − mismatches − gap\_initiation
+    [code](../../02-bwa-rn.sh)
 
 Alignment Length Proportions
 
