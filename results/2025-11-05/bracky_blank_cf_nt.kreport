@@ -1,1 +1,34 @@
   0.83	314633	314633	U	0	unclassified
+ 99.17	37454889	228695	-	1	root
+ 98.28	37121098	2871418	-	131567	  cellular organisms
+ 72.75	27477219	2128156	D	2759	    Eukaryota
+ 40.41	15263674	370355	-	33154	      Opisthokonta
+ 24.66	9314899	6383	K	33208	        Metazoa
+ 24.62	9298255	31243	-	6072	          Eumetazoa
+ 24.39	9213688	1060578	-	33213	            Bilateria
+ 14.08	5316409	8212	-	33511	              Deuterostomia
+ 13.98	5279055	6329	P	7711	                Chordata
+ 13.91	5252030	0	-	89593	                  Craniata
+ 13.91	5252030	429	-	7742	                    Vertebrata
+ 13.90	5250136	8754	-	7776	                      Gnathostomata
+ 13.82	5219059	0	-	117570	                        Teleostomi
+ 13.82	5219059	252869	-	117571	                          Euteleostomi
+  9.29	3508793	2119	-	8287	                            Sarcopterygii
+  9.26	3496186	19	-	1338369	                              Dipnotetrapodomorpha
+  9.26	3496091	8814	-	32523	                                Tetrapoda
+  9.12	3445614	86275	-	32524	                                  Amniota
+  7.41	2798519	5755	C	40674	                                    Mammalia
+  7.37	2784782	6371	-	32525	                                      Theria
+  7.26	2741310	10171	-	9347	                                        Eutheria
+  7.14	2696056	86019	-	1437010	                                          Boreoeutheria
+  4.95	1869726	39928	-	314146	                                            Euarchontoglires
+  3.07	1161113	1977	O	9443	                                              Primates
+  3.02	1140715	307	-	376913	                                                Haplorrhini
+  3.01	1136324	5595	-	314293	                                                  Simiiformes
+  2.92	1102157	50897	-	9526	                                                    Catarrhini
+  2.41	908517	12345	-	314295	                                                      Hominoidea
+  2.36	891645	19225	F	9604	                                                        Hominidae
+  2.20	831319	58565	-	207598	                                                          Homininae
+  1.94	732525	0	G	9605	                                                            Homo
+  1.94	732525	732525	S	9606	                                                              Homo sapiens
+  0.10	37666	37666	G	9596	                                                            Pan

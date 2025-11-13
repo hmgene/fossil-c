@@ -8,6 +8,13 @@ if [ $# -lt 2 ];then echo "$usage";return;fi
         my ($indent) = $d[5] =~ /^(\s*)/;
         my $level = length($indent);
 
+    if ($level == 0) {
+        print join("\t", @d), "\n";
+        push @stack, { level => $level, skip => 0 };
+        next;
+    }
+
+
 
     # check if parent is skipping children
     if (@stack && $stack[-1]{skip}) {

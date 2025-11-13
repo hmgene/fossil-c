@@ -1,1 +1,9 @@
 314633	Unclassified
+3604927	k__Eukaryota
+365608	k__Eukaryota	p__Chordata
+148244	k__Eukaryota	p__Chordata	c__Mammalia
+71121	k__Eukaryota	p__Chordata	c__Mammalia	o__Primates
+77790	k__Eukaryota	p__Chordata	c__Mammalia	o__Primates	f__Hominidae
+0	k__Eukaryota	p__Chordata	c__Mammalia	o__Primates	f__Hominidae	g__Homo
+732525	k__Eukaryota	p__Chordata	c__Mammalia	o__Primates	f__Hominidae	g__Homo	s__Homo_sapiens
+37666	k__Eukaryota	p__Chordata	c__Mammalia	o__Primates	f__Hominidae	g__Pan
