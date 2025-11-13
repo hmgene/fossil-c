@@ -15,7 +15,17 @@ knitr:
 ## Results
 
 - Data: bigdata/bwa_scores/*.tsv files on HPC
-- Score calculation: $$score=matches − mismatches − gap_initation$$ [code](../../03-bwa-pl.sh)
+  - example : 
+  ```
+id	seq	Brachy_cells@allMis1	Brachy_cells@anoCar2	Brachy_cells@bearded_dragon	Brachy_cells@brown_anole	Brachy_cells@crocodile	Brachy_cells@falcon	Brachy_cells@galGal6	Brachy_cells@hg38	Brachy_cells@komodo_dragon	Brachy_cells@loxAfr3	Brachy_cells@mm10	Brachy_cells@ostrich
+LH00333:151:232G25LT3:2:2167:33774:18886	TGGCCCCGGAAGTCGTCGGC	0	0	0	0	0	0	0	0	0	0	16	0
+LH00333:151:232G25LT3:2:2176:26174:11745	AAATTTTGCTAAGGATATTTGCGTCAATTTTTATGAAGATTTTATCAAGAATATGGGTTGTAGTTTTCCATTATGATGTCTTTGTTGGAGTAATGCTGGCCT	0	102	0	0	0	0
+LH00333:151:232G25LT3:2:1172:50091:21945	CGACAGCGTCGTGACAGCTTC	0	0	0	0	0	0	0	0	0	0	17	17
+  ```
+- Score calculation: 
+$$
+\text{score} = \text{matches} - \text{mismatches} - \text{gap\_initiation}
+$$
 
 Alignment Length Proportions
 
