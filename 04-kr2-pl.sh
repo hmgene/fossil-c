@@ -22,5 +22,5 @@ echo "#!/bin/bash
 dino kr2-filter $f 1 > $o.kreport 
 python ../KrakenTools/kreport2krona.py -r $o.kreport -o $o.krona.txt
 ktImportText $o.krona.txt  -o $o.krona.html 
-" #| sbatch  -o $o.out 
+" | sbatch  -o $o.out 
 done
