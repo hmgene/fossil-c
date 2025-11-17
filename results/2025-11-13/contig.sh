@@ -1,22 +1,23 @@
 
 input=(
-../../bigdata/spades/Brachy_Blank/scaffolds.fasta  
-../../bigdata/spades/Brachy_cells/scaffolds.fasta 
+bracky_blank_scaffolds,../../bigdata/spades/Brachy_Blank/scaffolds.fasta  
+bracky_blank_contigs,../../bigdata/spades/Brachy_Blank/contigs.fasta  
+bracky_cell_scaffolds,../../bigdata/spades/Brachy_cells/scaffolds.fasta 
 )
 output=../../bigdata/spades/scaffold.info.txt.gz
 
 fn(){
-    n=${1#*/spades/};n=${n%/scaffolds*}
-    dino fa2flat $1 | perl -ne 'chomp;$_=~/_cov_([\d\.]+)\t(\w+)/; print "'$n'\t$1\t",length($2),"\n";' 
+    n=`echo $1 | cut -d "," -f 1`
+    i=`echo $1 | cut -d "," -f 2`
+    dino fa2flat $i |  perl -ne 'chomp;$_=~/_cov_([\d\.]+)\t(\w+)/; print "'$n'\t$1\t",length($2),"\n";' 
 };export -f fn
 
-parallel fn {} \ ::: ${input[@]} > $output 
-
+parallel fn {} ::: ${input[@]} | gzip -c > $output 
 Rscript -e '
 library(data.table)
 library(ggplot2)
 
-tt=fread("scaffold.info.txt.gz")
+tt=fread("'$output'")
 names(tt)=c("sample","cov","contig_len");
 
 
