@@ -11,6 +11,8 @@ knitr:
 ---
 ## Discussion Points
 - [x] :  Quantify the proportion of reads mapped for Brachy_Blank and Brachy_cells in human and other species.
+- [x] : Contig Distributions in Bracky_Blank vs. Bracky_Cells
+  - [ ] : This approach may necessitate species pre-classification instead of performing redundant post-identification.
 
 ## Results
 

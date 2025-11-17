@@ -42,5 +42,5 @@ p <- ggplot(tt, aes(x = contig_len, y = cov)) +
         title = "Coverage vs Contig/Scaffold Length"
     )
 
-ggsave("figures/scaffold_dist.png", plot = p, width = 8, height = 6, dpi = 300)
+ggsave("figures/scaffold_dist.png", plot = p, width = 12, height = 4, dpi = 300)
 '

@@ -2,6 +2,9 @@
 
 -   ☒ : Quantify the proportion of reads mapped for Brachy\_Blank and
     Brachy\_cells in human and other species.
+-   ☒ : Contig Distributions in Bracky\_Blank vs. Bracky\_Cells
+    -   ☐ : This approach may necessitate species pre-classification
+        instead of performing redundant post-identification.
 
 ## Results
 
