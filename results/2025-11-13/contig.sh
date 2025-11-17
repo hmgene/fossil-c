@@ -18,19 +18,28 @@ library(data.table)
 library(ggplot2)
 
 tt=fread("'$output'")
+tt=fread("../../bigdata/spades/scaffold.info.txt.gz")
 names(tt)=c("sample","cov","contig_len");
 
 
-p=ggplot(tt, aes(x = contig_len, y = cov)) +
-    geom_point(alpha = 0.6) +
-    scale_x_log10() +           # recommended for contig lengths
-    scale_y_log10() +           # optional for coverage
-    facet_wrap(~ sample, scales = "free") +
+library(ggplot2)
+library(data.table)
+library(viridis)  # install if missing
+
+tt <- as.data.table(tt)
+
+p <- ggplot(tt, aes(x = contig_len, y = cov)) +
+    geom_bin2d(bins = 50) +
+    scale_fill_viridis(option = "magma", trans = "log10") +  # log10 scale for counts
+    scale_x_log10() +
+    scale_y_log10() +
+    facet_wrap(~ sample, scales = "fixed") +
     theme_bw() +
     labs(
-        x = "Contig length (bp)",
-        y = "Coverage",
-        title = "Coverage vs Contig Length per Sample"
+        x = "log10 Contig length (bp)",
+        y = "log10 Coverage",
+        fill = "log10(Count)",
+        title = "Coverage vs Contig/Scaffold Length"
     )
 
 ggsave("figures/scaffold_dist.png", plot = p, width = 8, height = 6, dpi = 300)
