@@ -43,3 +43,10 @@
 </tr>
 </tbody>
 </table>
+
+### Contig/Scaffold Lengths
+
+<figure>
+<img src="figures/scaffold_dist.png" alt="png" />
+<figcaption aria-hidden="true">png</figcaption>
+</figure>

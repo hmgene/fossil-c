@@ -43,4 +43,10 @@ cat("| ", paste(labels, collapse = " | "), " |\n")
 cat("|", paste(rep("---", length(labels)), collapse = " | "), "|\n")
 cat("| ", paste0("![](", imgs, ")", collapse = " | "), " |\n")
 ```
+### Contig/Scaffold Lengths
+
+![png](figures/scaffold_dist.png )
+
+
+
 

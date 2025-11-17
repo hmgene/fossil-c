@@ -1,6 +1,6 @@
 # ref : https://archaeogenetics.readthedocs.io/en/latest/4_ReadsMapping_v2.html
 input=(
-	bigdata/leehom/Brachy_Blank.fq.gz
+#	bigdata/leehom/Brachy_Blank.fq.gz
 	bigdata/leehom/Brachy_cells.fq.gz
 #	bigdata/leehom/Brachy_c_sedi.fq.gz
 #	bigdata/leehom/Brachy_vessels.fq.gz
@@ -24,6 +24,6 @@ for i in ${input[@]};do
     echo "#!/bin/bash -l
     mamba activate dino_env
     carpedeam ancient_assemble $i $o $o_tmp --threads 8 #--ancient-damage $o_tmp/dmg
-    "| sbatch -p smp --mem=256g -c 32 --time=100:00:00 -o $o.out
+    "| sbatch -p smp --mem=1024g -c 32 --time=100:00:00 -o $o.out
 
 done
