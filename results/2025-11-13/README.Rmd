@@ -45,7 +45,8 @@ cat("| ", paste0("![](", imgs, ")", collapse = " | "), " |\n")
 ```
 ### Contig/Scaffold Lengths – SPAdes (Merged Single-End Reads)
 
-> Scaffolds and contigs are identical in the blank. In the cell sample, contigs are assembled but remain the same due to using merged single-end reads.
+> Scaffolds and contigs are identical in the bracky_blank. 
+> Assembly of contigs for the bracky_cell sample is not yet complete.
 
 ![png](figures/scaffold_dist.png )
 

@@ -46,9 +46,8 @@
 
 ### Contig/Scaffold Lengths – SPAdes (Merged Single-End Reads)
 
-> Scaffolds and contigs are identical in the blank. In the cell sample,
-> contigs are assembled but remain the same due to using merged
-> single-end reads.
+> Scaffolds and contigs are identical in the bracky\_blank. Assembly of
+> contigs for the bracky\_cell sample is not yet complete.
 
 <figure>
 <img src="figures/scaffold_dist.png" alt="png" />
