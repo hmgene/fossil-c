@@ -44,7 +44,11 @@
 </tbody>
 </table>
 
-### Contig/Scaffold Lengths
+### Contig/Scaffold Lengths – SPAdes (Merged Single-End Reads)
+
+> Scaffolds and contigs are identical in the blank. In the cell sample,
+> contigs are assembled but remain the same due to using merged
+> single-end reads.
 
 <figure>
 <img src="figures/scaffold_dist.png" alt="png" />

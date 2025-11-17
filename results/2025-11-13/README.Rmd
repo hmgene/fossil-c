@@ -43,7 +43,9 @@ cat("| ", paste(labels, collapse = " | "), " |\n")
 cat("|", paste(rep("---", length(labels)), collapse = " | "), "|\n")
 cat("| ", paste0("![](", imgs, ")", collapse = " | "), " |\n")
 ```
-### Contig/Scaffold Lengths
+### Contig/Scaffold Lengths – SPAdes (Merged Single-End Reads)
+
+> Scaffolds and contigs are identical in the blank. In the cell sample, contigs are assembled but remain the same due to using merged single-end reads.
 
 ![png](figures/scaffold_dist.png )
 
