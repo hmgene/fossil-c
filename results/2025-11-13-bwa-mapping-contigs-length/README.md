@@ -29,6 +29,31 @@
 ### Alignment Length Proportions
 
 <table>
+<thead>
+<tr>
+<th>Sample</th>
+<th>Total Reads</th>
+<th>Reads Merged</th>
+<th>Merged Reads</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bracky_Blank</td>
+<td>91592712</td>
+<td>75539044</td>
+<td>37769522</td>
+</tr>
+<tr>
+<td>Bracky_cell</td>
+<td>675698180</td>
+<td>557543426</td>
+<td>278771713</td>
+</tr>
+</tbody>
+</table>
+
+<table>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
