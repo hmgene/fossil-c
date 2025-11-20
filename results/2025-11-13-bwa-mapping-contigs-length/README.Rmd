@@ -35,10 +35,10 @@ $$
 $$
 
 ### Alignment Length Proportions
-| Sample | Total Reads | Reads Merged | Merged Reads |
-| --- | --- | --- | --- |
-| Bracky_Blank | 91592712 | 75539044 | 37769522 |
-| Bracky_cell | 675698180 | 557543426 | 278771713 | 
+| Sample | Total Reads | Reads Merged | Merged Reads | Aligned |
+| --- | --- | --- | --- | --- |
+| Bracky_Blank | 91592712 | 75539044 | 37769522 | 964789 |
+| Bracky_cell | 675698180 | 557543426 | 278771713 | 2507895  |
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
 imgs <- c("figures/alignment_proportion_Brachy_Blank.png",

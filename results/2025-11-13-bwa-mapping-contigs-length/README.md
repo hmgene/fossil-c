@@ -35,6 +35,7 @@
 <th>Total Reads</th>
 <th>Reads Merged</th>
 <th>Merged Reads</th>
+<th>Aligned</th>
 </tr>
 </thead>
 <tbody>
@@ -43,12 +44,14 @@
 <td>91592712</td>
 <td>75539044</td>
 <td>37769522</td>
+<td>964789</td>
 </tr>
 <tr>
 <td>Bracky_cell</td>
 <td>675698180</td>
 <td>557543426</td>
 <td>278771713</td>
+<td>2507895</td>
 </tr>
 </tbody>
 </table>
