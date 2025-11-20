@@ -47,6 +47,7 @@
 </tbody>
 </table>
 
+<<<<<<< HEAD:results/2025-11-13-bwa-mapping-contigs-length/README.md
 -   In the cell samples, Human(118350) and AllMis1(98404) are the top
     two mapped taxa,.
 -   Human and Komataella (yeast) show ~ 100% aligned/read-length
@@ -55,6 +56,12 @@
     Komataella (1694742) and Pinus taeda (565081), with 80~100%
     aligned/read-length proportions.
 
+=======
+- In the cell samples, Human(118350) and AllMis1(98404) are the top two mapped taxa,.
+- Human and Komataella (yeast)  show ~ 100% aligned/read-length proportions.
+- In the blank samples, the majority of reads map to Komataella (1694742) and Pinus taeda (565081), with 80~100% aligned/read-length proportions.
+  
+>>>>>>> refs/remotes/origin/main:results/2025-11-13/README.md
 ### Contig/Scaffold Lengths – SPAdes (Merged Single-End Reads)
 
 > Scaffolds and contigs are identical in the bracky\_blank. Assembly of
