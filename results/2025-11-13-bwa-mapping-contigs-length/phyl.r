@@ -2,7 +2,7 @@ library(data.table)
 library(ggplot2)
 library(cowplot)
 library(tools)
-tsv_files <- list.files( "../../bigdata/bwa_scores", pattern = "Brachy_(Blank|cells).*\\.tsv$", full.names = TRUE, recursive = TRUE)
+tsv_files <- list.files( "../../bigdata/bwa_scores", pattern = "Brachy_(Blank|cells).*\\.tsv$", full.names = TRUE, recursive = F)
 pattern_order <- c("cells", "vessels", "c_sedi", "v_sedi", "blank")
 tsv_files<- tsv_files[order(sapply(tsv_files, function(x) {
   x_lower <- tolower(basename(x))
@@ -27,7 +27,7 @@ for (grp in names(groups)) {
     dt_best[, ref := sub(".*@", "", best_ref)]
     dt_best[, ref_label := paste0(ref, " (n=", .N, ")"), by = best_ref]
 
-
+    fwrite(dt_best,file=paste0("data/",sample_name,".csv.gz"))
     library(ggplot2)
     library(dplyr)
     library(tidyr)  # needed for unnest
