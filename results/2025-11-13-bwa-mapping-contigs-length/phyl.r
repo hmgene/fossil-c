@@ -32,19 +32,34 @@ for (grp in names(groups)) {
     library(dplyr)
     library(tidyr)  # needed for unnest
 
+      dt<- dt_best %>% group_by(ref_label) %>%
+      summarise( dens = list(density(best_score / read_len, adjust = 1.2)), .groups = "drop") %>%
+      mutate( x = lapply(dens, function(d) d$x), y = lapply(dens, function(d) d$y )) %>%
+      select(ref_label, x, y) %>% unnest(cols = c(x, y))  # tidyr unnest
+
+
+    p <- ggplot(dt, aes(x = x, y = y, color = ref_label)) +
+      geom_line(size = 1) + labs( x = "Best Score / Read Length", y = "Density",
+        title = "Alignment Quality per Reference (Peak Normalized)") +
+      theme_minimal(base_size = 6) +
+      theme( plot.title = element_text(hjust = 0.5), legend.title = element_blank())
+
+    if (!dir.exists("figures")) dir.create("figures", recursive = TRUE)
+    ggsave(paste0("figures/alignment_proportion_",sample_name,".png"), plot = p, width = 6, height = 4, dpi = 300)
+
     dt_norm <- dt_best %>% group_by(ref_label) %>%
       summarise( dens = list(density(best_score / read_len, adjust = 1.2)), .groups = "drop") %>%
       mutate( x = lapply(dens, function(d) d$x), y = lapply(dens, function(d) d$y / max(d$y))) %>%
       select(ref_label, x, y) %>% unnest(cols = c(x, y))  # tidyr unnest
 
     # Plot
-    p <- ggplot(dt_norm, aes(x = x, y = y, color = ref_label)) +
+    p1 <- ggplot(dt_norm, aes(x = x, y = y, color = ref_label)) +
       geom_line(size = 1) + labs( x = "Best Score / Read Length", y = "Density (normalized by max)",
         title = "Alignment Quality per Reference (Peak Normalized)") +
       theme_minimal(base_size = 6) +
       theme( plot.title = element_text(hjust = 0.5), legend.title = element_blank())
     if (!dir.exists("figures")) dir.create("figures", recursive = TRUE)
-    ggsave(paste0("figures/alignment_proportion_",sample_name,".png"), plot = p, width = 6, height = 4, dpi = 300)
+    ggsave(paste0("figures/alignment_proportion_norm_",sample_name,".png"), plot = p1, width = 6, height = 4, dpi = 300)
 
   }
 }
