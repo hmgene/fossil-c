@@ -59,6 +59,6 @@ for (grp in names(groups)) {
 all_groups_grid <- plot_grid(plotlist = all_group_plots, ncol = 1, align = "v", labels = names(all_group_plots))
 
 # Save safely
-dir.create("figs")
+#dir.create("figs")
 ggsave("figs/bwa_score_grid.png", all_groups_grid, width = 30, height = 5 * length(all_group_plots), limitsize = FALSE, dpi = 300)
 

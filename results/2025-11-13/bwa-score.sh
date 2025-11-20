@@ -8,9 +8,6 @@ ls $input | perl -pe 's#.*/([^@]+)@([^.]+).*#$1#' | sort -u | while read -r s; d
     dino sam2score - > $o
     "  #| sbatch --mem=24g -o $o.out 
 done
-
-pl-bwa-score(){
-
 Rscript -e '
 library(data.table)
 library(ggplot2)
@@ -40,5 +37,3 @@ for (tsv in tsv_files) {
 
 '
 }
-pl-bwa-score
-

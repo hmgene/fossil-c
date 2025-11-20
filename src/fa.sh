@@ -7,9 +7,10 @@ fa2flat(){
 		print substr($_,1),"\t";
 	}else{ print $_; }
 '
+}
 
-
-		
+fa-filt(){
+    cat $1 | fa2flat - | grep -wf $2  | flat2fa -
 }
 
 fa-rc(){
@@ -21,7 +22,7 @@ fa-rc(){
 }
 
 flat2fa(){
-	cat $1 | awk '{ print ">"$1"\n"$2;}'
+	cat $1 | awk -vFS="\t" '{ print ">"$1"\n"$2;}'
 }
 
 
