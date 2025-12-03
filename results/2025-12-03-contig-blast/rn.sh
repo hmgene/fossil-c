@@ -3,7 +3,8 @@ input=(
 ../../bigdata/blast/Bracky_cells.unc.K0M7FNPR016-Alignment-HitTable.csv
 )
 
-
+output=data/blast_res.tsv
+echo "sample fa_id query_len species" | tr " " "\t" > $output
 for i in ${input[@]};do
     o=${i##*/};o=${o%.*-Alignment*};
     cat $i | perl -e 'use strict;
@@ -18,4 +19,4 @@ for i in ${input[@]};do
         curl -s "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=$j&rettype=gb&retmode=text" \
         | grep "^  ORGANISM" | sed 's/^  ORGANISM  //' | awk -v OFS="\t" -v o=$o -v i=$i -v k=$k '{print o,i,k,$0;}' 
     done 
-done > data/blast_res.tsv
+done >> $output
