@@ -27,8 +27,9 @@ knitr:
 ### Capedeam Results
 - Input: Unclassified (>20bp) 
 - Output:
-  - data/Brachy_Blank.unc.fa  
-  - data/Brachy_cells.unc.fa
+  - [Bracky_Blank contigs](data/Brachy_Blank.unc.fa)
+  - [Bracky_cells_contigs](data/Brachy_cells.unc.fa)
+  - [Blast results](data/blast_res.csv)
 
 
 

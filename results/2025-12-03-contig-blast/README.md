@@ -54,5 +54,6 @@
 
 -   Input: Unclassified (&gt;20bp)
 -   Output:
-    -   data/Brachy\_Blank.unc.fa  
-    -   data/Brachy\_cells.unc.fa
+    -   [Bracky\_Blank contigs](data/Brachy_Blank.unc.fa)
+    -   [Bracky\_cells\_contigs](data/Brachy_cells.unc.fa)
+    -   [Blast results](data/blast_res.csv)
