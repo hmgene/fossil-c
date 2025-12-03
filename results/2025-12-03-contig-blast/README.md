@@ -56,4 +56,4 @@
 -   Output:
     -   [Bracky\_Blank contigs](data/Brachy_Blank.unc.fa)
     -   [Bracky\_cells\_contigs](data/Brachy_cells.unc.fa)
-    -   [Blast results](data/blast_res.csv)
+    -   [Blast results](data/blast_res.tsv)

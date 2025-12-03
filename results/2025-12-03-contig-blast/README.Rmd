@@ -29,7 +29,7 @@ knitr:
 - Output:
   - [Bracky_Blank contigs](data/Brachy_Blank.unc.fa)
   - [Bracky_cells_contigs](data/Brachy_cells.unc.fa)
-  - [Blast results](data/blast_res.csv)
+  - [Blast results](data/blast_res.tsv)
 
 
 
