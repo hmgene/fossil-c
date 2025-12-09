@@ -12,4 +12,4 @@ cat tt | perl -e 'use strict;
     foreach my $n (keys %r){
         print join("\t",$n,@{$r{$n}}),"\n";
     }
-' > summ.csv
+' > summ.tsv

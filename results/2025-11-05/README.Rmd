@@ -38,7 +38,7 @@ K-mer (Kraken2) identifies mutation-free fragments, while alignment-based (Centr
 library(readr)
 library(knitr)
 
-df <- read_csv("summ.csv")
+df <- read_csv("summ.tsv",sep="\t")
 kable(df, format = "markdown")
 ```
 
