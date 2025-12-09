@@ -34,13 +34,12 @@ LeeHom Trimmed, Merged FastQ [link](https://github.com/hmgene/fossil-c/tree/main
 ### (Partial > 16 bp) Alignment w/ Centrifuge @ nt db
 K-mer (Kraken2) identifies mutation-free fragments, while alignment-based (Centrifuge) analysis reveals ancestral and modern species sequences, with cells mapping to more unknown species than blank samples.
 
-```{r}
+```{r, warning=FALSE, message=FALSE}
 library(readr)
 library(knitr)
 library(dplyr)
-
-df <- read_tsv("summ.tsv") %>% mutate(across(
-    starts_with("top"), ~ gsub("^(.*)\\s*\\((.*)\\)$", "\\1<br>(\\2)", .x)))
+df <- read_tsv("summ.tsv") %>%
+  mutate(across(everything(), ~ gsub("\\(", "<br>(", as.character(.x))))
 kable(df, format = "markdown")
 ```
 
