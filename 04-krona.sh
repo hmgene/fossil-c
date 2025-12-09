@@ -4,14 +4,14 @@ input=(
 #bracky_blank_cf_nt,bigdata/centrifuge/results/Brachy_Blank.krreport.txt 
 #bracky_cells_cf_nt,bigdata/centrifuge/results/Brachy_cells.krreport.txt 
 #BC_SRSLY,bigdata/centrifuge/results/BC_SRSLY.krreport.txt 
-bracky_csedi,bigdata/centrifuge/results/Brachy_c_sedi.krreport.txt
-bracky_vessels,bigdata/centrifuge/results/Brachy_vessels.krreport.txt
-bracky_vsedi,bigdata/centrifuge/results/Brachy_v_sedi.krreport.txt
-trex_cells,bigdata/centrifuge/results/Trex_cells.krreport.txt
-trex,csedi,bigdata/centrifuge/results/Trex_c_sedi.krreport.txt
-trex_blank,bigdata/centrifuge/results/Trex_ExtrBlank.krreport.txt
-trex_vessels,bigdata/centrifuge/results/Trex_vessels.krreport.txt
-trex_vsedi,bigdata/centrifuge/results/Trex_v_sedi.krreport.txt
+#bracky_csedi,bigdata/centrifuge/results/Brachy_c_sedi.krreport.txt
+#bracky_vessels,bigdata/centrifuge/results/Brachy_vessels.krreport.txt
+#bracky_vsedi,bigdata/centrifuge/results/Brachy_v_sedi.krreport.txt
+#trex_cells,bigdata/centrifuge/results/Trex_cells.krreport.txt
+trex_csedi,bigdata/centrifuge/results/Trex_c_sedi.krreport.txt
+#trex_blank,bigdata/centrifuge/results/Trex_ExtrBlank.krreport.txt
+#trex_vessels,bigdata/centrifuge/results/Trex_vessels.krreport.txt
+#trex_vsedi,bigdata/centrifuge/results/Trex_v_sedi.krreport.txt
 
 )
 odir=results/2025-11-05;mkdir -p $odir
