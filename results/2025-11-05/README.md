@@ -51,15 +51,15 @@ df <- read_tsv("summ.tsv") %>%
 kable(df, format = "markdown")
 ```
 
-| rank | Brachy_c_sedi | Brachy_vessels | Trex_v_sedi | Trex_vessels | Trex_cells | Brachy_cells | Trex_ExtrBlank | Brachy_v_sedi | Trex_c_sedi | Brachy_Blank | BC_SRSLY |
+| rank | BC_SRSLY | Brachy_Blank | Brachy_c_sedi | Brachy_cells | Brachy_v_sedi | Brachy_vessels | Trex_ExtrBlank | Trex_c_sedi | Trex_cells | Trex_v_sedi | Trex_vessels |
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|
-| top0 | unclassified <br>( 115364 ) | unclassified <br>( 203197 ) | unclassified <br>( 3947549 ) | unclassified <br>( 901446 ) | unclassified <br>( 558566 ) | unclassified <br>( 446627 ) | unclassified <br>( 1599906 ) | unclassified <br>( 130274 ) | unclassified <br>( 287081 ) | unclassified <br>( 314633 ) | unclassified <br>( 12688170 ) |
-| top1 | root <br>( 42263832 ) | root <br>( 125850525 ) | root <br>( 9958837 ) | root <br>( 211226106 ) | root <br>( 171165670 ) | root <br>( 278325086 ) | root <br>( 15213911 ) | root <br>( 8295384 ) | root <br>( 46313890 ) | root <br>( 37454889 ) | root <br>( 33008119 ) |
-| top2 | Komagataella <br>( 406482 ) | Homo <br>( 826359 ) | Cyprinus <br>( 344234 ) | Homo <br>( 1593836 ) | Komagataella <br>( 5258369 ) | Homo <br>( 1185431 ) | Komagataella <br>( 5036202 ) | Komagataella <br>( 130042 ) | Homo <br>( 1602551 ) | Pinus <br>( 6637267 ) | Cyprinus <br>( 1264443 ) |
-| top3 | Homo <br>( 302991 ) | Mus <br>( 721813 ) | Homo <br>( 104514 ) | Mus <br>( 1520790 ) | Homo <br>( 4433855 ) | uncultured <br>( 1084609 ) | Homo <br>( 1327020 ) | Homo <br>( 110099 ) | Komagataella <br>( 787232 ) | Komagataella <br>( 4414018 ) | Homo <br>( 1130168 ) |
-| top4 | Mus <br>( 268482 ) | uncultured <br>( 453065 ) | Mus <br>( 93676 ) | Bradyrhizobium <br>( 1272183 ) | Pinus <br>( 3808205 ) | Mus <br>( 1084601 ) | Cyprinus <br>( 700001 ) | Cyprinus <br>( 100252 ) | Alternaria <br>( 702888 ) | Homo <br>( 732525 ) | Mycobacterium <br>( 949054 ) |
-| top5 | Cyprinus <br>( 198183 ) | Cyprinus <br>( 403706 ) | Komagataella <br>( 65203 ) | Pseudorhodoplanes <br>( 1051935 ) | Mus <br>( 2683007 ) | Spirometra <br>( 706143 ) | uncultured <br>( 129836 ) | uncultured <br>( 74139 ) | Mus <br>( 655032 ) | Cyprinus <br>( 516645 ) | Tarenaya <br>( 305647 ) |
-| top6 | uncultured <br>( 174016 ) | Oryzias <br>( 399232 ) | Spirometra <br>( 49318 ) | Spirometra <br>( 945714 ) | Cyprinus <br>( 1376149 ) | Burkholderia <br>( 2590115 ) | Gossypium <br>( 120718 ) | Mus <br>( 73944 ) | Cyprinus <br>( 405530 ) | Mus <br>( 478875 ) | Mycobacterium <br>( 235898 ) |
+| top0 | unclassified <br>(12688170) | unclassified <br>(314633) | unclassified <br>(115364) | unclassified <br>(446627) | unclassified <br>(130274) | unclassified <br>(203197) | unclassified <br>(1599906) | unclassified <br>(287081) | unclassified <br>(558566) | unclassified <br>(3947549) | unclassified <br>(901446) |
+| top1 | root <br>(33008119) | root <br>(37454889) | root <br>(42263832) | root <br>(278325086) | root <br>(8295384) | root <br>(125850525) | root <br>(15213911) | root <br>(46313890) | root <br>(171165670) | root <br>(9958837) | root <br>(211226106) |
+| top2 | Cyprinus <br>(1264443) | Pinus <br>(6637267) | Komagataella <br>(406482) | Homo <br>(1185431) | Komagataella <br>(130042) | Homo <br>(826359) | Komagataella <br>(5036202) | Homo <br>(1602551) | Komagataella <br>(5258369) | Cyprinus <br>(344234) | Homo <br>(1593836) |
+| top3 | Homo <br>(1130168) | Komagataella <br>(4414018) | Homo <br>(302991) | uncultured <br>(1084609) | Homo <br>(110099) | Mus <br>(721813) | Homo <br>(1327020) | Komagataella <br>(787232) | Homo <br>(4433855) | Homo <br>(104514) | Mus <br>(1520790) |
+| top4 | Mycobacterium <br>(949054) | Homo <br>(732525) | Mus <br>(268482) | Mus <br>(1084601) | Cyprinus <br>(100252) | uncultured <br>(453065) | Cyprinus <br>(700001) | Alternaria <br>(702888) | Pinus <br>(3808205) | Mus <br>(93676) | Bradyrhizobium <br>(1272183) |
+| top5 | Tarenaya <br>(305647) | Cyprinus <br>(516645) | Cyprinus <br>(198183) | Spirometra <br>(706143) | uncultured <br>(74139) | Cyprinus <br>(403706) | uncultured <br>(129836) | Mus <br>(655032) | Mus <br>(2683007) | Komagataella <br>(65203) | Pseudorhodoplanes <br>(1051935) |
+| top6 | Mycobacterium <br>(235898) | Mus <br>(478875) | uncultured <br>(174016) | Burkholderia <br>(2590115) | Mus <br>(73944) | Oryzias <br>(399232) | Gossypium <br>(120718) | Cyprinus <br>(405530) | Cyprinus <br>(1376149) | Spirometra <br>(49318) | Spirometra <br>(945714) |
 
 details:
 

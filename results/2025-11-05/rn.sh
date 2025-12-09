@@ -11,8 +11,9 @@ cat tt | perl -e 'use strict;
     while(<>){chomp;my($n,$c,$v)=split/\s+/,$_;
         push @{$r{$n}},[ $v, $c ];
     }
-    print join("\t","rank",keys %r),"\n";
+    my @cc=sort keys %r;
+    print join("\t","rank",@cc),"\n";
     foreach my $i (0..6){
-        print join("\t","top$i",map{ "$r{$_}[$i][0] ($r{$_}[$i][1])" } keys %r),"\n";
+        print join("\t","top$i",map{ "$r{$_}[$i][0] ($r{$_}[$i][1])" } @cc),"\n";
     }
 ' > summ.tsv
