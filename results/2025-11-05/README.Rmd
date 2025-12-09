@@ -1,3 +1,9 @@
+---
+title: "Centrifuge/Kraken2 Summary"
+output: 
+  md_document:
+    variant: gfm
+---
 
 ## Brachy Krona Visualization Dashboard (2025-11-05)
 
