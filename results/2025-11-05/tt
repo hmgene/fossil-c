@@ -1,55 +1,77 @@
-BC_SRSLY	Cyprinus
-BC_SRSLY	Homo
-BC_SRSLY	Mycobacterium
-BC_SRSLY	Tarenaya
-BC_SRSLY	Mycobacterium
-Brachy_Blank	Pinus
-Brachy_Blank	Komagataella
-Brachy_Blank	Homo
-Brachy_Blank	Cyprinus
-Brachy_Blank	Mus
-Brachy_cells	Homo
-Brachy_cells	uncultured
-Brachy_cells	Mus
-Brachy_cells	Spirometra
-Brachy_cells	Burkholderia
-Brachy_c_sedi	Komagataella
-Brachy_c_sedi	Homo
-Brachy_c_sedi	Mus
-Brachy_c_sedi	Cyprinus
-Brachy_c_sedi	uncultured
-Brachy_vessels	Homo
-Brachy_vessels	Mus
-Brachy_vessels	uncultured
-Brachy_vessels	Cyprinus
-Brachy_vessels	Oryzias
-Brachy_v_sedi	Komagataella
-Brachy_v_sedi	Homo
-Brachy_v_sedi	Cyprinus
-Brachy_v_sedi	uncultured
-Brachy_v_sedi	Mus
-Trex_cells	Komagataella
-Trex_cells	Homo
-Trex_cells	Pinus
-Trex_cells	Mus
-Trex_cells	Cyprinus
-Trex_c_sedi	Homo
-Trex_c_sedi	Komagataella
-Trex_c_sedi	Alternaria
-Trex_c_sedi	Mus
-Trex_c_sedi	Cyprinus
-Trex_ExtrBlank	Komagataella
-Trex_ExtrBlank	Homo
-Trex_ExtrBlank	Cyprinus
-Trex_ExtrBlank	uncultured
-Trex_ExtrBlank	Gossypium
-Trex_vessels	Homo
-Trex_vessels	Mus
-Trex_vessels	Bradyrhizobium
-Trex_vessels	Pseudorhodoplanes
-Trex_vessels	Spirometra
-Trex_v_sedi	Cyprinus
-Trex_v_sedi	Homo
-Trex_v_sedi	Mus
-Trex_v_sedi	Komagataella
-Trex_v_sedi	Spirometra
+BC_SRSLY	12688170	unclassified
+BC_SRSLY	33008119	root
+BC_SRSLY	1264443	Cyprinus
+BC_SRSLY	1130168	Homo
+BC_SRSLY	949054	Mycobacterium
+BC_SRSLY	305647	Tarenaya
+BC_SRSLY	235898	Mycobacterium
+Brachy_Blank	314633	unclassified
+Brachy_Blank	37454889	root
+Brachy_Blank	6637267	Pinus
+Brachy_Blank	4414018	Komagataella
+Brachy_Blank	732525	Homo
+Brachy_Blank	516645	Cyprinus
+Brachy_Blank	478875	Mus
+Brachy_cells	446627	unclassified
+Brachy_cells	278325086	root
+Brachy_cells	1185431	Homo
+Brachy_cells	1084609	uncultured
+Brachy_cells	1084601	Mus
+Brachy_cells	706143	Spirometra
+Brachy_cells	2590115	Burkholderia
+Brachy_c_sedi	115364	unclassified
+Brachy_c_sedi	42263832	root
+Brachy_c_sedi	406482	Komagataella
+Brachy_c_sedi	302991	Homo
+Brachy_c_sedi	268482	Mus
+Brachy_c_sedi	198183	Cyprinus
+Brachy_c_sedi	174016	uncultured
+Brachy_vessels	203197	unclassified
+Brachy_vessels	125850525	root
+Brachy_vessels	826359	Homo
+Brachy_vessels	721813	Mus
+Brachy_vessels	453065	uncultured
+Brachy_vessels	403706	Cyprinus
+Brachy_vessels	399232	Oryzias
+Brachy_v_sedi	130274	unclassified
+Brachy_v_sedi	8295384	root
+Brachy_v_sedi	130042	Komagataella
+Brachy_v_sedi	110099	Homo
+Brachy_v_sedi	100252	Cyprinus
+Brachy_v_sedi	74139	uncultured
+Brachy_v_sedi	73944	Mus
+Trex_cells	558566	unclassified
+Trex_cells	171165670	root
+Trex_cells	5258369	Komagataella
+Trex_cells	4433855	Homo
+Trex_cells	3808205	Pinus
+Trex_cells	2683007	Mus
+Trex_cells	1376149	Cyprinus
+Trex_c_sedi	287081	unclassified
+Trex_c_sedi	46313890	root
+Trex_c_sedi	1602551	Homo
+Trex_c_sedi	787232	Komagataella
+Trex_c_sedi	702888	Alternaria
+Trex_c_sedi	655032	Mus
+Trex_c_sedi	405530	Cyprinus
+Trex_ExtrBlank	1599906	unclassified
+Trex_ExtrBlank	15213911	root
+Trex_ExtrBlank	5036202	Komagataella
+Trex_ExtrBlank	1327020	Homo
+Trex_ExtrBlank	700001	Cyprinus
+Trex_ExtrBlank	129836	uncultured
+Trex_ExtrBlank	120718	Gossypium
+Trex_vessels	901446	unclassified
+Trex_vessels	211226106	root
+Trex_vessels	1593836	Homo
+Trex_vessels	1520790	Mus
+Trex_vessels	1272183	Bradyrhizobium
+Trex_vessels	1051935	Pseudorhodoplanes
+Trex_vessels	945714	Spirometra
+Trex_v_sedi	3947549	unclassified
+Trex_v_sedi	9958837	root
+Trex_v_sedi	344234	Cyprinus
+Trex_v_sedi	104514	Homo
+Trex_v_sedi	93676	Mus
+Trex_v_sedi	65203	Komagataella
+Trex_v_sedi	49318	Spirometra

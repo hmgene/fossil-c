@@ -1,12 +1,12 @@
-sample	top1	top2	top3	top4	top5
-Trex_cells	Komagataella	Homo	Pinus	Mus	Cyprinus
-Brachy_cells	Homo	uncultured	Mus	Spirometra	Burkholderia
-Brachy_Blank	Pinus	Komagataella	Homo	Cyprinus	Mus
-Trex_v_sedi	Cyprinus	Homo	Mus	Komagataella	Spirometra
-Brachy_v_sedi	Komagataella	Homo	Cyprinus	uncultured	Mus
-Brachy_vessels	Homo	Mus	uncultured	Cyprinus	Oryzias
-Brachy_c_sedi	Komagataella	Homo	Mus	Cyprinus	uncultured
-Trex_ExtrBlank	Komagataella	Homo	Cyprinus	uncultured	Gossypium
-BC_SRSLY	Cyprinus	Homo	Mycobacterium	Tarenaya	Mycobacterium
-Trex_vessels	Homo	Mus	Bradyrhizobium	Pseudorhodoplanes	Spirometra
-Trex_c_sedi	Homo	Komagataella	Alternaria	Mus	Cyprinus
+sample	top1	top2	top3	top4	top5	top6	top7
+Trex_v_sedi	root ( 9958837 )	unclassified ( 3947549 )	Cyprinus ( 344234 )	Homo ( 104514 )	Mus ( 93676 )	Komagataella ( 65203 )	Spirometra ( 49318 )
+Brachy_c_sedi	root ( 42263832 )	Komagataella ( 406482 )	Homo ( 302991 )	Mus ( 268482 )	Cyprinus ( 198183 )	uncultured ( 174016 )	unclassified ( 115364 )
+Trex_vessels	root ( 211226106 )	Homo ( 1593836 )	Mus ( 1520790 )	Bradyrhizobium ( 1272183 )	Pseudorhodoplanes ( 1051935 )	Spirometra ( 945714 )	unclassified ( 901446 )
+BC_SRSLY	root ( 33008119 )	unclassified ( 12688170 )	Cyprinus ( 1264443 )	Homo ( 1130168 )	Mycobacterium ( 949054 )	Tarenaya ( 305647 )	Mycobacterium ( 235898 )
+Trex_cells	root ( 171165670 )	Komagataella ( 5258369 )	Homo ( 4433855 )	Pinus ( 3808205 )	Mus ( 2683007 )	Cyprinus ( 1376149 )	unclassified ( 558566 )
+Brachy_cells	root ( 278325086 )	Burkholderia ( 2590115 )	Homo ( 1185431 )	uncultured ( 1084609 )	Mus ( 1084601 )	Spirometra ( 706143 )	unclassified ( 446627 )
+Trex_ExtrBlank	root ( 15213911 )	Komagataella ( 5036202 )	unclassified ( 1599906 )	Homo ( 1327020 )	Cyprinus ( 700001 )	uncultured ( 129836 )	Gossypium ( 120718 )
+Trex_c_sedi	root ( 46313890 )	Homo ( 1602551 )	Komagataella ( 787232 )	Alternaria ( 702888 )	Mus ( 655032 )	Cyprinus ( 405530 )	unclassified ( 287081 )
+Brachy_vessels	root ( 125850525 )	Homo ( 826359 )	Mus ( 721813 )	uncultured ( 453065 )	Cyprinus ( 403706 )	Oryzias ( 399232 )	unclassified ( 203197 )
+Brachy_Blank	root ( 37454889 )	Pinus ( 6637267 )	Komagataella ( 4414018 )	Homo ( 732525 )	Cyprinus ( 516645 )	Mus ( 478875 )	unclassified ( 314633 )
+Brachy_v_sedi	root ( 8295384 )	unclassified ( 130274 )	Komagataella ( 130042 )	Homo ( 110099 )	Cyprinus ( 100252 )	uncultured ( 74139 )	Mus ( 73944 )
