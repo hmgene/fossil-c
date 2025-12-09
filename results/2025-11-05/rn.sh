@@ -13,6 +13,6 @@ cat tt | perl -e 'use strict;
     }
     print join("\t","rank",keys %r),"\n";
     foreach my $i (0..6){
-        print join("\t","top$i",map{ "$r{$_}[$i][0] ( $r{$_}[$i][1] )" } keys %r),"\n";
+        print join("\t","top$i",map{ "$r{$_}[$i][0] ($r{$_}[$i][1])" } keys %r),"\n";
     }
 ' > summ.tsv

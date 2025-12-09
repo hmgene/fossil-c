@@ -45,11 +45,27 @@ samples.
 ``` r
 library(readr)
 library(knitr)
+library(dplyr)
+```
 
-df <- read_tsv("summ.tsv")
+    ## 
+    ## Attaching package: 'dplyr'
+
+    ## The following objects are masked from 'package:stats':
+    ## 
+    ##     filter, lag
+
+    ## The following objects are masked from 'package:base':
+    ## 
+    ##     intersect, setdiff, setequal, union
+
+``` r
+df <- read_tsv("summ.tsv") %>% mutate(across(
+    starts_with("top"), ~ gsub("^(.*)\\s*\\((.*)\\)$", "\\1<br>(\\2)", .x)))
 ```
 
     ## Rows: 7 Columns: 12
+
     ## ── Column specification ───────────────────────────────────────────────────────────────────────────────────────────────────
     ## Delimiter: "\t"
     ## chr (12): rank, Brachy_c_sedi, Brachy_vessels, Trex_v_sedi, Trex_vessels, Tr...
