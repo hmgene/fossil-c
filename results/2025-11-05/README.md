@@ -46,13 +46,13 @@ samples.
 library(readr)
 library(knitr)
 
-df <- read_csv("summ.csv")
+df <- read_tsv("summ.tsv")
 ```
 
-    ## Rows: 11 Columns: 1
+    ## Rows: 11 Columns: 6
     ## ── Column specification ───────────────────────────────────────────────────────────────────────────────────────────────────
-    ## Delimiter: ","
-    ## chr (1): sample  top1    top2    top3    top4    top5
+    ## Delimiter: "\t"
+    ## chr (6): sample, top1, top2, top3, top4, top5
     ## 
     ## ℹ Use `spec()` to retrieve the full column specification for this data.
     ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
@@ -61,19 +61,19 @@ df <- read_csv("summ.csv")
 kable(df, format = "markdown")
 ```
 
-| sample top1 top2 top3 top4 top5                                   |
-|:------------------------------------------------------------------|
-| Trex_ExtrBlank Komagataella Homo Cyprinus uncultured Gossypium    |
-| Brachy_Blank Pinus Komagataella Homo Cyprinus Mus                 |
-| Trex_vessels Homo Mus Bradyrhizobium Pseudorhodoplanes Spirometra |
-| Trex_c_sedi Homo Komagataella Alternaria Mus Cyprinus             |
-| BC_SRSLY Cyprinus Homo Mycobacterium Tarenaya Mycobacterium       |
-| Trex_v_sedi Cyprinus Homo Mus Komagataella Spirometra             |
-| Trex_cells Komagataella Homo Pinus Mus Cyprinus                   |
-| Brachy_vessels Homo Mus uncultured Cyprinus Oryzias               |
-| Brachy_v_sedi Komagataella Homo Cyprinus uncultured Mus           |
-| Brachy_c_sedi Komagataella Homo Mus Cyprinus uncultured           |
-| Brachy_cells Homo uncultured Mus Spirometra Burkholderia          |
+| sample | top1 | top2 | top3 | top4 | top5 |
+|:---|:---|:---|:---|:---|:---|
+| Trex_cells | Komagataella | Homo | Pinus | Mus | Cyprinus |
+| Brachy_cells | Homo | uncultured | Mus | Spirometra | Burkholderia |
+| Brachy_Blank | Pinus | Komagataella | Homo | Cyprinus | Mus |
+| Trex_v_sedi | Cyprinus | Homo | Mus | Komagataella | Spirometra |
+| Brachy_v_sedi | Komagataella | Homo | Cyprinus | uncultured | Mus |
+| Brachy_vessels | Homo | Mus | uncultured | Cyprinus | Oryzias |
+| Brachy_c_sedi | Komagataella | Homo | Mus | Cyprinus | uncultured |
+| Trex_ExtrBlank | Komagataella | Homo | Cyprinus | uncultured | Gossypium |
+| BC_SRSLY | Cyprinus | Homo | Mycobacterium | Tarenaya | Mycobacterium |
+| Trex_vessels | Homo | Mus | Bradyrhizobium | Pseudorhodoplanes | Spirometra |
+| Trex_c_sedi | Homo | Komagataella | Alternaria | Mus | Cyprinus |
 
 details:
 
