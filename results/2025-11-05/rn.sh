@@ -13,7 +13,9 @@ cat tt | perl -e 'use strict;
     }
     my @cc=sort keys %r;
     print join("\t","rank",@cc),"\n";
-    foreach my $i (0..6){
-        print join("\t","top$i",map{ "$r{$_}[$i][0] ($r{$_}[$i][1])" } @cc),"\n";
+    print join("\t","unclassified",map{ "$r{$_}[0][1]" } @cc),"\n";
+    print join("\t","root",map{ "$r{$_}[1][1]" } @cc),"\n";
+    foreach my $i (2..6){
+        print join("\t","top".($i-2),map{ "$r{$_}[$i][0] ($r{$_}[$i][1])" } @cc),"\n";
     }
 ' > summ.tsv
