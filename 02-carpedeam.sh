@@ -1,6 +1,6 @@
 # ref : https://archaeogenetics.readthedocs.io/en/latest/4_ReadsMapping_v2.html
 input=(
-bigdata/centrifuge/results/Brachy_Blank.unc.fq.gz
+#bigdata/centrifuge/results/Brachy_Blank.unc.fq.gz
 #bigdata/centrifuge/results/Brachy_cells.unc.fq.gz
 #	bigdata/leehom/Brachy_Blank.fq.gz
 #	bigdata/leehom/Brachy_cells.fq.gz
@@ -14,6 +14,9 @@ bigdata/centrifuge/results/Brachy_Blank.unc.fq.gz
 #	bigdata/leehom/Trex_v_sedi.fq.gz
 
 )
+input=(
+bigdata/centrifuge/results/*.unc.fq.gz
+)
 odir=`realpath bigdata/carpedeam`; mkdir -p $odir
 
 for i in ${input[@]};do 
@@ -21,7 +24,7 @@ for i in ${input[@]};do
 	o=$odir/$s.fa; 
     o_tmp=$odir/${s}_tmp; mkdir -p $o_tmp
     o_dam=$odir/${s}_dmg; 
-    if [ -s $o.fa ];then echo "$o.fa exists!"; continue; fi
+    if [ -s $o ];then echo "$o exists!"; continue; fi
 
     echo "#!/bin/bash -l
     mamba activate dino_env
