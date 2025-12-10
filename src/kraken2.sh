@@ -3,26 +3,62 @@ usage="$FUNCNAME <kreport> <perc_thre=1>";
 if [ $# -lt 2 ];then echo "$usage";return;fi
     cat $1 | perl -e 'my $thre='${2:-1}'; 
     use strict; use warnings;
-    my $p=0; my $s=0;
-    
-    while (<>) { chomp; next if /^\s*$/; my @d = split /\t/;
-        my ($indent) = $d[5] =~ /^(\s*)/;
-        my $level = length($indent);
 
-    if ($level == 0) {
-        print join("\t", @d), "\n";next;
-    }
 
-    if ($d[0] < $thre) {
-        $d[2] = $d[1];
-        if($p < $level && $s==0){
-            print join("\t", @d), "\n";
-            $s=1;
+my @lines = <>;
+
+# Parse input
+my @tree;
+foreach my $line (@lines) {
+    chomp($line);
+    next if $line =~ /^\s*$/;
+    my @d = split /\t/, $line;
+    my ($indent) = $d[5] =~ /^(\s*)/;
+    my $level = length($indent);
+    push @tree, {
+        line   => $line,
+        data   => \@d,
+        level  => $level,
+        kept   => 1,
+    };
+}
+
+# Collapse nodes below threshold
+for (my $i = 0; $i < @tree; $i++) {
+    my $d = $tree[$i]{data};
+    my $perc = $d->[0];
+    my $level = $tree[$i]{level};
+
+    # skip root
+    next if $level == 0;
+
+    if ($perc < $thre) {
+        # find siblings of same or deeper level
+        my $sum = 0;
+        my $j = $i;
+        while ($j < @tree && $tree[$j]{level} >= $level) {
+            my $dd = $tree[$j]{data};
+            $sum += $dd->[2];    # clade reads
+            $tree[$j]{kept} = 0; # mark to remove
+            $j++;
         }
+
+        # insert "other" node before we skip to next branch
+        my $parent_indent = " " x $level;
+        my @copy = @{$d};
+        $copy[0] = sprintf("%.2f", $thre);  # use threshold as placeholder %
+        $copy[2] = $sum;                    # total reads
+        $copy[5] = $parent_indent . $copy[5] . "_other";
+        print join("\t", @copy), "\n";
+
+        # skip over removed subtree
+        $i = $j - 1;
         next;
     }
-    print join("\t",@d),"\n";
-    $p=$level;
+
+    if ($tree[$i]{kept}) {
+        print $tree[$i]{line}, "\n";
+    }
 }
 
 '

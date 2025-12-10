@@ -1,11 +1,10 @@
 Traceback (most recent call last):
   File "/home/hxk728/git/fossil-c/../KrakenTools/kreport2krona.py", line 282, in <module>
     main()
-    ~~~~^^
   File "/home/hxk728/git/fossil-c/../KrakenTools/kreport2krona.py", line 278, in main
-    kreport2krona_main(args.r_file,args.o_file)
-    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hxk728/git/fossil-c/../KrakenTools/kreport2krona.py", line 177, in kreport2krona_main
-    r_file = open(report_file, 'r')
-FileNotFoundError: [Errno 2] No such file or directory: 'bracky_cells_cf_nt,bigdata/centrifuge/results/Brachy_cells.krreport.txt'
-Writing results/2025-11-05/bracky_cells_cf_nt.krona.html...
+    kreport2krona_main(args.r_file,args.o_file) 
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hxk728/git/fossil-c/../KrakenTools/kreport2krona.py", line 218, in kreport2krona_main
+    curr_path.pop()
+IndexError: pop from empty list
+/var/spool/slurm/job2994425/slurm_script: line 3: ktImportText: command not found

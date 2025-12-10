@@ -11,6 +11,8 @@ knitr:
 ---
 ## Discussion Points
 - [x] :  Quantify the proportion of reads mapped for Brachy_Blank and Brachy_cells in human and other species.
+- [x] : Contig Distributions in Bracky_Blank vs. Bracky_Cells
+  - [ ] : This approach may necessitate species pre-classification instead of performing redundant post-identification.
 
 ## Results
 
@@ -33,6 +35,11 @@ $$
 $$
 
 ### Alignment Length Proportions
+| Sample | Total Reads | Reads Merged | Merged Reads | Aligned |
+| --- | --- | --- | --- | --- |
+| Bracky_Blank | 91592712 | 75539044 | 37769522 | 964789 |
+| Bracky_cell | 675698180 | 557543426 | 278771713 | 2507895  |
+
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
 imgs <- c("figures/alignment_proportion_Brachy_Blank.png",
           "figures/alignment_proportion_Brachy_cells.png")
@@ -43,4 +50,19 @@ cat("| ", paste(labels, collapse = " | "), " |\n")
 cat("|", paste(rep("---", length(labels)), collapse = " | "), "|\n")
 cat("| ", paste0("![](", imgs, ")", collapse = " | "), " |\n")
 ```
+
+
+- In the cell samples, Human(118350) and AllMis1(98404) are the top two mapped taxa,.
+- Human and Komataella (yeast)  show ~ 100% aligned/read-length proportions.
+- In the blank samples, the majority of reads map to Komataella (1694742) and Pinus taeda (565081), with 80~100% aligned/read-length proportions.
+
+### Contig/Scaffold Lengths – SPAdes (Merged Single-End Reads)
+
+> Scaffolds and contigs are identical in the bracky_blank. 
+> Assembly of contigs for the bracky_cell sample is not yet complete.
+
+![png](figures/scaffold_dist.png )
+
+
+
 

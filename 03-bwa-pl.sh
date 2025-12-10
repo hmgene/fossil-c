@@ -6,7 +6,7 @@ ls $input | perl -pe 's#.*/([^@]+)@([^.]+).*#$1#' | sort -u | while read -r s; d
     [ -s $o ] || echo "#!/bin/bash
     parallel --line-buffer samtools view -q 20 {} ::: bigdata/bwa/results/$s@*.dedup.rg.bam |\
     dino sam2score - > $o
-    "  | sbatch --mem=24g -o $o.out 
+    " # | sbatch --mem=24g -o $o.out 
 done
 
 pl-bwa-score(){
@@ -40,5 +40,5 @@ for (tsv in tsv_files) {
 
 '
 }
-#pl-bwa-score
+pl-bwa-score
 

@@ -1,0 +1,35 @@
+---
+title: "Fossil-C Contig Blast Results "
+author: "Hyunmin Kim"
+last updated : "`r Sys.Date()`"
+output: md_document
+knitr:
+  opts_chunk:
+    echo: false
+    warning: false
+    message: false
+---
+## Discussion Points
+- [x] : Make contigs out of Unclassified centrifuge results
+
+## Methods
+- find unclassified reads
+- blast
+
+## Results
+
+### Centrifuge Results
+| Sample | Total Reads | Reads Merged | Merged Reads | Unclassified | Unclassified (>20bp) |
+| --- | --- | --- | --- | --- | --- |
+| Bracky_Blank | 91592712 | 75539044 | 37769522 | 446627| 179130 |
+| Bracky_cell | 675698180 | 557543426 | 278771713 | 314633 | 205700 | 
+
+### Capedeam Results
+- Input: Unclassified (>20bp) 
+- Output:
+  - [Bracky_Blank contigs](data/Brachy_Blank.unc.fa)
+  - [Bracky_cells_contigs](data/Brachy_cells.unc.fa)
+  - [Blast results](data/blast_res.tsv)
+
+
+
