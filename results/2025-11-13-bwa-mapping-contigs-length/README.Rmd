@@ -61,7 +61,7 @@ cat("| ", paste0("![](", imgs, ")", collapse = " | "), " |\n")
 > Scaffolds and contigs are identical in the bracky_blank. 
 > Assembly of contigs for the bracky_cell sample is not yet complete.
 
-![png](figures/scaffold_dist.png )
+![png](figures/scaffold_dist.png)
 
 
 

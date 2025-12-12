@@ -36,6 +36,7 @@ for (grp in names(groups)) {
       summarise( dens = list(density(best_score / read_len, adjust = 1.2)), .groups = "drop") %>%
       mutate( x = lapply(dens, function(d) d$x), y = lapply(dens, function(d) d$y )) %>%
       select(ref_label, x, y) %>% unnest(cols = c(x, y))  # tidyr unnest
+    fwrite(dt,file=paste0("data/alignment_proportion_",sample_name,".csv.gz"))
 
 
     p <- ggplot(dt, aes(x = x, y = y, color = ref_label)) +
@@ -51,6 +52,8 @@ for (grp in names(groups)) {
       summarise( dens = list(density(best_score / read_len, adjust = 1.2)), .groups = "drop") %>%
       mutate( x = lapply(dens, function(d) d$x), y = lapply(dens, function(d) d$y / max(d$y))) %>%
       select(ref_label, x, y) %>% unnest(cols = c(x, y))  # tidyr unnest
+    fwrite(dt_norm,file=paste0("data/alignment_proportion_norm_",sample_name,".csv.gz"))
+    
 
     # Plot
     p1 <- ggplot(dt_norm, aes(x = x, y = y, color = ref_label)) +
