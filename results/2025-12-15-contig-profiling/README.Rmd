@@ -1,0 +1,70 @@
+---
+title: "Fossil-C BWA Alignment Profile"
+author: "Hyunmin Kim"
+last updated : "`r Sys.Date()`"
+output: md_document
+knitr:
+  opts_chunk:
+    echo: false
+    warning: false
+    message: false
+---
+## Discussion Points
+- [x] :  Quantify the proportion of reads mapped for Brachy_Blank and Brachy_cells in human and other species.
+- [x] : Contig Distributions in Bracky_Blank vs. Bracky_Cells
+  - [ ] : This approach may necessitate species pre-classification instead of performing redundant post-identification.
+
+## Results
+
+- Data: bigdata/bwa_scores/*.tsv files on HPC
+  - example : 
+  ```
+id	seq	Brachy_cells@allMis1	Brachy_cells@anoCar2	Brachy_cells@bearded_dragon	Brachy_cells@brown_anole	Brachy_cells@crocodile	Brachy_cells@falcon	Brachy_cells@galGal6	Brachy_cells@hg38	Brachy_cells@komodo_dragon	Brachy_cells@loxAfr3	Brachy_cells@mm10	Brachy_cells@ostrich
+LH00333:151:232G25LT3:2:2167:33774:18886	TGGCCCCGGAAGTCGTCGGC	0	0	0	0	0	0	0	0	0	0	16	0
+LH00333:151:232G25LT3:2:2176:26174:11745	AAATTTTGCTAAGGATATTTGCGTCAATTTTTATGAAGATTTTATCAAGAATATGGGTTGTAGTTTTCCATTATGATGTCTTTGTTGGAGTAATGCTGGCCT	0	102	0	0	0	0
+LH00333:151:232G25LT3:2:1172:50091:21945	CGACAGCGTCGTGACAGCTTC	0	0	0	0	0	0	0	0	0	0	17	17
+  ```
+
+- Method : 
+  - Bwa Alignment (aDNA fit)   [code](../../02-bwa-rn.sh)
+  - Considered Species : allMis1 anoCar2 bearded_dragon brown_anole crocodile galGal6 hg38 komodo_dragon loxAfr3 mm10 ostrich
+  - Best Scoring [code](../../03-bwa-pl.sh)
+  - Score calculation: 
+$$
+\text{score} = \text{matches} - \text{mismatches} - \text{gap\_initiation}
+$$
+
+### Alignment Length Proportions
+| Sample | Total Reads | Reads Merged | Merged Reads | Aligned |
+| --- | --- | --- | --- | --- |
+| Bracky_Blank | 91592712 | 75539044 | 37769522 | 964789 |
+| Bracky_cell | 675698180 | 557543426 | 278771713 | 2507895  |
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
+imgs <- c("figures/alignment_proportion_Brachy_Blank.png",
+          "figures/alignment_proportion_Brachy_cells.png")
+labels <- c("Brachy Blank", "Brachy Cells")
+
+# Print as Markdown table
+cat("| ", paste(labels, collapse = " | "), " |\n")
+cat("|", paste(rep("---", length(labels)), collapse = " | "), "|\n")
+cat("| ", paste0("![](", imgs, ")", collapse = " | "), " |\n")
+```
+[Bracky_Blank table](data/alignment_proportion_Brachy_Blank.csv.gz)
+[Bracky_cells table](data/alignment_proportion_Brachy_cells.csv.gz")
+
+
+- In the cell samples, Human(118350) and AllMis1(98404) are the top two mapped taxa,.
+- Human and Komataella (yeast)  show ~ 100% aligned/read-length proportions.
+- In the blank samples, the majority of reads map to Komataella (1694742) and Pinus taeda (565081), with 80~100% aligned/read-length proportions.
+
+### Contig/Scaffold Lengths – SPAdes (Merged Single-End Reads)
+
+> Scaffolds and contigs are identical in the bracky_blank. 
+> Assembly of contigs for the bracky_cell sample is not yet complete.
+
+![png](figures/scaffold_dist.png)
+
+
+
+

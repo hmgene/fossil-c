@@ -1,5 +1,5 @@
 
-gatk=bigdata/gatk/gatk-4.6.2.0/gatk
+gatk=~/git/fossil-c/bigdata/gatk/gatk-4.6.2.0/gatk
 gatk(){
 	$gatk $@
 }
