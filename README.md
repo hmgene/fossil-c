@@ -8,6 +8,22 @@ mamba activate dino_env
 dino list ## list tools
 dino <command> ## help
 ```
+## Summary
+<details><summary sankey_input>
+## Brcky_Blank
+Bracky_Blank  [16053668] not_t.merged
+Bracky_Blank  [75539044 ] t.merged
+t.merged [ 37769522 ] cf
+cf [314633 ] cf_uc
+cf [37454889] cf_root
+cf_root [6637267] cf_Pinus
+cf_root [4414018] cf_Komagataella
+cf_root [732525] cf_Homo
+cf_root [516645] cf_Cyprinus
+cf_root [478875] Mus
+
+</details>
+
 
 ## Goals
 ### Profiling of FASTQ Read Contents
