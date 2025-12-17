@@ -13,13 +13,14 @@ Challenges in Authentication
 [ raw reads ] 
      | leehom 
 [ merge reads ] 
-     |            \
-[ contig  ]      [ centrifuge nt] 
-     | add             \
-[ bwa idx ]           [ species ]
-     | 
-[ bwa species]
-
+     | spade     \ centrifuge
+[ contig  ]      [ species assignment ] 
+     | bwa build     \
+[ bwa idx ]           [ results ]
+     | bwa aln
+[ bwa species] 
+      |
+[ results ]
 ```
 ### Add Contigs in the BWA score commpetition
 ![contig_link](https://github.com/hmgene/fossil-c/raw/main/results/2025-11-13-bwa-mapping-contigs-length/figures/scaffold_dist.png)
