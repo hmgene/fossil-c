@@ -17,7 +17,8 @@
 
 ```
 ### Add Contigs in the BWA score commpetition
-- select Bracky cell unique contigs (len>10k) [contig_link](https://github.com/hmgene/fossil-c/raw/main/results/2025-11-13-bwa-mapping-contigs-length/figures/scaffold_dist.png)
+![contig_link](https://github.com/hmgene/fossil-c/raw/main/results/2025-11-13-bwa-mapping-contigs-length/figures/scaffold_dist.png)
+> selected Bracky_cells contigs (len>10k) 
 
 ### Bracky_Blank Read-History 
  |Methods |Bracky Blank | Bracky Cells |
