@@ -9,7 +9,7 @@ dino list ## list tools
 dino <command> ## help
 ```
 ## Summary
-<details><summary sankey_input>
+<summary><b>Sankey input</b></summary>
 ## Brcky_Blank
 Bracky_Blank  [16053668] not_t.merged
 Bracky_Blank  [75539044 ] t.merged
