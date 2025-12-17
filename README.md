@@ -7,7 +7,7 @@
  |Blank | Cells |
  |----|----|
  | ![Bracky_Blank](figures/sankey_bracky_blank.svg) | ![Bracky_cells](figures/sankey_bracky_cells.svg) |
- ! [Bracky_Blank](figures/sankey_bracky_blank_bwa.svg) | ![Bracky_cells](figures/sankey_bracky_cells_bwa.svg) |
+ ! ![Bracky_Blank](figures/sankey_bracky_blank_bwa.svg) | ![Bracky_cells](figures/sankey_bracky_cells_bwa.svg) |
 
 <details>
 <summary>Sankey input</summary>
@@ -111,8 +111,6 @@ mamba activate dino_env
 dino list ## list tools
 dino <command> ## help
 ```
-
-
 ## Goals
 ### Profiling of FASTQ Read Contents
 - [x] Lengths of trimmed and merged reads
