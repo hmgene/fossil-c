@@ -5,6 +5,7 @@
 ## Summary
 ### Bracky_Blank Read-History 
  ![Bracky_Blank](figures/sankey_bracky_blank.svg)
+ ![Bracky_cells](figures/sankey_bracky_blank.svg)
 
 <summary><b>Sankey input</b></summary>
 
@@ -12,13 +13,27 @@
 Bracky_Blank  [16053668] not_t.merged
 Bracky_Blank  [75539044 ] t.merged
 t.merged [ 37769522 ] cf
-cf [314633 ] cf_uc
+cf [314633] cf_uc
 cf [37454889] cf_root
 cf_root [6637267] cf_Pinus
 cf_root [4414018] cf_Komagataella
 cf_root [732525] cf_Homo
 cf_root [516645] cf_Cyprinus
 cf_root [478875] Mus
+
+
+Bracky_cell  [118154754] not_t.merged
+Bracky_cell  [557543426 ] t.merged
+t.merged [ 278771713 ] cf
+cf [446627 ] cf_uc
+cf [278325086] cf_root
+cf_root [1185431] cf_Homo
+c_root [1084609] cf_unc_bacteria
+cf_root [1084601] Mus
+cf_root [706143] Spirometra
+cf_root [2590115] Burkholderia
+
+
 ```
 
 </details>
