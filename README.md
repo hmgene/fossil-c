@@ -5,7 +5,7 @@
 ## Summary
 ### Bracky_Blank Read-History 
  ![Bracky_Blank](figures/sankey_bracky_blank.svg)
- ![Bracky_cells](figures/sankey_bracky_blank.svg)
+ ![Bracky_cells](figures/sankey_bracky_cells.svg)
 
 <summary><b>Sankey input</b></summary>
 
