@@ -2,13 +2,10 @@
 
 ### Installation
 
-```
-mamba env update -n dino_env -f dino_env.yml
-mamba activate dino_env
-dino list ## list tools
-dino <command> ## help
-```
 ## Summary
+
+[Bracky_Blank](figures/figures/sankey_bracky_blank.svg)
+
 <summary><b>Sankey input</b></summary>
 ## Brcky_Blank
 Bracky_Blank  [16053668] not_t.merged
@@ -21,8 +18,15 @@ cf_root [4414018] cf_Komagataella
 cf_root [732525] cf_Homo
 cf_root [516645] cf_Cyprinus
 cf_root [478875] Mus
-
+```
 </details>
+
+```
+mamba env update -n dino_env -f dino_env.yml
+mamba activate dino_env
+dino list ## list tools
+dino <command> ## help
+```
 
 
 ## Goals
