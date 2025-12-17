@@ -3,11 +3,12 @@
 ### Installation
 
 ## Summary
-
-[Bracky_Blank](figures/figures/sankey_bracky_blank.svg)
+### Bracky_Blank Read-History 
+ ![Bracky_Blank](figures/sankey_bracky_blank.svg)
 
 <summary><b>Sankey input</b></summary>
-## Brcky_Blank
+
+```
 Bracky_Blank  [16053668] not_t.merged
 Bracky_Blank  [75539044 ] t.merged
 t.merged [ 37769522 ] cf
@@ -19,8 +20,10 @@ cf_root [732525] cf_Homo
 cf_root [516645] cf_Cyprinus
 cf_root [478875] Mus
 ```
+
 </details>
 
+## Installation
 ```
 mamba env update -n dino_env -f dino_env.yml
 mamba activate dino_env
