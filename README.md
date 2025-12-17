@@ -4,10 +4,13 @@
 
 ## Summary
 ### Bracky_Blank Read-History 
- ![Bracky_Blank](figures/sankey_bracky_blank.svg)
- ![Bracky_cells](figures/sankey_bracky_cells.svg)
+ |Blank | Cells |
+ |----|----|
+ | ![Bracky_Blank](figures/sankey_bracky_blank.svg) | ![Bracky_cells](figures/sankey_bracky_cells.svg) |
+ ! [Bracky_Blank](figures/sankey_bracky_blank_bwa.svg) | ![Bracky_cells](figures/sankey_bracky_cells_bwa.svg) |
 
-<summary><b>Sankey input</b></summary>
+<details>
+<summary>Sankey input</summary>
 
 ```
 Bracky_Blank  [16053668] not_t.merged
@@ -34,6 +37,69 @@ cf_root [706143] Spirometra
 cf_root [2590115] Burkholderia
 
 
+Bracky_Blank [10736 ] allMis1
+Bracky_Blank [14261 ] anoCar2
+Bracky_Blank [15774 ] bearded_dragon
+Bracky_Blank [57337 ] Brachy_cells_scaffolds_len10k
+Bracky_Blank [13860 ] brown_anole
+Bracky_Blank [12089 ] crocodile
+Bracky_Blank [12283 ] falcon
+Bracky_Blank [11610 ] galGal6
+Bracky_Blank [110136 ] hg38
+Bracky_Blank [1694252 ] Komagataella
+Bracky_Blank [10577 ] komodo_dragon
+Bracky_Blank [11442 ] loxAfr3
+Bracky_Blank [11041 ] mm10
+Bracky_Blank [8895 ] ostrich
+Bracky_Blank [564728 ] Pinus_taeda
+
+Bracky_Blank_90pro [ 40046] Brachy_cells_scaffolds_len10k
+Bracky_Blank_90pro [ 1666207] Komagataella
+Bracky_Blank_90pro [ 356674] Pinus_taeda
+Bracky_Blank_90pro [ 856] allMis1
+Bracky_Blank_90pro [ 763] anoCar2
+Bracky_Blank_90pro [ 1131] bearded_dragon
+Bracky_Blank_90pro [ 684] brown_anole
+Bracky_Blank_90pro [ 1205] crocodile
+Bracky_Blank_90pro [ 677] falcon
+Bracky_Blank_90pro [ 1831] galGal6
+Bracky_Blank_90pro [ 98397] hg38
+Bracky_Blank_90pro [ 837] komodo_dragon
+Bracky_Blank_90pro [ 577] loxAfr3
+Bracky_Blank_90pro [ 1113] mm10
+Bracky_Blank_90pro [ 698] ostrich
+
+Bracky_cell [ 81084] allMis1
+Bracky_cell [ 65501] anoCar2
+Bracky_cell [ 71002] bearded_dragon
+Bracky_cell [ 82859630] Brachy_cells_scaffolds_len10k
+Bracky_cell [ 55619] brown_anole
+Bracky_cell [ 57523] crocodile
+Bracky_cell [ 56785] falcon
+Bracky_cell [ 50590] galGal6
+Bracky_cell [ 107855] hg38
+Bracky_cell [ 77140] Komagataella
+Bracky_cell [ 52566] komodo_dragon
+Bracky_cell [ 39047] loxAfr3
+Bracky_cell [ 41878] mm10
+Bracky_cell [ 46237] ostrich
+Bracky_cell [ 26031] Pinus_taeda
+
+Brachy_cell_90pro [81436369] Brachy_cells_scaffolds_len10k
+Brachy_cell_90pro [38277] Komagataella
+Brachy_cell_90pro [2177] Pinus_taeda
+Brachy_cell_90pro [2188] allMis1
+Brachy_cell_90pro [1919] anoCar2
+Brachy_cell_90pro [2468] bearded_dragon
+Brachy_cell_90pro [1885] brown_anole
+Brachy_cell_90pro [2354] crocodile
+Brachy_cell_90pro [2218] falcon
+Brachy_cell_90pro [2169] galGal6
+Brachy_cell_90pro [60292] hg38
+Brachy_cell_90pro [2706] komodo_dragon
+Brachy_cell_90pro [1384] loxAfr3
+Brachy_cell_90pro [2391] mm10
+Brachy_cell_90pro [2540] ostrichk
 ```
 
 </details>
