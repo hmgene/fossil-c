@@ -1,7 +1,7 @@
 # ref : https://archaeogenetics.readthedocs.io/en/latest/4_ReadsMapping_v2.html
 input=(
-	bigdata/leehom/Brachy_Blank.fq.gz
-    bigdata/leehom/Brachy_cells.fq.gz
+#	bigdata/leehom/Brachy_Blank.fq.gz
+#   bigdata/leehom/Brachy_cells.fq.gz
 #	bigdata/leehom/Brachy_c_sedi.fq.gz
 #	bigdata/leehom/Brachy_vessels.fq.gz
 #	bigdata/leehom/Brachy_v_sedi.fq.gz

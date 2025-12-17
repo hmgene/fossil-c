@@ -2,7 +2,8 @@ library(data.table)
 library(ggplot2)
 library(cowplot)
 library(tools)
-tsv_files <- list.files( "../../bigdata/bwa_scores", pattern = "Brachy_(Blank|cells).*\\.tsv$", full.names = TRUE, recursive = F)
+input="../../bigdata/bwa_scores_+contig/"
+tsv_files <- list.files(input, pattern = "Brachy_(Blank|cells).*\\.tsv$", full.names = TRUE, recursive = F)
 pattern_order <- c("cells", "vessels", "c_sedi", "v_sedi", "blank")
 tsv_files<- tsv_files[order(sapply(tsv_files, function(x) {
   x_lower <- tolower(basename(x))
@@ -36,7 +37,7 @@ for (grp in names(groups)) {
       summarise( dens = list(density(best_score / read_len, adjust = 1.2)), .groups = "drop") %>%
       mutate( x = lapply(dens, function(d) d$x), y = lapply(dens, function(d) d$y )) %>%
       select(ref_label, x, y) %>% unnest(cols = c(x, y))  # tidyr unnest
-    fwrite(dt,file=paste0("data/alignment_proportion_",sample_name,".csv.gz"))
+    #fwrite(dt,file=paste0("data/alignment_proportion_",sample_name,".csv.gz"))
 
 
     p <- ggplot(dt, aes(x = x, y = y, color = ref_label)) +
