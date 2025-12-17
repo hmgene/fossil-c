@@ -3,11 +3,26 @@
 ### Installation
 
 ## Summary
+### Pipelines
+```
+[ raw reads ] 
+     | leehom 
+[ merge reads ] 
+     |            \
+[ contig  ]      [ centrifuge nt] 
+     | add             \
+[ bwa idx ]           [ species ]
+     | 
+[ bwa species]
+
+```
+- [contig_link](https://github.com/hmgene/fossil-c/raw/main/results/2025-11-13-bwa-mapping-contigs-length/figures/scaffold_dist.png) ]
+
 ### Bracky_Blank Read-History 
- |Blank | Cells |
- |----|----|
- | ![Bracky_Blank](figures/sankey_bracky_blank.svg) | ![Bracky_cells](figures/sankey_bracky_cells.svg) |
- ! ![Bracky_Blank](figures/sankey_bracky_blank_bwa.svg) | ![Bracky_cells](figures/sankey_bracky_cells_bwa.svg) |
+ | |Blank | Cells |
+ | |----|----|
+ | centrifuge | ![Bracky_Blank](figures/sankey_bracky_blank.svg) | ![Bracky_cells](figures/sankey_bracky_cells.svg) |
+ ! bwa | ![Bracky_Blank](figures/sankey_bracky_blank_bwa.svg) | ![Bracky_cells](figures/sankey_bracky_cells_bwa.svg) |
 
 <details>
 <summary>Sankey input</summary>
