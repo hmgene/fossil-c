@@ -1,7 +1,12 @@
 # Fossil-C Bracky & T-rex
+## Problem
+Challenges in Authentication
+```
+ Ancient DNA, A 
+ [ chicken-like | crocodile-like | unique | damage ] 
 
-### Installation
-
+ 
+```
 ## Summary
 ### Pipelines
 ```
