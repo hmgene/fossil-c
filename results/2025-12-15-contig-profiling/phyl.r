@@ -3,7 +3,8 @@ library(ggplot2)
 library(cowplot)
 library(tools)
 input="../../bigdata/bwa_scores_+contig/"
-tsv_files <- list.files(input, pattern = "Brachy_(Blank|cells).*\\.tsv$", full.names = TRUE, recursive = F)
+#tsv_files <- list.files(input, pattern = "Brachy_(Blank|cells).*\\.tsv$", full.names = TRUE, recursive = F)
+tsv_files <- list.files(input, pattern = "Brachy_(vessels).*\\.tsv$", full.names = TRUE, recursive = F)
 pattern_order <- c("cells", "vessels", "c_sedi", "v_sedi", "blank")
 tsv_files<- tsv_files[order(sapply(tsv_files, function(x) {
   x_lower <- tolower(basename(x))
@@ -28,6 +29,9 @@ for (grp in names(groups)) {
     dt_best[, ref := sub(".*@", "", best_ref)]
     dt_best[, ref_label := paste0(ref, " (n=", .N, ")"), by = best_ref]
 
+    x=dt_best[prop>=0.9]
+    x[, ref_label := paste0(ref, " (n=", .N, ")"), by = best_ref]
+
     fwrite(dt_best,file=paste0("data/",sample_name,".csv.gz"))
     library(ggplot2)
     library(dplyr)
@@ -37,7 +41,7 @@ for (grp in names(groups)) {
       summarise( dens = list(density(best_score / read_len, adjust = 1.2)), .groups = "drop") %>%
       mutate( x = lapply(dens, function(d) d$x), y = lapply(dens, function(d) d$y )) %>%
       select(ref_label, x, y) %>% unnest(cols = c(x, y))  # tidyr unnest
-    #fwrite(dt,file=paste0("data/alignment_proportion_",sample_name,".csv.gz"))
+    fwrite(dt,file=paste0("data/alignment_proportion_",sample_name,".csv.gz"))
 
 
     p <- ggplot(dt, aes(x = x, y = y, color = ref_label)) +

@@ -123,6 +123,35 @@ Brachy_cell_90pro [2706] komodo_dragon
 Brachy_cell_90pro [1384] loxAfr3
 Brachy_cell_90pro [2391] mm10
 Brachy_cell_90pro [2540] ostrichk
+
+Bracky_vessels [ 29049062 ] Brachy_cells_scaffolds_len10k
+Bracky_vessels [ 17618 ] brown_anole
+Bracky_vessels [ 24295 ] allMis1
+Bracky_vessels [ 21859 ] bearded_dragon
+Bracky_vessels [ 13477 ] mm10
+Bracky_vessels [ 53203 ] hg38
+Bracky_vessels [ 20828 ] anoCar2
+Bracky_vessels [ 17409 ] crocodile
+Bracky_vessels [ 17257 ] falcon
+Bracky_vessels [ 13043 ] loxAfr3
+Bracky_vessels [ 15460 ] komodo_dragon
+Bracky_vessels [ 13152 ] ostrich
+Bracky_vessels [ 15454 ] galGal6
+
+Bracky_vessels_90prop [ 28591793 ] Brachy_cells_scaffolds_len10k
+Bracky_vessels_90prop [ 38323 ] hg38
+Bracky_vessels_90prop [ 616 ] loxAfr3
+Bracky_vessels_90prop [ 1033 ] falcon
+Bracky_vessels_90prop [ 997 ] allMis1
+Bracky_vessels_90prop [ 984 ] anoCar2
+Bracky_vessels_90prop [ 1178 ] bearded_dragon
+Bracky_vessels_90prop [ 1234 ] mm10
+Bracky_vessels_90prop [ 1111 ] komodo_dragon
+Bracky_vessels_90prop [ 1076 ] crocodile
+Bracky_vessels_90prop [ 937 ] brown_anole
+Bracky_vessels_90prop [ 1008 ] galGal6
+Bracky_vessels_90prop [ 1079 ] ostrich
+
 ```
 
 </details>
