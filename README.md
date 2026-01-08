@@ -27,10 +27,10 @@ Challenges in Authentication
 > selected Bracky_cells contigs (len>10k) 
 
 ### Bracky_Blank Read-History 
- |Methods |Bracky Blank | Bracky Cells |
- |--- |----|----|
- | centrifuge | ![Bracky_Blank](figures/sankey_bracky_blank.svg) | ![Bracky_cells](figures/sankey_bracky_cells.svg) |
- | bwa | ![Bracky_Blank](figures/sankey_bracky_blank_bwa.svg) | ![Bracky_cells](figures/sankey_bracky_cells_bwa.svg) |
+ |Methods |Bracky Blank | Bracky Cells | Bracky Vessels |
+ |--- |----|----|----|
+ | centrifuge | ![Bracky_Blank](figures/sankey_bracky_blank.svg) | ![Bracky_cells](figures/sankey_bracky_cells.svg) | |
+ | bwa | ![Bracky_Blank](figures/sankey_bracky_blank_bwa.svg) | ![Bracky_cells](figures/sankey_bracky_cells_bwa.svg) | ![Bracky_vessels](figures/sankey_bracky_vessels_bwa.svg) |
 
 <details>
 <summary>Sankey input</summary>
