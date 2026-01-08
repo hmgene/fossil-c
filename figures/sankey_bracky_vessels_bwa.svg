@@ -1,0 +1,129 @@
+<svg height="600" width="600" xmlns="http://www.w3.org/2000/svg">
+<title>Your Diagram Title</title>
+<!-- Generated with SankeyMATIC: 1/8/2026, 4:38:06 PM -->
+<rect height="600" width="600" fill="#ffffff"></rect>
+<g transform="translate(176.25285,18)">
+<g id="sankey_flows">
+<path id="flow0" d="M12 102.47984C101.85652 102.47984 101.85652 110.30368 191.71305 110.30368" fill="none" stroke-width="144.15852" stroke="#e377c2" opacity="0.45"><title>Bracky_vessels → Brachy_cells_scaffolds_len10k: 29,049,062</title></path>
+<path id="flow13" d="M12 263.86617C101.85652 263.86617 101.85652 253.32757 191.71305 253.32757" fill="none" stroke-width="141.88928" stroke="#1f77b4" opacity="0.45"><title>Bracky_vessels_90prop → Brachy_cells_scaffolds_len10k: 28,591,793</title></path>
+<path id="flow5" d="M12 175.63327C101.85652 175.63327 101.85652 531.27723 191.71305 531.27723" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Bracky_vessels → hg38: 53,203</title></path>
+<path id="flow14" d="M12 334.96174C101.85652 334.96174 101.85652 531.50433 191.71305 531.50433" fill="none" stroke-width="1" stroke="#1f77b4" opacity="0.45"><title>Bracky_vessels_90prop → hg38: 38,323</title></path>
+<path id="flow2" d="M12 174.61938C101.85652 174.61938 101.85652 341.48875 191.71305 341.48875" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Bracky_vessels → allMis1: 24,295</title></path>
+<path id="flow3" d="M12 174.98942C101.85652 174.98942 101.85652 410.50132 191.71305 410.50132" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Bracky_vessels → bearded_dragon: 21,859</title></path>
+<path id="flow6" d="M12 174.73134C101.85652 174.73134 101.85652 358.76191 191.71305 358.76191" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Bracky_vessels → anoCar2: 20,828</title></path>
+<path id="flow1" d="M12 174.89147C101.85652 174.89147 101.85652 393.24247 191.71305 393.24247" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Bracky_vessels → brown_anole: 17,618</title></path>
+<path id="flow7" d="M12 175.17249C101.85652 175.17249 101.85652 445.00787 191.71305 445.00787" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Bracky_vessels → crocodile: 17,409</title></path>
+<path id="flow8" d="M12 175.08648C101.85652 175.08648 101.85652 427.76048 191.71305 427.76048" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Bracky_vessels → falcon: 17,257</title></path>
+<path id="flow10" d="M12 175.33074C101.85652 175.33074 101.85652 479.48896 191.71305 479.48896" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Bracky_vessels → komodo_dragon: 15,460</title></path>
+<path id="flow12" d="M12 175.25404C101.85652 175.25404 101.85652 462.251 191.71305 462.251" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Bracky_vessels → galGal6: 15,454</title></path>
+<path id="flow4" d="M12 175.46781C101.85652 175.46781 101.85652 513.9494 191.71305 513.9494" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Bracky_vessels → mm10: 13,477</title></path>
+<path id="flow11" d="M12 175.40174C101.85652 175.40174 101.85652 496.72172 191.71305 496.72172" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Bracky_vessels → ostrich: 13,152</title></path>
+<path id="flow9" d="M12 174.81539C101.85652 174.81539 101.85652 376.00708 191.71305 376.00708" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Bracky_vessels → loxAfr3: 13,043</title></path>
+<path id="flow20" d="M12 334.86359C101.85652 334.86359 101.85652 513.9859 191.71305 513.9859" fill="none" stroke-width="1" stroke="#1f77b4" opacity="0.45"><title>Bracky_vessels_90prop → mm10: 1,234</title></path>
+<path id="flow19" d="M12 334.83127C101.85652 334.83127 101.85652 410.55849 191.71305 410.55849" fill="none" stroke-width="1" stroke="#1f77b4" opacity="0.45"><title>Bracky_vessels_90prop → bearded_dragon: 1,178</title></path>
+<path id="flow21" d="M12 334.85241C101.85652 334.85241 101.85652 479.53008 191.71305 479.53008" fill="none" stroke-width="1" stroke="#1f77b4" opacity="0.45"><title>Bracky_vessels_90prop → komodo_dragon: 1,111</title></path>
+<path id="flow25" d="M12 334.85785C101.85652 334.85785 101.85652 496.75703 191.71305 496.75703" fill="none" stroke-width="1" stroke="#1f77b4" opacity="0.45"><title>Bracky_vessels_90prop → ostrich: 1,079</title></path>
+<path id="flow22" d="M12 334.84199C101.85652 334.84199 101.85652 445.05374 191.71305 445.05374" fill="none" stroke-width="1" stroke="#1f77b4" opacity="0.45"><title>Bracky_vessels_90prop → crocodile: 1,076</title></path>
+<path id="flow16" d="M12 334.83675C101.85652 334.83675 101.85652 427.80586 191.71305 427.80586" fill="none" stroke-width="1" stroke="#1f77b4" opacity="0.45"><title>Bracky_vessels_90prop → falcon: 1,033</title></path>
+<path id="flow24" d="M12 334.84716C101.85652 334.84716 101.85652 462.29185 191.71305 462.29185" fill="none" stroke-width="1" stroke="#1f77b4" opacity="0.45"><title>Bracky_vessels_90prop → galGal6: 1,008</title></path>
+<path id="flow17" d="M12 334.81328C101.85652 334.81328 101.85652 341.5515 191.71305 341.5515" fill="none" stroke-width="1" stroke="#1f77b4" opacity="0.45"><title>Bracky_vessels_90prop → allMis1: 997</title></path>
+<path id="flow18" d="M12 334.81819C101.85652 334.81819 101.85652 358.81603 191.71305 358.81603" fill="none" stroke-width="1" stroke="#1f77b4" opacity="0.45"><title>Bracky_vessels_90prop → anoCar2: 984</title></path>
+<path id="flow23" d="M12 334.82602C101.85652 334.82602 101.85652 393.28851 191.71305 393.28851" fill="none" stroke-width="1" stroke="#1f77b4" opacity="0.45"><title>Bracky_vessels_90prop → brown_anole: 937</title></path>
+<path id="flow15" d="M12 334.82216C101.85652 334.82216 101.85652 376.04098 191.71305 376.04098" fill="none" stroke-width="1" stroke="#1f77b4" opacity="0.45"><title>Bracky_vessels_90prop → loxAfr3: 616</title></path>
+</g>
+<g id="sankey_nodes">
+<g class="node">
+<rect id="r0" class="for_r0" x="0" y="30.40058" height="145.3647" width="12" fill="#e377c2" fill-opacity="1"><title>Bracky_vessels:
+29,292,117</title></rect>
+</g>
+<g class="node">
+<rect id="r1" class="for_r1" x="191.71305" y="38.22442" height="286.04779" width="12" fill="#7f7f7f" fill-opacity="1"><title>Brachy_cells_scaffolds_len10k:
+57,640,855</title></rect>
+</g>
+<g class="node">
+<rect id="r2" class="for_r2" x="191.71305" y="393.19875" height="0.09208" width="12" fill="#bcbd22" fill-opacity="1"><title>brown_anole:
+18,555</title></rect>
+</g>
+<g class="node">
+<rect id="r3" class="for_r3" x="191.71305" y="341.42846" height="0.12551" width="12" fill="#17becf" fill-opacity="1"><title>allMis1:
+25,292</title></rect>
+</g>
+<g class="node">
+<rect id="r4" class="for_r4" x="191.71305" y="410.44708" height="0.11432" width="12" fill="#1f77b4" fill-opacity="1"><title>bearded_dragon:
+23,037</title></rect>
+</g>
+<g class="node">
+<rect id="r5" class="for_r5" x="191.71305" y="513.91596" height="0.073" width="12" fill="#ff7f0e" fill-opacity="1"><title>mm10:
+14,711</title></rect>
+</g>
+<g class="node">
+<rect id="r6" class="for_r6" x="191.71305" y="531.14521" height="0.45421" width="12" fill="#2ca02c" fill-opacity="1"><title>hg38:
+91,526</title></rect>
+</g>
+<g class="node">
+<rect id="r7" class="for_r7" x="191.71305" y="358.71023" height="0.10824" width="12" fill="#d62728" fill-opacity="1"><title>anoCar2:
+21,812</title></rect>
+</g>
+<g class="node">
+<rect id="r8" class="for_r8" x="191.71305" y="444.96467" height="0.09173" width="12" fill="#9467bd" fill-opacity="1"><title>crocodile:
+18,485</title></rect>
+</g>
+<g class="node">
+<rect id="r9" class="for_r9" x="191.71305" y="427.71766" height="0.09077" width="12" fill="#8c564b" fill-opacity="1"><title>falcon:
+18,290</title></rect>
+</g>
+<g class="node">
+<rect id="r10" class="for_r10" x="191.71305" y="375.97472" height="0.06778" width="12" fill="#e377c2" fill-opacity="1"><title>loxAfr3:
+13,659</title></rect>
+</g>
+<g class="node">
+<rect id="r11" class="for_r11" x="191.71305" y="479.4506" height="0.08224" width="12" fill="#7f7f7f" fill-opacity="1"><title>komodo_dragon:
+16,571</title></rect>
+</g>
+<g class="node">
+<rect id="r12" class="for_r12" x="191.71305" y="496.68909" height="0.07062" width="12" fill="#bcbd22" fill-opacity="1"><title>ostrich:
+14,231</title></rect>
+</g>
+<g class="node">
+<rect id="r13" class="for_r13" x="191.71305" y="462.21266" height="0.08169" width="12" fill="#17becf" fill-opacity="1"><title>galGal6:
+16,462</title></rect>
+</g>
+<g class="node">
+<rect id="r14" class="for_r14" x="0" y="192.92153" height="142.1353" width="12" fill="#1f77b4" fill-opacity="1"><title>Bracky_vessels_90prop:
+28,641,369</title></rect>
+</g>
+</g>
+<g id="sankey_labels" font-family="sans-serif" font-size="16px" fill="#000000">
+<text text-anchor="middle" x="123.74715" y="577" font-size="12px" font-weight="400" fill="#336781">Made at SankeyMATIC.com</text>
+<rect id="label0_bg" class="for_r0" x="-111.4091" y="82.23142" width="109.77641" height="41.12" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label0" class="for_r0" text-anchor="end" x="-6.29754" y="103.08293" font-weight="400" font-size="14.4px" dy="-5.45151">Bracky_vessels<tspan x="-6.29754" dy="19.32" font-weight="400" font-size="17.6px">29,292,117</tspan></text>
+<rect id="label1_bg" class="for_r1" x="205.34575" y="160.39683" width="206.40141" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label1" class="for_r1" text-anchor="start" x="210.01059" y="181.24832" font-weight="400" font-size="14.4px" dy="-5.45149">Brachy_cells_scaffolds_len10k<tspan x="210.01059" dy="19.32" font-weight="400" font-size="17.6px">57,640,855</tspan></text>
+<rect id="label2_bg" class="for_r2" x="205.34575" y="372.32479" width="92.19828" height="41.11998" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label2" class="for_r2" text-anchor="start" x="210.01059" y="393.24479" font-weight="400" font-size="14.4px" dy="-5.52">brown_anole<tspan x="210.01059" dy="19.32" font-weight="400" font-size="17.6px">18,555</tspan></text>
+<rect id="label3_bg" class="for_r3" x="205.34575" y="320.57122" width="63.57328" height="41.11998" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label3" class="for_r3" text-anchor="start" x="210.01059" y="341.49122" font-weight="400" font-size="14.4px" dy="-5.52">allMis1<tspan x="210.01059" dy="19.32" font-weight="400" font-size="17.6px">25,292</tspan></text>
+<rect id="label4_bg" class="for_r4" x="205.34575" y="389.73049" width="115.43266" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label4" class="for_r4" text-anchor="start" x="210.01059" y="410.50425" font-weight="400" font-size="14.4px" dy="-5.37374">bearded_dragon<tspan x="210.01059" dy="19.32" font-weight="400" font-size="17.6px">23,037</tspan></text>
+<rect id="label5_bg" class="for_r5" x="205.34575" y="493.03246" width="62.27641" height="41.11998" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label5" class="for_r5" text-anchor="start" x="210.01059" y="513.95246" font-weight="400" font-size="14.4px" dy="-5.52">mm10<tspan x="210.01059" dy="19.32" font-weight="400" font-size="17.6px">14,711</tspan></text>
+<rect id="label6_bg" class="for_r6" x="205.34575" y="510.5986" width="63.57328" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label6" class="for_r6" text-anchor="start" x="210.01059" y="531.37232" font-weight="400" font-size="14.4px" dy="-5.37374">hg38<tspan x="210.01059" dy="19.32" font-weight="400" font-size="17.6px">91,526</tspan></text>
+<rect id="label7_bg" class="for_r7" x="205.34575" y="337.84435" width="64.97953" height="41.11998" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label7" class="for_r7" text-anchor="start" x="210.01059" y="358.76435" font-weight="400" font-size="14.4px" dy="-5.52">anoCar2<tspan x="210.01059" dy="19.32" font-weight="400" font-size="17.6px">21,812</tspan></text>
+<rect id="label8_bg" class="for_r8" x="205.34575" y="424.09054" width="67.37016" height="41.11998" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label8" class="for_r8" text-anchor="start" x="210.01059" y="445.01054" font-weight="400" font-size="14.4px" dy="-5.52">crocodile<tspan x="210.01059" dy="19.32" font-weight="400" font-size="17.6px">18,485</tspan></text>
+<rect id="label9_bg" class="for_r9" x="205.34575" y="406.84304" width="63.57328" height="41.11998" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label9" class="for_r9" text-anchor="start" x="210.01059" y="427.76304" font-weight="400" font-size="14.4px" dy="-5.52">falcon<tspan x="210.01059" dy="19.32" font-weight="400" font-size="17.6px">18,290</tspan></text>
+<rect id="label10_bg" class="for_r10" x="205.34575" y="355.08862" width="63.57328" height="41.11998" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label10" class="for_r10" text-anchor="start" x="210.01059" y="376.00861" font-weight="400" font-size="14.4px" dy="-5.52">loxAfr3<tspan x="210.01059" dy="19.32" font-weight="400" font-size="17.6px">13,659</tspan></text>
+<rect id="label11_bg" class="for_r11" x="205.34575" y="458.71798" width="113.80766" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label11" class="for_r11" text-anchor="start" x="210.01059" y="479.49172" font-weight="400" font-size="14.4px" dy="-5.37374">komodo_dragon<tspan x="210.01059" dy="19.32" font-weight="400" font-size="17.6px">16,571</tspan></text>
+<rect id="label12_bg" class="for_r12" x="205.34575" y="475.80441" width="63.57328" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label12" class="for_r12" text-anchor="start" x="210.01059" y="496.7244" font-weight="400" font-size="14.4px" dy="-5.52">ostrich<tspan x="210.01059" dy="19.32" font-weight="400" font-size="17.6px">14,231</tspan></text>
+<rect id="label13_bg" class="for_r13" x="205.34575" y="441.47976" width="63.57328" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label13" class="for_r13" text-anchor="start" x="210.01059" y="462.2535" font-weight="400" font-size="14.4px" dy="-5.37374">galGal6<tspan x="210.01059" dy="19.32" font-weight="400" font-size="17.6px">16,462</tspan></text>
+<rect id="label14_bg" class="for_r14" x="-164.25286" y="243.13766" width="162.62016" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label14" class="for_r14" text-anchor="end" x="-6.29754" y="263.98918" font-weight="400" font-size="14.4px" dy="-5.45151">Bracky_vessels_90prop<tspan x="-6.29754" dy="19.32" font-weight="400" font-size="17.6px">28,641,369</tspan></text>
+</g>
+</g></svg>
