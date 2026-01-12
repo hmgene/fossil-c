@@ -79,8 +79,8 @@
 <tbody>
 <tr>
 <td><img src="figures/alignment_proportion_Brachy_Blank.png" /></td>
-<td><img src="figures/alignment_proportion_Brachy_vessels" /></td>
 <td><img src="figures/alignment_proportion_Brachy_cells.png" /></td>
+<td><img src="figures/alignment_proportion_Brachy_vessels.png" /></td>
 </tr>
 </tbody>
 </table>
