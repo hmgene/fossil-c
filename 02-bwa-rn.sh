@@ -22,6 +22,7 @@ for i in ${input[@]};do
 for j in ${idx[@]};do
 	i=`realpath $i`
 	j=`realpath $j`
+echo $i $j; continue;
 	s=${i##*/};s=${s%.fq.gz*};
 	r=${j##*/};r=${r%.fa*};
 	o=$odir/$s@$r;
