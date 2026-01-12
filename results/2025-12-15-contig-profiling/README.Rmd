@@ -43,8 +43,9 @@ $$
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
 imgs <- c("figures/alignment_proportion_Brachy_Blank.png",
+          "figures/alignment_proportion_Brachy_vessels",
           "figures/alignment_proportion_Brachy_cells.png")
-labels <- c("Brachy Blank", "Brachy Cells")
+labels <- c("Bracky Blank", "Bracky Cells", "Bracky Vessels")
 
 # Print as Markdown table
 cat("| ", paste(labels, collapse = " | "), " |\n")

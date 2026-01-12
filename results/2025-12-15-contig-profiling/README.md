@@ -65,18 +65,21 @@
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
 </colgroup>
 <thead>
 <tr>
-<th>Brachy Blank</th>
-<th>Brachy Cells</th>
+<th>Bracky Blank</th>
+<th>Bracky Cells</th>
+<th>Bracky Vessels</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><img src="figures/alignment_proportion_Brachy_Blank.png" /></td>
+<td><img src="figures/alignment_proportion_Brachy_vessels" /></td>
 <td><img src="figures/alignment_proportion_Brachy_cells.png" /></td>
 </tr>
 </tbody>
