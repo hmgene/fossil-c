@@ -1,14 +1,168 @@
 # Fossil-C Bracky & T-rex
+## Problem
+Challenges in Authentication
+```
+ Ancient DNA, A 
+ [ chicken-like | crocodile-like | unique | damage ] 
 
-### Installation
+ 
+```
+## Summary
+### Pipelines
+```
+[ raw reads ] 
+     | leehom 
+[ merge reads ] 
+     | spade     \ centrifuge
+[ contig  ]      [ species assignment ] 
+     | bwa build     \
+[ bwa idx ]           [ results ]
+     | bwa aln
+[ bwa species] 
+      |
+[ results ]
+```
+### Add Contigs in the BWA score commpetition
+![contig_link](https://github.com/hmgene/fossil-c/raw/main/results/2025-11-13-bwa-mapping-contigs-length/figures/scaffold_dist.png)
+> selected Bracky_cells contigs (len>10k) 
 
+### Bracky_Blank Read-History 
+ |Methods |Bracky Blank | Bracky Cells | Bracky Vessels |
+ |--- |----|----|----|
+ | centrifuge | ![Bracky_Blank](figures/sankey_bracky_blank.svg) | ![Bracky_cells](figures/sankey_bracky_cells.svg) | |
+ | bwa | ![Bracky_Blank](figures/sankey_bracky_blank_bwa.svg) | ![Bracky_cells](figures/sankey_bracky_cells_bwa.svg) | ![Bracky_vessels](figures/sankey_bracky_vessels_bwa.svg) |
+
+<details>
+<summary>Sankey input</summary>
+
+```
+Bracky_Blank  [16053668] not_t.merged
+Bracky_Blank  [75539044 ] t.merged
+t.merged [ 37769522 ] cf
+cf [314633] cf_uc
+cf [37454889] cf_root
+cf_root [6637267] cf_Pinus
+cf_root [4414018] cf_Komagataella
+cf_root [732525] cf_Homo
+cf_root [516645] cf_Cyprinus
+cf_root [478875] Mus
+
+
+Bracky_cell  [118154754] not_t.merged
+Bracky_cell  [557543426 ] t.merged
+t.merged [ 278771713 ] cf
+cf [446627 ] cf_uc
+cf [278325086] cf_root
+cf_root [1185431] cf_Homo
+c_root [1084609] cf_unc_bacteria
+cf_root [1084601] Mus
+cf_root [706143] Spirometra
+cf_root [2590115] Burkholderia
+
+
+Bracky_Blank [10736 ] allMis1
+Bracky_Blank [14261 ] anoCar2
+Bracky_Blank [15774 ] bearded_dragon
+Bracky_Blank [57337 ] Brachy_cells_scaffolds_len10k
+Bracky_Blank [13860 ] brown_anole
+Bracky_Blank [12089 ] crocodile
+Bracky_Blank [12283 ] falcon
+Bracky_Blank [11610 ] galGal6
+Bracky_Blank [110136 ] hg38
+Bracky_Blank [1694252 ] Komagataella
+Bracky_Blank [10577 ] komodo_dragon
+Bracky_Blank [11442 ] loxAfr3
+Bracky_Blank [11041 ] mm10
+Bracky_Blank [8895 ] ostrich
+Bracky_Blank [564728 ] Pinus_taeda
+
+Bracky_Blank_90pro [ 40046] Brachy_cells_scaffolds_len10k
+Bracky_Blank_90pro [ 1666207] Komagataella
+Bracky_Blank_90pro [ 356674] Pinus_taeda
+Bracky_Blank_90pro [ 856] allMis1
+Bracky_Blank_90pro [ 763] anoCar2
+Bracky_Blank_90pro [ 1131] bearded_dragon
+Bracky_Blank_90pro [ 684] brown_anole
+Bracky_Blank_90pro [ 1205] crocodile
+Bracky_Blank_90pro [ 677] falcon
+Bracky_Blank_90pro [ 1831] galGal6
+Bracky_Blank_90pro [ 98397] hg38
+Bracky_Blank_90pro [ 837] komodo_dragon
+Bracky_Blank_90pro [ 577] loxAfr3
+Bracky_Blank_90pro [ 1113] mm10
+Bracky_Blank_90pro [ 698] ostrich
+
+Bracky_cell [ 81084] allMis1
+Bracky_cell [ 65501] anoCar2
+Bracky_cell [ 71002] bearded_dragon
+Bracky_cell [ 82859630] Brachy_cells_scaffolds_len10k
+Bracky_cell [ 55619] brown_anole
+Bracky_cell [ 57523] crocodile
+Bracky_cell [ 56785] falcon
+Bracky_cell [ 50590] galGal6
+Bracky_cell [ 107855] hg38
+Bracky_cell [ 77140] Komagataella
+Bracky_cell [ 52566] komodo_dragon
+Bracky_cell [ 39047] loxAfr3
+Bracky_cell [ 41878] mm10
+Bracky_cell [ 46237] ostrich
+Bracky_cell [ 26031] Pinus_taeda
+
+Brachy_cell_90pro [81436369] Brachy_cells_scaffolds_len10k
+Brachy_cell_90pro [38277] Komagataella
+Brachy_cell_90pro [2177] Pinus_taeda
+Brachy_cell_90pro [2188] allMis1
+Brachy_cell_90pro [1919] anoCar2
+Brachy_cell_90pro [2468] bearded_dragon
+Brachy_cell_90pro [1885] brown_anole
+Brachy_cell_90pro [2354] crocodile
+Brachy_cell_90pro [2218] falcon
+Brachy_cell_90pro [2169] galGal6
+Brachy_cell_90pro [60292] hg38
+Brachy_cell_90pro [2706] komodo_dragon
+Brachy_cell_90pro [1384] loxAfr3
+Brachy_cell_90pro [2391] mm10
+Brachy_cell_90pro [2540] ostrichk
+
+Bracky_vessels [ 29049062 ] Brachy_cells_scaffolds_len10k
+Bracky_vessels [ 17618 ] brown_anole
+Bracky_vessels [ 24295 ] allMis1
+Bracky_vessels [ 21859 ] bearded_dragon
+Bracky_vessels [ 13477 ] mm10
+Bracky_vessels [ 53203 ] hg38
+Bracky_vessels [ 20828 ] anoCar2
+Bracky_vessels [ 17409 ] crocodile
+Bracky_vessels [ 17257 ] falcon
+Bracky_vessels [ 13043 ] loxAfr3
+Bracky_vessels [ 15460 ] komodo_dragon
+Bracky_vessels [ 13152 ] ostrich
+Bracky_vessels [ 15454 ] galGal6
+
+Bracky_vessels_90prop [ 28591793 ] Brachy_cells_scaffolds_len10k
+Bracky_vessels_90prop [ 38323 ] hg38
+Bracky_vessels_90prop [ 616 ] loxAfr3
+Bracky_vessels_90prop [ 1033 ] falcon
+Bracky_vessels_90prop [ 997 ] allMis1
+Bracky_vessels_90prop [ 984 ] anoCar2
+Bracky_vessels_90prop [ 1178 ] bearded_dragon
+Bracky_vessels_90prop [ 1234 ] mm10
+Bracky_vessels_90prop [ 1111 ] komodo_dragon
+Bracky_vessels_90prop [ 1076 ] crocodile
+Bracky_vessels_90prop [ 937 ] brown_anole
+Bracky_vessels_90prop [ 1008 ] galGal6
+Bracky_vessels_90prop [ 1079 ] ostrich
+
+```
+
+</details>
+
+## Installation
 ```
 mamba env update -n dino_env -f dino_env.yml
 mamba activate dino_env
 dino list ## list tools
 dino <command> ## help
 ```
-
 ## Goals
 ### Profiling of FASTQ Read Contents
 - [x] Lengths of trimmed and merged reads

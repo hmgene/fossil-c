@@ -1,0 +1,95 @@
+<svg height="600" width="600" xmlns="http://www.w3.org/2000/svg">
+<title>Your Diagram Title</title>
+<!-- Generated with SankeyMATIC: 12/17/2025, 12:20:14 PM -->
+<rect height="600" width="600" fill="#ffffff"></rect>
+<g transform="translate(121.23723,18)">
+<g id="sankey_flows">
+<path id="flow1" d="M12 306.55466C51.31862 306.55466 51.31862 316.89862 90.63725 316.89862" fill="none" stroke-width="341.93242" stroke="#e377c2" opacity="0.45"><title>Bracky_cell → t.merged: 557,543,426</title></path>
+<path id="flow2" d="M102.63725 231.41551C141.95587 231.41551 141.95587 237.54413 181.27449 237.54413" fill="none" stroke-width="170.96621" stroke="#bcbd22" opacity="0.45"><title>t.merged → cf: 278,771,713</title></path>
+<path id="flow4" d="M193.27449 237.68108C232.59312 237.68108 232.59312 246.26743 271.91174 246.26743" fill="none" stroke-width="170.6923" stroke="#ff7f0e" opacity="0.45"><title>cf → cf_root: 278,325,086</title></path>
+<path id="flow0" d="M12 99.35725C51.31862 99.35725 51.31862 56.43546 90.63725 56.43546" fill="none" stroke-width="72.46241" stroke="#e377c2" opacity="0.45"><title>Bracky_cell → not_t.merged: 118,154,754</title></path>
+<path id="flow9" d="M283.91174 163.54076C323.23036 163.54076 323.23036 224.81189 362.54898 224.81189" fill="none" stroke-width="1.58848" stroke="#7f7f7f" opacity="0.45"><title>cf_root → Burkholderia: 2,590,115</title></path>
+<path id="flow5" d="M283.91174 161.28478C323.23036 161.28478 323.23036 62.75866 362.54898 62.75866" fill="none" stroke-width="1" stroke="#2ca02c" opacity="0.45"><title>cf_root → cf_Homo: 1,185,431</title></path>
+<path id="flow6" d="M12 540.10084v0.66517L90.63725 541.79575v-0.66517z" fill="#d62728" stroke-width="0.5" stroke="#d62728" opacity="0.45"><title>c_root → cf_unc_bacteria: 1,084,609</title></path>
+<path id="flow7" d="M283.91174 161.98087C323.23036 161.98087 323.23036 116.7205 362.54898 116.7205" fill="none" stroke-width="1" stroke="#8c564b" opacity="0.45"><title>cf_root → Mus: 1,084,601</title></path>
+<path id="flow8" d="M283.91174 162.52999C323.23036 162.52999 323.23036 170.53537 362.54898 170.53537" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>cf_root → Spirometra: 706,143</title></path>
+<path id="flow3" d="M193.27449 152.19798C232.59312 152.19798 232.59312 107.51858 271.91174 107.51858" fill="none" stroke-width="1" stroke="#1f77b4" opacity="0.45"><title>cf → cf_uc: 446,627</title></path>
+</g>
+<g id="sankey_nodes">
+<g class="node">
+<rect id="r0" class="for_r0" x="0" y="63.12605" height="414.39483" width="12" fill="#e377c2" fill-opacity="1"><title>Bracky_cell:
+675,698,180</title></rect>
+</g>
+<g class="node">
+<rect id="r1" class="for_r1" x="90.63725" y="20.20425" height="72.46241" width="12" fill="#7f7f7f" fill-opacity="1"><title>not_t.merged:
+118,154,754</title></rect>
+</g>
+<g class="node">
+<rect id="r2" class="for_r2" x="90.63725" y="145.93241" height="341.93242" width="12" fill="#bcbd22" fill-opacity="1"><title>t.merged:
+557,543,426</title></rect>
+</g>
+<g class="node">
+<rect id="r3" class="for_r3" x="181.27449" y="152.06102" height="170.96621" width="12" fill="#17becf" fill-opacity="1"><title>cf:
+278,771,713</title></rect>
+</g>
+<g class="node">
+<rect id="r4" class="for_r4" x="271.91174" y="107.38162" height="0.27391" width="12" fill="#1f77b4" fill-opacity="1"><title>cf_uc:
+446,627</title></rect>
+</g>
+<g class="node">
+<rect id="r5" class="for_r5" x="271.91174" y="160.92128" height="170.6923" width="12" fill="#ff7f0e" fill-opacity="1"><title>cf_root:
+278,325,086</title></rect>
+</g>
+<g class="node">
+<rect id="r6" class="for_r6" x="362.54898" y="62.39516" height="0.72701" width="12" fill="#2ca02c" fill-opacity="1"><title>cf_Homo:
+1,185,431</title></rect>
+</g>
+<g class="node">
+<rect id="r7" class="for_r7" x="0" y="540.10084" height="0.66517" width="12" fill="#d62728" fill-opacity="1"><title>c_root:
+1,084,609</title></rect>
+</g>
+<g class="node">
+<rect id="r8" class="for_r8" x="90.63725" y="541.13058" height="0.66517" width="12" fill="#9467bd" fill-opacity="1"><title>cf_unc_bacteria:
+1,084,609</title></rect>
+</g>
+<g class="node">
+<rect id="r9" class="for_r9" x="362.54898" y="116.38792" height="0.66517" width="12" fill="#8c564b" fill-opacity="1"><title>Mus:
+1,084,601</title></rect>
+</g>
+<g class="node">
+<rect id="r10" class="for_r10" x="362.54898" y="170.31883" height="0.43307" width="12" fill="#e377c2" fill-opacity="1"><title>Spirometra:
+706,143</title></rect>
+</g>
+<g class="node">
+<rect id="r11" class="for_r11" x="362.54898" y="224.01765" height="1.58848" width="12" fill="#7f7f7f" fill-opacity="1"><title>Burkholderia:
+2,590,115</title></rect>
+</g>
+</g>
+<g id="sankey_labels" font-family="sans-serif" font-size="16px" fill="#000000">
+<text text-anchor="middle" x="178.76277" y="577" font-size="12px" font-weight="400" fill="#336781">Made at SankeyMATIC.com</text>
+<rect id="label0_bg" class="for_r0" x="-109.23723" y="249.79846" width="107.60453" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label0" class="for_r0" text-anchor="end" x="-6.29754" y="270.32346" font-weight="400" font-size="14.4px" dy="-5.125">Bracky_cell<tspan x="-6.29754" dy="19.32" font-weight="400" font-size="17.6px">675,698,180</tspan></text>
+<rect id="label1_bg" class="for_r1" x="104.26995" y="35.91046" width="106.30765" height="41.12" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label1" class="for_r1" text-anchor="start" x="108.93479" y="56.43546" font-weight="400" font-size="14.4px" dy="-5.125">not_t.merged<tspan x="108.93479" dy="19.32" font-weight="400" font-size="17.6px">118,154,754</tspan></text>
+<rect id="label2_bg" class="for_r2" x="43.03491" y="296.37362" width="107.60453" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label2" class="for_r2" text-anchor="middle" x="96.63725" y="316.89862" font-weight="400" font-size="14.4px" dy="-5.125">t.merged<tspan x="96.63725" dy="19.32" font-weight="400" font-size="17.6px">557,543,426</tspan></text>
+<rect id="label3_bg" class="for_r3" x="133.67216" y="217.01913" width="107.60453" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label3" class="for_r3" text-anchor="middle" x="187.27449" y="237.54413" font-weight="400" font-size="14.4px" dy="-5.125">cf<tspan x="187.27449" dy="19.32" font-weight="400" font-size="17.6px">278,771,713</tspan></text>
+<rect id="label4_bg" class="for_r4" x="285.54445" y="86.99358" width="73.35453" height="41.12" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label4" class="for_r4" text-anchor="start" x="290.20928" y="107.51858" font-weight="400" font-size="14.4px" dy="-5.125">cf_uc<tspan x="290.20928" dy="19.32" font-weight="400" font-size="17.6px">446,627</tspan></text>
+<rect id="label5_bg" class="for_r5" x="224.3094" y="225.74243" width="107.60453" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label5" class="for_r5" text-anchor="middle" x="277.91174" y="246.26743" font-weight="400" font-size="14.4px" dy="-5.125">cf_root<tspan x="277.91174" dy="19.32" font-weight="400" font-size="17.6px">278,325,086</tspan></text>
+<rect id="label6_bg" class="for_r6" x="376.18168" y="42.23366" width="88.03422" height="41.12" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label6" class="for_r6" text-anchor="start" x="380.84652" y="62.75866" font-weight="400" font-size="14.4px" dy="-5.125">cf_Homo<tspan x="380.84652" dy="19.32" font-weight="400" font-size="17.6px">1,185,431</tspan></text>
+<rect id="label7_bg" class="for_r7" x="-89.66691" y="519.90841" width="88.03422" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label7" class="for_r7" text-anchor="end" x="-6.29754" y="540.43343" font-weight="400" font-size="14.4px" dy="-5.125">c_root<tspan x="-6.29754" dy="19.32" font-weight="400" font-size="17.6px">1,084,609</tspan></text>
+<rect id="label8_bg" class="for_r8" x="104.26995" y="520.93813" width="111.4014" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label8" class="for_r8" text-anchor="start" x="108.93479" y="541.46316" font-weight="400" font-size="14.4px" dy="-5.125">cf_unc_bacteria<tspan x="108.93479" dy="19.32" font-weight="400" font-size="17.6px">1,084,609</tspan></text>
+<rect id="label9_bg" class="for_r9" x="376.18168" y="96.1955" width="88.03422" height="41.12" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label9" class="for_r9" text-anchor="start" x="380.84652" y="116.7205" font-weight="400" font-size="14.4px" dy="-5.125">Mus<tspan x="380.84652" dy="19.32" font-weight="400" font-size="17.6px">1,084,601</tspan></text>
+<rect id="label10_bg" class="for_r10" x="376.18168" y="150.01037" width="80.15922" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label10" class="for_r10" text-anchor="start" x="380.84652" y="170.53537" font-weight="400" font-size="14.4px" dy="-5.125">Spirometra<tspan x="380.84652" dy="19.32" font-weight="400" font-size="17.6px">706,143</tspan></text>
+<rect id="label11_bg" class="for_r11" x="376.18168" y="204.28689" width="90.58109" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label11" class="for_r11" text-anchor="start" x="380.84652" y="224.81189" font-weight="400" font-size="14.4px" dy="-5.125">Burkholderia<tspan x="380.84652" dy="19.32" font-weight="400" font-size="17.6px">2,590,115</tspan></text>
+</g>
+</g></svg>

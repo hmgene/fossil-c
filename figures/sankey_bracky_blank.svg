@@ -1,0 +1,89 @@
+<svg height="600" width="600" xmlns="http://www.w3.org/2000/svg">
+<title>Your Diagram Title</title>
+<!-- Generated with SankeyMATIC: 12/17/2025, 11:56:29 AM -->
+<rect height="600" width="600" fill="#ffffff"></rect>
+<g transform="translate(111.44816,18)">
+<g id="sankey_flows">
+<path id="flow1" d="M12 318.67879C49.23952 318.67879 49.23952 328.38506 86.47904 328.38506" fill="none" stroke-width="210.63967" stroke="#e377c2" opacity="0.45"><title>Bracky_Blank → t.merged: 75,539,044</title></path>
+<path id="flow2" d="M98.47904 223.06523v105.31983L172.95809 329.43191v-105.31983z" fill="#bcbd22" stroke-width="0.5" stroke="#bcbd22" opacity="0.45"><title>t.merged → cf: 37,769,522</title></path>
+<path id="flow4" d="M184.95809 277.21067C222.19761 277.21067 222.19761 280.9352 259.43713 280.9352" fill="none" stroke-width="104.44248" stroke="#ff7f0e" opacity="0.45"><title>cf → cf_root: 37,454,889</title></path>
+<path id="flow0" d="M12 190.97623C49.23952 190.97623 49.23952 150.67783 86.47904 150.67783" fill="none" stroke-width="44.76545" stroke="#e377c2" opacity="0.45"><title>Bracky_Blank → not_t.merged: 16,053,668</title></path>
+<path id="flow5" d="M271.43713 237.96793C308.67665 237.96793 308.67665 200.43144 345.91617 200.43144" fill="none" stroke-width="18.50794" stroke="#2ca02c" opacity="0.45"><title>cf_root → cf_Pinus: 6,637,267</title></path>
+<path id="flow6" d="M271.43713 253.37611C308.67665 253.37611 308.67665 265.8443 345.91617 265.8443" fill="none" stroke-width="12.30843" stroke="#d62728" opacity="0.45"><title>cf_root → cf_Komagataella: 4,414,018</title></path>
+<path id="flow7" d="M271.43713 260.55165C308.67665 260.55165 308.67665 323.02451 345.91617 323.02451" fill="none" stroke-width="2.04264" stroke="#9467bd" opacity="0.45"><title>cf_root → cf_Homo: 732,525</title></path>
+<path id="flow8" d="M271.43713 262.29329C308.67665 262.29329 308.67665 374.77083 345.91617 374.77083" fill="none" stroke-width="1.44066" stroke="#8c564b" opacity="0.45"><title>cf_root → cf_Cyprinus: 516,645</title></path>
+<path id="flow9" d="M271.43713 263.68129C308.67665 263.68129 308.67665 426.1635 345.91617 426.1635" fill="none" stroke-width="1.33534" stroke="#e377c2" opacity="0.45"><title>cf_root → Mus: 478,875</title></path>
+<path id="flow3" d="M184.95809 224.55075C222.19761 224.55075 222.19761 178.27061 259.43713 178.27061" fill="none" stroke-width="1" stroke="#1f77b4" opacity="0.45"><title>cf → cf_uc: 314,633</title></path>
+</g>
+<g id="sankey_nodes">
+<g class="node">
+<rect id="r0" class="for_r0" x="0" y="168.59351" height="255.40512" width="12" fill="#e377c2" fill-opacity="1"><title>Bracky_Blank:
+91,592,712</title></rect>
+</g>
+<g class="node">
+<rect id="r1" class="for_r1" x="86.47904" y="128.2951" height="44.76545" width="12" fill="#7f7f7f" fill-opacity="1"><title>not_t.merged:
+16,053,668</title></rect>
+</g>
+<g class="node">
+<rect id="r2" class="for_r2" x="86.47904" y="223.06523" height="210.63967" width="12" fill="#bcbd22" fill-opacity="1"><title>t.merged:
+75,539,044</title></rect>
+</g>
+<g class="node">
+<rect id="r3" class="for_r3" x="172.95809" y="224.11208" height="105.31983" width="12" fill="#17becf" fill-opacity="1"><title>cf:
+37,769,522</title></rect>
+</g>
+<g class="node">
+<rect id="r4" class="for_r4" x="259.43713" y="177.83193" height="0.87735" width="12" fill="#1f77b4" fill-opacity="1"><title>cf_uc:
+314,633</title></rect>
+</g>
+<g class="node">
+<rect id="r5" class="for_r5" x="259.43713" y="228.71396" height="104.44248" width="12" fill="#ff7f0e" fill-opacity="1"><title>cf_root:
+37,454,889</title></rect>
+</g>
+<g class="node">
+<rect id="r6" class="for_r6" x="345.91617" y="191.17747" height="18.50794" width="12" fill="#2ca02c" fill-opacity="1"><title>cf_Pinus:
+6,637,267</title></rect>
+</g>
+<g class="node">
+<rect id="r7" class="for_r7" x="345.91617" y="259.69008" height="12.30843" width="12" fill="#d62728" fill-opacity="1"><title>cf_Komagataella:
+4,414,018</title></rect>
+</g>
+<g class="node">
+<rect id="r8" class="for_r8" x="345.91617" y="322.00319" height="2.04264" width="12" fill="#9467bd" fill-opacity="1"><title>cf_Homo:
+732,525</title></rect>
+</g>
+<g class="node">
+<rect id="r9" class="for_r9" x="345.91617" y="374.0505" height="1.44066" width="12" fill="#8c564b" fill-opacity="1"><title>cf_Cyprinus:
+516,645</title></rect>
+</g>
+<g class="node">
+<rect id="r10" class="for_r10" x="345.91617" y="425.49583" height="1.33534" width="12" fill="#e377c2" fill-opacity="1"><title>Mus:
+478,875</title></rect>
+</g>
+</g>
+<g id="sankey_labels" font-family="sans-serif" font-size="16px" fill="#000000">
+<text text-anchor="middle" x="188.55184" y="577" font-size="12px" font-weight="400" fill="#336781">Made at SankeyMATIC.com</text>
+<rect id="label0_bg" class="for_r0" x="-99.44816" y="275.77108" width="97.81547" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label0" class="for_r0" text-anchor="end" x="-6.29754" y="296.29607" font-weight="400" font-size="14.4px" dy="-5.125">Bracky_Blank<tspan x="-6.29754" dy="19.32" font-weight="400" font-size="17.6px">91,592,712</tspan></text>
+<rect id="label1_bg" class="for_r1" x="100.11174" y="130.15283" width="97.81547" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label1" class="for_r1" text-anchor="start" x="104.77658" y="150.67783" font-weight="400" font-size="14.4px" dy="-5.125">not_t.merged<tspan x="104.77658" dy="19.32" font-weight="400" font-size="17.6px">16,053,668</tspan></text>
+<rect id="label2_bg" class="for_r2" x="43.77124" y="307.86007" width="97.81547" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label2" class="for_r2" text-anchor="middle" x="92.47904" y="328.38506" font-weight="400" font-size="14.4px" dy="-5.125">t.merged<tspan x="92.47904" dy="19.32" font-weight="400" font-size="17.6px">75,539,044</tspan></text>
+<rect id="label3_bg" class="for_r3" x="130.25029" y="256.247" width="97.81547" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label3" class="for_r3" text-anchor="middle" x="178.95809" y="276.772" font-weight="400" font-size="14.4px" dy="-5.125">cf<tspan x="178.95809" dy="19.32" font-weight="400" font-size="17.6px">37,769,522</tspan></text>
+<rect id="label4_bg" class="for_r4" x="273.06984" y="157.74561" width="73.35453" height="41.11999" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label4" class="for_r4" text-anchor="start" x="277.73467" y="178.27061" font-weight="400" font-size="14.4px" dy="-5.125">cf_uc<tspan x="277.73467" dy="19.32" font-weight="400" font-size="17.6px">314,633</tspan></text>
+<rect id="label5_bg" class="for_r5" x="216.72932" y="260.41021" width="97.81547" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label5" class="for_r5" text-anchor="middle" x="265.43713" y="280.9352" font-weight="400" font-size="14.4px" dy="-5.125">cf_root<tspan x="265.43713" dy="19.32" font-weight="400" font-size="17.6px">37,454,889</tspan></text>
+<rect id="label6_bg" class="for_r6" x="359.54887" y="179.90644" width="88.03422" height="41.11999" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label6" class="for_r6" text-anchor="start" x="364.21371" y="200.43144" font-weight="400" font-size="14.4px" dy="-5.125">cf_Pinus<tspan x="364.21371" dy="19.32" font-weight="400" font-size="17.6px">6,637,267</tspan></text>
+<rect id="label7_bg" class="for_r7" x="359.54887" y="245.3193" width="117.00297" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label7" class="for_r7" text-anchor="start" x="364.21371" y="265.8443" font-weight="400" font-size="14.4px" dy="-5.125">cf_Komagataella<tspan x="364.21371" dy="19.32" font-weight="400" font-size="17.6px">4,414,018</tspan></text>
+<rect id="label8_bg" class="for_r8" x="359.54887" y="302.49951" width="73.35453" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label8" class="for_r8" text-anchor="start" x="364.21371" y="323.02451" font-weight="400" font-size="14.4px" dy="-5.125">cf_Homo<tspan x="364.21371" dy="19.32" font-weight="400" font-size="17.6px">732,525</tspan></text>
+<rect id="label9_bg" class="for_r9" x="359.54887" y="354.24584" width="85.76078" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label9" class="for_r9" text-anchor="start" x="364.21371" y="374.77083" font-weight="400" font-size="14.4px" dy="-5.125">cf_Cyprinus<tspan x="364.21371" dy="19.32" font-weight="400" font-size="17.6px">516,645</tspan></text>
+<rect id="label10_bg" class="for_r10" x="359.54887" y="405.63851" width="73.35453" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label10" class="for_r10" text-anchor="start" x="364.21371" y="426.1635" font-weight="400" font-size="14.4px" dy="-5.125">Mus<tspan x="364.21371" dy="19.32" font-weight="400" font-size="17.6px">478,875</tspan></text>
+</g>
+</g></svg>
