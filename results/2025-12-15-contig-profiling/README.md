@@ -87,6 +87,8 @@
 
 [Bracky\_Blank table](data/alignment_proportion_Brachy_Blank.csv.gz)
 [Bracky\_cells table](data/alignment_proportion_Brachy_cells.csv.gz%22)
+[Bracky\_vessels
+table](data/alignment_proportion_Brachy_vessels.csv.gz%22)
 
 -   In the cell samples, Human(118350) and AllMis1(98404) are the top
     two mapped taxa,.
