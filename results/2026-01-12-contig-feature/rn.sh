@@ -1,3 +1,7 @@
+cat  ../../bigdata/augustus/Brachy_cells.gff  | grep -v "^#" | hm gff2bed12 -  | awk -v OFS="\t" '$10>2{$1="chr1";print $0;}' | head -n 100 > Brachy_cells_multi_exon.bed 
+
+
+
 import torch
 from evo2 import Evo2
 
