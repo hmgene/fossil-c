@@ -8,6 +8,9 @@
 7. Make sure the blanks and sediments for all samples are mapping mainly to *Komagataella phaffii*, the primary yeast used for producing recombinant proteins, including DNA polymerases that would have come in the kits used to amplify the libraries.
 
 ### Results
+
+** Workflow ** 
+```
 Ancient DNA Reads
         ↓
 De novo Assembly
@@ -36,4 +39,4 @@ Integrated Evidence:
   - Evolutionary signal
   - Species consistency
   - aDNA damage pattern
-###
+```
