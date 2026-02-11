@@ -5,7 +5,7 @@ fn(){
     r=${1##*\@};r=bigdata/bwa/idx/${r%.dedup.*}.fa; ## genome 
     o=bigdata/mapdamage/$n; mkdir -p $o;
     [ -s $o/Fragmisincorporation_plot.pdf ] || echo "#!/bin/bash
-        mapDamage --single-strand  -i $1 -r $r -d $o --merge-reference-sequences" #| sbatch --mem=24g -o $o/slurm.out -J $n.$r.md
+        mapDamage --single-strand  -i $1 -r $r -d $o --merge-reference-sequences" | sbatch --mem=128g -o $o/slurm.out -J $n.$r.md
 
 };export -f fn
 
