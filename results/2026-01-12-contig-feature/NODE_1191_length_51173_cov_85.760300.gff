@@ -1,0 +1,42 @@
+# ----- prediction on sequence number 1191 (length = 51173, name = NODE_1191_length_51173_cov_85.760300) -----
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	gene	1	29167	1	+	.	g66864
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	transcript	1	29167	.	+	.	g66864.t1
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	intron	1661	1793	.	+	.	transcript_id "g66864.t1"; gene_id "g66864";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	intron	3801	10470	.	+	.	transcript_id "g66864.t1"; gene_id "g66864";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	intron	10687	11337	.	+	.	transcript_id "g66864.t1"; gene_id "g66864";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	intron	11582	16675	.	+	.	transcript_id "g66864.t1"; gene_id "g66864";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	intron	18309	18541	.	+	.	transcript_id "g66864.t1"; gene_id "g66864";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	intron	18678	21137	.	+	.	transcript_id "g66864.t1"; gene_id "g66864";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	intron	21335	24024	.	+	.	transcript_id "g66864.t1"; gene_id "g66864";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	intron	24299	24538	.	+	.	transcript_id "g66864.t1"; gene_id "g66864";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	intron	25859	26248	.	+	.	transcript_id "g66864.t1"; gene_id "g66864";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	intron	27574	29026	.	+	.	transcript_id "g66864.t1"; gene_id "g66864";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	CDS	1	1660	.	+	0	transcript_id "g66864.t1"; gene_id "g66864";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	CDS	1794	3800	.	+	2	transcript_id "g66864.t1"; gene_id "g66864";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	CDS	10471	10686	.	+	2	transcript_id "g66864.t1"; gene_id "g66864";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	CDS	11338	11581	.	+	2	transcript_id "g66864.t1"; gene_id "g66864";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	CDS	16676	18308	.	+	1	transcript_id "g66864.t1"; gene_id "g66864";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	CDS	18542	18677	.	+	0	transcript_id "g66864.t1"; gene_id "g66864";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	CDS	21138	21334	.	+	2	transcript_id "g66864.t1"; gene_id "g66864";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	CDS	24025	24298	.	+	0	transcript_id "g66864.t1"; gene_id "g66864";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	CDS	24539	25858	.	+	2	transcript_id "g66864.t1"; gene_id "g66864";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	CDS	26249	27573	.	+	2	transcript_id "g66864.t1"; gene_id "g66864";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	CDS	29027	29167	.	+	0	transcript_id "g66864.t1"; gene_id "g66864";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	stop_codon	29165	29167	.	+	0	transcript_id "g66864.t1"; gene_id "g66864";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	gene	30102	32546	1	+	.	g66865
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	transcript	30102	32546	.	+	.	g66865.t1
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	start_codon	30102	30104	.	+	0	transcript_id "g66865.t1"; gene_id "g66865";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	CDS	30102	32546	.	+	0	transcript_id "g66865.t1"; gene_id "g66865";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	stop_codon	32544	32546	.	+	0	transcript_id "g66865.t1"; gene_id "g66865";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	gene	32621	33595	1	+	.	g66866
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	transcript	32621	33595	.	+	.	g66866.t1
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	start_codon	32621	32623	.	+	0	transcript_id "g66866.t1"; gene_id "g66866";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	CDS	32621	33595	.	+	0	transcript_id "g66866.t1"; gene_id "g66866";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	stop_codon	33593	33595	.	+	0	transcript_id "g66866.t1"; gene_id "g66866";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	gene	35576	42113	1	-	.	g66867
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	transcript	35576	42113	.	-	.	g66867.t1
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	stop_codon	35576	35578	.	-	0	transcript_id "g66867.t1"; gene_id "g66867";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	intron	36040	39967	.	-	.	transcript_id "g66867.t1"; gene_id "g66867";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	CDS	35576	36039	.	-	2	transcript_id "g66867.t1"; gene_id "g66867";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	CDS	39968	42113	.	-	0	transcript_id "g66867.t1"; gene_id "g66867";
+NODE_1191_length_51173_cov_85.760300	AUGUSTUS	start_codon	42111	42113	.	-	0	transcript_id "g66867.t1"; gene_id "g66867";
