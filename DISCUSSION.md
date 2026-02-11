@@ -1,5 +1,9 @@
 ## Discussion Points
 1. Examine contigs for coding potential. Hyunmin has done some of this but hasn't presented it to anyone yet.  
+
+Evo2 Species Prediction Example : Example exons of Bracky_cells_Contigs (selected by the max number of exons )
+<img width="1388" height="689" alt="image" src="https://github.com/user-attachments/assets/761b0c98-0737-4ad2-ba95-5f4af3aa74a5" />
+
 2. Look for specific genes common among all vertebrates inside the contigs (for example, histone genes).  
 3. Discuss the possibility of detecting DNA damage; normally this requires a reference genome. Can the de novo scaffold work for this, assuming most base pairs are towards the middle of the DNA inserts and therefore not mutated?  
 
