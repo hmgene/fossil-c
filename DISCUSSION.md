@@ -1,3 +1,10 @@
+## To-Do List
+
+- Re-run BWA and generate Sankey plots including Trex_cells and Trex_vessels contigs
+- Perform gene type identification
+- Conduct damage profiling analysis
+- Add any missing tasks
+
 ## Discussion Points
 1. Examine contigs for coding potential. Hyunmin has done some of this but hasn't presented it to anyone yet.  
 <details><summary>ContigProfiles</summary>
