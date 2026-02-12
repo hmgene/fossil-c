@@ -1,5 +1,21 @@
 ## Discussion Points
 1. Examine contigs for coding potential. Hyunmin has done some of this but hasn't presented it to anyone yet.  
+<details>
+        <summary>Deterministic Approach</summary>
+- Annotated gene features on Bracky_cells contigs (>10 kb) using AUGUSTUS.
+- Converted the resulting GFF files to BED12 format, modifying the chromosome field to “chr1” to accommodate genes accumulated across different contigs.
+- Visualized the annotated genes in a genome browser.
+
+- Transcript profiles (gene length, exons)
+| Bracky Blank | Bracky Cells |
+| ------- | --------|
+| ![png](figures/contour_bracky_blank.png) | ![png](figures/contour_bracky_cells.png) |
+
+- Semi-genome gene shapes (genes with a least 3 exons)
+
+<img width="917" height="436" alt="image" src="https://github.com/user-attachments/assets/b5517bba-26ba-4f06-9b03-9cefa2f83b6e" />
+</details>
+
 
 Evo2 Species Prediction Example : Example exons of Bracky_cells_Contigs (selected by the max number of exons )
 <img width="1388" height="689" alt="image" src="https://github.com/user-attachments/assets/761b0c98-0737-4ad2-ba95-5f4af3aa74a5" />
