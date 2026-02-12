@@ -41,6 +41,25 @@ Evo2 Species Prediction Example : Example exons of Bracky_cells_Contigs (selecte
 
 4. Revisit known SINE/LINE divergence between reptiles and birds, and come up with a bioinformatic way to test this in our samples.  
 5. See if the T-rex cell scaffold is the main target of T-Rex blood vessel DNA reads, as we saw with Brachy (Hyunmin may be working on this already).  
+
+<details>
+<summary>Spade results</summary>
+```
+/mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/spades/Brachy_Blank
+/mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/spades/Brachy_cells
+/mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/spades/Brachy_c_sedi
+/mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/spades/Brachy_vessels
+/mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/spades/Brachy_v_sedi
+/mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/spades/scaffold.info.txt.gz
+/mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/spades/Trex_cells
+/mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/spades/Trex_c_sedi
+/mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/spades/Trex_ExtrBlank
+/mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/spades/Trex_vessels
+/mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/spades/Trex_v_sedi
+
+```
+</details>
+
 6. Look over centrifuge results with a critical eye: what amount of bp matches are required when finding a match? Why are there so many reads that are "classified" into a clade but not classified into a species?  
 7. Make sure the blanks and sediments for all samples are mapping mainly to *Komagataella phaffii*, the primary yeast used for producing recombinant proteins, including DNA polymerases that would have come in the kits used to amplify the libraries.
 
