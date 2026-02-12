@@ -50,6 +50,30 @@ Evo2 Species Prediction Example : Example exons of Bracky_cells_Contigs (selecte
         
 </details>
 
+<details><summary>Mydamag Results</summary>
+
+       **Merged Alignments of Bracky_cells on Bracky_cell_contigs**
+```
+counts	pos	query	ref
+   1656 0	A	G
+   1610 0	T	C
+   1593 80	T	C
+   1484 80	A	G
+   1439 60	T	C
+   1392 20	T	C
+   1353 20	A	G
+   1318 40	A	G
+   1302 60	A	G
+   1299 40	T	C
+    659 0	T	G
+    646 80	T	G
+    629 0	A	C
+    596 80	A	C
+    591 60	T	G
+```
+
+</details>
+
 4. Revisit known SINE/LINE divergence between reptiles and birds, and come up with a bioinformatic way to test this in our samples.  
 5. See if the T-rex cell scaffold is the main target of T-Rex blood vessel DNA reads, as we saw with Brachy (Hyunmin may be working on this already).  
 
