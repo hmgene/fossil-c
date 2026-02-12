@@ -35,7 +35,7 @@ Evo2 Species Prediction Example : Example exons of Bracky_cells_Contigs (selecte
 3. Discuss the possibility of detecting DNA damage; normally this requires a reference genome. Can the de novo scaffold work for this, assuming most base pairs are towards the middle of the DNA inserts and therefore not mutated?  
 
 | Alignment | Bracky_cells Contig (>20k)  | Elephant |
-| :-: | :-: |
+| :-: | :-: | :-: |
 | Bracky_vessels| <img width="495" height="491" alt="image" src="https://github.com/user-attachments/assets/6139fd0e-023a-432c-836a-1142c696496d" /> | N.A |
 | Mamoth | N.A | <img width="462" height="450" alt="image" src="https://github.com/user-attachments/assets/e96ba3aa-eed2-4b30-bed4-4ca6d1f3ce65" /> |
 
