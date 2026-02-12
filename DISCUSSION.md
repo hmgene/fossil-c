@@ -7,9 +7,10 @@
 - Visualized the annotated genes in a genome browser.
 
 - Transcript profiles (gene length, exons)
+  
 | Bracky Blank | Bracky Cells |
 | ------- | --------|
-| ![png](figures/contour_bracky_blank.png) | ![png](figures/contour_bracky_cells.png) |
+| ![png](results/2026-01-12-contig-feature/figures/contour_bracky_blank.png) | ![png](results/2026-01-12-contig-feature/figures/figures/contour_bracky_cells.png) |
 
 - Semi-genome gene shapes (genes with a least 3 exons)
 
