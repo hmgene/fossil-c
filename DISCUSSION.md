@@ -8,7 +8,7 @@
 </details>
 
 <details>
-<summary>Deterministic Approach</summary>
+<summary>Search Approach</summary>
         
 - Annotated gene features on Bracky_cells contigs (>10 kb) using AUGUSTUS (gff files).
   ```
@@ -30,7 +30,7 @@
 </details>
 
 <details>
-        <summary>Probabilistic Approach</summary>
+        <summary>Posterior Generative Approach</summary>
 
 
 Evo2 Species Prediction Example : Example exons of Bracky_cells_Contigs (selected by the max number of exons )
