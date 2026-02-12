@@ -44,6 +44,7 @@ Evo2 Species Prediction Example : Example exons of Bracky_cells_Contigs (selecte
 
 <details>
 <summary>Spade results</summary>
+        
 ```
 /mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/spades/Brachy_Blank
 /mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/spades/Brachy_cells
@@ -58,6 +59,7 @@ Evo2 Species Prediction Example : Example exons of Bracky_cells_Contigs (selecte
 /mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/spades/Trex_v_sedi
 
 ```
+
 </details>
 
 6. Look over centrifuge results with a critical eye: what amount of bp matches are required when finding a match? Why are there so many reads that are "classified" into a clade but not classified into a species?  
