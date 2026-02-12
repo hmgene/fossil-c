@@ -1,5 +1,12 @@
 ## Discussion Points
 1. Examine contigs for coding potential. Hyunmin has done some of this but hasn't presented it to anyone yet.  
+<details><summary>ContigProfiles</summary>
+
+        **Contig Length and Depth**
+<img width="3600" height="1200" alt="image" src="https://github.com/user-attachments/assets/c6b6f5ed-584f-4272-bba5-651d5f3ef07d" />
+
+</details>
+
 <details>
 <summary>Deterministic Approach</summary>
         
