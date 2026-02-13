@@ -103,6 +103,8 @@ table](data/alignment_proportion_Brachy_vessels.csv.gz%22)
 > Scaffolds and contigs are identical in the bracky\_blank. Assembly of
 > contigs for the bracky\_cell sample is not yet complete.
 
+[contig\_len\_percentile.tsv](data/contig_len_percentile.tsv)
+
 <figure>
 <img src="figures/scaffold_dist.png" alt="png" />
 <figcaption aria-hidden="true">png</figcaption>
