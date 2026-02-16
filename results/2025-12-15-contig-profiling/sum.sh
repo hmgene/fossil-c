@@ -93,12 +93,16 @@ print "\t$val\n";
 # Print percentile interval rows
 ########################################
 my @sorted_samples = sort keys %samples;
-
 for (my $i=0; $i < @p; $i++) {
     my $start_val = ($i==0) ? $all_lengths[0] : $perc_boundaries{"GLOBAL"}->[$i-1];
     my $end_val   = $perc_boundaries{"GLOBAL"}->[$i];
 
-    printf "[%d,%d)", $start_val, $end_val;
+    # For the last percentile, make the interval closed [start,end]
+    if ($i == $#p) {
+        printf "[%d,%d]", $start_val, $end_val;
+    } else {
+        printf "[%d,%d)", $start_val, $end_val;
+    }
 
     foreach my $sample (@sorted_samples) {
         my $val = $perc_boundaries{$sample}->[$i];
