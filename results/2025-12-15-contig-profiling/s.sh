@@ -47,4 +47,4 @@ for (my $i = 0; $i < $n; $i += $bin_size) {
 }
 
      
-'
+' > data/contig_len_percentile.tsv 
