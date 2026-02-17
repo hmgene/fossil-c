@@ -1,11 +1,14 @@
+#!/bin/bash
 input=(
 #../../bigdata/spades/Brachy_cells/scaffolds.fasta 
 #../../bigdata/spades/Brachy_Blank/scaffolds.fasta
+ ../../bigdata/spades/Trex_{cells,vessels}/contigs.fasta
 )
 
 for i in ${input[@]};do
     n=`echo $i | cut -d"/" -f 5`;
-    o=${i/scaffolds.fasta/${n}_scaffolds_len10k.fasta};
+    o=${i%/*}/${n}_scaffolds_len10k.fasta;
+    [ ! -s $i -o -s $o ] && continue;
     echo "$i => $o";
     cat $i | perl -ne 'chomp; 
        # >NODE_1_length_330253_cov_13.040361
@@ -32,9 +35,10 @@ fn(){
 input=(
 #../../bigdata/spades/Brachy_Blank/Brachy_Blank_scaffolds_len10k.fasta 
 #../../bigdata/spades/Brachy_cells/Brachy_cells_scaffolds_len10k.fasta 
+../../bigdata/spades/Trex_*/*_len10k.fasta 
 )
-#parallel fn {} ::: ${input[@]}
-
+parallel fn {} ::: ${input[@]}
+exit;
 
 input=(
 	../../bigdata/leehom/Brachy_Blank.fq.gz
