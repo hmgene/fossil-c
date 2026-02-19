@@ -2,7 +2,7 @@
 input=(
 #../../bigdata/spades/Brachy_cells/scaffolds.fasta 
 #../../bigdata/spades/Brachy_Blank/scaffolds.fasta
- ../../bigdata/spades/Trex_{cells,vessels}/contigs.fasta
+# ../../bigdata/spades/Trex_{cells,vessels}/contigs.fasta
 )
 
 for i in ${input[@]};do

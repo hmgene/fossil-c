@@ -5,10 +5,11 @@ output=bigdata/bwa_scores_+contig
 mkdir -p $output
 ls $input | perl -pe 's#.*/([^@]+)@([^.]+).*#$1#' | sort -u | while read -r s; do
     o=$output/$s.tsv
-    [ -s $o ] || echo "#!/bin/bash
+    echo $o;continue;
+    [ -s $o ] && echo "#!/bin/bash
     parallel --line-buffer samtools view -q 20 {} ::: bigdata/bwa/results/$s@*.dedup.rg.bam |\
     dino sam2score - > $o
-    "  | sbatch --mem=64g -o $o.out 
+    " | sbatch --mem=94g -o $o.out 
 done
 
 exit
