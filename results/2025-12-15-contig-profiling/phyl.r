@@ -3,9 +3,8 @@ library(ggplot2)
 library(cowplot)
 library(tools)
 input="../../bigdata/bwa_scores_+contig/"
-#tsv_files <- list.files(input, pattern = "Brachy_(Blank|cells).*\\.tsv$", full.names = TRUE, recursive = F)
-#tsv_files <- list.files(input, pattern = "Brachy_(vessels).*\\.tsv$", full.names = TRUE, recursive = F)
-tsv_files <- list.files(input, pattern = "Trex_(cells|vessels).*\\.tsv$", full.names = TRUE, recursive = F)
+tsv_files <- list.files(input, pattern = "Brachy_(cells|vessels|Blank).*\\.tsv$", full.names = TRUE, recursive = F)
+#tsv_files <- list.files(input, pattern = "Trex_(cells|vessels).*\\.tsv$", full.names = TRUE, recursive = F)
 pattern_order <- c("cells", "vessels", "c_sedi", "v_sedi", "blank")
 tsv_files<- tsv_files[order(sapply(tsv_files, function(x) {
   x_lower <- tolower(basename(x))
