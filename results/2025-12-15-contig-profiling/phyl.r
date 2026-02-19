@@ -52,7 +52,7 @@ for (grp in names(groups)) {
       theme( plot.title = element_text(hjust = 0.5), legend.title = element_blank())
 
     if (!dir.exists("figures")) dir.create("figures", recursive = TRUE)
-    ggsave(paste0("figures/alignment_proportion_",sample_name,".png"), plot = p, width = 6, height = 4, dpi = 300)
+    ggsave(paste0("figures/alignment_proportion_",sample_name,".png"), plot = p, width = 6, height = 6, dpi = 300)
 
     dt_norm <- dt_best %>% group_by(ref_label) %>%
       summarise( dens = list(density(best_score / read_len, adjust = 1.2)), .groups = "drop") %>%
@@ -68,7 +68,7 @@ for (grp in names(groups)) {
       theme_minimal(base_size = 6) +
       theme( plot.title = element_text(hjust = 0.5), legend.title = element_blank())
     if (!dir.exists("figures")) dir.create("figures", recursive = TRUE)
-    ggsave(paste0("figures/alignment_proportion_norm_",sample_name,".png"), plot = p1, width = 6, height = 4, dpi = 300)
+    ggsave(paste0("figures/alignment_proportion_norm_",sample_name,".png"), plot = p1, width = 6, height = 6, dpi = 300)
 
   }
 }

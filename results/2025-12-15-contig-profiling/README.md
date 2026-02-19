@@ -65,15 +65,19 @@
 
 <table>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
 </colgroup>
 <thead>
 <tr>
 <th>Bracky Blank</th>
 <th>Bracky Cells</th>
 <th>Bracky Vessels</th>
+<th>Trex Cells</th>
+<th>Trex Vessels</th>
 </tr>
 </thead>
 <tbody>
@@ -81,6 +85,8 @@
 <td><img src="figures/alignment_proportion_Brachy_Blank.png" /></td>
 <td><img src="figures/alignment_proportion_Brachy_cells.png" /></td>
 <td><img src="figures/alignment_proportion_Brachy_vessels.png" /></td>
+<td><img src="figures/alignment_proportion_Trex_cells.png" /></td>
+<td><img src="figures/alignment_proportion_Trex_vessels.png" /></td>
 </tr>
 </tbody>
 </table>
@@ -88,7 +94,9 @@
 [Bracky\_Blank table](data/alignment_proportion_Brachy_Blank.csv.gz)
 [Bracky\_cells table](data/alignment_proportion_Brachy_cells.csv.gz%22)
 [Bracky\_vessels
-table](data/alignment_proportion_Brachy_vessels.csv.gz%22)
+table](data/alignment_proportion_Brachy_vessels.csv.gz%22) [Trex\_cells
+table](data/alignment_proportion_Trex_cells.csv.gz%22) [Trex\_vessels
+table](data/alignment_proportion_Trex_vessels.csv.gz%22)
 
 -   In the cell samples, Human(118350) and AllMis1(98404) are the top
     two mapped taxa,.
