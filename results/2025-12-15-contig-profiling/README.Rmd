@@ -39,7 +39,9 @@ $$
 | --- | --- | --- | --- | --- |
 | Bracky_Blank | 91592712 | 75539044 | 37769522 | 2559021 |
 | Bracky_cells | 675698180 | 557543426 | 278771713 | 83688488 |
-| Bracky_vessels | 327279862 | 315134305 | 157567152 | 29292117|
+| Bracky_vessels | 327279862 | 315134305 | 157567152 | 29292117 |
+| Trex_cells | 372679752 | 214655295 | 107327648 | 14415549 |
+| Trex_vessels | 477581256 | 265159440 |132579720 | 17602948 |
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
 imgs <- c("figures/alignment_proportion_Brachy_Blank.png",
