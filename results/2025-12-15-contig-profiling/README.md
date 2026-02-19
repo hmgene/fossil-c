@@ -60,6 +60,20 @@
 <td>157567152</td>
 <td>29292117</td>
 </tr>
+<tr>
+<td>Trex_cells</td>
+<td>372679752</td>
+<td>214655295</td>
+<td>107327648</td>
+<td>14415549</td>
+</tr>
+<tr>
+<td>Trex_vessels</td>
+<td>477581256</td>
+<td>265159440</td>
+<td>132579720</td>
+<td>17602948</td>
+</tr>
 </tbody>
 </table>
 
