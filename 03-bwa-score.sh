@@ -4,12 +4,12 @@ input="bigdata/bwa/results/*.dedup.rg.bam"
 output=bigdata/bwa_scores_+contig
 mkdir -p $output
 ls $input | perl -pe 's#.*/([^@]+)@([^.]+).*#$1#' | sort -u | while read -r s; do
+    [ $s == "Brachy_vessels" ] || continue;
     o=$output/$s.tsv
-    echo $o;continue;
     [ -s $o ] && echo "#!/bin/bash
     parallel --line-buffer samtools view -q 20 {} ::: bigdata/bwa/results/$s@*.dedup.rg.bam |\
     dino sam2score - > $o
-    " | sbatch --mem=94g -o $o.out 
+    " #| sbatch --mem=94g -o $o.out 
 done
 
 exit

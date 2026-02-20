@@ -1,8 +1,10 @@
 #!/bin/bash
 input=(
 #../../bigdata/spades/Brachy_cells/scaffolds.fasta 
+#../../bigdata/spades/Brachy_vessels/scaffolds.fasta 
 #../../bigdata/spades/Brachy_Blank/scaffolds.fasta
 # ../../bigdata/spades/Trex_{cells,vessels}/contigs.fasta
+# ../../bigdata/spades/Trex_cells/scaffolds.fasta
 )
 
 for i in ${input[@]};do
@@ -35,7 +37,8 @@ fn(){
 input=(
 #../../bigdata/spades/Brachy_Blank/Brachy_Blank_scaffolds_len10k.fasta 
 #../../bigdata/spades/Brachy_cells/Brachy_cells_scaffolds_len10k.fasta 
-../../bigdata/spades/Trex_*/*_len10k.fasta 
+#../../bigdata/spades/Trex_*/*_len10k.fasta 
+../../bigdata/spades/Brachy_vessels/Brachy_vessels_scaffolds_len10k.fasta 
 )
 parallel fn {} ::: ${input[@]}
 exit;
