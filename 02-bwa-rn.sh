@@ -28,7 +28,7 @@ for j in ${idx[@]};do
     if [ -s $o.dedup.rg.bam ];then
         echo "$o exists!"; continue;
     fi
-	echo "#!/bin/bash -l
+	[ -s $o ] || echo "#!/bin/bash -l
 	mamba activate dino_env
 
 	bwa aln $j $i -t 24 -n 0.01 -l 1000 -o 2 > $o.sai

@@ -131,3 +131,10 @@ table](data/alignment_proportion_Trex_vessels.csv.gz%22)
 <img src="figures/scaffold_dist.png" alt="png" />
 <figcaption aria-hidden="true">png</figcaption>
 </figure>
+
+### Sankey Plot of BWA + Scalffolds
+
+<figure>
+<img src="figures/sankey.svg" alt="svg" />
+<figcaption aria-hidden="true">svg</figcaption>
+</figure>

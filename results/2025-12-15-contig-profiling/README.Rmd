@@ -78,5 +78,7 @@ cat("| ", paste0("![](", imgs, ")", collapse = " | "), " |\n")
 ![png](figures/scaffold_dist.png)
 
 
+### Sankey Plot of BWA + Scalffolds
 
+![svg](figures/sankey.svg)
 
