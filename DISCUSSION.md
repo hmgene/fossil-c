@@ -1,6 +1,9 @@
 ## To-Do List
 
 - Re-run BWA and generate Sankey plots including Trex_cells and Trex_vessels contigs
+
+[view](https://github.com/hmgene/fossil-c/blob/main/results/2025-12-15-contig-profiling/figures/sankey.svg)
+
 - Perform gene type identification
 - Conduct damage profiling analysis
 - Add any missing tasks
