@@ -1,0 +1,252 @@
+<svg height="600" width="700" xmlns="http://www.w3.org/2000/svg">
+<title>Your Diagram Title</title>
+<!-- Generated with SankeyMATIC: 2/23/2026, 11:57:01 AM -->
+<rect height="600" width="700" fill="#ffffff"></rect>
+<g transform="translate(153.68451,18)">
+<g id="sankey_flows">
+<path id="flow20" d="M12 1.90841v174.43757L273.5841 174.43757v-174.43757z" fill="#e377c2" stroke-width="0.5" stroke="#e377c2" opacity="0.45"><title>Brachy_cells → Brachy_cells_scaffolds_len10k: 82,651,637</title></path>
+<path id="flow39" d="M12 261.23684C142.79205 261.23684 142.79205 204.81437 273.5841 204.81437" fill="none" stroke-width="60.75361" stroke="#7f7f7f" opacity="0.45"><title>Brachy_vessels → Brachy_cells_scaffolds_len10k: 28,786,147</title></path>
+<path id="flow40" d="M12 291.61365v47.45301L273.5841 339.90153v-47.45301z" fill="#7f7f7f" stroke-width="0.5" stroke="#7f7f7f" opacity="0.45"><title>Brachy_vessels → Brachy_vessels_scaffolds_len10k: 22,484,082</title></path>
+<path id="flow21" d="M12 198.27505C142.79205 198.27505 142.79205 270.51944 273.5841 270.51944" fill="none" stroke-width="43.85816" stroke="#e377c2" opacity="0.45"><title>Brachy_cells → Brachy_vessels_scaffolds_len10k: 20,780,780</title></path>
+<path id="flow81" d="M12 441.31377C142.79205 441.31377 142.79205 462.14897 273.5841 462.14897" fill="none" stroke-width="22.89073" stroke="#17becf" opacity="0.45"><title>Trex_vessels → Trex_cells_scaffolds_len10k: 10,846,038</title></path>
+<path id="flow62" d="M12 483.62C142.79205 483.62 142.79205 480.64475 273.5841 480.64475" fill="none" stroke-width="14.10084" stroke="#bcbd22" opacity="0.45"><title>Trex_cells → Trex_cells_scaffolds_len10k: 6,681,231</title></path>
+<path id="flow82" d="M12 455.77378C142.79205 455.77378 142.79205 500.26388 273.5841 500.26388" fill="none" stroke-width="6.02928" stroke="#17becf" opacity="0.45"><title>Trex_vessels → Trex_vessels_scaffolds_len10k: 2,856,781</title></path>
+<path id="flow57" d="M12 498.8454C142.79205 498.8454 142.79205 531.01276 273.5841 531.01276" fill="none" stroke-width="4.67541" stroke="#bcbd22" opacity="0.45"><title>Trex_cells → Brachy_Blank_scaffolds_len10k: 2,215,292</title></path>
+<path id="flow0" d="M12 526.16234C142.79205 526.16234 142.79205 535.29752 273.5841 535.29752" fill="none" stroke-width="3.89411" stroke="#e377c2" opacity="0.45"><title>Brachy_Blank → Brachy_Blank_scaffolds_len10k: 1,845,099</title></path>
+<path id="flow77" d="M12 424.24622C142.79205 424.24622 142.79205 237.06204 273.5841 237.06204" fill="none" stroke-width="3.74173" stroke="#17becf" opacity="0.45"><title>Trex_vessels → Brachy_cells_scaffolds_len10k: 1,772,899</title></path>
+<path id="flow63" d="M12 492.36361C142.79205 492.36361 142.79205 504.97171 273.5841 504.97171" fill="none" stroke-width="3.38637" stroke="#bcbd22" opacity="0.45"><title>Trex_cells → Trex_vessels_scaffolds_len10k: 1,604,525</title></path>
+<path id="flow60" d="M12 502.44144C142.79205 502.44144 142.79205 547.66163 273.5841 547.66163" fill="none" stroke-width="2.51666" stroke="#bcbd22" opacity="0.45"><title>Trex_cells → Komagataella: 1,192,440</title></path>
+<path id="flow71" d="M12 495.28225C142.79205 495.28225 142.79205 517.59255 273.5841 517.59255" fill="none" stroke-width="2.4509" stroke="#bcbd22" opacity="0.45"><title>Trex_cells → hg38: 1,161,281</title></path>
+<path id="flow3" d="M12 529.15201C142.79205 529.15201 142.79205 549.96258 273.5841 549.96258" fill="none" stroke-width="2.08524" stroke="#e377c2" opacity="0.45"><title>Brachy_Blank → Komagataella: 988,026</title></path>
+<path id="flow78" d="M12 426.90084C142.79205 426.90084 142.79205 340.68528 273.5841 340.68528" fill="none" stroke-width="1.56751" stroke="#17becf" opacity="0.45"><title>Trex_vessels → Brachy_vessels_scaffolds_len10k: 742,714</title></path>
+<path id="flow4" d="M12 530.78855C142.79205 530.78855 142.79205 561.40609 273.5841 561.40609" fill="none" stroke-width="1.18783" stroke="#e377c2" opacity="0.45"><title>Brachy_Blank → Pinus_taeda: 562,815</title></path>
+<path id="flow61" d="M12 504.21335C142.79205 504.21335 142.79205 560.29859 273.5841 560.29859" fill="none" stroke-width="1.02716" stroke="#bcbd22" opacity="0.45"><title>Trex_cells → Pinus_taeda: 486,685</title></path>
+<path id="flow58" d="M12 474.43181C142.79205 474.43181 142.79205 239.40396 273.5841 239.40396" fill="none" stroke-width="1" stroke="#bcbd22" opacity="0.45"><title>Trex_cells → Brachy_cells_scaffolds_len10k: 446,381</title></path>
+<path id="flow5" d="M12 523.56177C142.79205 523.56177 142.79205 488.098 273.5841 488.098" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_Blank → Trex_cells_scaffolds_len10k: 381,729</title></path>
+<path id="flow90" d="M12 459.17174C142.79205 459.17174 142.79205 515.98378 273.5841 515.98378" fill="none" stroke-width="1" stroke="#17becf" opacity="0.45"><title>Trex_vessels → hg38: 363,252</title></path>
+<path id="flow76" d="M12 459.92216C142.79205 459.92216 142.79205 528.30796 273.5841 528.30796" fill="none" stroke-width="1" stroke="#17becf" opacity="0.45"><title>Trex_vessels → Brachy_Blank_scaffolds_len10k: 347,874</title></path>
+<path id="flow59" d="M12 475.12733C142.79205 475.12733 142.79205 341.69351 273.5841 341.69351" fill="none" stroke-width="1" stroke="#bcbd22" opacity="0.45"><title>Trex_cells → Brachy_vessels_scaffolds_len10k: 212,714</title></path>
+<path id="flow83" d="M12 428.80535C142.79205 428.80535 142.79205 413.97606 273.5841 413.97606" fill="none" stroke-width="1" stroke="#17becf" opacity="0.45"><title>Trex_vessels → allMis1: 204,493</title></path>
+<path id="flow79" d="M12 460.49061C142.79205 460.49061 142.79205 546.20195 273.5841 546.20195" fill="none" stroke-width="1" stroke="#17becf" opacity="0.45"><title>Trex_vessels → Komagataella: 190,808</title></path>
+<path id="flow89" d="M12 429.18723C142.79205 429.18723 142.79205 423.24799 273.5841 423.24799" fill="none" stroke-width="1" stroke="#17becf" opacity="0.45"><title>Trex_vessels → galGal6: 157,398</title></path>
+<path id="flow24" d="M12 221.46029C142.79205 221.46029 142.79205 450.44066 273.5841 450.44066" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_cells → Trex_cells_scaffolds_len10k: 157,253</title></path>
+<path id="flow93" d="M12 429.72549C142.79205 429.72549 142.79205 441.38939 273.5841 441.38939" fill="none" stroke-width="1" stroke="#17becf" opacity="0.45"><title>Trex_vessels → mm10: 135,430</title></path>
+<path id="flow14" d="M12 524.09948C142.79205 524.09948 142.79205 518.9338 273.5841 518.9338" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_Blank → hg38: 109,738</title></path>
+<path id="flow92" d="M12 429.46795C142.79205 429.46795 142.79205 432.33483 273.5841 432.33483" fill="none" stroke-width="1" stroke="#17becf" opacity="0.45"><title>Trex_vessels → loxAfr3: 108,621</title></path>
+<path id="flow33" d="M12 221.84463C142.79205 221.84463 142.79205 515.38746 273.5841 515.38746" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_cells → hg38: 100,427</title></path>
+<path id="flow19" d="M12 222.03673C142.79205 222.03673 142.79205 527.73323 273.5841 527.73323" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_cells → Brachy_Blank_scaffolds_len10k: 81,619</title></path>
+<path id="flow85" d="M12 428.25541C142.79205 428.25541 142.79205 386.74272 273.5841 386.74272" fill="none" stroke-width="1" stroke="#17becf" opacity="0.45"><title>Trex_vessels → bearded_dragon: 75,207</title></path>
+<path id="flow64" d="M12 476.19487C142.79205 476.19487 142.79205 414.26902 273.5841 414.26902" fill="none" stroke-width="1" stroke="#bcbd22" opacity="0.45"><title>Trex_cells → allMis1: 73,134</title></path>
+<path id="flow84" d="M12 428.10362C142.79205 428.10362 142.79205 377.67602 273.5841 377.67602" fill="none" stroke-width="1" stroke="#17becf" opacity="0.45"><title>Trex_vessels → anoCar2: 68,630</title></path>
+<path id="flow26" d="M12 220.99202C142.79205 220.99202 142.79205 413.64774 273.5841 413.64774" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_cells → allMis1: 67,222</title></path>
+<path id="flow66" d="M12 475.8248C142.79205 475.8248 142.79205 386.89218 273.5841 386.89218" fill="none" stroke-width="1" stroke="#bcbd22" opacity="0.45"><title>Trex_cells → bearded_dragon: 66,422</title></path>
+<path id="flow87" d="M12 428.40048C142.79205 428.40048 142.79205 395.78944 273.5841 395.78944" fill="none" stroke-width="1" stroke="#17becf" opacity="0.45"><title>Trex_vessels → crocodile: 62,268</title></path>
+<path id="flow88" d="M12 427.84933C142.79205 427.84933 142.79205 359.70878 273.5841 359.70878" fill="none" stroke-width="1" stroke="#17becf" opacity="0.45"><title>Trex_vessels → falcon: 59,752</title></path>
+<path id="flow28" d="M12 220.65916C142.79205 220.65916 142.79205 386.56272 273.5841 386.56272" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_cells → bearded_dragon: 59,428</title></path>
+<path id="flow65" d="M12 475.69201C142.79205 475.69201 142.79205 377.81114 273.5841 377.81114" fill="none" stroke-width="1" stroke="#bcbd22" opacity="0.45"><title>Trex_cells → anoCar2: 59,416</title></path>
+<path id="flow86" d="M12 428.52787C142.79205 428.52787 142.79205 404.77835 273.5841 404.77835" fill="none" stroke-width="1" stroke="#17becf" opacity="0.45"><title>Trex_vessels → brown_anole: 58,453</title></path>
+<path id="flow74" d="M12 476.50842C142.79205 476.50842 142.79205 441.59346 273.5841 441.59346" fill="none" stroke-width="1" stroke="#bcbd22" opacity="0.45"><title>Trex_cells → mm10: 57,954</title></path>
+<path id="flow38" d="M12 339.69786C142.79205 339.69786 142.79205 527.88011 273.5841 527.88011" fill="none" stroke-width="1" stroke="#7f7f7f" opacity="0.45"><title>Brachy_vessels → Brachy_Blank_scaffolds_len10k: 57,568</title></path>
+<path id="flow91" d="M12 427.97179C142.79205 427.97179 142.79205 368.67903 273.5841 368.67903" fill="none" stroke-width="1" stroke="#17becf" opacity="0.45"><title>Trex_vessels → komodo_dragon: 56,297</title></path>
+<path id="flow1" d="M12 522.73301C142.79205 522.73301 142.79205 239.93393 273.5841 239.93393" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_Blank → Brachy_cells_scaffolds_len10k: 55,844</title></path>
+<path id="flow27" d="M12 220.53954C142.79205 220.53954 142.79205 377.51104 273.5841 377.51104" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_cells → anoCar2: 53,928</title></path>
+<path id="flow25" d="M12 221.68244C142.79205 221.68244 142.79205 497.15453 273.5841 497.15453" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_cells → Trex_vessels_scaffolds_len10k: 53,268</title></path>
+<path id="flow68" d="M12 475.95068C142.79205 475.95068 142.79205 395.91094 273.5841 395.91094" fill="none" stroke-width="1" stroke="#bcbd22" opacity="0.45"><title>Trex_cells → crocodile: 52,869</title></path>
+<path id="flow80" d="M12 460.7477C142.79205 460.7477 142.79205 559.72927 273.5841 559.72927" fill="none" stroke-width="1" stroke="#17becf" opacity="0.45"><title>Trex_vessels → Pinus_taeda: 52,824</title></path>
+<path id="flow67" d="M12 476.06208C142.79205 476.06208 142.79205 404.89564 273.5841 404.89564" fill="none" stroke-width="1" stroke="#bcbd22" opacity="0.45"><title>Trex_cells → brown_anole: 52,697</title></path>
+<path id="flow52" d="M12 339.58361C142.79205 339.58361 142.79205 515.54695 273.5841 515.54695" fill="none" stroke-width="1" stroke="#7f7f7f" opacity="0.45"><title>Brachy_vessels → hg38: 50,704</title></path>
+<path id="flow69" d="M12 475.48065C142.79205 475.48065 142.79205 359.82386 273.5841 359.82386" fill="none" stroke-width="1" stroke="#bcbd22" opacity="0.45"><title>Trex_cells → falcon: 49,302</title></path>
+<path id="flow30" d="M12 220.77279C142.79205 220.77279 142.79205 395.64266 273.5841 395.64266" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_cells → crocodile: 48,247</title></path>
+<path id="flow94" d="M12 427.73544C142.79205 427.73544 142.79205 350.77167 273.5841 350.77167" fill="none" stroke-width="1" stroke="#17becf" opacity="0.45"><title>Trex_vessels → ostrich: 48,177</title></path>
+<path id="flow31" d="M12 220.33783C142.79205 220.33783 142.79205 359.56538 273.5841 359.56538" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_cells → falcon: 47,778</title></path>
+<path id="flow2" d="M12 522.84148C142.79205 522.84148 142.79205 341.96751 273.5841 341.96751" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_Blank → Brachy_vessels_scaffolds_len10k: 46,939</title></path>
+<path id="flow70" d="M12 476.32104C142.79205 476.32104 142.79205 423.46308 273.5841 423.46308" fill="none" stroke-width="1" stroke="#bcbd22" opacity="0.45"><title>Trex_cells → galGal6: 46,433</title></path>
+<path id="flow29" d="M12 220.87239C142.79205 220.87239 142.79205 404.63744 273.5841 404.63744" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_cells → brown_anole: 46,141</title></path>
+<path id="flow43" d="M12 339.4431C142.79205 339.4431 142.79205 450.6551 273.5841 450.6551" fill="none" stroke-width="1" stroke="#7f7f7f" opacity="0.45"><title>Brachy_vessels → Trex_cells_scaffolds_len10k: 45,961</title></path>
+<path id="flow72" d="M12 475.58099C142.79205 475.58099 142.79205 368.78675 273.5841 368.78675" fill="none" stroke-width="1" stroke="#bcbd22" opacity="0.45"><title>Trex_cells → komodo_dragon: 45,786</title></path>
+<path id="flow34" d="M12 220.43544C142.79205 220.43544 142.79205 368.54536 273.5841 368.54536" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_cells → komodo_dragon: 44,721</title></path>
+<path id="flow22" d="M12 222.16976C142.79205 222.16976 142.79205 545.88898 273.5841 545.88898" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_cells → Komagataella: 44,446</title></path>
+<path id="flow32" d="M12 221.10781C142.79205 221.10781 142.79205 423.01021 273.5841 423.01021" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_cells → galGal6: 42,504</title></path>
+<path id="flow37" d="M12 220.24577C142.79205 220.24577 142.79205 350.65618 273.5841 350.65618" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_cells → ostrich: 39,460</title></path>
+<path id="flow73" d="M12 476.40865C142.79205 476.40865 142.79205 432.48807 273.5841 432.48807" fill="none" stroke-width="1" stroke="#bcbd22" opacity="0.45"><title>Trex_cells → loxAfr3: 36,591</title></path>
+<path id="flow75" d="M12 475.39021C142.79205 475.39021 142.79205 350.86092 273.5841 350.86092" fill="none" stroke-width="1" stroke="#bcbd22" opacity="0.45"><title>Trex_cells → ostrich: 36,402</title></path>
+<path id="flow36" d="M12 221.25648C142.79205 221.25648 142.79205 441.18451 273.5841 441.18451" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_cells → mm10: 35,877</title></path>
+<path id="flow35" d="M12 221.18564C142.79205 221.18564 142.79205 432.1661 273.5841 432.1661" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_cells → loxAfr3: 31,255</title></path>
+<path id="flow41" d="M12 339.79097C142.79205 339.79097 142.79205 545.96824 273.5841 545.96824" fill="none" stroke-width="1" stroke="#7f7f7f" opacity="0.45"><title>Brachy_vessels → Komagataella: 30,664</title></path>
+<path id="flow23" d="M12 222.2396C142.79205 222.2396 142.79205 559.62564 273.5841 559.62564" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_cells → Pinus_taeda: 21,735</title></path>
+<path id="flow45" d="M12 339.30174C142.79205 339.30174 142.79205 413.73947 273.5841 413.73947" fill="none" stroke-width="1" stroke="#7f7f7f" opacity="0.45"><title>Brachy_vessels → allMis1: 19,706</title></path>
+<path id="flow44" d="M12 339.51085C142.79205 339.51085 142.79205 497.22999 273.5841 497.22999" fill="none" stroke-width="1" stroke="#7f7f7f" opacity="0.45"><title>Brachy_vessels → Trex_vessels_scaffolds_len10k: 18,241</title></path>
+<path id="flow47" d="M12 339.20129C142.79205 339.20129 142.79205 386.64439 273.5841 386.64439" fill="none" stroke-width="1" stroke="#7f7f7f" opacity="0.45"><title>Brachy_vessels → bearded_dragon: 17,972</title></path>
+<path id="flow46" d="M12 339.1645C142.79205 339.1645 142.79205 377.58577 273.5841 377.58577" fill="none" stroke-width="1" stroke="#7f7f7f" opacity="0.45"><title>Brachy_vessels → anoCar2: 16,891</title></path>
+<path id="flow9" d="M12 523.00012C142.79205 523.00012 142.79205 386.97826 273.5841 386.97826" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_Blank → bearded_dragon: 15,150</title></path>
+<path id="flow48" d="M12 339.26568C142.79205 339.26568 142.79205 404.7014 273.5841 404.7014" fill="none" stroke-width="1" stroke="#7f7f7f" opacity="0.45"><title>Brachy_vessels → brown_anole: 14,468</title></path>
+<path id="flow49" d="M12 339.23533C142.79205 339.23533 142.79205 395.70865 273.5841 395.70865" fill="none" stroke-width="1" stroke="#7f7f7f" opacity="0.45"><title>Brachy_vessels → crocodile: 14,291</title></path>
+<path id="flow50" d="M12 339.10463C142.79205 339.10463 142.79205 359.63076 273.5841 359.63076" fill="none" stroke-width="1" stroke="#7f7f7f" opacity="0.45"><title>Brachy_vessels → falcon: 14,181</title></path>
+<path id="flow8" d="M12 522.9698C142.79205 522.9698 142.79205 377.88817 273.5841 377.88817" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_Blank → anoCar2: 13,582</title></path>
+<path id="flow10" d="M12 523.05466C142.79205 523.05466 142.79205 404.96528 273.5841 404.96528" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_Blank → brown_anole: 13,291</title></path>
+<path id="flow53" d="M12 339.13313C142.79205 339.13313 142.79205 368.60609 273.5841 368.60609" fill="none" stroke-width="1" stroke="#7f7f7f" opacity="0.45"><title>Brachy_vessels → komodo_dragon: 12,828</title></path>
+<path id="flow51" d="M12 339.33595C142.79205 339.33595 142.79205 423.06848 273.5841 423.06848" fill="none" stroke-width="1" stroke="#7f7f7f" opacity="0.45"><title>Brachy_vessels → galGal6: 12,711</title></path>
+<path id="flow42" d="M12 339.8358C142.79205 339.8358 142.79205 559.66105 273.5841 559.66105" fill="none" stroke-width="1" stroke="#7f7f7f" opacity="0.45"><title>Brachy_vessels → Pinus_taeda: 11,822</title></path>
+<path id="flow12" d="M12 522.92152C142.79205 522.92152 142.79205 359.88828 273.5841 359.88828" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_Blank → falcon: 11,740</title></path>
+<path id="flow11" d="M12 523.02837C142.79205 523.02837 142.79205 395.97899 273.5841 395.97899" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_Blank → crocodile: 11,619</title></path>
+<path id="flow55" d="M12 339.38255C142.79205 339.38255 142.79205 441.23442 273.5841 441.23442" fill="none" stroke-width="1" stroke="#7f7f7f" opacity="0.45"><title>Brachy_vessels → mm10: 11,422</title></path>
+<path id="flow13" d="M12 523.10211C142.79205 523.10211 142.79205 423.52385 273.5841 423.52385" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_Blank → galGal6: 11,151</title></path>
+<path id="flow56" d="M12 339.07816C142.79205 339.07816 142.79205 350.70933 273.5841 350.70933" fill="none" stroke-width="1" stroke="#7f7f7f" opacity="0.45"><title>Brachy_vessels → ostrich: 10,904</title></path>
+<path id="flow17" d="M12 523.14765C142.79205 523.14765 142.79205 441.66592 273.5841 441.66592" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_Blank → mm10: 10,707</title></path>
+<path id="flow16" d="M12 523.12511C142.79205 523.12511 142.79205 432.53792 273.5841 432.53792" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_Blank → loxAfr3: 10,647</title></path>
+<path id="flow7" d="M12 523.07951C142.79205 523.07951 142.79205 414.35703 273.5841 414.35703" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_Blank → allMis1: 10,262</title></path>
+<path id="flow15" d="M12 522.94469C142.79205 522.94469 142.79205 368.84585 273.5841 368.84585" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_Blank → komodo_dragon: 10,216</title></path>
+<path id="flow54" d="M12 339.35993C142.79205 339.35993 142.79205 432.20964 273.5841 432.20964" fill="none" stroke-width="1" stroke="#7f7f7f" opacity="0.45"><title>Brachy_vessels → loxAfr3: 10,013</title></path>
+<path id="flow6" d="M12 523.97413C142.79205 523.97413 142.79205 506.67444 273.5841 506.67444" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_Blank → Trex_vessels_scaffolds_len10k: 9,045</title></path>
+<path id="flow18" d="M12 522.90007C142.79205 522.90007 142.79205 350.9084 273.5841 350.9084" fill="none" stroke-width="1" stroke="#e377c2" opacity="0.45"><title>Brachy_Blank → ostrich: 8,587</title></path>
+</g>
+<g id="sankey_nodes">
+<g class="node">
+<rect id="r0" class="for_r0" x="0" y="522.67408" height="8.70838" width="12" fill="#e377c2" fill-opacity="1"><title>Brachy_Blank:
+4,126,187</title></rect>
+</g>
+<g class="node">
+<rect id="r1" class="for_r1" x="273.5841" y="527.64711" height="9.59747" width="12" fill="#7f7f7f" fill-opacity="1"><title>Brachy_Blank_scaffolds_len10k:
+4,547,452</title></rect>
+</g>
+<g class="node">
+<rect id="r2" class="for_r2" x="273.5841" y="0" height="239.99286" width="12" fill="#bcbd22" fill-opacity="1"><title>Brachy_cells_scaffolds_len10k:
+113,712,908</title></rect>
+</g>
+<g class="node">
+<rect id="r3" class="for_r3" x="273.5841" y="248.59036" height="93.42668" width="12" fill="#17becf" fill-opacity="1"><title>Brachy_vessels_scaffolds_len10k:
+44,267,229</title></rect>
+</g>
+<g class="node">
+<rect id="r4" class="for_r4" x="273.5841" y="545.84207" height="5.16313" width="12" fill="#1f77b4" fill-opacity="1"><title>Komagataella:
+2,446,384</title></rect>
+</g>
+<g class="node">
+<rect id="r5" class="for_r5" x="273.5841" y="559.60271" height="2.39729" width="12" fill="#ff7f0e" fill-opacity="1"><title>Pinus_taeda:
+1,135,881</title></rect>
+</g>
+<g class="node">
+<rect id="r6" class="for_r6" x="273.5841" y="450.27472" height="38.22611" width="12" fill="#2ca02c" fill-opacity="1"><title>Trex_cells_scaffolds_len10k:
+18,112,212</title></rect>
+</g>
+<g class="node">
+<rect id="r7" class="for_r7" x="273.5841" y="497.09832" height="9.58567" width="12" fill="#d62728" fill-opacity="1"><title>Trex_vessels_scaffolds_len10k:
+4,541,860</title></rect>
+</g>
+<g class="node">
+<rect id="r8" class="for_r8" x="273.5841" y="413.5768" height="0.79106" width="12" fill="#9467bd" fill-opacity="1"><title>allMis1:
+374,817</title></rect>
+</g>
+<g class="node">
+<rect id="r9" class="for_r9" x="273.5841" y="377.45413" height="0.44837" width="12" fill="#8c564b" fill-opacity="1"><title>anoCar2:
+212,447</title></rect>
+</g>
+<g class="node">
+<rect id="r10" class="for_r10" x="273.5841" y="386.5" height="0.49424" width="12" fill="#e377c2" fill-opacity="1"><title>bearded_dragon:
+234,179</title></rect>
+</g>
+<g class="node">
+<rect id="r11" class="for_r11" x="273.5841" y="404.58875" height="0.39055" width="12" fill="#7f7f7f" fill-opacity="1"><title>brown_anole:
+185,050</title></rect>
+</g>
+<g class="node">
+<rect id="r12" class="for_r12" x="273.5841" y="395.59174" height="0.39951" width="12" fill="#bcbd22" fill-opacity="1"><title>crocodile:
+189,294</title></rect>
+</g>
+<g class="node">
+<rect id="r13" class="for_r13" x="273.5841" y="359.51496" height="0.3857" width="12" fill="#17becf" fill-opacity="1"><title>falcon:
+182,753</title></rect>
+</g>
+<g class="node">
+<rect id="r14" class="for_r14" x="273.5841" y="422.96536" height="0.57025" width="12" fill="#1f77b4" fill-opacity="1"><title>galGal6:
+270,197</title></rect>
+</g>
+<g class="node">
+<rect id="r15" class="for_r15" x="273.5841" y="515.28149" height="3.76812" width="12" fill="#ff7f0e" fill-opacity="1"><title>hg38:
+1,785,402</title></rect>
+</g>
+<g class="node">
+<rect id="r16" class="for_r16" x="273.5841" y="368.49816" height="0.35847" width="12" fill="#2ca02c" fill-opacity="1"><title>komodo_dragon:
+169,848</title></rect>
+</g>
+<g class="node">
+<rect id="r17" class="for_r17" x="273.5841" y="432.13311" height="0.41604" width="12" fill="#d62728" fill-opacity="1"><title>loxAfr3:
+197,127</title></rect>
+</g>
+<g class="node">
+<rect id="r18" class="for_r18" x="273.5841" y="441.14665" height="0.53056" width="12" fill="#9467bd" fill-opacity="1"><title>mm10:
+251,390</title></rect>
+</g>
+<g class="node">
+<rect id="r19" class="for_r19" x="273.5841" y="350.61454" height="0.30292" width="12" fill="#8c564b" fill-opacity="1"><title>ostrich:
+143,530</title></rect>
+</g>
+<g class="node">
+<rect id="r20" class="for_r20" x="0" y="1.90841" height="220.35413" width="12" fill="#e377c2" fill-opacity="1"><title>Brachy_cells:
+104,407,726</title></rect>
+</g>
+<g class="node">
+<rect id="r21" class="for_r21" x="0" y="230.86004" height="108.98824" width="12" fill="#7f7f7f" fill-opacity="1"><title>Brachy_vessels:
+51,640,576</title></rect>
+</g>
+<g class="node">
+<rect id="r22" class="for_r22" x="0" y="473.96077" height="30.76616" width="12" fill="#bcbd22" fill-opacity="1"><title>Trex_cells:
+14,577,555</title></rect>
+</g>
+<g class="node">
+<rect id="r23" class="for_r23" x="0" y="422.37536" height="38.42809" width="12" fill="#17becf" fill-opacity="1"><title>Trex_vessels:
+18,207,916</title></rect>
+</g>
+</g>
+<g id="sankey_labels" font-family="sans-serif" font-size="10px" fill="#000000">
+<text text-anchor="middle" x="196.31549" y="577" font-size="12px" font-weight="400" fill="#336781">Made at SankeyMATIC.com</text>
+<rect id="label0_bg" class="for_r0" x="-104.72357" y="519.73596" width="103.70242" height="14.06104" rx="2.5" fill="#fff" fill-opacity="0.55" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label0" class="for_r0" text-anchor="end" x="-3.93873" y="527.02828" font-weight="400" font-size="9.61881px" dy="3.2077">Brachy_Blank: <tspan font-weight="400" font-size="7.40563px">4,126,187</tspan></text>
+<rect id="label1_bg" class="for_r1" x="286.60525" y="525.15448" width="180.77273" height="14.06421" rx="2.5" fill="#fff" fill-opacity="0.55" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label1" class="for_r1" text-anchor="start" x="289.52283" y="532.44584" font-weight="400" font-size="9.63222px" dy="3.20863">Brachy_Blank_scaffolds_len10k: <tspan font-weight="400" font-size="7.41596px">4,547,452</tspan></text>
+<rect id="label2_bg" class="for_r2" x="286.60525" y="110.84643" width="247.71023" height="18" rx="2.5" fill="#fff" fill-opacity="0.55" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label2" class="for_r2" text-anchor="start" x="289.52283" y="119.99643" font-weight="400" font-size="13.108px" dy="4.35">Brachy_cells_scaffolds_len10k: <tspan font-weight="400" font-size="10.092px">113,712,908</tspan></text>
+<rect id="label3_bg" class="for_r3" x="286.60525" y="287.42871" width="217.4368" height="15.5" rx="2.5" fill="#fff" fill-opacity="0.55" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label3" class="for_r3" text-anchor="start" x="289.52283" y="295.3037" font-weight="400" font-size="10.89688px" dy="3.625">Brachy_vessels_scaffolds_len10k: <tspan font-weight="400" font-size="8.38963px">44,267,229</tspan></text>
+<rect id="label4_bg" class="for_r4" x="286.60525" y="541.14722" width="102.64773" height="14.11566" rx="2.5" fill="#fff" fill-opacity="0.55" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label4" class="for_r4" text-anchor="start" x="289.52283" y="548.42364" font-weight="400" font-size="9.56532px" dy="3.22355">Komagataella: <tspan font-weight="400" font-size="7.36445px">2,446,384</tspan></text>
+<rect id="label5_bg" class="for_r5" x="286.60525" y="553.49133" width="96.92117" height="14" rx="2.5" fill="#fff" fill-opacity="0.55" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label5" class="for_r5" text-anchor="start" x="289.52283" y="560.80135" font-weight="400" font-size="9.5236px" dy="3.19">Pinus_taeda: <tspan font-weight="400" font-size="7.33233px">1,135,881</tspan></text>
+<rect id="label6_bg" class="for_r6" x="286.60525" y="461.86777" width="175.76492" height="15" rx="2.5" fill="#fff" fill-opacity="0.55" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label6" class="for_r6" text-anchor="start" x="289.52283" y="469.38777" font-weight="400" font-size="10.06412px" dy="3.48">Trex_cells_scaffolds_len10k: <tspan font-weight="400" font-size="7.74848px">18,112,212</tspan></text>
+<rect id="label7_bg" class="for_r7" x="286.60525" y="494.58115" width="177.72586" height="14" rx="2.5" fill="#fff" fill-opacity="0.55" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label7" class="for_r7" text-anchor="start" x="289.52283" y="501.89115" font-weight="400" font-size="9.63204px" dy="3.19">Trex_vessels_scaffolds_len10k: <tspan font-weight="400" font-size="7.41582px">4,541,860</tspan></text>
+<rect id="label8_bg" class="for_r8" x="286.60525" y="406.66232" width="67.34305" height="14" rx="2.5" fill="#fff" fill-opacity="0.55" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label8" class="for_r8" text-anchor="start" x="289.52283" y="413.97233" font-weight="400" font-size="9.49936px" dy="3.19">allMis1: <tspan font-weight="400" font-size="7.31367px">374,817</tspan></text>
+<rect id="label9_bg" class="for_r9" x="286.60525" y="370.36832" width="74.17117" height="14" rx="2.5" fill="#fff" fill-opacity="0.55" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label9" class="for_r9" text-anchor="start" x="289.52283" y="377.67832" font-weight="400" font-size="9.49419px" dy="3.19">anoCar2: <tspan font-weight="400" font-size="7.30969px">212,447</tspan></text>
+<rect id="label10_bg" class="for_r10" x="286.60525" y="379.46588" width="107.44461" height="14.09912" rx="2.5" fill="#fff" fill-opacity="0.55" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label10" class="for_r10" text-anchor="start" x="289.52283" y="386.74712" font-weight="400" font-size="9.49489px" dy="3.21875">bearded_dragon: <tspan font-weight="400" font-size="7.31022px">234,179</tspan></text>
+<rect id="label11_bg" class="for_r11" x="286.60525" y="397.47403" width="92.11648" height="14" rx="2.5" fill="#fff" fill-opacity="0.55" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label11" class="for_r11" text-anchor="start" x="289.52283" y="404.78403" font-weight="400" font-size="9.49332px" dy="3.19">brown_anole: <tspan font-weight="400" font-size="7.30902px">185,050</tspan></text>
+<rect id="label12_bg" class="for_r12" x="286.60525" y="388.48151" width="75.7493" height="14" rx="2.5" fill="#fff" fill-opacity="0.55" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label12" class="for_r12" text-anchor="start" x="289.52283" y="395.7915" font-weight="400" font-size="9.49346px" dy="3.19">crocodile: <tspan font-weight="400" font-size="7.30912px">189,294</tspan></text>
+<rect id="label13_bg" class="for_r13" x="286.60525" y="352.39783" width="63.09305" height="14" rx="2.5" fill="#fff" fill-opacity="0.55" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label13" class="for_r13" text-anchor="start" x="289.52283" y="359.70781" font-weight="400" font-size="9.49325px" dy="3.19">falcon: <tspan font-weight="400" font-size="7.30896px">182,753</tspan></text>
+<rect id="label14_bg" class="for_r14" x="286.60525" y="415.96954" width="70.52273" height="14.10022" rx="2.5" fill="#fff" fill-opacity="0.55" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label14" class="for_r14" text-anchor="start" x="289.52283" y="423.25049" font-weight="400" font-size="9.49603px" dy="3.21906">galGal6: <tspan font-weight="400" font-size="7.31111px">270,197</tspan></text>
+<rect id="label15_bg" class="for_r15" x="286.60525" y="509.88745" width="65.29617" height="14.11017" rx="2.5" fill="#fff" fill-opacity="0.55" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label15" class="for_r15" text-anchor="start" x="289.52283" y="517.16555" font-weight="400" font-size="9.54428px" dy="3.22195">hg38: <tspan font-weight="400" font-size="7.34825px">1,785,402</tspan></text>
+<rect id="label16_bg" class="for_r16" x="286.60525" y="361.39615" width="106.35867" height="14.09912" rx="2.5" fill="#fff" fill-opacity="0.55" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label16" class="for_r16" text-anchor="start" x="289.52283" y="368.6774" font-weight="400" font-size="9.49284px" dy="3.21875">komodo_dragon: <tspan font-weight="400" font-size="7.30865px">169,848</tspan></text>
+<rect id="label17_bg" class="for_r17" x="286.60525" y="425.03113" width="67.30398" height="14" rx="2.5" fill="#fff" fill-opacity="0.55" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label17" class="for_r17" text-anchor="start" x="289.52283" y="432.34113" font-weight="400" font-size="9.49371px" dy="3.19">loxAfr3: <tspan font-weight="400" font-size="7.30931px">197,127</tspan></text>
+<rect id="label18_bg" class="for_r18" x="286.60525" y="434.10193" width="64.17117" height="14" rx="2.5" fill="#fff" fill-opacity="0.55" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label18" class="for_r18" text-anchor="start" x="289.52283" y="441.41193" font-weight="400" font-size="9.49543px" dy="3.19">mm10: <tspan font-weight="400" font-size="7.31064px">251,390</tspan></text>
+<rect id="label19_bg" class="for_r19" x="286.60525" y="343.45599" width="65.71805" height="14" rx="2.5" fill="#fff" fill-opacity="0.55" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label19" class="for_r19" text-anchor="start" x="289.52283" y="350.766" font-weight="400" font-size="9.492px" dy="3.19">ostrich: <tspan font-weight="400" font-size="7.308px">143,530</tspan></text>
+<rect id="label20_bg" class="for_r20" x="-141.68453" y="102.93547" width="140.66337" height="18" rx="2.5" fill="#fff" fill-opacity="0.55" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label20" class="for_r20" text-anchor="end" x="-3.93873" y="112.08547" font-weight="400" font-size="12.81173px" dy="4.35">Brachy_cells: <tspan font-weight="400" font-size="9.8639px">104,407,726</tspan></text>
+<rect id="label21_bg" class="for_r21" x="-134.13764" y="277.47916" width="133.11649" height="15.5" rx="2.5" fill="#fff" fill-opacity="0.55" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label21" class="for_r21" text-anchor="end" x="-3.93873" y="285.35416" font-weight="400" font-size="11.13164px" dy="3.625">Brachy_vessels: <tspan font-weight="400" font-size="8.57038px">51,640,576</tspan></text>
+<rect id="label22_bg" class="for_r22" x="-95.95795" y="482.17883" width="94.9368" height="14.5" rx="2.5" fill="#fff" fill-opacity="0.55" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label22" class="for_r22" text-anchor="end" x="-3.93873" y="489.34385" font-weight="400" font-size="9.95157px" dy="3.335">Trex_cells: <tspan font-weight="400" font-size="7.66183px">14,577,555</tspan></text>
+<rect id="label23_bg" class="for_r23" x="-110.41107" y="434.0694" width="109.38992" height="15" rx="2.5" fill="#fff" fill-opacity="0.55" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label23" class="for_r23" text-anchor="end" x="-3.93873" y="441.5894" font-weight="400" font-size="10.06716px" dy="3.48">Trex_vessels: <tspan font-weight="400" font-size="7.75082px">18,207,916</tspan></text>
+</g>
+</g></svg>
