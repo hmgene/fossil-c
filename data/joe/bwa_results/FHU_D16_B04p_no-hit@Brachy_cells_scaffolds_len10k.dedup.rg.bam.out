@@ -1,0 +1,148 @@
+[bwa_aln] 17bp reads: max_diff = 2
+[bwa_aln] 22bp reads: max_diff = 3
+[bwa_aln] 42bp reads: max_diff = 4
+[bwa_aln] 64bp reads: max_diff = 5
+[bwa_aln] 90bp reads: max_diff = 6
+[bwa_aln] 117bp reads: max_diff = 7
+[bwa_aln] 146bp reads: max_diff = 8
+[bwa_aln] 176bp reads: max_diff = 9
+[bwa_aln] 207bp reads: max_diff = 10
+[bwa_aln] 239bp reads: max_diff = 11
+[bwa_aln_core] calculate SA coordinate... 3.20 sec
+[bwa_aln_core] write to the disk... 0.00 sec
+[bwa_aln_core] 2896 sequences have been processed.
+[main] Version: 0.7.19-r1273
+[main] CMD: bwa aln -t 24 -n 0.01 -l 1000 -o 2 /mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/bwa/idx/Brachy_cells_scaffolds_len10k.fa /home/hxk728/git/fossil-c/data/joe/FHU_D16_B04p_no-hit.fastq
+[main] Real time: 1.300 sec; CPU: 3.358 sec
+[bwa_aln_core] convert to sequence coordinate... 0.21 sec
+[bwa_aln_core] refine gapped alignments... 0.04 sec
+[bwa_aln_core] print alignments... 0.00 sec
+[bwa_aln_core] 2896 sequences have been processed.
+[main] Version: 0.7.19-r1273
+[main] CMD: bwa samse -f /home/hxk728/git/fossil-c/data/joe/bwa_results/FHU_D16_B04p_no-hit@Brachy_cells_scaffolds_len10k.sam /mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/bwa/idx/Brachy_cells_scaffolds_len10k.fa /home/hxk728/git/fossil-c/data/joe/bwa_results/FHU_D16_B04p_no-hit@Brachy_cells_scaffolds_len10k.sai /home/hxk728/git/fossil-c/data/joe/FHU_D16_B04p_no-hit.fastq
+[main] Real time: 0.663 sec; CPU: 0.267 sec
+Step 1: Mark Duplicates
+Using GATK jar /mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/gatk/gatk-4.6.2.0/gatk-package-4.6.2.0-local.jar
+Running:
+    java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=2 -Xmx32G -jar /mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/gatk/gatk-4.6.2.0/gatk-package-4.6.2.0-local.jar MarkDuplicates -I /home/hxk728/git/fossil-c/data/joe/bwa_results/FHU_D16_B04p_no-hit@Brachy_cells_scaffolds_len10k.bam -O /home/hxk728/git/fossil-c/data/joe/bwa_results/FHU_D16_B04p_no-hit@Brachy_cells_scaffolds_len10k.dedup.bam -M /home/hxk728/git/fossil-c/data/joe/bwa_results/FHU_D16_B04p_no-hit@Brachy_cells_scaffolds_len10k.dedup.metrics.txt --REMOVE_DUPLICATES true
+15:25:41.310 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/gatk/gatk-4.6.2.0/gatk-package-4.6.2.0-local.jar!/com/intel/gkl/native/libgkl_compression.so
+[Wed Mar 04 15:25:41 EST 2026] MarkDuplicates --INPUT /home/hxk728/git/fossil-c/data/joe/bwa_results/FHU_D16_B04p_no-hit@Brachy_cells_scaffolds_len10k.bam --OUTPUT /home/hxk728/git/fossil-c/data/joe/bwa_results/FHU_D16_B04p_no-hit@Brachy_cells_scaffolds_len10k.dedup.bam --METRICS_FILE /home/hxk728/git/fossil-c/data/joe/bwa_results/FHU_D16_B04p_no-hit@Brachy_cells_scaffolds_len10k.dedup.metrics.txt --REMOVE_DUPLICATES true --MAX_SEQUENCES_FOR_DISK_READ_ENDS_MAP 50000 --MAX_FILE_HANDLES_FOR_READ_ENDS_MAP 8000 --SORTING_COLLECTION_SIZE_RATIO 0.25 --TAG_DUPLICATE_SET_MEMBERS false --REMOVE_SEQUENCING_DUPLICATES false --TAGGING_POLICY DontTag --CLEAR_DT true --DUPLEX_UMI false --FLOW_MODE false --FLOW_DUP_STRATEGY FLOW_QUALITY_SUM_STRATEGY --FLOW_USE_END_IN_UNPAIRED_READS false --FLOW_USE_UNPAIRED_CLIPPED_END false --FLOW_UNPAIRED_END_UNCERTAINTY 0 --FLOW_UNPAIRED_START_UNCERTAINTY 0 --FLOW_SKIP_FIRST_N_FLOWS 0 --FLOW_Q_IS_KNOWN_END false --FLOW_EFFECTIVE_QUALITY_THRESHOLD 15 --ADD_PG_TAG_TO_READS true --ASSUME_SORTED false --DUPLICATE_SCORING_STRATEGY SUM_OF_BASE_QUALITIES --PROGRAM_RECORD_ID MarkDuplicates --PROGRAM_GROUP_NAME MarkDuplicates --READ_NAME_REGEX <optimized capture of last three ':' separated fields as numeric values> --OPTICAL_DUPLICATE_PIXEL_DISTANCE 100 --MAX_OPTICAL_DUPLICATE_SET_SIZE 300000 --VERBOSITY INFO --QUIET false --VALIDATION_STRINGENCY STRICT --COMPRESSION_LEVEL 2 --MAX_RECORDS_IN_RAM 500000 --CREATE_INDEX false --CREATE_MD5_FILE false --help false --version false --showHidden false --USE_JDK_DEFLATER false --USE_JDK_INFLATER false
+[Wed Mar 04 15:25:41 EST 2026] Executing as hxk728@compt337 on Linux 4.18.0-553.el8_10.x86_64 amd64; OpenJDK 64-Bit Server VM 17.0.15-internal+0-adhoc..src; Deflater: Intel; Inflater: Intel; Provider GCS is available; Picard version: Version:4.6.2.0
+INFO	2026-03-04 15:25:41	MarkDuplicates	Start of doWork freeMemory: 87121600; totalMemory: 117440512; maxMemory: 34359738368
+INFO	2026-03-04 15:25:41	MarkDuplicates	Reading input file and constructing read end information.
+INFO	2026-03-04 15:25:41	MarkDuplicates	Will retain up to 124491805 data points before spilling to disk.
+WARNING	2026-03-04 15:25:41	AbstractOpticalDuplicateFinderCommandLineProgram	Default READ_NAME_REGEX '<optimized capture of last three ':' separated fields as numeric values>' did not match read name '27e71a6c-f055-4813-b313-02e01edc9691'.  You may need to specify a READ_NAME_REGEX in order to correctly identify optical duplicates.  Note that this message will not be emitted again even if other read names do not match the regex.
+INFO	2026-03-04 15:25:41	MarkDuplicates	Read 12 records. 0 pairs never matched.
+INFO	2026-03-04 15:25:42	MarkDuplicates	After buildSortedReadEndLists freeMemory: 1699673024; totalMemory: 3758096384; maxMemory: 34359738368
+INFO	2026-03-04 15:25:42	MarkDuplicates	Will retain up to 1073741824 duplicate indices before spilling to disk.
+INFO	2026-03-04 15:25:43	MarkDuplicates	Traversing read pair information and detecting duplicates.
+INFO	2026-03-04 15:25:43	MarkDuplicates	Traversing fragment information and detecting duplicates.
+INFO	2026-03-04 15:25:43	MarkDuplicates	Sorting list of duplicate records.
+INFO	2026-03-04 15:25:43	MarkDuplicates	After generateDuplicateIndexes freeMemory: 6061747592; totalMemory: 14713618432; maxMemory: 34359738368
+INFO	2026-03-04 15:25:43	MarkDuplicates	Marking 0 records as duplicates.
+INFO	2026-03-04 15:25:43	MarkDuplicates	Found 0 optical duplicate clusters.
+INFO	2026-03-04 15:25:43	MarkDuplicates	Reads are assumed to be ordered by: coordinate
+INFO	2026-03-04 15:25:43	MarkDuplicates	Writing complete. Closing input iterator.
+INFO	2026-03-04 15:25:43	MarkDuplicates	Duplicate Index cleanup.
+INFO	2026-03-04 15:25:43	MarkDuplicates	Getting Memory Stats.
+INFO	2026-03-04 15:25:43	MarkDuplicates	Before output close freeMemory: 1021050376; totalMemory: 1073741824; maxMemory: 34359738368
+INFO	2026-03-04 15:25:43	MarkDuplicates	Closed outputs. Getting more Memory Stats.
+INFO	2026-03-04 15:25:43	MarkDuplicates	After output close freeMemory: 349963800; totalMemory: 402653184; maxMemory: 34359738368
+[Wed Mar 04 15:25:43 EST 2026] picard.sam.markduplicates.MarkDuplicates done. Elapsed time: 0.04 minutes.
+Runtime.totalMemory()=402653184
+Tool returned:
+0
+Step 2: Add or Replace Read Groups
+Using GATK jar /mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/gatk/gatk-4.6.2.0/gatk-package-4.6.2.0-local.jar
+Running:
+    java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=2 -Xmx16G -jar /mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/gatk/gatk-4.6.2.0/gatk-package-4.6.2.0-local.jar AddOrReplaceReadGroups -I /home/hxk728/git/fossil-c/data/joe/bwa_results/FHU_D16_B04p_no-hit@Brachy_cells_scaffolds_len10k.dedup.bam -O /home/hxk728/git/fossil-c/data/joe/bwa_results/FHU_D16_B04p_no-hit@Brachy_cells_scaffolds_len10k.dedup.rg.bam -RGID FHU_D16_B04p_no-hit@Brachy_cells_scaffolds_len10k -RGLB lib1 -RGPL illumina -RGPU unit1 -RGSM FHU_D16_B04p_no-hit@Brachy_cells_scaffolds_len10k
+15:25:45.059 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/gatk/gatk-4.6.2.0/gatk-package-4.6.2.0-local.jar!/com/intel/gkl/native/libgkl_compression.so
+[Wed Mar 04 15:25:45 EST 2026] AddOrReplaceReadGroups --INPUT /home/hxk728/git/fossil-c/data/joe/bwa_results/FHU_D16_B04p_no-hit@Brachy_cells_scaffolds_len10k.dedup.bam --OUTPUT /home/hxk728/git/fossil-c/data/joe/bwa_results/FHU_D16_B04p_no-hit@Brachy_cells_scaffolds_len10k.dedup.rg.bam --RGID FHU_D16_B04p_no-hit@Brachy_cells_scaffolds_len10k --RGLB lib1 --RGPL illumina --RGPU unit1 --RGSM FHU_D16_B04p_no-hit@Brachy_cells_scaffolds_len10k --VERBOSITY INFO --QUIET false --VALIDATION_STRINGENCY STRICT --COMPRESSION_LEVEL 2 --MAX_RECORDS_IN_RAM 500000 --CREATE_INDEX false --CREATE_MD5_FILE false --help false --version false --showHidden false --USE_JDK_DEFLATER false --USE_JDK_INFLATER false
+[Wed Mar 04 15:25:45 EST 2026] Executing as hxk728@compt337 on Linux 4.18.0-553.el8_10.x86_64 amd64; OpenJDK 64-Bit Server VM 17.0.15-internal+0-adhoc..src; Deflater: Intel; Inflater: Intel; Provider GCS is available; Picard version: Version:4.6.2.0
+INFO	2026-03-04 15:25:45	AddOrReplaceReadGroups	Created read-group ID=FHU_D16_B04p_no-hit@Brachy_cells_scaffolds_len10k PL=illumina LB=lib1 SM=FHU_D16_B04p_no-hit@Brachy_cells_scaffolds_len10k
+
+[Wed Mar 04 15:25:45 EST 2026] picard.sam.AddOrReplaceReadGroups done. Elapsed time: 0.01 minutes.
+Runtime.totalMemory()=637534208
+Tool returned:
+0
+Step 3: Index BAM
+Step 4: HaplotypeCaller (GVCF mode)
+Using GATK jar /mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/gatk/gatk-4.6.2.0/gatk-package-4.6.2.0-local.jar
+Running:
+    java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=2 -Xmx32G -jar /mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/gatk/gatk-4.6.2.0/gatk-package-4.6.2.0-local.jar HaplotypeCaller -R /mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/bwa/idx/Brachy_cells_scaffolds_len10k.fa -I /home/hxk728/git/fossil-c/data/joe/bwa_results/FHU_D16_B04p_no-hit@Brachy_cells_scaffolds_len10k.dedup.rg.bam -O /home/hxk728/git/fossil-c/data/joe/bwa_results/FHU_D16_B04p_no-hit@Brachy_cells_scaffolds_len10k.g.vcf.gz -ERC GVCF --sample-name FHU_D16_B04p_no-hit@Brachy_cells_scaffolds_len10k --native-pair-hmm-threads 16 --bam-output /home/hxk728/git/fossil-c/data/joe/bwa_results/FHU_D16_B04p_no-hit@Brachy_cells_scaffolds_len10k.final.bam
+15:25:46.935 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/gatk/gatk-4.6.2.0/gatk-package-4.6.2.0-local.jar!/com/intel/gkl/native/libgkl_compression.so
+15:25:47.041 INFO  HaplotypeCaller - ------------------------------------------------------------
+15:25:47.043 INFO  HaplotypeCaller - The Genome Analysis Toolkit (GATK) v4.6.2.0
+15:25:47.043 INFO  HaplotypeCaller - For support and documentation go to https://software.broadinstitute.org/gatk/
+15:25:47.043 INFO  HaplotypeCaller - Executing as hxk728@compt337 on Linux v4.18.0-553.el8_10.x86_64 amd64
+15:25:47.043 INFO  HaplotypeCaller - Java runtime: OpenJDK 64-Bit Server VM v17.0.15-internal+0-adhoc..src
+15:25:47.043 INFO  HaplotypeCaller - Start Date/Time: March 4, 2026 at 3:25:46 PM EST
+15:25:47.043 INFO  HaplotypeCaller - ------------------------------------------------------------
+15:25:47.043 INFO  HaplotypeCaller - ------------------------------------------------------------
+15:25:47.044 INFO  HaplotypeCaller - HTSJDK Version: 4.2.0
+15:25:47.044 INFO  HaplotypeCaller - Picard Version: 3.4.0
+15:25:47.044 INFO  HaplotypeCaller - Built for Spark Version: 3.5.0
+15:25:47.045 INFO  HaplotypeCaller - HTSJDK Defaults.COMPRESSION_LEVEL : 2
+15:25:47.046 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_READ_FOR_SAMTOOLS : false
+15:25:47.047 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_SAMTOOLS : true
+15:25:47.047 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_TRIBBLE : false
+15:25:47.047 INFO  HaplotypeCaller - Deflater: IntelDeflater
+15:25:47.047 INFO  HaplotypeCaller - Inflater: IntelInflater
+15:25:47.047 INFO  HaplotypeCaller - GCS max retries/reopens: 20
+15:25:47.047 INFO  HaplotypeCaller - Requester pays: disabled
+15:25:47.047 INFO  HaplotypeCaller - Initializing engine
+15:25:47.786 INFO  HaplotypeCaller - Done initializing engine
+15:25:47.788 INFO  HaplotypeCallerEngine - Tool is in reference confidence mode and the annotation, the following changes will be made to any specified annotations: 'StrandBiasBySample' will be enabled. 'ChromosomeCounts', 'FisherStrand', 'StrandOddsRatio' and 'QualByDepth' annotations have been disabled
+15:25:48.082 INFO  NativeLibraryLoader - Loading libgkl_utils.so from jar:file:/mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/gatk/gatk-4.6.2.0/gatk-package-4.6.2.0-local.jar!/com/intel/gkl/native/libgkl_utils.so
+15:25:48.084 INFO  NativeLibraryLoader - Loading libgkl_smithwaterman.so from jar:file:/mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/gatk/gatk-4.6.2.0/gatk-package-4.6.2.0-local.jar!/com/intel/gkl/native/libgkl_smithwaterman.so
+15:25:48.085 INFO  IntelSmithWaterman - Using CPU-supported AVX-512 instructions
+15:25:48.085 INFO  SmithWatermanAligner - Using AVX accelerated SmithWaterman implementation
+15:25:48.087 INFO  HaplotypeCallerEngine - Standard Emitting and Calling confidence set to -0.0 for reference-model confidence output
+15:25:48.087 INFO  HaplotypeCallerEngine - All sites annotated with PLs forced to true for reference-model confidence output
+15:25:48.205 INFO  NativeLibraryLoader - Loading libgkl_pairhmm_omp.so from jar:file:/mnt/vstor/SOM_GENE_BEG33/fossil-c/bigdata/gatk/gatk-4.6.2.0/gatk-package-4.6.2.0-local.jar!/com/intel/gkl/native/libgkl_pairhmm_omp.so
+15:25:48.224 INFO  IntelPairHmm - Using CPU-supported AVX-512 instructions
+15:25:48.224 INFO  IntelPairHmm - Flush-to-zero (FTZ) is enabled when running PairHMM
+15:25:48.224 INFO  IntelPairHmm - Available threads: 24
+15:25:48.224 INFO  IntelPairHmm - Requested threads: 16
+15:25:48.224 INFO  PairHMM - Using the OpenMP multi-threaded AVX-accelerated native PairHMM implementation
+15:25:48.348 INFO  ProgressMeter - Starting traversal
+15:25:48.348 INFO  ProgressMeter -        Current Locus  Elapsed Minutes     Regions Processed   Regions/Minute
+15:25:58.350 INFO  ProgressMeter - NODE_122_length_125664_cov_13.251113:87601              0.2                 72230         433336.7
+15:26:08.349 INFO  ProgressMeter - NODE_345_length_86564_cov_49.170387:42301              0.3                148120         444337.8
+15:26:18.350 INFO  ProgressMeter - NODE_645_length_67854_cov_10.276464:6301              0.5                224010         447990.1
+15:26:28.352 INFO  ProgressMeter - NODE_1016_length_55173_cov_9.655104:41701              0.7                299810         449692.5
+15:26:38.352 INFO  ProgressMeter - NODE_1461_length_46526_cov_16.279615:36001              0.8                374880         449820.0
+15:26:48.352 INFO  ProgressMeter - NODE_1982_length_40051_cov_9.259001:27301              1.0                449960         449930.0
+15:26:58.352 INFO  ProgressMeter - NODE_2585_length_34581_cov_17.407635:14701              1.2                524800         449802.9
+15:27:08.353 INFO  ProgressMeter - NODE_3277_length_30439_cov_27.001218:4801              1.3                599840         449851.9
+15:27:18.353 INFO  ProgressMeter - NODE_4058_length_27019_cov_5.737020:23101              1.5                674890         449901.7
+15:27:28.354 INFO  ProgressMeter - NODE_4929_length_24127_cov_12.720671:18901              1.7                749440         449641.5
+15:27:38.355 INFO  ProgressMeter - NODE_5897_length_21671_cov_17.394060:2701              1.8                823610         449217.3
+15:27:48.354 INFO  ProgressMeter - NODE_6978_length_19455_cov_8.215876:7801              2.0                898150         449052.5
+15:27:58.354 INFO  ProgressMeter - NODE_8177_length_17623_cov_20.376025:9301              2.2                972730         448931.6
+15:28:08.354 INFO  ProgressMeter - NODE_9488_length_15943_cov_4.266490:8101              2.3               1046480         448472.2
+15:28:18.354 INFO  ProgressMeter - NODE_10937_length_14469_cov_18.638615:13501              2.5               1120490         448178.1
+15:28:28.354 INFO  ProgressMeter - NODE_12541_length_13141_cov_10.607290:1801              2.7               1194890         448066.9
+15:28:38.354 INFO  ProgressMeter - NODE_14266_length_12040_cov_16.309053:7201              2.8               1268140         447563.0
+15:28:48.355 INFO  ProgressMeter - NODE_16157_length_10961_cov_8.473409:8101              3.0               1341420         447122.6
+15:28:58.355 INFO  ProgressMeter - NODE_18236_length_10020_cov_4.642047:6001              3.2               1414970         446816.2
+15:28:58.539 INFO  HaplotypeCaller - 0 read(s) filtered by: MappingQualityReadFilter 
+0 read(s) filtered by: MappingQualityAvailableReadFilter 
+0 read(s) filtered by: MappedReadFilter 
+0 read(s) filtered by: NotSecondaryAlignmentReadFilter 
+0 read(s) filtered by: NotDuplicateReadFilter 
+0 read(s) filtered by: PassesVendorQualityCheckReadFilter 
+0 read(s) filtered by: NonZeroReferenceLengthAlignmentReadFilter 
+0 read(s) filtered by: GoodCigarReadFilter 
+0 read(s) filtered by: WellformedReadFilter 
+0 total reads filtered out of 12 reads processed
+15:28:58.539 INFO  ProgressMeter - NODE_18275_length_10001_cov_10.324251:7201              3.2               1416309         446806.3
+15:28:58.539 INFO  ProgressMeter - Traversal complete. Processed 1416309 total regions in 3.2 minutes.
+15:28:58.653 INFO  VectorLoglessPairHMM - Time spent in setup for JNI call : 0.0
+15:28:58.653 INFO  PairHMM - Total compute time in PairHMM computeLogLikelihoods() : 0.0
+15:28:58.653 INFO  SmithWatermanAligner - Total compute time in native Smith-Waterman : 0.00 sec
+15:28:59.297 INFO  HaplotypeCaller - Shutting down engine
+[March 4, 2026 at 3:28:59 PM EST] org.broadinstitute.hellbender.tools.walkers.haplotypecaller.HaplotypeCaller done. Elapsed time: 3.21 minutes.
+Runtime.totalMemory()=2751463424
+Done! Output GVCF: /home/hxk728/git/fossil-c/data/joe/bwa_results/FHU_D16_B04p_no-hit@Brachy_cells_scaffolds_len10k.g.vcf.gz
+Done! Output BAM: /home/hxk728/git/fossil-c/data/joe/bwa_results/FHU_D16_B04p_no-hit@Brachy_cells_scaffolds_len10k.final.bam
