@@ -1,0 +1,63 @@
+<svg height="600" width="600" xmlns="http://www.w3.org/2000/svg">
+<title>Your Diagram Title</title>
+<!-- Generated with SankeyMATIC: 3/9/2026, 3:02:42 PM -->
+<rect height="600" width="600" fill="#ffffff"></rect>
+<g transform="translate(173.05754,18)">
+<g id="sankey_flows">
+<path id="flow0" d="M12 76.625C93.85652 76.625 93.85652 80.20192 175.71305 80.20192" fill="none" stroke-width="87.07692" stroke="#e377c2" opacity="0.45"><title>FHU_D16_B03p_no-hit → Brachy_cells_scaffolds_len10k: 12</title></path>
+<path id="flow4" d="M12 291.50321C93.85652 291.50321 93.85652 167.27885 175.71305 167.27885" fill="none" stroke-width="87.07692" stroke="#ff7f0e" opacity="0.45"><title>FHU_D16_B04p_no-hit → Brachy_cells_scaffolds_len10k: 12</title></path>
+<path id="flow6" d="M12 430.1891C93.85652 430.1891 93.85652 228.95833 175.71305 228.95833" fill="none" stroke-width="36.28205" stroke="#2ca02c" opacity="0.45"><title>FHU_D16_B05p_no-hit → Brachy_cells_scaffolds_len10k: 5</title></path>
+<path id="flow1" d="M12 163.70192C93.85652 163.70192 93.85652 499.88782 175.71305 499.88782" fill="none" stroke-width="29.02564" stroke="#e377c2" opacity="0.45"><title>FHU_D16_B03p_no-hit → Brachy_vessels_scaffolds_len10k: 4</title></path>
+<path id="flow2" d="M12 131.04808C93.85652 131.04808 93.85652 327.73397 175.71305 327.73397" fill="none" stroke-width="21.76923" stroke="#e377c2" opacity="0.45"><title>FHU_D16_B03p_no-hit → Trex_cells_scaffolds_len10k: 3</title></path>
+<path id="flow3" d="M12 145.5609C93.85652 145.5609 93.85652 411.99679 175.71305 411.99679" fill="none" stroke-width="7.25641" stroke="#e377c2" opacity="0.45"><title>FHU_D16_B03p_no-hit → Trex_vessels_scaffolds_len10k: 1</title></path>
+<path id="flow5" d="M12 338.66987C93.85652 338.66987 93.85652 518.02885 175.71305 518.02885" fill="none" stroke-width="7.25641" stroke="#ff7f0e" opacity="0.45"><title>FHU_D16_B04p_no-hit → Brachy_vessels_scaffolds_len10k: 1</title></path>
+<path id="flow7" d="M12 451.95833C93.85652 451.95833 93.85652 525.28526 175.71305 525.28526" fill="none" stroke-width="7.25641" stroke="#2ca02c" opacity="0.45"><title>FHU_D16_B05p_no-hit → Brachy_vessels_scaffolds_len10k: 1</title></path>
+</g>
+<g id="sankey_nodes">
+<g class="node">
+<rect id="r0" class="for_r0" x="0" y="33.08654" height="145.12821" width="12" fill="#e377c2" fill-opacity="1"><title>FHU_D16_B03p_no-hit:
+20</title></rect>
+</g>
+<g class="node">
+<rect id="r1" class="for_r1" x="175.71305" y="36.66346" height="210.4359" width="12" fill="#7f7f7f" fill-opacity="1"><title>Brachy_cells_scaffolds_len10k:
+29</title></rect>
+</g>
+<g class="node">
+<rect id="r2" class="for_r2" x="175.71305" y="485.375" height="43.53846" width="12" fill="#bcbd22" fill-opacity="1"><title>Brachy_vessels_scaffolds_len10k:
+6</title></rect>
+</g>
+<g class="node">
+<rect id="r3" class="for_r3" x="175.71305" y="316.84936" height="21.76923" width="12" fill="#17becf" fill-opacity="1"><title>Trex_cells_scaffolds_len10k:
+3</title></rect>
+</g>
+<g class="node">
+<rect id="r4" class="for_r4" x="175.71305" y="408.36859" height="7.25641" width="12" fill="#1f77b4" fill-opacity="1"><title>Trex_vessels_scaffolds_len10k:
+1</title></rect>
+</g>
+<g class="node">
+<rect id="r5" class="for_r5" x="0" y="247.96474" height="94.33333" width="12" fill="#ff7f0e" fill-opacity="1"><title>FHU_D16_B04p_no-hit:
+13</title></rect>
+</g>
+<g class="node">
+<rect id="r6" class="for_r6" x="0" y="412.04808" height="43.53846" width="12" fill="#2ca02c" fill-opacity="1"><title>FHU_D16_B05p_no-hit:
+6</title></rect>
+</g>
+</g>
+<g id="sankey_labels" font-family="sans-serif" font-size="16px" fill="#000000">
+<text text-anchor="middle" x="126.94246" y="577" font-size="12px" font-weight="400" fill="#336781">Made at SankeyMATIC.com</text>
+<rect id="label0_bg" class="for_r0" x="-161.05755" y="85.12564" width="159.42484" height="41.12" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label0" class="for_r0" text-anchor="end" x="-6.29754" y="105.65064" font-weight="400" font-size="14.4px" dy="-5.125">FHU_D16_B03p_no-hit<tspan x="-6.29754" dy="19.32" font-weight="400" font-size="17.6px">20</tspan></text>
+<rect id="label1_bg" class="for_r1" x="189.34575" y="121.35641" width="206.39359" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label1" class="for_r1" text-anchor="start" x="194.01059" y="141.88141" font-weight="400" font-size="14.4px" dy="-5.125">Brachy_cells_scaffolds_len10k<tspan x="194.01059" dy="19.32" font-weight="400" font-size="17.6px">29</tspan></text>
+<rect id="label2_bg" class="for_r2" x="189.34575" y="486.61923" width="225.59672" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label2" class="for_r2" text-anchor="start" x="194.01059" y="507.14423" font-weight="400" font-size="14.4px" dy="-5.125">Brachy_vessels_scaffolds_len10k<tspan x="194.01059" dy="19.32" font-weight="400" font-size="17.6px">6</tspan></text>
+<rect id="label3_bg" class="for_r3" x="189.34575" y="307.20898" width="189.84672" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label3" class="for_r3" text-anchor="start" x="194.01059" y="327.73397" font-weight="400" font-size="14.4px" dy="-5.125">Trex_cells_scaffolds_len10k<tspan x="194.01059" dy="19.32" font-weight="400" font-size="17.6px">3</tspan></text>
+<rect id="label4_bg" class="for_r4" x="189.34575" y="391.4718" width="209.05766" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label4" class="for_r4" text-anchor="start" x="194.01059" y="411.99679" font-weight="400" font-size="14.4px" dy="-5.125">Trex_vessels_scaffolds_len10k<tspan x="194.01059" dy="19.32" font-weight="400" font-size="17.6px">1</tspan></text>
+<rect id="label5_bg" class="for_r5" x="-161.05755" y="274.60641" width="159.42484" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label5" class="for_r5" text-anchor="end" x="-6.29754" y="295.13141" font-weight="400" font-size="14.4px" dy="-5.125">FHU_D16_B04p_no-hit<tspan x="-6.29754" dy="19.32" font-weight="400" font-size="17.6px">13</tspan></text>
+<rect id="label6_bg" class="for_r6" x="-161.05755" y="413.29232" width="159.42484" height="41.12001" rx="4" fill="#fff" fill-opacity="0.75" stroke="none" stroke-width="0" stroke-opacity="0"></rect>
+<text id="label6" class="for_r6" text-anchor="end" x="-6.29754" y="433.81731" font-weight="400" font-size="14.4px" dy="-5.125">FHU_D16_B05p_no-hit<tspan x="-6.29754" dy="19.32" font-weight="400" font-size="17.6px">6</tspan></text>
+</g>
+</g></svg>
